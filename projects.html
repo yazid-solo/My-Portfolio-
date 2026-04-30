@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id" data-accent="cyan">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proyek-proyek Muchamad Yazid Ardani — web development, UI design, dan proyek akademik.">
+  <title>Portfolio Yazid · Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="nav-inject"></div>
+
+  <main style="padding-top:68px;">
+
+    <!-- ========== PAGE HERO ========== -->
+    <section style="padding:5rem 0 3rem;background:var(--bg2);position:relative;overflow:hidden;">
+      <div class="glow-blob" style="width:500px;height:500px;background:rgba(var(--accent-rgb),0.07);top:-150px;left:-100px;"></div>
+      <div class="container" style="position:relative;z-index:1;">
+        <p class="section-label reveal">Karya Saya</p>
+        <h1 class="section-title reveal" style="font-size:clamp(2rem,5vw,3.5rem);margin-bottom:0.5rem;">Projects</h1>
+        <div class="accent-line reveal"></div>
+        <p class="reveal" style="color:var(--text-muted);max-width:520px;line-height:1.8;font-size:0.925rem;">
+          Kumpulan proyek latihan dan akademik. Masih dalam proses berkembang — akan terus bertambah seiring perjalanan belajar.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== FILTER & SEARCH ========== -->
+    <section style="padding:2.5rem 0;border-bottom:1px solid var(--border);position:sticky;top:68px;z-index:50;background:var(--bg);backdrop-filter:blur(16px);">
+      <div class="container">
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;justify-content:space-between;">
+          <!-- Filter Pills -->
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+            <button class="filter-pill active" data-filter="all">Semua</button>
+            <button class="filter-pill" data-filter="web">Web Dev</button>
+            <button class="filter-pill" data-filter="ui">UI Design</button>
+            <button class="filter-pill" data-filter="mini">Mini Apps</button>
+            <button class="filter-pill" data-filter="akademik">Akademik</button>
+          </div>
+          <!-- Search -->
+          <div style="position:relative;min-width:200px;">
+            <svg style="position:absolute;left:0.75rem;top:50%;transform:translateY(-50%);color:var(--text-dim);" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input 
+              id="project-search"
+              type="search" 
+              placeholder="Cari project..." 
+              class="form-input" 
+              style="padding-left:2.25rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;font-size:0.85rem;min-width:220px;"
+              aria-label="Cari project"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS GRID ========== -->
+    <section class="section-pad">
+      <div class="container">
+        <div id="projects-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem;"></div>
+      </div>
+    </section>
+
+    <!-- ========== COMING SOON TEASER ========== -->
+    <section style="padding:3rem 0 5rem;" class="grid-bg">
+      <div class="container" style="text-align:center;">
+        <div class="glass-card reveal" style="padding:2.5rem;max-width:480px;margin:0 auto;border-style:dashed;">
+          <div style="font-size:2rem;margin-bottom:0.75rem;">🔧</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">Lebih Banyak Project Coming Soon</h3>
+          <p style="font-size:0.825rem;color:var(--text-muted);line-height:1.7;">
+            Saya terus belajar dan mengerjakan proyek baru. Follow GitHub saya untuk update terbaru.
+          </p>
+          <a href="https://github.com/yazid-solo" target="_blank" rel="noopener" class="btn-ghost" style="margin-top:1.25rem;font-size:0.85rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            Lihat GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== PROJECT MODAL ========== -->
+  <div id="project-modal" role="dialog" aria-modal="true" aria-label="Detail project">
+    <div id="modal-box"></div>
+  </div>
+
+  <div id="footer-inject"></div>
+
+  <script src="data/profile.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/intro.js"></script>
+
+  <style>
+    @media(max-width:640px){
+      #projects-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</body>
+</html>

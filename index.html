@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="id" data-accent="cyan">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Muchamad Yazid Ardani — Mahasiswa Informatika UNU Yogyakarta, Web Developer & UI Learner.">
+  <meta name="theme-color" content="#080d1a">
+  <title>Portfolio Yazid · Home</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    /* Tailwind config */
+    tailwind.config = { darkMode: 'class' }
+
+    /* FOUC Prevention for Homepage */
+    if (!sessionStorage.getItem('introPlayed') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('intro-loading');
+    }
+  </script>
+</head>
+<body>
+  <!-- NAV INJECT -->
+  <div id="nav-inject"></div>
+
+  <main style="padding-top:68px;">
+
+    <!-- ========== HERO ========== -->
+    <section id="hero" class="grid-bg" style="min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;">
+      <!-- Three.js Canvas Background -->
+      <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;"></canvas>
+
+      <!-- === ANIMASI ROBOT SVG 4D INTERAKTIF === -->
+      <div id="robot-scene" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:620px; height:700px; z-index:5; pointer-events:none; display:flex; align-items:center; justify-content:center; perspective:1200px; opacity:0;">
+
+        <!-- BOOT OVERLAY: muncul dulu, lalu fade out -->
+        <div id="robot-boot-ui" style="position:absolute; inset:0; z-index:20; display:flex; align-items:center; justify-content:center; pointer-events:none; opacity:1;">
+          <!-- Boot scan beam -->
+          <div id="boot-beam" style="position:absolute; left:0; right:0; height:3px; top:0; background:linear-gradient(90deg, transparent 0%, rgba(0,212,255,0.3) 20%, rgba(255,255,255,0.9) 50%, rgba(0,212,255,0.3) 80%, transparent 100%); box-shadow:0 0 20px rgba(0,212,255,0.8), 0 0 40px rgba(0,212,255,0.4); opacity:0; animation:bootBeamSweep 1.2s ease-in-out 0.4s 1 both;"></div>
+          <!-- Boot text log -->
+          <div style="position:absolute; bottom:8%; left:0; right:0; text-align:center; font-family:monospace; font-size:10px; letter-spacing:3px; opacity:0; animation:bootTextFade 0.8s ease-out 0.2s both; color:#00d4ff;">
+            SYSTEM <span style="color:#fff;">BOOT</span> <span id="boot-cursor" style="animation:blink 0.4s step-end infinite;">█</span>
+          </div>
+          <!-- DATA STREAM lines -->
+          <div style="position:absolute; top:12%; left:5%; font-family:monospace; font-size:8px; color:rgba(0,212,255,0.4); opacity:0; animation:bootTextFade 0.6s 0.1s both; line-height:1.6;">
+            <div>► INITIALIZING...</div>
+            <div>► LOADING ASSETS</div>
+            <div style="color:rgba(0,255,136,0.6);">✓ CORE OK</div>
+          </div>
+          <div style="position:absolute; top:12%; right:5%; font-family:monospace; font-size:8px; color:rgba(0,212,255,0.4); opacity:0; animation:bootTextFade 0.6s 0.15s both; line-height:1.6; text-align:right;">
+            <div>SYS v2.6.1</div>
+            <div>CPU: 100%</div>
+            <div style="color:rgba(0,255,136,0.6);">ONLINE</div>
+          </div>
+        </div>
+
+        <!-- Orbit ring 1 (kuar, muncul terlambat) -->
+        <div id="orbit-1" style="position:absolute; width:680px; height:680px; border-radius:50%; border:1px solid rgba(0,212,255,0.13); opacity:0; pointer-events:none;"></div>
+        <!-- Orbit ring 2 (dalam) -->
+        <div id="orbit-2" style="position:absolute; width:540px; height:540px; border-radius:50%; border:1px dashed rgba(0,212,255,0.09); opacity:0; pointer-events:none;"></div>
+        <!-- Horizontal orbit ring -->
+        <div id="orbit-h" style="position:absolute; width:600px; height:70px; border-radius:50%; border:1px solid rgba(0,212,255,0.16); opacity:0; transform:rotateX(70deg); pointer-events:none;"></div>
+        <!-- Holographic scan sweeper -->
+        <div id="scan-sweeper" style="position:absolute; inset:0; background:linear-gradient(0deg, transparent 46%, rgba(0,212,255,0.07) 50%, transparent 54%); pointer-events:none; z-index:6; opacity:0; animation:scanSweep 3.5s ease-in-out infinite;"></div>
+        <!-- Glow halo -->
+        <div style="position:absolute; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle, rgba(0,212,255,0.07) 0%, transparent 70%); animation:haloBreath 4s ease-in-out infinite alternate; pointer-events:none;"></div>
+
+        <svg id="robot-svg" viewBox="0 0 420 520" xmlns="http://www.w3.org/2000/svg" style="width:82%; height:auto; cursor:pointer; pointer-events:all; transform-origin:center center; opacity:0;">
+          <defs>
+            <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0d1b2a"/>
+              <stop offset="100%" stop-color="#1a2744"/>
+            </linearGradient>
+            <linearGradient id="headGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1e3a5f"/>
+              <stop offset="100%" stop-color="#0d1b2a"/>
+            </linearGradient>
+            <linearGradient id="laptopGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0d1b2a"/>
+              <stop offset="100%" stop-color="#162032"/>
+            </linearGradient>
+            <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#001a33"/>
+              <stop offset="100%" stop-color="#003366"/>
+            </linearGradient>
+            <filter id="glowFilter">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="40%" stop-color="#00d4ff"/>
+              <stop offset="100%" stop-color="#0055aa"/>
+            </radialGradient>
+          </defs>
+
+          <!-- ====== PARTICLE DOTS (dekoratif) ====== -->
+          <g id="particles" opacity="0.5">
+            <circle cx="50" cy="80" r="3" fill="#00d4ff" opacity="0.6"><animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.3s" repeatCount="indefinite"/></circle>
+            <circle cx="370" cy="60" r="2" fill="#00d4ff" opacity="0.4"><animate attributeName="opacity" values="0.4;0.9;0.4" dur="1.8s" repeatCount="indefinite"/></circle>
+            <circle cx="40" cy="380" r="4" fill="#00aaff" opacity="0.3"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.1s" repeatCount="indefinite"/></circle>
+            <circle cx="390" cy="420" r="2.5" fill="#00d4ff" opacity="0.5"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.5s" repeatCount="indefinite"/></circle>
+            <circle cx="200" cy="30" r="2" fill="#00ffcc" opacity="0.4"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="1.5s" repeatCount="indefinite"/></circle>
+            <circle cx="80" cy="200" r="1.5" fill="#00d4ff" opacity="0.5"><animate attributeName="opacity" values="0.5;0;0.5" dur="2.2s" repeatCount="indefinite"/></circle>
+          </g>
+
+          <!-- ====== SHADOW / BASE ====== -->
+          <ellipse cx="210" cy="500" rx="90" ry="14" fill="rgba(0,212,255,0.1)" filter="url(#glowFilter)"/>
+
+          <!-- ====== BODY ====== -->
+          <g id="robot-body" style="transform-origin:210px 300px">
+
+            <!-- Torso -->
+            <rect x="130" y="230" width="160" height="140" rx="22" fill="url(#bodyGrad)" stroke="rgba(0,212,255,0.5)" stroke-width="1.5"/>
+            <!-- Torso panel lines -->
+            <rect x="148" y="252" width="44" height="28" rx="6" fill="rgba(0,212,255,0.06)" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+            <circle cx="170" cy="266" r="8" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
+            <circle cx="170" cy="266" r="4" fill="#00d4ff" opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2s" repeatCount="indefinite"/></circle>
+            <!-- Chest second panel -->
+            <rect x="210" y="252" width="64" height="28" rx="6" fill="rgba(0,212,255,0.06)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+            <line x1="220" y1="260" x2="265" y2="260" stroke="rgba(0,212,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="220" y1="268" x2="252" y2="268" stroke="rgba(0,212,255,0.25)" stroke-width="1" stroke-linecap="round"/>
+            <!-- Core energy line -->
+            <rect x="148" y="295" width="124" height="3" rx="2" fill="rgba(0,212,255,0.2)" stroke="none"/>
+            <rect id="energy-bar" x="148" y="295" width="80" height="3" rx="2" fill="#00d4ff" opacity="0.8">
+              <animate attributeName="width" values="40;124;40" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite"/>
+            </rect>
+
+            <!-- Belly / lower torso -->
+            <rect x="145" y="320" width="130" height="40" rx="8" fill="rgba(0,25,50,0.8)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+            <circle cx="175" cy="340" r="5" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="1"/>
+            <circle cx="175" cy="340" r="2.5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
+            <circle cx="210" cy="340" r="5" fill="rgba(0,212,255,0.3)" stroke="#00d4ff" stroke-width="1"/>
+            <circle cx="210" cy="340" r="2.5" fill="#00d4ff"><animate attributeName="opacity" values="1;0.3;1" dur="2.3s" repeatCount="indefinite"/></circle>
+
+            <!-- Hips -->
+            <rect x="155" y="360" width="110" height="20" rx="10" fill="#0a1628" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+
+            <!-- Left Leg -->
+            <rect x="152" y="378" width="42" height="80" rx="12" fill="url(#bodyGrad)" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+            <rect x="158" y="440" width="32" height="20" rx="8" fill="#0d1b2a" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+            <!-- Foot L -->
+            <ellipse cx="174" cy="464" rx="22" ry="9" fill="#0d1b2a" stroke="rgba(0,212,255,0.4)" stroke-width="1.5"/>
+
+            <!-- Right Leg -->
+            <rect x="226" y="378" width="42" height="80" rx="12" fill="url(#bodyGrad)" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+            <rect x="230" y="440" width="32" height="20" rx="8" fill="#0d1b2a" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+            <!-- Foot R -->
+            <ellipse cx="246" cy="464" rx="22" ry="9" fill="#0d1b2a" stroke="rgba(0,212,255,0.4)" stroke-width="1.5"/>
+
+            <!-- Shoulder connectors -->
+            <rect x="100" y="234" width="35" height="22" rx="8" fill="#0d2040" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+            <rect x="285" y="234" width="35" height="22" rx="8" fill="#0d2040" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+
+            <!-- === LEFT ARM (holding laptop base) === -->
+            <g id="arm-left" style="transform-origin:117px 245px">
+              <!-- Upper arm -->
+              <rect x="65" y="240" width="55" height="22" rx="11" fill="url(#bodyGrad)" stroke="rgba(0,212,255,0.35)" stroke-width="1" transform="rotate(30 65 240)"/>
+              <!-- Elbow joint -->
+              <circle cx="100" cy="285" r="11" fill="#0d1b2a" stroke="rgba(0,212,255,0.5)" stroke-width="1.5"/>
+              <circle cx="100" cy="285" r="5" fill="rgba(0,212,255,0.2)" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
+              <!-- Lower arm -->
+              <rect x="75" y="282" width="50" height="20" rx="10" fill="url(#bodyGrad)" stroke="rgba(0,212,255,0.35)" stroke-width="1" transform="rotate(55 98 285)"/>
+              <!-- Hand L -->
+              <ellipse cx="82" cy="330" rx="16" ry="11" fill="#0d2040" stroke="rgba(0,212,255,0.45)" stroke-width="1.5"/>
+            </g>
+
+            <!-- === RIGHT ARM (holding laptop lid from right) === -->
+            <g id="arm-right" style="transform-origin:303px 245px">
+              <!-- Upper arm -->
+              <rect x="300" y="240" width="55" height="22" rx="11" fill="url(#bodyGrad)" stroke="rgba(0,212,255,0.35)" stroke-width="1" transform="rotate(-30 300 240)"/>
+              <!-- Elbow joint -->
+              <circle cx="320" cy="285" r="11" fill="#0d1b2a" stroke="rgba(0,212,255,0.5)" stroke-width="1.5"/>
+              <circle cx="320" cy="285" r="5" fill="rgba(0,212,255,0.2)" stroke="rgba(0,212,255,0.5)" stroke-width="1"/>
+              <!-- Lower arm -->
+              <rect x="295" y="282" width="50" height="20" rx="10" fill="url(#bodyGrad)" stroke="rgba(0,212,255,0.35)" stroke-width="1" transform="rotate(-55 322 285)"/>
+              <!-- Hand R -->
+              <ellipse cx="338" cy="330" rx="16" ry="11" fill="#0d2040" stroke="rgba(0,212,255,0.45)" stroke-width="1.5"/>
+            </g>
+
+            <!-- === LAPTOP === -->
+            <g id="laptop-group" style="transform-origin:210px 360px">
+              <!-- Laptop Base -->
+              <rect x="100" y="355" width="220" height="14" rx="4" fill="url(#laptopGrad)" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+              <rect x="108" y="356" width="204" height="6" rx="2" fill="rgba(0,212,255,0.04)"/>
+              <!-- Keyboard deck -->
+              <rect x="115" y="340" width="190" height="18" rx="3" fill="#0a1628" stroke="rgba(0,212,255,0.25)" stroke-width="1"/>
+              <!-- Keys hint -->
+              <rect x="125" y="344" width="170" height="8" rx="2" fill="rgba(0,212,255,0.05)" stroke="rgba(0,212,255,0.1)" stroke-width="0.5"/>
+              <!-- key dots -->
+              <g opacity="0.4" fill="rgba(0,212,255,0.5)">
+                <rect x="128" y="346" width="6" height="4" rx="1"/>
+                <rect x="138" y="346" width="6" height="4" rx="1"/>
+                <rect x="148" y="346" width="6" height="4" rx="1"/>
+                <rect x="158" y="346" width="6" height="4" rx="1"/>
+                <rect x="168" y="346" width="12" height="4" rx="1"/>
+                <rect x="184" y="346" width="6" height="4" rx="1"/>
+                <rect x="194" y="346" width="6" height="4" rx="1"/>
+                <rect x="204" y="346" width="6" height="4" rx="1"/>
+                <rect x="214" y="346" width="6" height="4" rx="1"/>
+                <rect x="224" y="346" width="6" height="4" rx="1"/>
+                <rect x="234" y="346" width="6" height="4" rx="1"/>
+                <rect x="244" y="346" width="6" height="4" rx="1"/>
+                <rect x="254" y="346" width="14" height="4" rx="1"/>
+              </g>
+
+              <!-- Screen lid (open, angled) -->
+              <g id="screen-lid" transform="rotate(-100 210 340)">
+                <rect x="118" y="220" width="184" height="120" rx="8" fill="url(#laptopGrad)" stroke="rgba(0,212,255,0.5)" stroke-width="1.5"/>
+                <!-- Screen bezel -->
+                <rect x="126" y="228" width="168" height="104" rx="4" fill="url(#screenGrad)"/>
+                <!-- Screen content -->
+                <!-- Scanlines -->
+                <rect x="126" y="228" width="168" height="104" rx="4" fill="url(#screenLines)" opacity="0.1"/>
+                <!-- Code lines on screen -->
+                <g opacity="0.9" font-family="monospace" font-size="6.5">
+                  <text x="135" y="245" fill="#c678dd">&lt;html&gt;</text>
+                  <text x="135" y="254" fill="#98c379">  &lt;head&gt;</text>
+                  <text x="135" y="263" fill="#61afef">    name:</text>
+                  <text x="165" y="263" fill="#e5c07b">"Yazid"</text>
+                  <text x="135" y="272" fill="#98c379">  &lt;/head&gt;</text>
+                  <text x="135" y="281" fill="#e06c75">  &lt;body&gt;</text>
+                  <text x="135" y="290" fill="#61afef">    skills:</text>
+                  <text x="135" y="299" fill="#56b6c2">      ["dev"</text>
+                  <text x="135" y="308" fill="#56b6c2">       "ui"]</text>
+                  <text x="135" y="317" fill="#e06c75">  &lt;/body&gt;</text>
+                  <text x="135" y="326" fill="#c678dd">&lt;/html&gt;</text>
+                  <!-- Cursor blinking -->
+                  <rect x="181" y="320" width="5" height="7" rx="1" fill="#00d4ff">
+                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                  </rect>
+                </g>
+                <!-- Screen glow overlay -->
+                <rect x="126" y="228" width="168" height="104" rx="4" fill="rgba(0,150,255,0.04)" pointer-events="none"/>
+                <!-- Camera dot -->
+                <circle cx="210" cy="233" r="2.5" fill="#333" stroke="rgba(0,212,255,0.3)" stroke-width="0.5"/>
+                <circle cx="210" cy="233" r="1" fill="#00d4ff" opacity="0.6"><animate attributeName="opacity" values="0.6;0.1;0.6" dur="3s" repeatCount="indefinite"/></circle>
+              </g>
+            </g>
+
+            <!-- Body bolts / details -->
+            <circle cx="140" cy="235" r="3.5" fill="#0d1b2a" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+            <circle cx="280" cy="235" r="3.5" fill="#0d1b2a" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+          </g>
+
+          <!-- ====== NECK ====== -->
+          <rect x="196" y="212" width="28" height="22" rx="6" fill="#091524" stroke="rgba(0,212,255,0.35)" stroke-width="1"/>
+          <rect x="201" y="216" width="18" height="14" rx="4" fill="rgba(0,212,255,0.05)" stroke="rgba(0,212,255,0.15)" stroke-width="0.5"/>
+
+          <!-- ====== HEAD ====== -->
+          <g id="robot-head" style="transform-origin:210px 170px">
+            <!-- Head shape -->
+            <rect x="145" y="100" width="130" height="115" rx="22" fill="url(#headGrad)" stroke="rgba(0,212,255,0.55)" stroke-width="1.8"/>
+            <!-- Head top detail -->
+            <rect x="170" y="97" width="80" height="8" rx="4" fill="#0d2040" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+            <!-- Antenna -->
+            <line x1="210" y1="97" x2="210" y2="70" stroke="rgba(0,212,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="210" cy="65" r="6" fill="#0d1b2a" stroke="#00d4ff" stroke-width="1.5"/>
+            <circle cx="210" cy="65" r="3" fill="#00d4ff">
+              <animate attributeName="r" values="3;5;3" dur="1.5s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Side ear panel L -->
+            <rect x="132" y="128" width="16" height="40" rx="6" fill="#091524" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+            <rect x="136" y="135" width="8" height="8" rx="2" fill="rgba(0,212,255,0.2)" stroke="rgba(0,212,255,0.4)" stroke-width="0.5"/>
+            <rect x="136" y="148" width="8" height="6" rx="2" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.25)" stroke-width="0.5"/>
+            <!-- Side ear panel R -->
+            <rect x="272" y="128" width="16" height="40" rx="6" fill="#091524" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+            <rect x="276" y="135" width="8" height="8" rx="2" fill="rgba(0,212,255,0.2)" stroke="rgba(0,212,255,0.4)" stroke-width="0.5"/>
+            <rect x="276" y="148" width="8" height="6" rx="2" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.25)" stroke-width="0.5"/>
+
+            <!-- === EYES === -->
+            <!-- Eye sockets -->
+            <rect x="163" y="132" width="38" height="28" rx="10" fill="#000a18" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+            <rect x="219" y="132" width="38" height="28" rx="10" fill="#000a18" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+            <!-- Eye glow -->
+            <ellipse cx="182" cy="146" rx="13" ry="10" fill="url(#eyeGlow)" filter="url(#glowFilter)">
+              <animate attributeName="rx" values="13;11;13" dur="3s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="238" cy="146" rx="13" ry="10" fill="url(#eyeGlow)" filter="url(#glowFilter)">
+              <animate attributeName="rx" values="13;11;13" dur="3s" repeatCount="indefinite"/>
+            </ellipse>
+            <!-- Pupil / iris L -->
+            <circle id="pupil-l" cx="182" cy="146" r="5" fill="rgba(0,0,30,0.9)"/>
+            <circle id="pupil-l-hl" cx="184" cy="144" r="2" fill="rgba(255,255,255,0.6)"/>
+            <!-- Pupil / iris R -->
+            <circle id="pupil-r" cx="238" cy="146" r="5" fill="rgba(0,0,30,0.9)"/>
+            <circle id="pupil-r-hl" cx="240" cy="144" r="2" fill="rgba(255,255,255,0.6)"/>
+
+            <!-- === MOUTH / VISOR === -->
+            <rect x="172" y="178" width="76" height="20" rx="6" fill="#000" stroke="rgba(0,212,255,0.35)" stroke-width="1"/>
+            <!-- Scrolling text on mouth display -->
+            <clipPath id="mouthClip"><rect x="174" y="180" width="72" height="16" rx="4"/></clipPath>
+            <g clip-path="url(#mouthClip)">
+              <text x="175" y="192" font-family="monospace" font-size="8" fill="#00d4ff" opacity="0.85">
+                Hello World!  &lt;Code /&gt;  Yazid.dev  OK! 
+                <animate attributeName="x" values="175;-60;175" dur="6s" repeatCount="indefinite"/>
+              </text>
+            </g>
+
+            <!-- Head glow reflection -->
+            <rect x="155" y="105" width="110" height="40" rx="14" fill="rgba(255,255,255,0.03)" pointer-events="none"/>
+          </g>
+
+          <!-- === GLOW RING (floor glow) === -->
+          <ellipse cx="210" cy="498" rx="100" ry="16" fill="none" stroke="rgba(0,212,255,0.2)" stroke-width="2">
+            <animate attributeName="rx" values="100;120;100" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+          </ellipse>
+        </svg>
+
+        <!-- Click ripple effect -->
+        <div id="robot-ripple" style="position:absolute; border-radius:50%; pointer-events:none; border:2px solid rgba(0,212,255,0.8); width:60px; height:60px; opacity:0; transform:scale(0); top:50%; left:50%; margin:-30px 0 0 -30px;"></div>
+      </div>
+
+      <!-- Glow blobs -->
+      <div class="glow-blob" style="width:600px;height:600px;background:rgba(var(--accent-rgb),0.08);top:-100px;right:-150px;z-index:1;"></div>
+      <div class="glow-blob" style="width:400px;height:400px;background:rgba(var(--accent-rgb),0.05);bottom:-100px;left:-100px;z-index:1;"></div>
+
+      <div class="container hero-content" style="position:relative;z-index:10;padding-top:5rem;padding-bottom:4rem;">
+        <div class="hero-main-layout" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:3rem;">
+          <!-- Teks Kiri -->
+          <div style="max-width:500px; flex:1 1 280px; position:relative; z-index:20;">
+
+            <!-- Premium Badge -->
+            <div class="hero-badge" style="background:linear-gradient(135deg,rgba(var(--accent-rgb),0.12),rgba(139,92,246,0.08));border:1px solid rgba(var(--accent-rgb),0.35);padding:0.4rem 1.1rem 0.4rem 0.7rem;margin-bottom:1.75rem;box-shadow:0 0 20px rgba(var(--accent-rgb),0.15);">
+              <span style="box-shadow:0 0 8px var(--accent);"></span>
+              <span style="font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;">Tersedia untuk Kolaborasi &amp; Belajar</span>
+            </div>
+
+            <!-- Name with Typewriter -->
+            <div style="margin-bottom:1.25rem;">
+              <div style="overflow:hidden;">
+                <div id="hero-name-line1" class="hero-name" style="margin-bottom:0;color:var(--text);opacity:0;transform:translateY(30px);transition:opacity 0.5s ease,transform 0.5s ease;">Muchamad</div>
+              </div>
+              <div style="overflow:hidden;position:relative;">
+                <div class="hero-name" style="margin-bottom:0;">
+                  <span id="hero-name-line2" style="background:linear-gradient(125deg,#ffffff 10%,var(--accent) 50%,#8b5cf6 95%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"></span><span id="hero-name-cursor" style="display:inline-block;width:4px;height:0.85em;background:var(--accent);vertical-align:middle;margin-left:4px;border-radius:2px;animation:cursorBlink 0.75s step-end infinite;box-shadow:0 0 10px var(--accent);"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Animated Role Under Name -->
+            <div style="margin-bottom:1.5rem;display:flex;align-items:center;gap:0.6rem;" id="hero-role-row">
+              <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim);">// currently:</span>
+              <span id="hero-role-text" style="font-family:var(--font-mono);font-size:0.78rem;font-weight:600;color:var(--accent);border-bottom:1px dashed rgba(var(--accent-rgb),0.4);padding-bottom:1px;">Web Developer</span>
+              <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-dim);animation:cursorBlink 1.2s step-end infinite;">|</span>
+            </div>
+
+            <!-- Tagline Card -->
+            <div style="background:rgba(8,13,26,0.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:18px;border:1px solid rgba(255,255,255,0.07);border-left:3px solid var(--accent);padding:1.5rem 1.6rem;box-shadow:0 16px 40px rgba(0,0,0,0.5),inset 0 0 20px rgba(var(--accent-rgb),0.04);position:relative;overflow:hidden;margin-top:0;">
+              <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,rgba(var(--accent-rgb),0.9) 0%,transparent 50%);"></div>
+              <div style="position:absolute;bottom:-40px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(var(--accent-rgb),0.08),transparent 70%);pointer-events:none;"></div>
+
+              <p style="margin:0;color:#c8d8f2;line-height:1.9;font-size:0.95rem;font-weight:400;">
+                Mahasiswa Informatika <strong style="color:#fff;font-weight:700;">dengan status aktif</strong> di <strong style="color:var(--accent);font-weight:600;">UNU Yogyakarta</strong> — disiplin, cepat belajar, dan pekerja keras. Fokus di
+                <span style="color:var(--accent);font-weight:700;"> Web Development</span> &amp;
+                <span style="color:var(--accent);font-weight:700;"> Desain UI</span>.
+              </p>
+
+              <!-- Office & Workspace Note -->
+              <div style="display:flex;align-items:flex-start;gap:0.7rem;margin-top:0.9rem;padding:0.75rem 1rem;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-left:2px solid rgba(var(--accent-rgb),0.3);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(var(--accent-rgb),0.7)" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <p style="margin:0;font-size:0.82rem;color:#7a94b8;line-height:1.75;font-style:italic;">
+                  Saya juga mahir menggunakan <strong style="color:#a8bdd8;font-style:normal;font-weight:600;">Microsoft Office &amp; Google Workspace</strong> — keterampilan yang saya asah intensif melalui tugas akademik sebagai persiapan <strong style="color:var(--accent);font-style:normal;font-weight:600;">dunia kerja profesional</strong>.
+                </p>
+              </div>
+
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.9rem;">
+                <span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:8px;font-size:0.78rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);color:#94a3b8;">📄 Microsoft Office</span>
+                <span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:8px;font-size:0.78rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);color:#94a3b8;">🗂️ Google Workspace</span>
+                <span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:8px;font-size:0.78rem;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);color:#34d399;">✦ Open to Work</span>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:2rem;">
+              <a href="projects.html" class="btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                Lihat Projects
+              </a>
+              <a href="contact.html" class="btn-ghost">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                Hubungi Saya
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Kolom Kanan: Foto Card + Code Terminal -->
+          <div style="flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:1.5rem; z-index:10;">
+
+            <!-- Photo Card (Lanyard Style) -->
+            <div class="hanging-container" style="position:relative; perspective:1500px;">
+            <!-- Elemen Gantungan + Kartu -->
+            <div class="hanging-element" style="transform-origin: 50% -200px; opacity:0;">
+              
+              <!-- Tali (Lanyard) -->
+              <div class="lanyard" style="position:absolute; top:-100vh; left:50%; transform:translateX(-50%); width:120px; height:calc(100vh + 10px); pointer-events:none; z-index:1;">
+                <!-- Tali Kiri -->
+                <div style="position:absolute; top:0; left:15px; width:3px; height:100%; background:linear-gradient(to bottom, transparent, rgba(var(--accent-rgb),0.7), rgba(var(--accent-rgb),1)); transform-origin:top center; transform:rotate(-4.5deg); box-shadow:0 0 10px rgba(var(--accent-rgb),0.5);"></div>
+                <!-- Tali Kanan -->
+                <div style="position:absolute; top:0; right:15px; width:3px; height:100%; background:linear-gradient(to bottom, transparent, rgba(var(--accent-rgb),0.7), rgba(var(--accent-rgb),1)); transform-origin:top center; transform:rotate(4.5deg); box-shadow:0 0 10px rgba(var(--accent-rgb),0.5);"></div>
+              </div>
+              
+              <!-- Klip Penjepit -->
+              <div class="id-clip" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); width:56px; height:26px; background:linear-gradient(to bottom, #cbd5e1, #64748b, #334155); border-radius:6px; z-index:5; box-shadow:0 6px 12px rgba(0,0,0,0.3), inset 0 2px 3px rgba(255,255,255,0.8); display:flex; justify-content:center; align-items:center;">
+                <!-- Lubang cincin penjepit atas -->
+                <div style="position:absolute; top:-12px; width:16px; height:12px; border:3px solid #e2e8f0; border-bottom:none; border-radius:8px 8px 0 0;"></div>
+                <!-- Garis horizontal klip -->
+                <div style="width:28px; height:4px; background:#1e293b; border-radius:2px; box-shadow: 0 1px 1px rgba(255,255,255,0.4);"></div>
+              </div>
+
+              <!-- Kartu ID / Photo -->
+              <div class="glass-card tilt-card" style="width:280px; padding:1.2rem; padding-top:2.2rem; border-radius:32px; position:relative; background:var(--surface2); z-index:2; box-shadow: 0 25px 50px rgba(0,0,0,0.5); border-top:1px solid rgba(255,255,255,0.3);">
+                
+                <!-- Punch Hole (Bolongan ID Card) -->
+                <div style="position:absolute; top:12px; left:50%; transform:translateX(-50%); width:44px; height:10px; background:var(--bg); border-radius:5px; z-index:4; box-shadow:inset 0 3px 6px rgba(0,0,0,0.9), 0 1px 2px rgba(255,255,255,0.1);"></div>
+                
+                <div style="position:relative; border-radius:22px; overflow:hidden; aspect-ratio:3/4; background:var(--bg3);">
+                  <img id="hero-photo" src="assets/foto profile.jpeg" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80'" alt="Muchamad Yazid Ardani" loading="lazy" style="width:100%; height:100%; object-fit:cover; filter:contrast(1.05) saturate(1.1); transition:transform 0.6s var(--ease);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                  
+                  <!-- Glowing accent inner border -->
+                  <div style="position:absolute; inset:0; border:2px solid rgba(var(--accent-rgb),0.35); border-radius:22px; pointer-events:none; z-index:2;"></div>
+                  
+                  <!-- Bottom gradient shadow for text -->
+                  <div style="position:absolute; bottom:0; left:0; width:100%; height:60%; background:linear-gradient(to top, var(--bg) 0%, transparent 100%); pointer-events:none; z-index:1;"></div>
+                  
+                  <!-- Overlay Content Layout -->
+                  <div style="position:absolute; bottom:18px; left:18px; right:18px; z-index:3;">
+                    <span style="display:inline-flex; align-items:center; gap:6px; background:var(--surface); backdrop-filter:blur(8px); padding:6px 12px; border-radius:99px; border:1px solid var(--border-accent); font-size:0.75rem; font-weight:700; color:var(--text); margin-bottom:0.6rem; letter-spacing:0.02em; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                      <span style="display:block; width:8px; height:8px; background:#10b981; border-radius:50%; box-shadow:0 0 10px #10b981; animation:pulse-dot 2s infinite;"></span>
+                      Open to Work
+                    </span>
+                    <div style="font-family:var(--font-display); font-weight:800; font-size:1.3rem; color:var(--text); line-height:1.2; text-shadow:0 2px 4px rgba(0,0,0,0.2);">
+                      Informatics<br><span style="color:var(--accent);">Student</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Background glow untuk efek dinamis -->
+            <div style="position:absolute; top:15%; left:10%; right:10%; bottom:10%; background:var(--accent); filter:blur(60px); opacity:0.18; border-radius:50%; z-index:-1; animation: pulseGlow 4s ease-in-out infinite alternate; pointer-events:none;"></div>
+          </div>
+
+            <!-- Code Terminal (di bawah foto card) -->
+            <div class="hologram-window glass-card tilt-card reveal reveal-delay-3" style="position:relative; width:300px; border-radius:16px; background:#0f172a; border:1px solid rgba(var(--accent-rgb),0.4); overflow:hidden; box-shadow:0 15px 35px rgba(0,0,0,0.2), inset 0 0 20px rgba(var(--accent-rgb),0.05); padding:0.85rem 1rem;">
+              <!-- Window Header -->
+              <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:0.6rem; margin-bottom:0.75rem;">
+                <div style="display:flex; gap:7px;">
+                  <div style="width:11px; height:11px; border-radius:50%; background:#ff5f56; box-shadow:0 0 5px rgba(255,95,86,0.6);"></div>
+                  <div style="width:11px; height:11px; border-radius:50%; background:#ffbd2e; box-shadow:0 0 5px rgba(255,189,46,0.6);"></div>
+                  <div style="width:11px; height:11px; border-radius:50%; background:#27c93f; box-shadow:0 0 5px rgba(39,201,63,0.6);"></div>
+                </div>
+                <div style="font-family:var(--font-mono); font-size:0.7rem; color:#94a3b8; letter-spacing:1px;">
+                  <span style="color:#00d4ff;">~</span>/identitas.js
+                </div>
+                <div style="width:30px;"></div>
+              </div>
+              <!-- Editor Body -->
+              <div style="font-family:var(--font-mono); font-size:0.75rem; line-height:1.75; color:#cbd5e1; position:relative; z-index:2;">
+                <div class="code-line-1" style="display:flex; gap:12px; opacity:0;">
+                  <span style="color:#64748b; user-select:none; width:12px; text-align:right;">1</span>
+                  <span><span style="color:#c678dd;">const</span> <span style="color:#e5c07b;">developer</span> <span style="color:#56b6c2;">=</span> {</span>
+                </div>
+                <div class="code-line-2" style="display:flex; gap:12px; opacity:0;">
+                  <span style="color:#64748b; user-select:none; width:12px; text-align:right;">2</span>
+                  <span style="padding-left:1rem;"><span style="color:#e06c75;">name</span>: <span style="color:#98c379;">"Yazid Ardani"</span>,</span>
+                </div>
+                <div class="code-line-3" style="display:flex; gap:12px; opacity:0;">
+                  <span style="color:#64748b; user-select:none; width:12px; text-align:right;">3</span>
+                  <span style="padding-left:1rem;"><span style="color:#e06c75;">role</span>: <span style="color:#98c379;">"Informatics Student"</span>,</span>
+                </div>
+                <div class="code-line-4" style="display:flex; gap:12px; opacity:0;">
+                  <span style="color:#64748b; user-select:none; width:12px; text-align:right;">4</span>
+                  <span style="padding-left:1rem;"><span style="color:#e06c75;">skills</span>: [<span style="color:#98c379;">"Web Dev"</span>, <span style="color:#98c379;">"UI/UX"</span>],</span>
+                </div>
+                <div class="code-line-5" style="display:flex; gap:12px; opacity:0;">
+                  <span style="color:#64748b; user-select:none; width:12px; text-align:right;">5</span>
+                  <span style="padding-left:1rem;"><span style="color:#e06c75;">status</span>: <span style="color:#98c379;">"Building Future"</span></span>
+                </div>
+                <div class="code-line-6" style="display:flex; gap:12px; opacity:0;">
+                  <span style="color:#64748b; user-select:none; width:12px; text-align:right;">6</span>
+                  <span>};<span style="display:inline-block; width:7px; height:13px; background:#00d4ff; margin-left:5px; vertical-align:middle; animation:blink 1s step-end infinite; box-shadow:0 0 10px rgba(0,212,255,0.5);"></span></span>
+                </div>
+              </div>
+              <!-- Scanline overlay -->
+              <div style="position:absolute; inset:0; background:linear-gradient(rgba(255,255,255,0) 50%, rgba(var(--accent-rgb),0.05) 50%); background-size:100% 4px; pointer-events:none; z-index:10;"></div>
+            </div>
+
+          </div><!-- end kolom kanan -->
+        </div>
+
+        <!-- Quick Stats -->
+        <div id="hero-stats" style="display:flex;flex-wrap:wrap;margin-top:3.5rem;border:1px solid var(--border);border-radius:16px;background:var(--surface);backdrop-filter:blur(12px);overflow:hidden;max-width:fit-content;position:relative;z-index:3;opacity:0;"></div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div id="hero-scroll-indicator" style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;z-index:2;opacity:0;">
+        <span style="font-size:0.7rem;color:var(--text-dim);font-family:var(--font-mono);">scroll</span>
+        <div style="width:1px;height:40px;background:linear-gradient(to bottom, var(--accent), transparent);animation:fadeDown 2s ease infinite;"></div>
+      </div>
+    </section>
+
+    <!-- ========== HIGHLIGHTS ========== -->
+    <section class="section-pad" style="position: relative; overflow: hidden; background: var(--bg);">
+      <!-- Seamless Divider Edge -->
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(var(--accent-rgb), 0.2) 50%, transparent 100%); z-index: 5;"></div>
+      <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 30%; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(var(--accent-rgb), 0.6) 50%, transparent 100%); z-index: 5; box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.6);"></div>
+
+      <!-- 4D Tech Grid Background -->
+      <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px); background-size: 50px 50px; background-position: center center; z-index: 0; mask-image: linear-gradient(to bottom, transparent 0%, black 15%, transparent 85%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, transparent 85%); pointer-events: none;"></div>
+      
+      <!-- Glowing orbs -->
+      <div style="position: absolute; top: -150px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(var(--accent-rgb), 0.06) 0%, transparent 70%); z-index: 0; pointer-events: none;"></div>
+      <div style="position: absolute; bottom: -100px; right: -50px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(var(--accent-rgb), 0.03) 0%, transparent 70%); z-index: 0; pointer-events: none;"></div>
+      
+      <div class="container" style="position: relative; z-index: 2;">
+        
+        <!-- Premium Header Block -->
+        <div class="reveal" style="margin-bottom: 4.5rem; display: flex; flex-direction: column; align-items: flex-start; position: relative;">
+          
+          <!-- Decorative Cyber Line -->
+          <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, transparent, var(--accent), transparent); opacity: 0.6;"></div>
+
+          <div style="margin-left: 1.5rem; border-left: 1px solid rgba(255,255,255,0.05); padding-left: 1.5rem;">
+            <div style="display:inline-flex; align-items:center; gap:10px; padding: 6px 14px; background: rgba(var(--accent-rgb), 0.05); border: 1px solid rgba(var(--accent-rgb), 0.15); border-radius: 50px; margin-bottom: 1.25rem;">
+              <span style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); animation: pulse-dot 2s infinite;"></span>
+              <span style="font-size: 0.72rem; font-family: var(--font-mono); color: var(--accent); letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600;">Apa yang saya bawa</span>
+            </div>
+            
+            <h2 style="font-size:clamp(2rem,5vw,3.2rem);font-weight:900;letter-spacing:-0.035em;line-height:1.05;margin-bottom:1rem;">
+              <span style="display:block;color:var(--text);">Keahlian &amp;</span>
+              <span style="display:block;background:linear-gradient(125deg,#ffffff 20%,var(--accent) 55%,#8b5cf6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Fokus Saya</span>
+            </h2>
+            
+            <p style="color:#7a94b8;font-size:0.95rem;line-height:1.8;max-width:460px;">
+              Masih dalam proses belajar secara intensif — inilah area yang saya tekuni sungguh-sungguh untuk memecahkan masalah lewat barisan kode.
+            </p>
+          </div>
+        </div>
+        <div id="highlights-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;"></div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURED PROJECTS ========== -->
+    <section class="section-pad" style="position:relative;overflow:hidden;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%);">
+
+      <!-- BG grid -->
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(var(--accent-rgb),0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--accent-rgb),0.02) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(to bottom,transparent,black 20%,black 80%,transparent);-webkit-mask-image:linear-gradient(to bottom,transparent,black 20%,black 80%,transparent);pointer-events:none;"></div>
+
+      <!-- Ambient orbs -->
+      <div style="position:absolute;top:-80px;right:10%;width:500px;height:500px;background:radial-gradient(circle,rgba(var(--accent-rgb),0.07),transparent 65%);pointer-events:none;"></div>
+      <div style="position:absolute;bottom:-60px;left:5%;width:400px;height:400px;background:radial-gradient(circle,rgba(139,92,246,0.05),transparent 65%);pointer-events:none;"></div>
+
+      <!-- Top divider glow -->
+      <div style="position:absolute;top:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--accent-rgb),0.5),transparent);"></div>
+
+      <div class="container" style="position:relative;z-index:2;">
+
+        <!-- Header — 2 col -->
+        <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:3rem;">
+          <div>
+            <div style="display:inline-flex;align-items:center;gap:8px;padding:4px 14px;background:rgba(var(--accent-rgb),0.07);border:1px solid rgba(var(--accent-rgb),0.18);border-radius:99px;margin-bottom:0.9rem;">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="var(--accent)"><circle cx="5" cy="5" r="5"/></svg>
+              <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;font-weight:600;">Portfolio</span>
+            </div>
+            <h2 style="font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;letter-spacing:-0.03em;line-height:1.05;margin-bottom:0.6rem;">
+              <span style="color:var(--text);">Proyek </span><span style="background:linear-gradient(120deg,var(--accent),#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Pilihan</span>
+            </h2>
+            <p style="color:#5a7090;font-size:0.875rem;font-family:var(--font-mono);">// karya nyata dari proses belajar mandiri</p>
+          </div>
+          <a href="projects.html" class="btn-ghost" style="display:inline-flex;align-items:center;gap:8px;white-space:nowrap;">
+            <span>Lihat Semua</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Gallery with edge fade -->
+        <div style="position:relative;">
+          <!-- Left/Right fade edges -->
+          <div style="position:absolute;left:0;top:0;bottom:0;width:80px;background:linear-gradient(to right,var(--bg2),transparent);z-index:5;pointer-events:none;"></div>
+          <div style="position:absolute;right:0;top:0;bottom:0;width:80px;background:linear-gradient(to left,var(--bg),transparent);z-index:5;pointer-events:none;"></div>
+
+          <div class="gallery-nav-wrapper">
+            <div id="featured-projects" class="auto-scroll-gallery" tabindex="0"></div>
+            <button class="gallery-nav-btn left" id="btn-prev-projects" aria-label="Previous">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="gallery-nav-btn right" id="btn-next-projects" aria-label="Next">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== TOOLS ========== -->
+    <section class="section-pad" style="position: relative; overflow: hidden; background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=40&w=800&auto=format&fit=crop&fm=webp') center/cover no-repeat;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, var(--bg) 0%, rgba(8, 13, 26, 0.75) 50%, var(--bg) 100%);"></div>
+      <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, transparent 0%, var(--bg) 100%);"></div>
+      
+      <div class="container" style="position: relative; z-index: 2;">
+        <div class="reveal" style="text-align:center;margin-bottom:3.5rem;">
+          <p class="section-label" style="text-shadow: 0 0 12px rgba(0,212,255,0.8); font-weight: 800; letter-spacing: 0.2em;">TECH STACK</p>
+          <h2 class="section-title" style="text-shadow: 0 5px 25px rgba(0,0,0,0.9); font-weight: 900;">Tools yang Saya Pelajari</h2>
+          <div class="accent-line" style="margin:0.75rem auto 0; box-shadow: 0 0 15px var(--accent); height: 4px;"></div>
+        </div>
+        <div class="gallery-nav-wrapper" style="margin-bottom: 2rem;">
+          <button class="gallery-nav-btn left" id="btn-prev-tools" aria-label="Previous" style="z-index: 20;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          
+          <div class="marquee-wrapper" style="padding: 1rem 0;">
+            <div id="tools-marquee" class="marquee-content"></div>
+          </div>
+          
+          <button class="gallery-nav-btn right" id="btn-next-tools" aria-label="Next" style="z-index: 20;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT TEASER ========== -->
+    <section class="section-pad about-teaser-section" style="position:relative; overflow:hidden; background: url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=40&w=800&auto=format&fit=crop&fm=webp') center/cover no-repeat fixed;">
+
+      <!-- Image Dark Overlays and Ambient Glows -->
+      <div style="position:absolute; inset:0; background: linear-gradient(180deg, var(--bg2) 0%, rgba(3, 7, 18, 0.8) 50%, var(--bg2) 100%); z-index:0;"></div>
+      <div style="position:absolute; top:-100px; left:-100px; width:450px; height:450px; background:radial-gradient(circle, rgba(var(--accent-rgb),0.1) 0%, transparent 70%); pointer-events:none; z-index:0;"></div>
+      <div style="position:absolute; bottom:-80px; right:-80px; width:400px; height:400px; background:radial-gradient(circle, rgba(var(--accent-rgb),0.08) 0%, transparent 70%); pointer-events:none; z-index:0;"></div>
+
+      <div class="container" style="position:relative; z-index:1;">
+        <div class="about-teaser-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
+
+          <!-- Left: Text -->
+          <div class="reveal">
+            <p class="section-label" style="text-shadow: 0 0 10px rgba(var(--accent-rgb),0.6); letter-spacing: 0.15em; font-weight: 700;">Tentang Saya</p>
+            <h2 class="section-title" style="line-height:1.15; text-shadow: 0 5px 20px rgba(0,0,0,0.9); font-weight: 800;">Satu Perjalanan,<br><span style="background:linear-gradient(135deg,var(--accent),rgba(var(--accent-rgb),0.5));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Banyak Pelajaran</span></h2>
+            <div class="accent-line" style="box-shadow: 0 0 15px var(--accent); height: 3px;"></div>
+            <p style="color:var(--text-muted); line-height:1.85; margin-bottom:2rem; font-size:0.95rem; max-width:440px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);">
+              Dari bangku SMK teknik otomotif ke dunia kode — perjalanan saya tidak linier, tapi justru itu yang membuat saya terbiasa beradaptasi dengan cepat. Sekarang saya fokus membangun fondasi yang kuat di informatika.
+            </p>
+
+            <!-- Mini highlights -->
+            <div style="display:flex; flex-direction:column; gap:0.65rem; margin-bottom:2rem;">
+              <div style="display:flex; align-items:center; gap:0.75rem; font-size:0.85rem; color:var(--text-muted);">
+                <span style="width:28px; height:28px; border-radius:8px; background:var(--accent-dim); border:1px solid var(--border-accent); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="filter: drop-shadow(0 2px 4px rgba(250, 204, 21, 0.5)); transform: scale(1.1);">
+                    <defs>
+                      <linearGradient id="grad-flash" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#fef08a"></stop>
+                        <stop offset="100%" stop-color="#eab308"></stop>
+                      </linearGradient>
+                    </defs>
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#grad-flash)" stroke="#a16207" stroke-width="1.5" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+                Adaptif — dari bengkel ke kode
+              </div>
+              <div style="display:flex; align-items:center; gap:0.75rem; font-size:0.85rem; color:var(--text-muted);">
+                <span style="width:28px; height:28px; border-radius:8px; background:var(--accent-dim); border:1px solid var(--border-accent); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="filter: drop-shadow(0 2px 4px rgba(239, 68, 68, 0.5)); transform: scale(1.1);">
+                    <defs>
+                      <linearGradient id="grad-target1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fca5a5"></stop><stop offset="100%" stop-color="#dc2626"></stop></linearGradient>
+                      <linearGradient id="grad-target2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffffff"></stop><stop offset="100%" stop-color="#e5e7eb"></stop></linearGradient>
+                    </defs>
+                    <circle cx="12" cy="12" r="10" fill="url(#grad-target1)" stroke="#991b1b" stroke-width="1"></circle>
+                    <circle cx="12" cy="12" r="6" fill="url(#grad-target2)"></circle>
+                    <circle cx="12" cy="12" r="3" fill="url(#grad-target1)"></circle>
+                  </svg>
+                </span>
+                Fokus pada Web Development & UI/UX
+              </div>
+              <div style="display:flex; align-items:center; gap:0.75rem; font-size:0.85rem; color:var(--text-muted);">
+                <span style="width:28px; height:28px; border-radius:8px; background:var(--accent-dim); border:1px solid var(--border-accent); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.5)); transform: scale(1.1);">
+                    <defs>
+                      <linearGradient id="grad-folder" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#93c5fd"></stop><stop offset="100%" stop-color="#2563eb"></stop></linearGradient>
+                    </defs>
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" fill="url(#grad-folder)" stroke="#1e3a8a" stroke-width="1"></path>
+                    <path d="M2 10h20" stroke="#bfdbfe" stroke-width="1" opacity="0.5"></path>
+                  </svg>
+                </span>
+                kemampuan administratif menggunakan Microsoft Office (Word, Excel) & Google Workspace
+              </div>
+              <div style="display:flex; align-items:center; gap:0.75rem; font-size:0.85rem; color:var(--text-muted);">
+                <span style="width:28px; height:28px; border-radius:8px; background:var(--accent-dim); border:1px solid var(--border-accent); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.5)); transform: scale(1.1);">
+                    <defs>
+                      <linearGradient id="grad-teams" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"></stop><stop offset="100%" stop-color="#059669"></stop></linearGradient>
+                    </defs>
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" fill="url(#grad-teams)" stroke="#064e3b" stroke-width="1"></path>
+                    <circle cx="9" cy="7" r="4" fill="url(#grad-teams)" stroke="#064e3b" stroke-width="1"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="url(#grad-teams)" stroke-width="1.5" stroke-linecap="round"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="url(#grad-teams)" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                </span>
+                Open to Work & Kolaborasi
+              </div>
+            </div>
+
+            <a href="about.html" class="btn-primary" style="gap:10px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              Baca Selengkapnya
+            </a>
+          </div>
+
+          <!-- Right: Stat Cards -->
+          <div class="reveal reveal-delay-2">
+            <div class="about-teaser-stats" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+
+              <!-- Card 1 -->
+              <div class="about-stat-card glass-card" style="--c: var(--accent);">
+                <div class="about-stat-bg-glow" style="background:var(--accent);"></div>
+                <div class="about-stat-icon">
+                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" style="filter: drop-shadow(0 6px 10px rgba(0, 212, 255, 0.5)); transform: scale(1.15);">
+                    <defs>
+                      <linearGradient id="grad-grad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#a5f3fc"></stop>
+                        <stop offset="100%" stop-color="#0891b2"></stop>
+                      </linearGradient>
+                      <linearGradient id="grad-grad-top" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#cffafe"></stop>
+                        <stop offset="100%" stop-color="#06b6d4"></stop>
+                      </linearGradient>
+                    </defs>
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" fill="url(#grad-grad-top)" stroke="#164e63" stroke-width="1.5" stroke-linejoin="round"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" fill="url(#grad-grad)" stroke="#164e63" stroke-width="1"></path>
+                  </svg>
+                </div>
+                <div class="stat-number about-count" id="stat-semester" data-suffix="">-</div>
+                <div class="about-stat-label">Semester Aktif</div>
+                <div class="about-stat-bar"><div class="about-stat-bar-fill" style="width:75%;"></div></div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="about-stat-card glass-card" style="--c: #f59e0b;">
+                <div class="about-stat-bg-glow" style="background:#f59e0b;"></div>
+                <div class="about-stat-icon">
+                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" style="filter: drop-shadow(0 6px 10px rgba(245, 158, 11, 0.5)); transform: scale(1.15);">
+                    <defs>
+                      <linearGradient id="grad-pc1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fef3c7"></stop><stop offset="100%" stop-color="#f59e0b"></stop></linearGradient>
+                      <linearGradient id="grad-pc2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"></stop><stop offset="100%" stop-color="#b45309"></stop></linearGradient>
+                    </defs>
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" fill="url(#grad-pc1)" stroke="#78350f" stroke-width="1.5"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21" stroke="url(#grad-pc2)" stroke-width="4" stroke-linecap="round"></line>
+                    <line x1="12" y1="17" x2="12" y2="21" stroke="url(#grad-pc2)" stroke-width="4" stroke-linecap="round"></line>
+                  </svg>
+                </div>
+                <div class="stat-number about-count" id="stat-project" data-suffix="+">-</div>
+                <div class="about-stat-label">Proyek Latihan</div>
+                <div class="about-stat-bar"><div class="about-stat-bar-fill" style="width:60%; background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div></div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="about-stat-card glass-card" style="--c: #10b981;">
+                <div class="about-stat-bg-glow" style="background:#10b981;"></div>
+                <div class="about-stat-icon">
+                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" style="filter: drop-shadow(0 6px 10px rgba(16, 185, 129, 0.5)); transform: scale(1.15);">
+                    <defs>
+                      <linearGradient id="grad-trophy" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a7f3d0"></stop><stop offset="100%" stop-color="#059669"></stop></linearGradient>
+                      <linearGradient id="grad-trophy-base" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#34d399"></stop><stop offset="100%" stop-color="#065f46"></stop></linearGradient>
+                    </defs>
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" stroke="url(#grad-trophy)" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" stroke="url(#grad-trophy)" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M4 22h16" stroke="url(#grad-trophy-base)" stroke-width="3" stroke-linecap="round"></path>
+                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" stroke="url(#grad-trophy-base)" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" stroke="url(#grad-trophy-base)" stroke-width="2" stroke-linecap="round"></path>
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2z" fill="url(#grad-trophy)" stroke="#064e3b" stroke-width="1.5"></path>
+                  </svg>
+                </div>
+                <div class="stat-number about-count" id="stat-cert" data-suffix="">-</div>
+                <div class="about-stat-label">Sertifikat</div>
+                <div class="about-stat-bar"><div class="about-stat-bar-fill" style="width:80%; background:linear-gradient(90deg,#10b981,#34d399);"></div></div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="about-stat-card glass-card" style="--c: #8b5cf6;">
+                <div class="about-stat-bg-glow" style="background:#8b5cf6;"></div>
+                <div class="about-stat-icon">
+                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" style="filter: drop-shadow(0 6px 10px rgba(139, 92, 246, 0.5)); transform: scale(1.15);">
+                    <defs>
+                      <linearGradient id="grad-org-bag" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ddd6fe"></stop><stop offset="100%" stop-color="#7c3aed"></stop></linearGradient>
+                      <linearGradient id="grad-org-handle" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a78bfa"></stop><stop offset="100%" stop-color="#5b21b6"></stop></linearGradient>
+                    </defs>
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" fill="url(#grad-org-bag)" stroke="#4c1d95" stroke-width="1.5"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke="url(#grad-org-handle)" stroke-width="2.5" stroke-linecap="round"></path>
+                  </svg>
+                </div>
+                <div class="stat-number about-count" id="stat-org" data-suffix="">-</div>
+                <div class="about-stat-label">Organisasi</div>
+                <div class="about-stat-bar"><div class="about-stat-bar-fill" style="width:55%; background:linear-gradient(90deg,#8b5cf6,#a78bfa);"></div></div>
+              </div>
+
+              <!-- Card 5 (Training - Linked) -->
+              <div class="about-stat-card glass-card" style="--c: #ef4444; grid-column: 1 / -1; cursor: pointer;" onclick="window.location.href='resume.html#training-section'">
+                <div class="about-stat-bg-glow" style="background:#ef4444;"></div>
+                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                  <div>
+                    <div class="about-stat-icon" style="margin-bottom:0.75rem;">
+                      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" style="filter: drop-shadow(0 6px 10px rgba(239, 68, 68, 0.5)); transform: scale(1.15);">
+                        <defs>
+                          <linearGradient id="grad-train1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fecaca"></stop><stop offset="100%" stop-color="#ef4444"></stop></linearGradient>
+                          <linearGradient id="grad-train2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f87171"></stop><stop offset="100%" stop-color="#b91c1c"></stop></linearGradient>
+                        </defs>
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="url(#grad-train2)" stroke-width="2" stroke-linecap="round"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="url(#grad-train1)" stroke="#7f1d1d" stroke-width="1.5"></path>
+                      </svg>
+                    </div>
+                    <div class="stat-number about-count" id="stat-training" data-suffix="">-</div>
+                    <div class="about-stat-label">Pelatihan yang Diikuti</div>
+                  </div>
+                  <div style="background:rgba(239, 68, 68, 0.1); border:1px solid rgba(239, 68, 68, 0.2); border-radius:99px; padding:4px 12px; font-size:0.75rem; font-weight:700; color:#fca5a5; display:flex; align-items:center; gap:4px; margin-top:0.5rem;">
+                    Lihat Detail <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </div>
+                <div class="about-stat-bar" style="margin-top:1rem;"><div class="about-stat-bar-fill" style="width:100%; background:linear-gradient(90deg,#ef4444,#fca5a5);"></div></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Automatically pull accurate data for About Section
+      document.addEventListener("DOMContentLoaded", () => {
+        if (typeof PROFILE !== 'undefined' && typeof PROJECTS !== 'undefined') {
+          // Mapping data dari PROFILE dan PROJECTS
+          const dataStats = {
+            semester: PROFILE.semester || 4,
+            project: PROJECTS.length || 0,
+            cert: (PROFILE.certificates && PROFILE.certificates.length) ? PROFILE.certificates.length : 0,
+            org: (PROFILE.organization && PROFILE.organization.length) ? PROFILE.organization.length : 0
+          };
+
+          // Update text nya (bisa menyesuaikan delay biar muncul cantik)
+          document.getElementById('stat-semester').textContent = dataStats.semester;
+          document.getElementById('stat-project').textContent = dataStats.project + "+";
+          document.getElementById('stat-cert').textContent = dataStats.cert;
+          document.getElementById('stat-org').textContent = dataStats.org;
+        }
+      });
+    </script>
+
+  </main>
+
+  <!-- FOOTER INJECT -->
+  <div id="footer-inject"></div>
+
+  <!-- Scripts -->
+  <script src="data/profile.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js" defer></script>
+
+  <style>
+    @keyframes fadeDown { 0%,100%{opacity:0;transform:translateY(-8px)} 50%{opacity:1;transform:translateY(0)} }
+
+    /* 4D Tesseract hero canvas enhancement */
+    #hero-canvas {
+      filter: drop-shadow(0 0 18px rgba(0, 212, 255, 0.18));
+    }
+
+    /* Subtle radial gradient to give the 3D scene depth */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 70% at 72% 50%, rgba(0,212,255,0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Card pulse glow */
+    @keyframes pulseGlow {
+      0% { opacity: 0.15; transform: scale(0.9); }
+      100% { opacity: 0.3; transform: scale(1.05); }
+    }
+
+    /* Drop & Swing animation untuk ID Card */
+    @keyframes dropSwing {
+      0% { transform: translateY(-120vh) rotateZ(12deg); opacity: 0; }
+      20% { transform: translateY(0) rotateZ(-10deg); opacity: 1; }
+      40% { transform: rotateZ(6deg); }
+      60% { transform: rotateZ(-3deg); }
+      80% { transform: rotateZ(1.5deg); }
+      100% { transform: translateY(0) rotateZ(0deg); opacity: 1; }
+    }
+
+    /* Terminal Code Animation */
+    @keyframes codeAppear {
+      from { opacity: 0; transform: translateY(8px); filter: blur(2px); }
+      to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Hero components delayed animations */
+    .hero-content { opacity: 0; transform: translateY(28px); }
+    .start-hero .hero-content {
+      animation: heroFadeUp 0.9s cubic-bezier(0.4,0,0.2,1) both 0.3s;
+    }
+    
+    .start-hero #robot-scene {
+      animation: robotFadeIn 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.4s;
+    }
+    
+    .start-hero .hanging-element {
+      animation: dropSwing 2.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.6s;
+    }
+    
+    .start-hero .hologram-window .code-line-1 { animation: 0.4s 0.8s codeAppear both; }
+    .start-hero .hologram-window .code-line-2 { animation: 0.4s 1.2s codeAppear both; }
+    .start-hero .hologram-window .code-line-3 { animation: 0.4s 1.6s codeAppear both; }
+    .start-hero .hologram-window .code-line-4 { animation: 0.4s 2.0s codeAppear both; }
+    .start-hero .hologram-window .code-line-5 { animation: 0.4s 2.4s codeAppear both; }
+    .start-hero .hologram-window .code-line-6 { animation: 0.4s 2.8s codeAppear both; }
+
+    .start-hero #hero-stats {
+      animation: heroFadeUp 0.8s cubic-bezier(0.4,0,0.2,1) forwards 1.2s;
+    }
+    .start-hero #hero-scroll-indicator {
+      animation: heroFadeUp 0.8s cubic-bezier(0.4,0,0.2,1) forwards 1.8s;
+    }
+
+    @keyframes robotFadeIn {
+      0% { opacity: 0; filter: blur(20px); }
+      100% { opacity: 1; filter: blur(0); }
+    }
+
+    @keyframes heroFadeUp {
+      from { opacity:0; transform: translateY(28px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    @media(max-width:850px) {
+      #hero .hero-content > div { flex-direction: column; text-align: center; gap: 3rem; }
+      #hero .hero-content > div > div { margin: 0 auto; }
+      #hero .hero-badge { margin: 0 auto 1.5rem; }
+      #hero .btn-primary, #hero .btn-ghost { width: 100%; justify-content: center; }
+      #hero-stats { margin-left: auto; margin-right: auto; justify-content: center; }
+      /* Reset text-align untuk Code Terminal agar tetap rata kiri meski parentnya center */
+      .hologram-window { text-align: left !important; }
+    }
+
+    @media(max-width:768px){
+      #hero { padding-top:1rem; padding-bottom: 2rem; }
+      #hero::after { display:none; }
+      section[style*="grid-template-columns:1fr 1fr"] > div { grid-template-columns:1fr!important; gap:2rem!important; }
+    }
+
+    @media(max-width:500px){
+      .hologram-window { padding: 1rem !important; max-width: 95vw !important; box-sizing: border-box; }
+      .hologram-window > div:nth-child(2) > div { 
+        gap: 8px !important; 
+        font-size: 0.75rem !important;
+        flex-wrap: wrap; /* Mencegah overflow teks ke kanan */
+      }
+      .hologram-window > div:nth-child(2) > div > span:nth-child(2) {
+        padding-left: 0.5rem !important; 
+        word-break: break-word; /* bungkus long string */
+      }
+      /* Pengecilan skala lanyard agar proporsional di HP tanpa merusak layout */
+      .hanging-container { transform: scale(0.9); transform-origin: center top; margin-top: 1rem !important; }
+      .hero-name { font-size: 2.5rem !important; }
+    }
+
+    /* ===== 4D ROBOT KEYFRAMES ===== */
+    @keyframes robotAutoFloat {
+      0%, 100% { transform: translateY(0px) rotateY(-4deg) rotateX(2deg); }
+      25%       { transform: translateY(-14px) rotateY(6deg) rotateX(-2deg); }
+      50%       { transform: translateY(-8px) rotateY(-2deg) rotateX(4deg); }
+      75%       { transform: translateY(-18px) rotateY(8deg) rotateX(-1deg); }
+    }
+    @keyframes orbitSpin {
+      from { transform: rotateZ(0deg); }
+      to   { transform: rotateZ(360deg); }
+    }
+    @keyframes orbitSpinH {
+      from { transform: rotateX(70deg) rotateZ(0deg); }
+      to   { transform: rotateX(70deg) rotateZ(360deg); }
+    }
+    @keyframes scanSweep {
+      0%   { background-position: 0% 0%; transform: translateY(-100%); }
+      100% { background-position: 0% 100%; transform: translateY(200%); }
+    }
+    @keyframes haloBreath {
+      from { transform: scale(0.9); opacity: 0.6; }
+      to   { transform: scale(1.2); opacity: 1; }
+    }
+
+    /* ===== CINEMATIC BOOT KEYFRAMES ===== */
+    @keyframes bootBeamSweep {
+      0%   { opacity:0; top:0; }
+      10%  { opacity:1; }
+      90%  { opacity:0.8; top:100%; }
+      100% { opacity:0; top:100%; }
+    }
+    @keyframes bootTextFade {
+      0%   { opacity:0; transform:translateY(6px); }
+      100% { opacity:1; transform:translateY(0); }
+    }
+    @keyframes robotMaterialize {
+      0%   { opacity:0; filter:blur(40px) brightness(8); transform:translateY(80px) scaleX(0.2); clip-path:inset(100% 0 0 0); }
+      15%  { opacity:0.08; filter:blur(25px) brightness(5); clip-path:inset(85% 0 0 0); }
+      22%  { opacity:0; clip-path:inset(70% 0 0 0); }
+      28%  { opacity:0.5; filter:blur(10px) brightness(3); clip-path:inset(55% 0 0 0); }
+      35%  { opacity:0.05; clip-path:inset(45% 0 0 0); }
+      45%  { opacity:0.75; filter:blur(5px) brightness(2); clip-path:inset(25% 0 0 0); transform:translateY(25px) scaleX(0.9); }
+      58%  { opacity:1; filter:blur(0) brightness(4); clip-path:inset(0% 0 0 0); transform:translateY(-12px) scale(1.06); }
+      70%  { filter:blur(0) brightness(1.5) drop-shadow(0 0 60px rgba(0,212,255,0.9)); transform:translateY(6px) scale(0.97); }
+      82%  { filter:drop-shadow(0 0 80px rgba(0,212,255,0.7)); transform:translateY(-4px) scale(1.01); }
+      100% { opacity:1; filter:drop-shadow(0 0 40px rgba(0,212,255,0.35)) drop-shadow(0 0 80px rgba(0,212,255,0.15)); transform:translateY(0) scale(1); }
+    }
+    @keyframes orbitRingUnfurl {
+      0%   { opacity:0; transform:scale(0.05); }
+      60%  { opacity:0.9; transform:scale(1.06); }
+      100% { opacity:1; transform:scale(1); }
+    }
+    @keyframes orbitRingUnfurlH {
+      0%   { opacity:0; transform:rotateX(70deg) scale(0.05); }
+      60%  { opacity:0.9; transform:rotateX(70deg) scale(1.05); }
+      100% { opacity:1; transform:rotateX(70deg) scale(1); }
+    }
+    @keyframes bootOverlayFade {
+      0%   { opacity:1; }
+      100% { opacity:0; }
+    }
+  </style>
+<script>
+/* ============================================================
+   ROBOT 4D — Cinematic Boot Sequence + Interactive Animation
+   ============================================================ */
+(function() {
+  const svg      = document.getElementById('robot-svg');
+  const scene    = document.getElementById('robot-scene');
+  const head     = document.getElementById('robot-head');
+  const body     = document.getElementById('robot-body');
+  const armL     = document.getElementById('arm-left');
+  const armR     = document.getElementById('arm-right');
+  const pupilL   = document.getElementById('pupil-l');
+  const pupilR   = document.getElementById('pupil-r');
+  const hlL      = document.getElementById('pupil-l-hl');
+  const hlR      = document.getElementById('pupil-r-hl');
+  const ripple   = document.getElementById('robot-ripple');
+  const bootUI   = document.getElementById('robot-boot-ui');
+  const orbit1   = document.getElementById('orbit-1');
+  const orbit2   = document.getElementById('orbit-2');
+  const orbitH   = document.getElementById('orbit-h');
+  const scanner  = document.getElementById('scan-sweeper');
+  if (!svg) return;
+
+  let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+  let headRX = 0, headRY = 0, bodyRY = 0;
+  let clickJump = 0, scrollOffset = 0;
+  let booted = false;
+
+  /* ── PHASE 1: 0–0.5s — Boot UI scan beam plays (CSS handled) ── */
+
+  /* ── PHASE 2: 0.6s — Robot materializes from bottom ── */
+  setTimeout(() => {
+    svg.style.animation = 'robotMaterialize 2.6s cubic-bezier(0.25,0.46,0.45,0.94) both';
+    svg.style.opacity   = '1';
+  }, 600);
+
+  /* ── PHASE 3: 1.8s — Orbit rings unfurl one by one ── */
+  setTimeout(() => {
+    orbit1.style.animation = 'orbitRingUnfurl 1s ease-out both, orbitSpin 18s linear 1s infinite';
+  }, 1800);
+  setTimeout(() => {
+    orbit2.style.animation = 'orbitRingUnfurl 0.9s ease-out both, orbitSpin 12s linear 0.9s infinite reverse';
+  }, 2200);
+  setTimeout(() => {
+    orbitH.style.animation = 'orbitRingUnfurlH 0.8s ease-out both, orbitSpinH 9s linear 0.8s infinite';
+  }, 2600);
+
+  /* ── PHASE 4: 2.8s — Boot scan sweeper turns on ── */
+  setTimeout(() => {
+    scanner.style.opacity = '1';
+  }, 2800);
+
+  /* ── PHASE 5: 3.0s — Boot UI fades out ── */
+  setTimeout(() => {
+    if (bootUI) {
+      bootUI.style.animation = 'bootOverlayFade 0.6s ease-out forwards';
+      setTimeout(() => { bootUI.style.display = 'none'; }, 700);
+    }
+  }, 3000);
+
+  /* ── PHASE 6: 3.2s — Switch to perpetual float animation ── */
+  setTimeout(() => {
+    svg.style.animation = 'robotAutoFloat 6s ease-in-out infinite';
+    svg.style.filter    = 'drop-shadow(0 0 40px rgba(0,212,255,0.35)) drop-shadow(0 0 80px rgba(0,212,255,0.15))';
+    booted = true;
+    tick(); /* start interactive loop */
+  }, 3200);
+
+  /* ── Mouse tracking ── */
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  window.addEventListener('scroll', () => { scrollOffset = window.scrollY; }, {passive:true});
+
+  /* ── Click: jump + glow burst + ripple ── */
+  svg.addEventListener('click', () => {
+    if (!booted) return;
+    clickJump = -20;
+    svg.style.filter = 'drop-shadow(0 0 100px rgba(0,212,255,1)) drop-shadow(0 0 40px rgba(255,255,255,0.5))';
+    setTimeout(() => svg.style.filter = 'drop-shadow(0 0 40px rgba(0,212,255,0.35)) drop-shadow(0 0 80px rgba(0,212,255,0.15))', 700);
+    if (ripple) {
+      ripple.style.transition = 'none';
+      ripple.style.opacity = '1';
+      ripple.style.transform = 'scale(0)';
+      requestAnimationFrame(() => {
+        ripple.style.transition = 'transform 0.8s ease-out, opacity 0.8s ease-out';
+        ripple.style.transform = 'scale(6)';
+        ripple.style.opacity = '0';
+      });
+    }
+  });
+
+  /* ── Interactive tick (only runs after boot) ── */
+  function tick() {
+    requestAnimationFrame(tick);
+    if (!booted) return;
+
+    const rect = svg.getBoundingClientRect();
+    const cx = rect.left + rect.width  / 2;
+    const cy = rect.top  + rect.height / 2;
+    const dx = mx - cx, dy = my - cy;
+    const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+    const normX = dx / dist, normY = dy / dist;
+
+    /* Head rotation follows mouse */
+    headRX += (normY * 12 - headRX) * 0.08;
+    headRY += (normX * 15 - headRY) * 0.08;
+    bodyRY += (normX * 5  - bodyRY) * 0.04;
+
+    /* Click jump damping */
+    if (clickJump !== 0) { clickJump *= 0.84; if (Math.abs(clickJump) < 0.5) clickJump = 0; }
+
+    /* Scroll parallax */
+    const sPx = scrollOffset * 0.12;
+
+    /* Apply to parts (don't override CSS float animation — only sub-element transforms) */
+    head.style.transform = `rotateX(${headRX}deg) rotateY(${headRY}deg)`;
+    body.style.transform = `rotateY(${bodyRY}deg)`;
+    armL.style.transform = `rotate(${normX * -6}deg)`;
+    armR.style.transform = `rotate(${normX *  6}deg)`;
+
+    /* Pupil tracking */
+    const maxP = 4;
+    const pxL = Math.max(-maxP, Math.min(maxP, normX * maxP));
+    const pyL = Math.max(-maxP, Math.min(maxP, normY * maxP));
+    pupilL.setAttribute('cx', 182 + pxL);
+    pupilL.setAttribute('cy', 146 + pyL);
+    hlL   .setAttribute('cx', 184 + pxL);
+    hlL   .setAttribute('cy', 144 + pyL);
+    pupilR.setAttribute('cx', 238 + pxL);
+    pupilR.setAttribute('cy', 146 + pyL);
+    hlR   .setAttribute('cx', 240 + pxL);
+    hlR   .setAttribute('cy', 144 + pyL);
+  }
+})();
+
+// ── Animate About Stat Bars when section enters viewport ──────────────────
+(function() {
+  const bars = document.querySelectorAll('.about-stat-bar-fill');
+  if (!bars.length) return;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Trigger all bars
+        bars.forEach(bar => {
+          const target = bar.style.width; // already set inline
+          bar.style.width = '0%';
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => { bar.style.width = target; });
+          });
+        });
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const section = document.querySelector('.about-teaser-section');
+  if (section) observer.observe(section);
+})();
+</script>
+
+  <!-- ===== HERO TYPEWRITER SCRIPT ===== -->
+  <script>
+    (function() {
+      // ── Line 1: Slide up "Muchamad" ──
+      function animateLine1() {
+        const el = document.getElementById('hero-name-line1');
+        if (!el) return;
+        el.style.opacity  = '1';
+        el.style.transform = 'translateY(0)';
+      }
+
+      // ── Line 2: Type "Yazid Ardani" char by char ──
+      function typeNameLine2() {
+        const el     = document.getElementById('hero-name-line2');
+        const cursor = document.getElementById('hero-name-cursor');
+        const roles  = document.getElementById('hero-role-row');
+        if (!el) return;
+        const text  = 'Yazid Ardani';
+        let   idx   = 0;
+
+        function type() {
+          if (idx < text.length) {
+            el.textContent += text.charAt(idx++);
+            setTimeout(type, idx < 7 ? 80 : 60);
+          } else {
+            // Done typing — hide cursor, reveal role row
+            setTimeout(() => {
+              if (cursor) cursor.style.display = 'none';
+              if (roles)  { roles.style.opacity = '1'; roles.style.transform = 'translateY(0)'; }
+              startRoleCycle();
+            }, 500);
+          }
+        }
+        type();
+      }
+
+      // ── Role Cycling ──
+      function startRoleCycle() {
+        const roleEl = document.getElementById('hero-role-text');
+        if (!roleEl) return;
+        const roles = ['Web Developer', 'UI Designer', 'Problem Solver', 'Fast Learner', 'IT Student'];
+        let   ri    = 0;
+
+        setInterval(() => {
+          ri = (ri + 1) % roles.length;
+          roleEl.style.opacity   = '0';
+          roleEl.style.transform = 'translateY(-6px)';
+          setTimeout(() => {
+            roleEl.textContent     = roles[ri];
+            roleEl.style.opacity   = '1';
+            roleEl.style.transform = 'translateY(0)';
+          }, 250);
+        }, 2500);
+
+        // smooth transition on role text
+        roleEl.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+      }
+
+      // Init role row hidden initially
+      const roleRow = document.getElementById('hero-role-row');
+      if (roleRow) {
+        roleRow.style.opacity   = '0';
+        roleRow.style.transform = 'translateY(8px)';
+        roleRow.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      }
+
+      function startHeroAnimations() {
+        document.body.classList.add('start-hero');
+        setTimeout(animateLine1, 200);
+        setTimeout(typeNameLine2, 600);
+      }
+
+      if (sessionStorage.getItem('introPlayed')) {
+        document.addEventListener('DOMContentLoaded', startHeroAnimations);
+      } else {
+        document.addEventListener('introFinished', startHeroAnimations);
+      }
+    })();
+
+    // Responsive DOM Shifting for Hero Robot
+    function adjustHeroRobot() {
+      const robot = document.getElementById('robot-scene');
+      const hero = document.getElementById('hero');
+      const leftCol = document.querySelector('.hero-main-layout > div:first-child');
+      
+      if (!robot || !hero || !leftCol) return;
+
+      if (window.innerWidth <= 900) {
+        // Pindahkan robot jadi sibling flexbox di tengah-tengah pada mobile
+        if (robot.parentElement.id === 'hero') {
+           leftCol.parentElement.insertBefore(robot, leftCol.nextSibling);
+           robot.style.position = '';
+           robot.style.top = '';
+           robot.style.left = '';
+           robot.style.transform = '';
+        }
+      } else {
+        // Kembalikan ke absolute positioning di #hero untuk desktop
+        if (robot.parentElement.classList.contains('hero-main-layout')) {
+           hero.insertBefore(robot, hero.children[1]); 
+           robot.style.position = 'absolute';
+           robot.style.top = '50%';
+           robot.style.left = '50%';
+           robot.style.transform = 'translate(-50%,-50%)';
+        }
+      }
+    }
+    
+    window.addEventListener('resize', adjustHeroRobot);
+    document.addEventListener('DOMContentLoaded', adjustHeroRobot);
+  </script>
+  <script src="js/intro.js"></script>
+</body>
+</html>
