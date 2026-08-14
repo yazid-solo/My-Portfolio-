@@ -571,22 +571,24 @@ function renderFeaturedProjects() {
 
   // ── Setup 3D Geometry ──────────────────────────────────────────────────
   // Perhitungan dinamis jumlah kartu & radius agar tidak saling bertabrakan (overlapping)
-  let displayProjects, radius;
-  if (window.innerWidth < 768) {
-    displayProjects = PROJECTS; // 7 kartu
-    radius = 380; // Mobile: Radius pas untuk 7 kartu (memberi celah ~29px antar kartu)
-  } else if (window.innerWidth < 1024) {
-    displayProjects = PROJECTS; // 7 kartu
-    radius = 450; // Tablet: Jarak lebih lega
-  } else {
-    // Desktop: Layar lebar, gandakan kartu jadi 14 agar terkesan penuh 
-    // dan perbesar radius secara ekstrim agar tidak bertumpuk
+  let displayProjects = PROJECTS;
+  
+  // Gandakan kartu di desktop HANYA jika jumlah kartu sedikit (< 8) agar lingkaran tidak kosong
+  if (window.innerWidth >= 1024 && displayProjects.length < 8) {
     displayProjects = [...PROJECTS, ...PROJECTS]; 
-    radius = 850; // Memberi celah ~78px antar 14 kartu
   }
   
   const numItems = displayProjects.length;
   const anglePerItem = 360 / numItems;
+  
+  // Lebar dasar kartu adalah 320px. Tambahkan margin/gap.
+  const cardWidthWithGap = window.innerWidth < 768 ? 340 : 400; 
+  
+  // Rumus polygon r = (s/2) / tan(pi/n)
+  let radius = Math.round((cardWidthWithGap / 2) / Math.tan(Math.PI / numItems));
+  
+  // Batas minimum radius agar tidak terlalu sempit
+  if (radius < 380) radius = 380;
 
   const scroller = document.createElement('div');
   scroller.className = 'proj-scroller-3d';
