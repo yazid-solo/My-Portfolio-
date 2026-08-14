@@ -493,13 +493,18 @@ const Components = (() => {
     const transition = document.getElementById('page-transition');
     if (!transition) return;
 
-    // Fade in on load
+    // Fade in on load and back navigation (bfcache)
     transition.classList.remove('active');
+    window.addEventListener('pageshow', (e) => {
+      if (e.persisted) {
+        transition.classList.remove('active');
+      }
+    });
 
     // Intercept all internal links
     document.querySelectorAll('a[href]').forEach(link => {
       const href = link.getAttribute('href');
-      if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel')) return;
+      if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel') || link.hasAttribute('download') || link.getAttribute('target') === '_blank') return;
       link.addEventListener('click', e => {
         e.preventDefault();
         transition.classList.add('active');
