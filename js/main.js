@@ -1274,14 +1274,9 @@ function renderLanguages() {
         <!-- Decorative Glow -->
         <div style="position:absolute; top:-30%; right:-5%; width:90px; height:90px; background:radial-gradient(circle, rgba(${rgb},0.15), transparent 70%); border-radius:50%; pointer-events:none;"></div>
         
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; position:relative; z-index:2;">
+        <div style="display:flex; justify-content:space-between; align-items:center; position:relative; z-index:2;">
           <span style="font-size:0.95rem; font-weight:700; color:#fff; letter-spacing:0.3px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">${l.lang}</span>
           <span style="font-size:0.7rem; padding:0.25rem 0.6rem; border-radius:20px; background:rgba(${rgb},0.1); color:${color}; border:1px solid rgba(${rgb},0.3); font-family:var(--font-mono); font-weight:700; text-transform:uppercase; letter-spacing:1px; box-shadow: 0 0 10px rgba(${rgb},0.15);">${l.level}</span>
-        </div>
-        
-        <!-- 3D Progress Bar -->
-        <div style="width:100%; height:6px; background:rgba(0,0,0,0.35); border-radius:10px; overflow:hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.05); position:relative; z-index:2;">
-          <div style="width:${pct}%; height:100%; background:linear-gradient(90deg, ${color}, #fff); border-radius:10px; box-shadow: 0 0 10px ${color}, inset 0 -2px 4px rgba(0,0,0,0.2); transition: width 1s ease-in-out;"></div>
         </div>
       </div>
     `;
