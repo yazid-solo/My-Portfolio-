@@ -1286,7 +1286,7 @@ function initProjects() {
           <img src="${p.image}" alt="${p.title}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
         </div>
         <div style="padding:1.25rem;">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem;margin-bottom:0.5rem;">
             <h3 style="font-size:0.95rem;font-weight:700;">${p.title}</h3>
             <span class="status-badge ${p.status === 'Selesai' ? 'status-done' : 'status-wip'}">${p.status}</span>
           </div>
