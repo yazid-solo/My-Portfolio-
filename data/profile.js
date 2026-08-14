@@ -207,7 +207,8 @@ const PROFILE = {
         { name: "Claude AI", icon: "assets/claude.svg" },
         { name: "Google Gemini", icon: "assets/gemini.svg" },
         { name: "Antigravity IDE", icon: "assets/antigravity.svg" },
-        { name: "Kiro", icon: "assets/kiro.svg" }
+        { name: "Kiro", icon: "assets/kiro.svg" },
+        { name: "Stitch", icon: "assets/stitch.svg" }
       ]
     },
     {
