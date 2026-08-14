@@ -658,11 +658,13 @@ kbd {
 }
 
 .status-badge {
-  display: inline-flex; align-items: center; gap: 4px;
-  padding: 2px 8px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  padding: 4px 10px;
   border-radius: 99px;
   font-size: 0.7rem;
   font-weight: 500;
+  white-space: nowrap;
+  line-height: 1.2;
 }
 .status-done { background: rgba(16,185,129,0.1); color: #10b981; }
 .status-wip { background: rgba(245,158,11,0.1); color: #f59e0b; }
