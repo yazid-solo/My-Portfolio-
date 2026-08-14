@@ -164,7 +164,7 @@ const PROFILE = {
     { name: "ms excel", icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg", style: "width: 24px; height: 24px;", color: "#107c41" },
     { name: "ms word", icon: "https://api.iconify.design/vscode-icons/file-type-word.svg", style: "width: 24px; height: 24px;", color: "#2b579a" },
     { name: "docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", color: "#2496ed" },
-    { name: "stitch", icon: "https://api.iconify.design/simple-icons:stitch.svg?color=white", style: "width: 24px; height: 24px;", color: "#00A9E0" },
+    { name: "stitch", icon: "assets/stitch.svg", style: "width: 28px; height: 28px;", color: "#FFA1E0" },
     { name: "ChatGPT", icon: "https://api.iconify.design/simple-icons:openai.svg?color=white", color: "#10a37f" },
     { name: "GitHub Copilot", icon: "https://api.iconify.design/simple-icons:githubcopilot.svg?color=white", color: "#ffffff" },
     { name: "Claude AI", icon: "assets/claude.svg", color: "#d97757" },
@@ -218,7 +218,7 @@ const PROFILE = {
         { name: "PostgreSQL", level: "Dasar", pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
         { name: "Supabase", level: "Dasar", pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
         { name: "Postman", level: "Dasar", pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" },
-        { name: "Stitch", level: "Mempelajari", pct: 25, icon: "https://api.iconify.design/simple-icons:stitch.svg?color=white" }
+        { name: "Stitch", level: "Mempelajari", pct: 25, icon: "assets/stitch.svg" }
       ]
     },
     {
