@@ -8,7 +8,7 @@
 const PROFILE = {
   name: "Muchamad Yazid Ardani",
   nickname: "Yazid",
-  tagline: "Informatics Student · Full-Stack Dev · Tech Enthusiast",
+  tagline: "Informatics Student · Aspiring Web Dev · Tech Enthusiast",
   taglineSub: "Mahasiswa Semester 5 yang sedang membangun fondasi di dunia teknologi — satu baris kode dalam satu waktu.",
   email: "muhzee16@gmail.com",
   phone: "+62819 1568 0315",

@@ -380,7 +380,7 @@
         </div>
         <div>
           <div class="intro-name">Muchamad <span>Yazid</span> Ardani</div>
-          <div class="intro-tagline" style="margin-top:0.4rem;">// Informatika · Full-Stack · Tech Enthusiast</div>
+          <div class="intro-tagline" style="margin-top:0.4rem;">// Informatika · Aspiring Web Dev · Tech Enthusiast</div>
         </div>
         <div class="intro-bar-wrap" id="intro-wrap-div" style="transition: opacity 0.4s ease;">
           <div class="intro-bar-fill" id="intro-fill"></div>
