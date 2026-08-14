@@ -13,23 +13,320 @@
   <main>
 
     <!-- ========== PAGE HERO ========== -->
+    <style>
+      /* ── CV Hero 3D Decoration ── */
+      .cv-hero-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        position: relative;
+      }
+      /* ── Floating 3D CV Card ── */
+      .cv-deco-zone {
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+        flex: 1;
+        min-width: 240px;
+        justify-content: flex-end;
+      }
+      .cv-3d-card {
+        position: relative;
+        width: 120px;
+        height: 160px;
+        perspective: 600px;
+        flex-shrink: 0;
+      }
+      .cv-3d-inner {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(145deg, rgba(var(--accent-rgb),0.18) 0%, rgba(var(--accent-rgb),0.06) 100%);
+        border: 1.5px solid rgba(var(--accent-rgb),0.35);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        backdrop-filter: blur(12px);
+        box-shadow:
+          0 8px 32px rgba(0,0,0,0.4),
+          0 0 0 1px rgba(var(--accent-rgb),0.15),
+          inset 0 1px 0 rgba(255,255,255,0.08);
+        animation: cvFloat 4s ease-in-out infinite, cvRotate3d 8s ease-in-out infinite;
+        transform-style: preserve-3d;
+        cursor: default;
+        transition: box-shadow 0.3s;
+      }
+      .cv-3d-inner:hover {
+        box-shadow:
+          0 16px 48px rgba(0,0,0,0.5),
+          0 0 24px rgba(var(--accent-rgb),0.25),
+          inset 0 1px 0 rgba(255,255,255,0.1);
+        animation-play-state: paused;
+      }
+      .cv-doc-icon {
+        font-size: 2.4rem;
+        filter: drop-shadow(0 0 8px rgba(var(--accent-rgb),0.7));
+        animation: cvIconPulse 2.5s ease-in-out infinite;
+      }
+      .cv-label-tag {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: rgba(var(--accent-rgb),0.12);
+        border: 1px solid rgba(var(--accent-rgb),0.3);
+        border-radius: 4px;
+        padding: 2px 6px;
+      }
+      .cv-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        padding: 0 10px;
+        width: 80%;
+      }
+      .cv-line {
+        height: 3px;
+        border-radius: 2px;
+        background: rgba(var(--accent-rgb),0.25);
+        animation: cvLineShimmer 2.5s ease-in-out infinite;
+      }
+      .cv-line:nth-child(1) { width: 100%; animation-delay: 0s; }
+      .cv-line:nth-child(2) { width: 75%; animation-delay: 0.15s; }
+      .cv-line:nth-child(3) { width: 90%; animation-delay: 0.3s; }
+      .cv-line:nth-child(4) { width: 60%; animation-delay: 0.45s; }
+
+      /* ── Pulsing rings around the card ── */
+      .cv-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 1.5px solid rgba(var(--accent-rgb),0.25);
+        animation: cvRingExpand 3s ease-out infinite;
+        pointer-events: none;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .cv-ring:nth-child(1) { width: 140px; height: 140px; animation-delay: 0s; }
+      .cv-ring:nth-child(2) { width: 180px; height: 180px; animation-delay: 1s; }
+      .cv-ring:nth-child(3) { width: 220px; height: 220px; animation-delay: 2s; }
+
+      /* ── Side info badges ── */
+      .cv-info-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .cv-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(var(--accent-rgb),0.08);
+        border: 1px solid rgba(var(--accent-rgb),0.2);
+        border-radius: 8px;
+        padding: 6px 12px;
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        backdrop-filter: blur(8px);
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateX(20px);
+        animation: cvBadgeSlide 0.5s ease forwards;
+      }
+      .cv-badge:nth-child(1) { animation-delay: 0.3s; }
+      .cv-badge:nth-child(2) { animation-delay: 0.5s; }
+      .cv-badge:nth-child(3) { animation-delay: 0.7s; }
+      .cv-badge .badge-dot {
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 6px var(--accent);
+        flex-shrink: 0;
+        animation: cvDotBlink 1.5s ease-in-out infinite;
+      }
+      /* ── Floating particles ── */
+      .cv-particles {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .cv-particle {
+        position: absolute;
+        width: 4px; height: 4px;
+        border-radius: 50%;
+        background: var(--accent);
+        opacity: 0;
+        animation: cvParticleFloat linear infinite;
+      }
+      /* ── Keyframes ── */
+      @keyframes cvFloat {
+        0%,100% { transform: translateY(0px) rotateY(-8deg) rotateX(4deg); }
+        50%      { transform: translateY(-12px) rotateY(8deg) rotateX(-4deg); }
+      }
+      @keyframes cvRotate3d {
+        0%,100% { transform: translateY(0) rotateY(-10deg) rotateX(5deg) rotateZ(-1deg); }
+        33%      { transform: translateY(-8px) rotateY(5deg) rotateX(-3deg) rotateZ(1deg); }
+        66%      { transform: translateY(-14px) rotateY(10deg) rotateX(4deg) rotateZ(-0.5deg); }
+      }
+      @keyframes cvIconPulse {
+        0%,100% { transform: scale(1);   filter: drop-shadow(0 0 6px rgba(var(--accent-rgb),0.6)); }
+        50%      { transform: scale(1.1); filter: drop-shadow(0 0 14px rgba(var(--accent-rgb),1)); }
+      }
+      @keyframes cvLineShimmer {
+        0%,100% { opacity: 0.3; }
+        50%      { opacity: 0.8; background: rgba(var(--accent-rgb),0.5); }
+      }
+      @keyframes cvRingExpand {
+        0%   { opacity: 0.5; transform: translate(-50%,-50%) scale(0.8); }
+        100% { opacity: 0;   transform: translate(-50%,-50%) scale(1.3); }
+      }
+      @keyframes cvBadgeSlide {
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes cvDotBlink {
+        0%,100% { opacity: 1; }
+        50%      { opacity: 0.3; }
+      }
+      @keyframes cvParticleFloat {
+        0%   { opacity: 0;   transform: translateY(0) scale(1); }
+        10%  { opacity: 0.7; }
+        90%  { opacity: 0.3; }
+        100% { opacity: 0;   transform: translateY(-120px) scale(0.5); }
+      }
+      /* Responsive */
+      @media (max-width: 640px) {
+        .cv-deco-zone { justify-content: flex-start; }
+        .cv-3d-card { width: 90px; height: 120px; }
+        .cv-ring:nth-child(1) { width: 110px; height: 110px; }
+        .cv-ring:nth-child(2) { width: 145px; height: 145px; }
+        .cv-ring:nth-child(3) { width: 180px; height: 180px; }
+        .cv-badge { font-size: 0.65rem; padding: 5px 9px; }
+        .cv-info-stack { display: none; }
+      }
+    </style>
+
     <section style="padding:calc(5rem + 68px) 0 3rem;background:var(--bg2);position:relative;overflow:hidden;">
+      <!-- Background blobs -->
       <div class="glow-blob" style="width:450px;height:450px;background:rgba(var(--accent-rgb),0.07);bottom:-100px;right:-100px;"></div>
+      <div class="glow-blob" style="width:300px;height:300px;background:rgba(var(--accent-rgb),0.04);top:-50px;left:30%;"></div>
+
       <div class="container" style="position:relative;z-index:1;">
-        <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+        <div class="cv-hero-wrap">
+          <!-- LEFT: Title -->
           <div>
             <p class="section-label reveal">Profil Profesional</p>
             <h1 class="section-title reveal" style="font-size:clamp(2rem,5vw,3.5rem);margin-bottom:0.5rem;">Resume</h1>
             <div class="accent-line reveal"></div>
           </div>
-          <!-- Download CV Button -->
-          <a href="assets/CV/CV_Utama_MuchamadYazidArdani.pdf" target="_blank" class="btn-primary reveal" style="align-self:flex-end;">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download CV
-          </a>
+
+          <!-- RIGHT: 3D CV Deco + Download Button -->
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1.2rem;">
+
+            <!-- 3D CV Decoration Zone -->
+            <div class="cv-deco-zone reveal">
+
+              <!-- Info Badges (left of card) -->
+              <div class="cv-info-stack">
+                <div class="cv-badge">
+                  <span class="badge-dot"></span>
+                  <span>📄 PDF Ready</span>
+                </div>
+                <div class="cv-badge">
+                  <span class="badge-dot"></span>
+                  <span>🔄 Updated 2026</span>
+                </div>
+                <div class="cv-badge">
+                  <span class="badge-dot"></span>
+                  <span>✅ 2 Pages</span>
+                </div>
+              </div>
+
+              <!-- 3D Card + Rings -->
+              <div class="cv-3d-card" id="cv3dCard">
+                <!-- Pulsing Rings -->
+                <div class="cv-ring"></div>
+                <div class="cv-ring"></div>
+                <div class="cv-ring"></div>
+                <!-- Card -->
+                <div class="cv-3d-inner">
+                  <div class="cv-doc-icon">📋</div>
+                  <div class="cv-label-tag">CV</div>
+                  <div class="cv-lines">
+                    <div class="cv-line"></div>
+                    <div class="cv-line"></div>
+                    <div class="cv-line"></div>
+                    <div class="cv-line"></div>
+                  </div>
+                </div>
+                <!-- Particles -->
+                <div class="cv-particles" id="cvParticles"></div>
+              </div>
+
+            </div>
+
+            <!-- Download CV Button -->
+            <a href="assets/CV/CV_Utama_MuchamadYazidArdani.pdf" target="_blank" class="btn-primary reveal" style="align-self:flex-end;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </a>
+          </div>
         </div>
       </div>
     </section>
+
+    <script>
+      // Spawn floating particles around the CV card
+      (function() {
+        const container = document.getElementById('cvParticles');
+        if (!container) return;
+        const colors = ['var(--accent)', '#ffffff', 'rgba(var(--accent-rgb),0.6)'];
+        function spawnParticle() {
+          const p = document.createElement('div');
+          p.className = 'cv-particle';
+          const size = Math.random() * 4 + 2;
+          p.style.cssText = `
+            width:${size}px; height:${size}px;
+            left:${Math.random() * 100}%;
+            bottom:${Math.random() * 30}%;
+            background:${colors[Math.floor(Math.random()*colors.length)]};
+            animation-duration:${Math.random()*2+2}s;
+            animation-delay:${Math.random()*2}s;
+          `;
+          container.appendChild(p);
+          setTimeout(() => p.remove(), 4200);
+        }
+        setInterval(spawnParticle, 400);
+
+        // 3D tilt on mouse move
+        const card = document.getElementById('cv3dCard');
+        if (card) {
+          document.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = (e.clientX - cx) / 12;
+            const dy = (e.clientY - cy) / 12;
+            const inner = card.querySelector('.cv-3d-inner');
+            if (inner) {
+              inner.style.transform = `rotateY(${dx}deg) rotateX(${-dy}deg) translateZ(10px)`;
+              inner.style.transition = 'transform 0.1s ease';
+            }
+          });
+          card.addEventListener('mouseleave', () => {
+            const inner = card.querySelector('.cv-3d-inner');
+            if (inner) {
+              inner.style.transform = '';
+              inner.style.transition = 'transform 0.5s ease';
+            }
+          });
+        }
+      })();
+    </script>
 
     <!-- ========== SUMMARY ========== -->
     <section style="padding:3rem 0;">
