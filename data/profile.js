@@ -22,8 +22,8 @@ const PROFILE = {
   faculty: "Fakultas Teknologi Informasi",
   major: "Teknik Informatika",
   semester: 5,
-  bio: `Saya adalah mahasiswa aktif Semester 5 Prodi Informatika yang disiplin, cepat belajar, dan memiliki minat besar di bidang teknologi — khususnya web development dan desain UI. Saat ini saya fokus membangun keahlian nyata melalui eksplorasi kode dan proyek-proyek personal yang menantang.`,
-  about: `Dengan latar belakang yang beragam — dari teknik otomotif, magang lapangan, hingga affiliate marketing — saya terbiasa melakukan troubleshooting dan beradaptasi dengan cepat. Saya percaya bahwa problem-solving di dunia nyata sama pentingnya dengan logika kode. Saat ini saya mendalami web development dan UI/UX, sembari mengasah kemampuan kolaborasi tim dan pelaporan data yang terstruktur.`,
+  bio: `Saya adalah mahasiswa aktif Semester 5 Prodi Informatika yang disiplin, cepat belajar, dan memiliki minat besar di bidang teknologi — khususnya web development dan desain UI. Saat ini saya fokus membangun keahlian nyata melalui eksplorasi kode dan proyek-proyek personal yang menantang. Dalam alur kerja, saya terbiasa memanfaatkan kapabilitas AI (seperti ChatGPT, Claude, dan Copilot) secara komprehensif sebagai asisten produktivitas—tidak hanya untuk problem-solving, tetapi juga untuk perencanaan proyek, riset, manajemen waktu, dan optimalisasi alur kerja harian.`,
+  about: `Dengan latar belakang yang beragam — dari teknik otomotif, magang lapangan, hingga affiliate marketing — saya terbiasa melakukan troubleshooting dan beradaptasi dengan cepat. Saya percaya bahwa problem-solving di dunia nyata sama pentingnya dengan logika kode. Saat ini saya mendalami web development dan UI/UX, sembari mengasah kemampuan kolaborasi tim dan pelaporan data yang terstruktur. Saya juga secara aktif mengintegrasikan berbagai alat Kecerdasan Buatan (AI) ke dalam workflow harian guna memaksimalkan produktivitas secara menyeluruh—mulai dari riset, analisis data, hingga penyelesaian kendala teknis secara presisi dan terukur.`,
 
   highlights: [
     {
@@ -121,6 +121,18 @@ const PROFILE = {
       level: 3,
       tags: ["Docker", "Container", "Learning"],
       image: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400&q=80"
+    },
+    {
+      icon: "🤖",
+      title: "Integrasi AI",
+      desc: "Memanfaatkan AI (ChatGPT, Claude, Copilot) untuk meningkatkan produktivitas—mulai dari manajemen tugas, riset, problem-solving, hingga penyelesaian proyek secara efisien dan profesional.",
+      color: "rgba(168,85,247,0.2)",
+      accentColor: "#a855f7",
+      glowColor: "rgba(168,85,247,0.3)",
+      borderHover: "rgba(168,85,247,0.4)",
+      level: 3,
+      tags: ["AI Tools", "Debugging", "Efisiensi"],
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&q=80"
     }
   ],
 
@@ -151,7 +163,13 @@ const PROFILE = {
     { name: "photoshop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg", color: "#31a8ff" },
     { name: "ms excel", icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg", style: "width: 24px; height: 24px;", color: "#107c41" },
     { name: "ms word", icon: "https://api.iconify.design/vscode-icons/file-type-word.svg", style: "width: 24px; height: 24px;", color: "#2b579a" },
-    { name: "docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", color: "#2496ed" }
+    { name: "docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", color: "#2496ed" },
+    { name: "ChatGPT", icon: "https://api.iconify.design/simple-icons:openai.svg?color=white", color: "#10a37f" },
+    { name: "GitHub Copilot", icon: "https://api.iconify.design/simple-icons:githubcopilot.svg?color=white", color: "#ffffff" },
+    { name: "Claude AI", icon: "assets/claude.svg", color: "#d97757" },
+    { name: "Google Gemini", icon: "assets/gemini.svg", color: "#1a73e8" },
+    { name: "Antigravity IDE", icon: "assets/antigravity.svg", color: "#ff00ff" },
+    { name: "Kiro", icon: "assets/kiro.svg", color: "#ffff00" }
   ],
 
   skills: [
@@ -177,6 +195,18 @@ const PROFILE = {
         { name: "Adobe Photoshop", level: "Dasar", pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" },
         { name: "Git / GitHub", level: "Dasar", pct: 45, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
         { name: "Docker", level: "Mempelajari", pct: 25, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" }
+      ]
+    },
+    {
+      category: "AI Assistants",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80",
+      items: [
+        { name: "ChatGPT", icon: "https://api.iconify.design/simple-icons:openai.svg?color=white" },
+        { name: "GitHub Copilot", icon: "https://api.iconify.design/simple-icons:githubcopilot.svg?color=white" },
+        { name: "Claude AI", icon: "assets/claude.svg" },
+        { name: "Google Gemini", icon: "assets/gemini.svg" },
+        { name: "Antigravity IDE", icon: "assets/antigravity.svg" },
+        { name: "Kiro", icon: "assets/kiro.svg" }
       ]
     },
     {
