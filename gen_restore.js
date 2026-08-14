@@ -1,4 +1,6 @@
-/**
+const fs = require('fs');
+
+const content = `/**
  * DATA UTAMA PORTOFOLIO
  * =====================
  * Edit file ini untuk memperbarui semua konten situs.
@@ -9,7 +11,7 @@ const PROFILE = {
   name: "Muchamad Yazid Ardani",
   nickname: "Yazid",
   tagline: "Informatics Student · Full-Stack Dev · Tech Enthusiast",
-  taglineSub: "Mahasiswa Semester 5 yang sedang membangun fondasi di dunia teknologi — satu baris kode dalam satu waktu.",
+  taglineSub: "Mahasiswa Semester 4 yang sedang membangun fondasi di dunia teknologi — satu baris kode dalam satu waktu.",
   email: "muhzee16@gmail.com",
   phone: "+62819 1568 0315",
   location: "Yogyakarta, Indonesia",
@@ -18,12 +20,11 @@ const PROFILE = {
   instagram: "https://www.instagram.com/muhzee17/", 
   whatsapp: "https://wa.me/6281915680315",
   university: "Universitas Nahdlatul Ulama Yogyakarta",
-  semester: 5,
   faculty: "Fakultas Teknologi Informasi",
   major: "Teknik Informatika",
-  semester: 5,
-  bio: `Saya adalah mahasiswa aktif Semester 5 Prodi Informatika yang disiplin, cepat belajar, dan memiliki minat besar di bidang teknologi — khususnya web development dan desain UI. Saat ini saya fokus membangun keahlian nyata melalui eksplorasi kode dan proyek-proyek personal yang menantang. Dalam alur kerja, saya terbiasa memanfaatkan kapabilitas AI (seperti ChatGPT, Claude, dan Copilot) secara komprehensif sebagai asisten produktivitas—tidak hanya untuk problem-solving, tetapi juga untuk perencanaan proyek, riset, manajemen waktu, dan optimalisasi alur kerja harian.`,
-  about: `Dengan latar belakang yang beragam — dari teknik otomotif, magang lapangan, hingga affiliate marketing — saya terbiasa melakukan troubleshooting dan beradaptasi dengan cepat. Saya percaya bahwa problem-solving di dunia nyata sama pentingnya dengan logika kode. Saat ini saya mendalami web development dan UI/UX, sembari mengasah kemampuan kolaborasi tim dan pelaporan data yang terstruktur. Saya juga secara aktif mengintegrasikan berbagai alat Kecerdasan Buatan (AI) ke dalam workflow harian guna memaksimalkan produktivitas secara menyeluruh—mulai dari riset, analisis data, hingga penyelesaian kendala teknis secara presisi dan terukur.`,
+  semester: 4,
+  bio: \`Saya adalah mahasiswa aktif Semester 4 Prodi Informatika yang disiplin, cepat belajar, dan memiliki minat besar di bidang teknologi — khususnya web development dan desain UI. Saat ini saya fokus membangun keahlian nyata melalui eksplorasi kode dan proyek-proyek personal yang menantang. Dalam alur kerja saya, saya terbiasa memanfaatkan kapabilitas AI (seperti ChatGPT, Claude, dan Copilot) secara bijak sebagai asisten pendamping untuk mempercepat debugging, problem-solving, dan efisiensi penyelesaian tugas.\`,
+  about: \`Dengan latar belakang yang beragam — dari teknik otomotif, magang lapangan, hingga affiliate marketing — saya terbiasa melakukan troubleshooting dan beradaptasi dengan cepat. Saya percaya bahwa problem-solving di dunia nyata sama pentingnya dengan logika kode. Saat ini saya mendalami web development dan UI/UX, sembari mengasah kemampuan kolaborasi tim dan pelaporan data yang terstruktur. Saya juga secara aktif mengintegrasikan berbagai alat Kecerdasan Buatan (AI) ke dalam workflow harian saya, bukan sebagai jalan pintas, melainkan sebagai instrumen analitis untuk menghasilkan solusi teknologi yang lebih presisi, tangkas, dan terukur.\`,
 
   highlights: [
     {
@@ -84,7 +85,7 @@ const PROFILE = {
       borderHover: "rgba(16,185,129,0.4)",
       level: 3,
       tags: ["Ms. Word", "Ms. Excel", "Google Docs", "Sheets"],
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80"
+      image: "https://images.unsplash.com/photo-1554415707-6e8cfc938c23?w=400&q=80"
     },
     {
       icon: "⚙️",
@@ -97,79 +98,7 @@ const PROFILE = {
       level: 3,
       tags: ["FastAPI", "Node.js", "Supabase", "PostgreSQL"],
       image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=400&q=80"
-    },
-    {
-      icon: "🚀",
-      title: "Modern Frontend",
-      desc: "Mengembangkan antarmuka web dinamis berskala menengah menggunakan framework modern seperti React dan Vite, dipadukan dengan Tailwind CSS.",
-      color: "rgba(168,85,247,0.2)",
-      accentColor: "#a855f7",
-      glowColor: "rgba(168,85,247,0.3)",
-      borderHover: "rgba(168,85,247,0.4)",
-      level: 3,
-      tags: ["React", "Vite", "Tailwind CSS"],
-      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&q=80"
-    },
-    {
-      icon: "🐳",
-      title: "Eksplorasi DevOps",
-      desc: "Mempelajari dan mempraktikkan kontainerisasi menggunakan Docker untuk menciptakan lingkungan pengembangan yang konsisten dan terisolasi.",
-      color: "rgba(14,165,233,0.2)",
-      accentColor: "#0ea5e9",
-      glowColor: "rgba(14,165,233,0.3)",
-      borderHover: "rgba(14,165,233,0.4)",
-      level: 3,
-      tags: ["Docker", "Container", "Learning"],
-      image: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400&q=80"
-    },
-    {
-      icon: "🤖",
-      title: "Integrasi AI",
-      desc: "Memanfaatkan AI (ChatGPT, Claude, Copilot) untuk meningkatkan produktivitas—mulai dari manajemen tugas, riset, problem-solving, hingga penyelesaian proyek secara efisien dan profesional.",
-      color: "rgba(168,85,247,0.2)",
-      accentColor: "#a855f7",
-      glowColor: "rgba(168,85,247,0.3)",
-      borderHover: "rgba(168,85,247,0.4)",
-      level: 3,
-      tags: ["AI Tools", "Debugging", "Efisiensi"],
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&q=80"
     }
-  ],
-
-  stats: [
-    { label: "Semester Aktif", value: "4" },
-    { label: "Proyek Personal", value: "5+" },
-    { label: "Sertifikat", value: "5" },
-    { label: "Organisasi", value: "3" }
-  ],
-
-  tools: [
-    { name: "html5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", color: "#e34f26" },
-    { name: "css3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", color: "#1572b6" },
-    { name: "javascript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg", color: "#f7df1e" },
-    { name: "python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg", color: "#3776ab" },
-    { name: "react", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", color: "#61dafb" },
-    { name: "vite", icon: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg", color: "#646CFF" },
-    { name: "nodejs", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg", color: "#339933" },
-    { name: "figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", color: "#f24e1e" },
-    { name: "git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg", color: "#f05032" },
-    { name: "github", icon: "https://cdn.simpleicons.org/github/white", color: "#ffffff" },
-    { name: "vercel", icon: "https://cdn.simpleicons.org/vercel/white", style: "width: 20px; height: 20px;", color: "#ffffff" },
-    { name: "postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg", color: "#ff6c37" },
-    { name: "mysql", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", color: "#4479a1" },
-    { name: "postgresql", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg", color: "#336791" },
-    { name: "supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg", color: "#3ecf8e" },
-    { name: "canva", icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg", style: "width: 28px; height: 28px;", color: "#00c4cc" },
-    { name: "photoshop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg", color: "#31a8ff" },
-    { name: "ms excel", icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg", style: "width: 24px; height: 24px;", color: "#107c41" },
-    { name: "ms word", icon: "https://api.iconify.design/vscode-icons/file-type-word.svg", style: "width: 24px; height: 24px;", color: "#2b579a" },
-    { name: "docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", color: "#2496ed" },
-    { name: "ChatGPT", icon: "https://api.iconify.design/simple-icons:openai.svg?color=white", color: "#10a37f" },
-    { name: "GitHub Copilot", icon: "https://api.iconify.design/simple-icons:githubcopilot.svg?color=white", color: "#ffffff" },
-    { name: "Claude AI", icon: "assets/claude.svg", color: "#d97757" },
-    { name: "Google Gemini", icon: "assets/gemini.svg", color: "#1a73e8" },
-    { name: "Antigravity IDE", icon: "assets/antigravity.svg", color: "#ff00ff" },
-    { name: "Kiro", icon: "assets/kiro.svg", color: "#ffff00" }
   ],
 
   skills: [
@@ -177,13 +106,10 @@ const PROFILE = {
       category: "Programming",
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80",
       items: [
-        { name: "HTML", level: "Dasar", pct: 60, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
-        { name: "CSS", level: "Dasar", pct: 55, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+        { name: "HTML5", level: "Dasar-Menengah", pct: 60, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+        { name: "CSS3", level: "Dasar-Menengah", pct: 55, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
         { name: "JavaScript", level: "Dasar", pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
-        { name: "Python", level: "Dasar", pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
-        { name: "React", level: "Mempelajari", pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
-        { name: "Vite", level: "Mempelajari", pct: 25, icon: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg" },
-        { name: "Node.js", level: "Mempelajari", pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" }
+        { name: "Python", level: "Dasar", pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" }
       ]
     },
     {
@@ -309,7 +235,7 @@ const PROFILE = {
       title: "Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative Academy",
       organizer: "Stechoq Academy x Innovative Academy",
       period: "2026",
-      desc: "Bootcamp intensif berstandar industri. Bekerja secara tim (kolaboratif) dalam membangun proyek final Warehouse Management System, dengan fokus pada simulasi lingkungan kerja profesional, version control (Git), dan praktik full-stack web development.",
+      desc: "Mengikuti bootcamp intensif bersama tim untuk membangun project Warehouse System secara kolaboratif, mempelajari workflow profesional, version control, dan deployment aplikasi web.",
       image: "assets/Foto-Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.png",
       url: "assets/Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.pdf"
     },
@@ -317,7 +243,7 @@ const PROFILE = {
       title: "Coding Camp – Intro to Software Engineering",
       organizer: "DBS Foundation / Dicoding",
       period: "2024",
-      desc: "Pelatihan fundamental rekayasa perangkat lunak (Software Engineering). Mencakup penguasaan metodologi pengembangan, penerapan algoritma dasar, hingga praktik pembuatan aplikasi web mandiri.",
+      desc: "Mempelajari fundamental Software Engineering, termasuk metodologi pengembangan perangkat lunak, algoritma dasar, membuat project mandiri berupa portofolio dan website sederhana yaitu to-do-list dan kolaborasi dalam lingkungan teknologi.",
       image: "assets/Foto-Sertifikat/Sertifikat Dicoding.png",
       url: "assets/Sertifikat/CCSE.pdf"
     },
@@ -325,7 +251,7 @@ const PROFILE = {
       title: "Samsung Innovation Campus Batch 7",
       organizer: "Samsung / Dibimbing.id",
       period: "2025/2026",
-      desc: "Pelatihan intensif dengan kurikulum berstandar industri. Fokus pada penguatan logika pemrograman Python, struktur data lanjutan, dan implementasi Object-Oriented Programming (OOP) melalui evaluasi proyek komprehensif.",
+      desc: "Menjalani pelatihan intensif logika pemrograman menggunakan Python, Algoritma & Struktur Data Dasar dan Object Oriented Programming(OOP),serta membuat beberapa project berupa project sederhana, terdapat tes untuk mengasah kemampuan dan penilaian untuk menentukan kelulusan.",
       image: "assets/Foto-Sertifikat/Sertifikat Samsung Innovation Campus.png",
       url: "assets/Sertifikat/Sertifikat Samsung Innovation Campus.pdf"
     },
@@ -333,7 +259,7 @@ const PROFILE = {
       title: "Integration AI in Penetration Testing",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan spesialisasi keamanan siber yang membahas praktik terbaik (best practices) integrasi Kecerdasan Buatan (AI) dalam simulasi penetrasi sistem (Penetration Testing) dan evaluasi kerentanan IT.",
+      desc: "Memahami dan mengimplementasikan praktik terbaik penggunaan kecerdasan buatan (AI) dalam simulasi penetrasi sistem dan evaluasi keamanan IT.",
       image: "assets/Foto-Sertifikat/Sertifikat Codelamp .png",
       url: "assets/Sertifikat/Sertifikat CodeLamp Integration AI in penetration Testing.pdf"
     },
@@ -341,25 +267,9 @@ const PROFILE = {
       title: "Praktek Kerja Lapangan – Band Motor",
       organizer: "Band Motor Yogyakarta",
       period: "2024",
-      desc: "Pelatihan teknis lapangan (Hands-on) di bidang mekanik otomotif. Melibatkan penanganan perawatan mesin berkala, proses overhaul (turun mesin), hingga diagnosis dan perbaikan (troubleshooting) sistem kelistrikan kendaraan.",
+      desc: "PKL / Training mengenai otomotif-mekanik kendaraan ringan. Belajar mulai dari perawatan ringan, turun mesin, hingga troubleshooting kelistrikan. ",
       image: "assets/Foto-Sertifikat/Sertifikat Kerja Lapangan.png",
       url: "assets/Sertifikat/Sertifikat Praktik Kerja Lapangan.pdf"
-    },
-    {
-      title: "AI Praktis untuk Produktivitas",
-      organizer: "Dicoding",
-      period: "2026",
-      desc: "Program pelatihan terapan mengenai pemanfaatan ragam instrumen Artificial Intelligence (AI) untuk mengotomatisasi tugas repetitif, memecahkan masalah komputasional, dan mengoptimalkan efisiensi alur kerja profesional.",
-      image: "assets/Foto-Sertifikat/Sertifikat AI Praktis untuk Produktivitas.png",
-      url: "assets/Sertifikat/AI Praktis untuk Produktivitas.pdf"
-    },
-    {
-      title: "AI Productivity and AI API Integration for Developers",
-      organizer: "Hacktiv8",
-      period: "2026",
-      desc: "Pelatihan tingkat lanjut bagi software developer mengenai arsitektur dan integrasi Application Programming Interface (API) berbasis Machine Learning/AI ke dalam sistem perangkat lunak modern.",
-      image: "assets/Foto-Sertifikat/Sertifikat AI Productivity and AI API Integration for Developers.png",
-      url: "assets/Sertifikat/AI Productivity and AI API Integration for Developers.pdf"
     }
   ],
 
@@ -369,7 +279,7 @@ const PROFILE = {
       org: "UNU Yogyakarta",
       period: "2025 – Sekarang",
       desc: "Mengatur jadwal, sarana, perlengkapan olahraga, dan mengkoordinasi semua anggota UKM.",
-      icon: "assets/Foto_Logo/logo Ukm Badminton UNUYO.svg",
+      icon: "https://png.pngtree.com/png-vector/20241120/ourlarge/pngtree-a-badminton-logo-png-image_14504475.png",
       image: "https://awsimages.detik.net.id/community/media/visual/2022/10/18/ilustrasi-badminton-4.jpeg?w=1200"
     },
      {
@@ -377,7 +287,7 @@ const PROFILE = {
       org: "PAC IPNU Mantrijeron",
       period: "2026 - Sekarang",
       desc: "Bertanggung jawab atas administrasi, keanggotaan, dan pengembangan struktur organisasi PAC IPNU Mantrijeron.",
-      icon: "assets/Foto_Logo/Logo IPNU Mantrijeron.svg",
+      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz0cCsifmm6cIATiuP_rPpz0BAmjTQld1czg&s",
       image: "https://pbs.twimg.com/profile_images/1437565816036229121/NrGG35Q-_400x400.jpg"
     },
     {
@@ -385,7 +295,7 @@ const PROFILE = {
       org: "UNU Yogyakarta",
       period: "2025 - Sekarang",
       desc: "Mengelola media sosial JQH Kaligrafi Universitas Nahdlatul Ulama Yogyakarta, mempublikasikan karya kaligrafi dan informasi seputar kegiatan JQH Kaligrafi.",
-      icon: "assets/Foto_Logo/Logo JQH Kaligrafi UNUYO.svg",
+      icon: "https://img.icons8.com/fluency/96/mosque.png",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQg0P5XRZsapBUYv9eowWhhSTZPT7gMQ0mvA&s"
     },
     {
@@ -401,13 +311,12 @@ const PROFILE = {
       org: "PAC IPNU Mantrijeron",
       period: "2023 – 2024",
       desc: "Mengkoordinasikan kegiatan dakwah internal maupun eksternal serta syiar keislaman.",
-      icon: "assets/Foto_Logo/Logo IPNU Mantrijeron.svg",
+      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz0cCsifmm6cIATiuP_rPpz0BAmjTQld1czg&s",
       image: "https://pbs.twimg.com/profile_images/1437565816036229121/NrGG35Q-_400x400.jpg"
     }
   ],
 
   certificates: [
-    { name: "Ketua UKM Badminton Universitas Nahdlatul Ulama Yogyakarta", issuer:"UNU Yogyakarta", year:"2025/2026", image:"assets/Foto-Sertifikat/Sertifikat Ketua UKM Badminton UNUYO.png", pdfUrl:"assets/Sertifikat/Sertifikat UKM Ketua Badminton UNUYO.pdf" },
     { name: "Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative Academy", issuer: "Stechoq Academy x Innovative Academy", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.png", pdfUrl: "assets/Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.pdf"},
     { name: "AI Praktis untuk Produktivitas", issuer:"Dicoding", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat AI Praktis untuk Produktivitas.png", pdfUrl:"assets/Sertifikat/AI Praktis untuk Produktivitas.pdf" },
     { name: "AI Productivity and AI API Integration for Developers", issuer:"Hacktiv8", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat AI Productivity and AI API Integration for Developers.png", pdfUrl:"assets/Sertifikat/AI Productivity and AI API Integration for Developers.pdf" },
@@ -443,9 +352,9 @@ const PROJECTS = [
     id: 1,
     title: "Portofolio Website",
     category: "web",
-    tags: ["HTML", "CSS", "JavaScript"],
-    desc: "Website portofolio personal interaktif bergaya modern minimalis (Glassmorphism & 3D tilt). Dibangun dari nol menggunakan Vanilla HTML, CSS, dan JavaScript murni tanpa framework, menampilkan performa animasi yang mulus dan sangat responsif.",
-    features: ["Animasi 3D & Tilt Hover Native", "Sistem Navigasi Dinamis via DOM", "Render Konten Otomatis via JSON", "Performa Ringan (Tanpa Framework)", "Desain Responsif Mobile-First"],
+    tags: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    desc: "Website portofolio personal multi-halaman dengan fitur command palette, Three.js hero, animasi scroll, dan accent color switcher.",
+    features: ["Multi-page (5 halaman)", "Dark/Light mode + localStorage", "Three.js 3D hero", "Command Palette (Ctrl+K)", "Scroll progress indicator", "Responsive design"],
     demo: "",
     github: "https://github.com/yazid-solo/My-Portfolio-",
     image: "assets/Foto_Project/Portfolio.png",
@@ -470,9 +379,9 @@ const PROJECTS = [
     id: 3,
     title: "Warehouse-System",
     category: "web",
-    tags: ["Vite", "Bootstrap", "Node.js", "PostgreSQL"],
-    desc: "Sistem Informasi Manajemen Gudang (WMS) kolaboratif. Dibangun bersama tim bootcamp menggunakan Vite dan Node.js Express, dengan basis data PostgreSQL untuk memfasilitasi pelacakan barang dan manajemen inventaris secara real-time.",
-    features: ["Autentikasi User (JWT)", "Manajemen Inventaris Gudang", "CRUD Data Master Barang", "Integrasi RESTful API", "Desain Responsif Clean UI"],
+    tags: ["Vue.js", "Bootstrap", "Node.js", "PostgreSQL"],
+    desc: "Sistem Informasi Manajemen Gudang (WMS) kolaboratif. Dibangun bersama tim bootcamp menggunakan Vue.js dan PostgreSQL untuk memfasilitasi pelacakan barang dan manajemen inventaris secara real-time.",
+    features: ["Autentikasi", "CRUD Barang, Gudang, dan User", "Rest API", "Responsive design", "Clean dark UI"],
     demo: "",
     github: "https://gitlab.com/bootcamp-stechoq/warehouse-system-cihuy",
     image: "assets/Foto_Project/Warehouse-system.png",
@@ -483,9 +392,9 @@ const PROJECTS = [
     id: 4,
     title: "Warmindo App",
     category: "mini",
-    tags: ["JavaScript", "HTML", "CSS", "FastAPI", "Supabase", "REST API"],
-    desc: "Aplikasi web pemesanan makanan dan sistem manajemen kasir ringan (POS). Mengintegrasikan FastAPI dan Supabase di sisi backend untuk pemrosesan pesanan yang cepat, serta Vanilla JS di sisi frontend untuk manajemen menu yang efisien.",
-    features: ["Sistem Kasir (POS) Interaktif", "Manajemen Menu Makanan (CRUD)", "Integrasi Backend FastAPI", "Database Real-time Supabase", "Antarmuka Ramah Pengguna"],
+    tags: ["JavaScript", "HTML", "CSS", "Fast API", "Supabase", "Rest API"],
+    desc: "Aplikasi web pemesanan makanan dan sistem manajemen kasir ringan (POS). Mengintegrasikan FastAPI dan Supabase untuk pemrosesan pesanan yang cepat dan manajemen menu yang efisien.",
+    features: ["Authentication", "CRUD Menu", "Rest API", "Responsive design", "Clean dark UI"],
     demo: "",
     github: "https://github.com/yazid-solo/Warmindo-App",
     image: "assets/Foto_Project/Warmindo_app.png",
@@ -496,12 +405,12 @@ const PROJECTS = [
     id: 5,
     title: "JogjaCourt",
     category: "web",
-    tags: ["React", "Tailwind CSS", "FastAPI", "Supabase"],
-    desc: "Platform reservasi lapangan olahraga khusus area Yogyakarta. Memungkinkan admin mengelola jadwal dan pengguna melakukan booking secara mandiri. Dibangun menggunakan arsitektur modern React (Frontend) yang terintegrasi dengan FastAPI dan Supabase (Backend).",
-    features: ["Sistem Booking Real-time", "Dashboard Admin & User", "Sistem Autentikasi & Otorisasi", "Manajemen Lapangan & Pembayaran", "Desain UI/UX Modern & Responsif"],
-    demo: "https://jogja-court.vercel.app/",
+    tags: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "Fast API", "Supabase"],
+    desc: "Platform reservasi lapangan olahraga khusus area Yogyakarta. Memungkinkan admin mengelola jadwal dan pengguna melakukan booking secara mandiri. Dibangun menggunakan arsitektur modern FastAPI dan Supabase.",
+    features: ["Autentikasi", "CRUD Lapangan, User, Booking, Pembayaran, dan lain-lain", "Fast API", "Responsive UI", "Clean dark UI"],
+    demo: "",
     github: "https://github.com/yazid-solo/Sistem-Boking-Lapangan-Badminton",
-    image: "assets/Foto_Project/Sistem_boking_Lap.Badminton.png",
+    image: "assets/Foto_Project/Sistem_boking_Lap.Badminton .png",
     status: "Selesai & dalam pengembangan",
     year: "2026"
   },
@@ -509,9 +418,9 @@ const PROJECTS = [
     id: 6,
     title: "CMS Sibuku",
     category: "web",
-    tags: ["React", "FastAPI", "Supabase"],
-    desc: "Platform e-commerce spesialis literatur dengan fitur Content Management System (CMS) lengkap. Merupakan hasil tugas akademik perkuliahan yang dikerjakan secara kolaboratif (tim), menggunakan arsitektur React dan Supabase untuk mengelola transaksi jual-beli, inventaris buku, dan data pelanggan secara terpusat.",
-    features: ["Sistem Manajemen Konten (CMS)", "Katalog Buku Dinamis", "Autentikasi Multi-Role (Admin/User)", "Keranjang Belanja (Cart System)", "Integrasi RESTful API Backend"],
+    tags: ["React", "Fast API", "Supabase"],
+    desc: "Platform e-commerce spesialis literatur. Menghadirkan fitur Content Management System (CMS) lengkap berbasis React dan Supabase untuk mengelola transaksi jual-beli buku secara terpusat.",
+    features: ["Responsive", "CRUD", "Login & Register", "User Roles"],
     demo: "https://si-buku-sigma.vercel.app/",
     github: "https://github.com/yazid-solo/SiBuku",
     image: "assets/Foto_Project/CMS_Sibuku.png",
@@ -523,68 +432,13 @@ const PROJECTS = [
     title: "Kalkulator Akademik IPK",
     category: "akademik",
     tags: ["HTML", "CSS", "JavaScript"],
-    desc: "Tugas mata kuliah Dasar Pemrograman. Aplikasi berbasis web interaktif untuk menghitung Indeks Prestasi Kumulatif (IPK) mahasiswa secara presisi berdasarkan input nilai huruf dan bobot SKS.",
-    features: ["Perhitungan IPK Instan", "Validasi Bobot SKS Dinamis", "Konversi Nilai Huruf ke Angka", "Antarmuka Minimalis yang Mudah Digunakan"],
+    desc: "Tugas mata kuliah Dasar Pemrograman. Aplikasi berbasis web sederhana untuk menghitung Indeks Prestasi Kumulatif (IPK) mahasiswa berdasarkan input nilai dan SKS.",
+    features: ["Perhitungan Otomatis", "Validasi Input", "Antarmuka Sederhana"],
     demo: "",
     github: "",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80",
     status: "Selesai",
     year: "2024"
-  },
-  {
-    id: 8,
-    title: "CASHNOTE",
-    category: "akademik",
-    tags: ["React", "Vite", "FastAPI", "Supabase", "Tailwind CSS"],
-    desc: "Sistem Pencatatan Keuangan Pribadi (Cash Note). Merupakan hasil tugas akademik perkuliahan yang dikerjakan secara tim (kolaboratif), dibangun menggunakan arsitektur modern untuk membantu pengguna memantau arus kas, pengeluaran, dan pemasukan secara komprehensif.",
-    features: ["Aplikasi Web Responsif", "Autentikasi Pengguna Aman", "CRUD Transaksi Keuangan", "Integrasi RESTful API Backend", "Dashboard Analitik Visual"],
-    demo: "",
-    github: "https://github.com/shonyaballqis/cash-note-pbo.git",
-    image: "assets/Foto_Project/CASHNOTE.jpeg",
-    status: "Selesai",
-    year: "2026"
-  },
-  {
-    id: 9, 
-    title: "UI/UX Design: Warmindo Delivery",
-    category: "ui",
-    tags: ["Figma", "UI/UX", "Prototyping"],
-    desc: "",
-    features: ["Interactive Prototype", "Design System", "Auto Layout", "Mobile-First", "WebApp"],
-    demo: "", 
-    embed: "https://embed.figma.com/design/8goiC7Nu277CYpj2Ns4no8/warmindo?node-id=0-1&embed-host=share", 
-    github: "", 
-    image: "assets/Foto_Project/Desain UI Warmindo Delivery.png",
-    status: "Selesai & Butuh Pengembangan",
-    year: "2026"
-  },
-  {
-    id: 10, 
-    title: "UI/UX Design: Warehouse-System",
-    category: "ui",
-    tags: ["Figma", "UI/UX", "Prototyping"],
-    desc: "",
-    features: ["Interactive Prototype", "Design System", "Auto Layout", "Mobile-First", "WebApp"],
-    demo: "", 
-    embed: "https://embed.figma.com/design/nK44ZokkywTLLl932sC77Y/stechoq?node-id=109-219&embed-host=share", 
-    github: "", 
-    image: "assets/Foto_Project/Desain UI Warehouse-System.png",
-    status: "Selesai & Butuh Pengembangan",
-    year: "2026"
-  },
-  {
-    id: 11, 
-    title: "UI/UX Design: Vareway",
-    category: "ui",
-    tags: ["Figma", "UI/UX", "Prototyping"],
-    desc: "",
-    features: ["Interactive Prototype", "Design System", "Auto Layout", "Mobile-First", "WebApp"],
-    demo: "", 
-    embed: "https://embed.figma.com/design/ixlEcoPHDG9k8gMxtuR4PZ/VAREWAY?node-id=3-2&embed-host=share", 
-    github: "", 
-    image: "assets/Foto_Project/Desain UI Vareway.jpeg",
-    status: "Selesai & Butuh Pengembangan",
-    year: "2026"
   }
 ];
 
@@ -592,3 +446,6 @@ const PROJECTS = [
 if (typeof module !== "undefined") {
   module.exports = { PROFILE, PROJECTS };
 }
+\`;
+
+fs.writeFileSync('restore.js', \`const fs = require('fs');\\nfs.writeFileSync('data/profile.js', \\\`\${content}\\\`, 'utf8');\\n\`);

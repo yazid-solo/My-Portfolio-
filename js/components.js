@@ -7,11 +7,41 @@
 const Components = (() => {
 
   const NAV_LINKS = [
-    { href: 'index.html', label: 'Home', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 5px rgba(0,212,255,0.5)); color:var(--accent);"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>' },
-    { href: 'about.html', label: 'About', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 5px rgba(239,68,68,0.5)); color:#ef4444;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>' },
-    { href: 'projects.html', label: 'Projects', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 5px rgba(16,185,129,0.5)); color:#10b981;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>' },
-    { href: 'resume.html', label: 'Resume', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 5px rgba(245,158,11,0.5)); color:#f59e0b;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>' },
-    { href: 'contact.html', label: 'Contact', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 5px rgba(139,92,246,0.5)); color:#8b5cf6;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>' }
+    { href: 'index.html', label: 'Beranda', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#0066cc"/></linearGradient></defs>
+      <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1h-5v-5H9v5H4a1 1 0 01-1-1V10.5z" fill="url(#hg)" opacity="0.9"/>
+      <rect x="9" y="16" width="6" height="6" rx="1" fill="rgba(255,255,255,0.4)"/>
+      <path d="M3 10.5L12 3l9 7.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>` },
+    { href: 'about.html', label: 'Tentang', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><radialGradient id="ag" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#fda4af"/><stop offset="100%" stop-color="#e11d48"/></radialGradient></defs>
+      <circle cx="12" cy="7.5" r="4" fill="url(#ag)"/>
+      <path d="M4 21c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#fb7185" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <circle cx="12" cy="7.5" r="1.5" fill="white" opacity="0.7"/>
+    </svg>` },
+    { href: 'projects.html', label: 'Proyek', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs>
+      <rect x="2" y="3" width="8" height="8" rx="2" fill="url(#pg)"/>
+      <rect x="14" y="3" width="8" height="8" rx="2" fill="#10b981" opacity="0.7"/>
+      <rect x="2" y="15" width="8" height="6" rx="2" fill="#10b981" opacity="0.5"/>
+      <rect x="14" y="15" width="8" height="6" rx="2" fill="url(#pg)"/>
+      <path d="M6 7l1.5 1.5L10 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>` },
+    { href: 'resume.html', label: 'Resume', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#d97706"/></linearGradient></defs>
+      <path d="M6 2h9l4 4v16a1 1 0 01-1 1H6a1 1 0 01-1-1V3a1 1 0 011-1z" fill="url(#rg)" opacity="0.9"/>
+      <path d="M14 2v5h5" stroke="#92400e" stroke-width="1.2" fill="none"/>
+      <line x1="8" y1="11" x2="16" y2="11" stroke="rgba(0,0,0,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="8" y1="14" x2="14" y2="14" stroke="rgba(0,0,0,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="8" y1="17" x2="16" y2="17" stroke="rgba(0,0,0,0.3)" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>` },
+    { href: 'contact.html', label: 'Kontak', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs>
+      <rect x="2" y="4" width="20" height="16" rx="3" fill="url(#cg)" opacity="0.9"/>
+      <path d="M2 7l10 7 10-7" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <circle cx="18" cy="18" r="4" fill="#7c3aed" stroke="white" stroke-width="1.5"/>
+      <path d="M16.5 18h3M18 16.5v3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>` }
   ];
 
   function getActivePage() {
@@ -38,11 +68,18 @@ const Components = (() => {
         <div style="display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem;">
 
           <!-- ── Logo ── -->
-          <a href="index.html" class="logo-text" style="text-decoration:none;display:flex;align-items:center;gap:10px;flex-shrink:0;">
-            <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(0,212,255,0.05));border:1px solid rgba(0,212,255,0.3);box-shadow:0 0 14px rgba(0,212,255,0.15);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </span>
-            <span style="font-size:1rem;">&lt;Yazid /&gt;</span>
+          <a href="index.html" class="logo-link-hover">
+            <div class="logo-4d-wrapper">
+              <div class="logo-4d-core">
+                <div class="logo-face front">&lt;</div>
+                <div class="logo-face back">/&gt;</div>
+                <div class="logo-face right"></div>
+                <div class="logo-face left"></div>
+                <div class="logo-face top"></div>
+                <div class="logo-face bottom"></div>
+              </div>
+            </div>
+            <span class="logo-text-gahar">&lt;Yazid /&gt;</span>
           </a>
 
           <!-- ── Desktop Nav (pill group) ── -->
@@ -61,15 +98,18 @@ const Components = (() => {
               OPEN TO WORK
             </div>
 
-            <!-- Command Palette -->
-            <button id="cmd-btn" class="icon-btn hide-mobile" title="Command Palette (Ctrl+K)" aria-label="Open command palette">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
-            </button>
+
 
             <!-- Accent Switcher -->
             <div style="position:relative;">
               <button id="accent-btn" class="icon-btn" title="Ganti warna aksen" aria-label="Change accent color">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6" fill="currentColor" opacity="0.3"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M12 2v10M12 12l7.07-7.07" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+                  <circle cx="12" cy="2" r="1.5" fill="#00d4ff"/>
+                  <circle cx="19.07" cy="4.93" r="1.5" fill="#8b5cf6"/>
+                </svg>
               </button>
               <div id="accent-dropdown">
                 <div class="accent-opt" data-accent="cyan"><span class="accent-swatch" style="background:#00d4ff;"></span> Cyan</div>
@@ -82,7 +122,11 @@ const Components = (() => {
 
             <!-- Mobile Hamburger -->
             <button id="hamburger" class="icon-btn" style="display:none;" aria-label="Open menu" aria-expanded="false">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="7" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="11" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
             </button>
           </div>
 
@@ -93,30 +137,14 @@ const Components = (() => {
     <!-- Mobile Menu -->
     <div id="mobile-menu" role="dialog" aria-label="Navigation menu">
       <button id="mobile-close" style="position:absolute;top:1.5rem;right:1.5rem;" class="icon-btn" aria-label="Close menu">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" fill="none" opacity="0.5"/>
+          <path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
       </button>
       ${NAV_LINKS.map(l => `<a href="${l.href}" class="mobile-nav-link ${activePage === l.href ? 'active' : ''}">${l.label}</a>`).join('')}
     </div>
 
-    <!-- Command Palette -->
-    <div id="cmd-overlay" role="dialog" aria-modal="true" aria-label="Command palette">
-      <div id="cmd-box">
-        <input id="cmd-input" type="text" placeholder="Cari halaman atau fitur..." autocomplete="off" aria-label="Search pages" />
-        <div id="cmd-list">
-          ${NAV_LINKS.map((l, i) => `
-            <div class="cmd-item" tabindex="-1" data-href="${l.href}" role="option">
-              <div class="cmd-icon">${l.icon}</div>
-              <span>${l.label}</span>
-            </div>
-          `).join('')}
-        </div>
-        <div class="cmd-hint">
-          <span><kbd>↑↓</kbd> Navigasi</span>
-          <span><kbd>Enter</kbd> Buka</span>
-          <span><kbd>Esc</kbd> Tutup</span>
-        </div>
-      </div>
-    </div>
     `;
   }
 
@@ -125,10 +153,20 @@ const Components = (() => {
     <style>
       .pro-footer {
         position: relative;
-        background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=40&w=800&auto=format&fit=crop&fm=webp') center/cover no-repeat fixed;
+        background: var(--bg2);
         border-top: 1px solid rgba(255,255,255,0.05);
         color: var(--text-muted);
         overflow: hidden;
+      }
+      /* Pseudo-element background tanpa fixed attachment (GPU-friendly) */
+      .pro-footer::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=40&w=800&auto=format&fit=crop&fm=webp') center/cover no-repeat;
+        opacity: 0.07;
+        z-index: 0;
+        pointer-events: none;
       }
       .pro-footer::before {
         content: '';
@@ -244,19 +282,94 @@ const Components = (() => {
         .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
       }
       .btt-btn {
-        background: none;
-        border: none;
-        color: var(--text-muted);
-        cursor: pointer;
-        font-family: inherit;
-        font-size: 0.85rem;
-        font-weight: 600;
+        position: relative;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
-        transition: color 0.3s var(--ease);
+        justify-content: center;
+        padding: 10px 30px;
+        border: 2px solid transparent;
+        font-size: 0.8rem;
+        background-color: transparent;
+        border-radius: 100px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: var(--text-muted);
+        box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        font-family: inherit;
       }
-      .btt-btn:hover { color: var(--accent); }
+
+      .btt-btn svg {
+        position: absolute;
+        width: 18px;
+        fill: var(--text-muted);
+        z-index: 9;
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        transform: rotate(-90deg);
+      }
+
+      .btt-btn .arr-1 {
+        right: 12px;
+      }
+
+      .btt-btn .arr-2 {
+        left: -25%;
+      }
+
+      .btt-btn .circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        background-color: rgba(var(--accent-rgb), 0.2);
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .btt-btn .text {
+        position: relative;
+        z-index: 1;
+        transform: translateX(-12px);
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .btt-btn:hover {
+        box-shadow: 0 0 0 4px transparent;
+        color: #080d1a;
+      }
+
+      .btt-btn:hover .arr-1 {
+        right: -25%;
+      }
+
+      .btt-btn:hover .arr-2 {
+        left: 12px;
+      }
+
+      .btt-btn:hover .text {
+        transform: translateX(12px);
+      }
+
+      .btt-btn:hover svg {
+        fill: #080d1a;
+      }
+
+      .btt-btn:active {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 2px var(--accent);
+      }
+
+      .btt-btn:hover .circle {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        background-color: var(--accent);
+      }
     </style>
     <footer class="pro-footer">
       <div class="pro-footer-glow"></div>
@@ -272,13 +385,24 @@ const Components = (() => {
             </p>
             <div class="social-row">
               <a href="${PROFILE.github}" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="11" fill="#161b22"/>
+                  <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" fill="#e5e7eb"/>
+                </svg>
               </a>
               <a href="${PROFILE.whatsapp}" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="11" fill="#25D366" opacity="0.15"/>
+                  <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01s-.52.07-.79.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35" fill="#25D366"/>
+                </svg>
               </a>
               <a href="mailto:${PROFILE.email}" class="social-icon" aria-label="Email">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs><linearGradient id="email-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs>
+                  <rect x="2" y="4" width="20" height="16" rx="3" fill="url(#email-g)" opacity="0.85"/>
+                  <path d="M2 6.5l10 7 10-7" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                  <path d="M2 10l5 3.5M22 10l-5 3.5" stroke="rgba(255,255,255,0.4)" stroke-width="1" stroke-linecap="round"/>
+                </svg>
               </a>
             </div>
           </div>
@@ -302,7 +426,10 @@ const Components = (() => {
             </p>
             <a href="contact.html" class="btn-primary" style="width: max-content; padding: 0.6rem 1.25rem;">
               Kerja Bareng
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M14 7l5 5-5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </a>
           </div>
           
@@ -319,8 +446,14 @@ const Components = (() => {
               <span style="font-weight: 500; letter-spacing: 0.05em; color:var(--text-muted); font-family: var(--font-mono); font-size: 0.8rem;">OPEN TO WORK</span>
             </span>
             <button class="btt-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Kembali ke atas">
-              KEMBALI KE ATAS 
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+              </svg>
+              <span class="text">KEMBALI KE ATAS</span>
+              <span class="circle"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+              </svg>
             </button>
           </div>
         </div>
@@ -356,87 +489,6 @@ const Components = (() => {
     });
   }
 
-  function initCommandPalette() {
-    const overlay = document.getElementById('cmd-overlay');
-    const input = document.getElementById('cmd-input');
-    const list = document.getElementById('cmd-list');
-    const cmdBtn = document.getElementById('cmd-btn');
-    if (!overlay || !input || !list) return;
-
-    let focusedIndex = -1;
-    const items = () => list.querySelectorAll('.cmd-item');
-
-    function open() {
-      overlay.classList.add('open');
-      input.value = '';
-      filterItems('');
-      input.focus();
-      focusedIndex = -1;
-    }
-
-    function close() {
-      overlay.classList.remove('open');
-      focusedIndex = -1;
-    }
-
-    function filterItems(query) {
-      const q = query.toLowerCase();
-      items().forEach(item => {
-        const text = item.querySelector('span').textContent.toLowerCase();
-        item.style.display = text.includes(q) ? 'flex' : 'none';
-      });
-    }
-
-    function navigate(dir) {
-      const visible = Array.from(items()).filter(i => i.style.display !== 'none');
-      if (!visible.length) return;
-      visible.forEach(i => i.classList.remove('focused'));
-      focusedIndex = (focusedIndex + dir + visible.length) % visible.length;
-      visible[focusedIndex].classList.add('focused');
-      visible[focusedIndex].scrollIntoView({ block: 'nearest' });
-    }
-
-    function go() {
-      const visible = Array.from(items()).filter(i => i.style.display !== 'none');
-      const focused = visible[focusedIndex] || visible[0];
-      if (focused) {
-        navigateTo(focused.dataset.href);
-        close();
-      }
-    }
-
-    function navigateTo(href) {
-      const transition = document.getElementById('page-transition');
-      if (transition) {
-        transition.classList.add('active');
-        setTimeout(() => { window.location.href = href; }, 300);
-      } else {
-        window.location.href = href;
-      }
-    }
-
-    // Keyboard shortcut
-    document.addEventListener('keydown', e => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); open(); }
-      if (!overlay.classList.contains('open')) return;
-      if (e.key === 'Escape') close();
-      if (e.key === 'ArrowDown') { e.preventDefault(); navigate(1); }
-      if (e.key === 'ArrowUp') { e.preventDefault(); navigate(-1); }
-      if (e.key === 'Enter') go();
-    });
-
-    overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
-    input.addEventListener('input', () => filterItems(input.value));
-    cmdBtn?.addEventListener('click', open);
-
-    items().forEach(item => {
-      item.addEventListener('click', () => {
-        navigateTo(item.dataset.href);
-        close();
-      });
-    });
-  }
-
   function initPageTransitions() {
     const transition = document.getElementById('page-transition');
     if (!transition) return;
@@ -451,7 +503,7 @@ const Components = (() => {
       link.addEventListener('click', e => {
         e.preventDefault();
         transition.classList.add('active');
-        setTimeout(() => { window.location.href = href; }, 300);
+        setTimeout(() => { window.location.href = href; }, 180);
       });
     });
   }
@@ -475,7 +527,6 @@ const Components = (() => {
   function init() {
     inject();
     initMobileMenu();
-    initCommandPalette();
     initPageTransitions();
   }
 

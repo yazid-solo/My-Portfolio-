@@ -1,0 +1,26 @@
+        { name: "Python", level: "Dasar", pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" }
+      ]
+    },
+    {
+      category: "Tools & Design",
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80",
+      items: [
+        { name: "Figma UI/UX", level: "Dasar", pct: 50, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
+        { name: "Canva", level: "Dasar-Menengah", pct: 65, icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg" },
+        { name: "Adobe Photoshop", level: "Dasar", pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" },
+        { name: "Git / GitHub", level: "Dasar", pct: 45, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" }
+      ]
+    },
+    {
+      category: "Database & API",
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
+      items: [
+        { name: "MySQL", level: "Dasar", pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+        { name: "PostgreSQL", level: "Dasar", pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+        { name: "Supabase", level: "Dasar", pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
+        { name: "Postman", level: "Dasar", pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" }
+      ]
+    },
+    {
+      category: "Produktivitas & Office",
+      image: "https://images.unsplash.com/photo-1554415707-6e8cfc938c23?w=600&q=80",

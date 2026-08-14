@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tentang Muchamad Yazid Ardani — latar belakang, pendidikan, dan nilai-nilai yang saya pegang.">
   <title>Portfolio Yazid · About</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="nav-inject"></div>
 
-  <main style="padding-top:68px;">
+  <main>
 
     <!-- ========== PAGE HERO ========== -->
-    <section id="about-hero" style="padding:5.5rem 0 4rem;background:var(--bg2);position:relative;overflow:hidden;min-height:320px;display:flex;align-items:center;">
+    <section id="about-hero" style="padding:calc(5.5rem + 68px) 0 4rem;background:var(--bg2);position:relative;overflow:hidden;min-height:320px;display:flex;align-items:center;">
 
       <!-- Background Layers -->
       <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(var(--accent-rgb),0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--accent-rgb),0.03) 1px,transparent 1px);background-size:44px 44px;z-index:0;"></div>
@@ -52,24 +51,24 @@
 
         <!-- Subtitle -->
         <p class="reveal" style="color:#93afd4;max-width:520px;line-height:1.85;font-size:1rem;font-weight:400;margin-bottom:2.5rem;">
-          Mahasiswa yang sedang membangun diri &mdash; dari <strong style="color:#fff;font-weight:600;">teknik otomotif</strong> ke informatika, dari lapangan ke laptop. Seorang <strong style="color:var(--accent);font-weight:600;">problem solver</strong> yang percaya adaptasi adalah kunci.
+          Mahasiswa Informatika yang tengah membangun spesialisasi di ranah <strong style="color:#fff;font-weight:600;">Full-Stack Web Development</strong>. Mentransformasi etos kerja tangguh dari mekanik lapangan ke dunia digital, saya berkembang menjadi <strong style="color:var(--accent);font-weight:600;">problem solver</strong> adaptif yang menjunjung tinggi eksekusi sistem yang terstruktur.
         </p>
 
         <!-- Quick Stats Row -->
-        <div class="reveal" style="display:flex;flex-wrap:wrap;gap:1rem;">
-          <div class="about-hero-stat" style="--sc:#00d4ff;">
-            <span class="about-hero-stat-num" style="color:#00d4ff;">Sem. 4</span>
-            <span class="about-hero-stat-label">Teknik Informatika</span>
+        <div class="reveal" style="display:flex;flex-wrap:wrap;gap:1.2rem;">
+          <div class="about-hero-stat tilt-card" style="--sc:#00d4ff;">
+            <span class="about-hero-stat-num" style="color:#00d4ff;">Sem. 5</span>
+            <span class="about-hero-stat-label">Informatika</span>
           </div>
-          <div class="about-hero-stat" style="--sc:#8b5cf6;">
+          <div class="about-hero-stat tilt-card" style="--sc:#8b5cf6;">
             <span class="about-hero-stat-num" style="color:#8b5cf6;">3+</span>
             <span class="about-hero-stat-label">Bidang Keahlian</span>
           </div>
-          <div class="about-hero-stat" style="--sc:#10b981;">
+          <div class="about-hero-stat tilt-card" style="--sc:#10b981;">
             <span class="about-hero-stat-num" style="color:#10b981;">2+</span>
             <span class="about-hero-stat-label">Tahun Belajar</span>
           </div>
-          <div class="about-hero-stat" style="--sc:#f59e0b;">
+          <div class="about-hero-stat tilt-card" style="--sc:#f59e0b;">
             <span class="about-hero-stat-num" style="color:#f59e0b;">Open</span>
             <span class="about-hero-stat-label">to Work &amp; Collaborate</span>
           </div>
@@ -85,38 +84,96 @@
       @keyframes heroOrb1 { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-14px) scale(1.2);} }
       @keyframes heroOrb2 { 0%,100%{transform:translateY(0) translateX(0);} 50%{transform:translateY(-10px) translateX(8px);} }
 
+      @keyframes floatStat {
+        0%, 100% { transform: translateY(0); box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
+        50% { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.4); }
+      }
+
       .about-hero-stat {
         display: flex;
         flex-direction: column;
-        gap: 2px;
-        padding: 0.65rem 1.1rem;
-        border-radius: 12px;
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.07);
-        backdrop-filter: blur(10px);
-        transition: all 0.3s ease;
-        cursor: default;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        gap: 5px;
+        padding: 0.85rem 1.5rem;
+        border-radius: 14px;
+        background: linear-gradient(135deg, rgba(20,25,40,0.7) 0%, rgba(10,14,24,0.9) 100%);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-top: 1px solid rgba(255,255,255,0.15);
+        backdrop-filter: blur(12px);
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        cursor: pointer;
+        animation: floatStat 4s ease-in-out infinite;
+        transform-style: preserve-3d;
       }
+      
+      .about-hero-stat:nth-child(2) { animation-delay: 0.5s; }
+      .about-hero-stat:nth-child(3) { animation-delay: 1.0s; }
+      .about-hero-stat:nth-child(4) { animation-delay: 1.5s; }
+      
+      .about-hero-stat::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(120px circle at top left, var(--sc), transparent 70%);
+        opacity: 0.15;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+      }
+      
+      .about-hero-stat::after {
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: 100%;
+        top: 0;
+        left: -150%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        transform: skewX(-20deg);
+        transition: all 0.6s ease;
+      }
+      
+      .about-hero-stat:hover::after {
+        left: 150%;
+        transition: all 0.6s ease;
+      }
+
       .about-hero-stat:hover {
-        background: rgba(var(--sc, var(--accent-rgb)), 0.06);
-        border-color: rgba(var(--sc, var(--accent-rgb)), 0.25);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        background: rgba(15,20,35,0.95);
+        border-color: var(--sc);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 25px color-mix(in srgb, var(--sc) 50%, transparent);
+        animation-play-state: paused;
       }
+      
+      .about-hero-stat:hover::before {
+        opacity: 0.4;
+      }
+      
       .about-hero-stat-num {
         font-family: var(--font-display);
-        font-size: 1.25rem;
-        font-weight: 800;
+        font-size: 1.5rem;
+        font-weight: 900;
         line-height: 1;
         letter-spacing: -0.02em;
+        text-shadow: 0 0 15px color-mix(in srgb, var(--sc) 40%, transparent);
+        transform: translateZ(25px);
+        transition: transform 0.3s;
       }
+      
       .about-hero-stat-label {
         font-family: var(--font-mono);
-        font-size: 0.68rem;
-        color: var(--text-dim);
+        font-size: 0.7rem;
+        color: var(--text-muted);
         text-transform: uppercase;
-        letter-spacing: 0.08em;
-        font-weight: 500;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        transform: translateZ(15px);
+        transition: color 0.3s;
+      }
+      
+      .about-hero-stat:hover .about-hero-stat-label {
+        color: #fff;
       }
     </style>
 
@@ -152,7 +209,7 @@
               <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:0.4rem;text-shadow:0 2px 8px rgba(0,0,0,0.6);">Muchamad Yazid Ardani</h2>
               
               <div style="display:inline-block;padding:6px 16px;background:rgba(var(--accent-rgb),0.08);border:1px solid rgba(var(--accent-rgb),0.2);border-radius:50px;margin-bottom:1.5rem;box-shadow:inset 0 0 10px rgba(var(--accent-rgb),0.05);">
-                <p style="font-size:0.75rem;color:var(--accent);font-family:var(--font-mono);margin:0;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;">Mahasiswa Informatika · Sem. 4</p>
+                <p style="font-size:0.75rem;color:var(--accent);font-family:var(--font-mono);margin:0;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;">Full-Stack Developer · Tech Enthusiast</p>
               </div>
 
               <div style="display:flex;flex-direction:column;gap:0.7rem;">
@@ -196,7 +253,7 @@
                 <div class="bio-para-card" style="margin-bottom:1rem;padding:1.1rem 1.25rem;border-radius:14px;background:rgba(var(--accent-rgb),0.04);border:1px solid rgba(var(--accent-rgb),0.12);border-left:3px solid var(--accent);position:relative;overflow:hidden;">
                   <div style="position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle,rgba(var(--accent-rgb),0.08),transparent 70%);pointer-events:none;"></div>
                   <p style="color:#c8d6f0;line-height:1.95;font-size:0.95rem;font-weight:400;margin:0;">
-                    Saya adalah mahasiswa aktif <strong style="color:#fff;font-weight:700;">Semester 4 Program Studi Teknik Informatika</strong> di <strong style="color:var(--accent);font-weight:600;">Universitas Nahdlatul Ulama Yogyakarta</strong>. Perjalanan saya ke dunia teknologi tidak dimulai dari jalur yang biasa — saya lulus dari <strong style="color:#fff;font-weight:600;">SMK Teknik Kendaraan Ringan Otomotif</strong> sebelum memutuskan untuk berkuliah di bidang informatika.
+                    Saya adalah mahasiswa aktif <strong style="color:#fff;font-weight:700;">Semester 5 Program Studi Teknik Informatika</strong> di <strong style="color:var(--accent);font-weight:600;">Universitas Nahdlatul Ulama Yogyakarta</strong>. Perjalanan saya ke dunia teknologi tidak dimulai dari jalur yang biasa — saya lulus dari <strong style="color:#fff;font-weight:600;">SMK Teknik Kendaraan Ringan Otomotif</strong> sebelum memutuskan untuk berkuliah di bidang informatika.
                   </p>
                 </div>
 
@@ -212,7 +269,7 @@
                 <div class="bio-para-card" style="margin-bottom:1.5rem;padding:1.1rem 1.25rem;border-radius:14px;background:rgba(16,185,129,0.04);border:1px solid rgba(16,185,129,0.12);border-left:3px solid #10b981;position:relative;overflow:hidden;">
                   <div style="position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle,rgba(16,185,129,0.08),transparent 70%);pointer-events:none;"></div>
                   <p style="color:#c8d6f0;line-height:1.95;font-size:0.95rem;font-weight:400;margin:0;">
-                    Saat ini saya mendalami <strong style="color:var(--accent);font-weight:700;">web development</strong>, <strong style="color:#fff;font-weight:600;">desain UI</strong> menggunakan Figma, dan <strong style="color:#fff;font-weight:600;">pemrograman Python</strong>. Saya juga mahir menggunakan <strong style="color:#34d399;font-weight:600;">Microsoft Office &amp; Google Workspace</strong> — keterampilan yang saya asah intensif melalui tugas akademik sebagai persiapan dunia kerja profesional.
+                    Berbekal kemampuan adaptasi tersebut, saat ini saya intensif mendalami <strong style="color:var(--accent);font-weight:700;">Full-Stack Web Development</strong>, perancangan <strong style="color:#fff;font-weight:600;">API & Database</strong>, dan <strong style="color:#fff;font-weight:600;">UI/UX Design</strong>. Saya juga terus mengembangkan diri dengan mengeksplorasi teknologi kontainerisasi (<strong style="color:var(--accent);font-weight:700;">Docker</strong>). Dipadukan dengan kemampuan manajerial serta kecakapan dalam <strong style="color:#10b981;font-weight:700;">Office & Pelaporan Data</strong>, saya berkomitmen untuk membangun solusi digital yang fungsional, estetik, dan terstruktur secara profesional. Penggunaan <strong style="color:#10b981;font-weight:700;">AI Assistants</strong> juga menjadi instrumen integral dalam keseharian saya untuk mendongkrak produktivitas secara menyeluruh—mulai dari riset, analisis data, manajemen tugas, hingga penyelesaian masalah <em>(problem-solving)</em> yang efisien dan berkualitas.
                   </p>
                 </div>
 
@@ -237,7 +294,7 @@
           <h2 class="section-title">Nilai yang Saya Pegang</h2>
           <div class="accent-line"></div>
         </div>
-        <div id="values-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;"></div>
+        <div id="values-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;"></div>
       </div>
     </section>
 
@@ -258,14 +315,14 @@
     <!-- ========== ORGANIZATION ========== -->
     <section class="section-pad" style="background:var(--bg2);">
       <div class="container">
-        <div style="max-width:720px;margin:0 auto;">
-          <div class="reveal" style="margin-bottom:2rem;">
-            <p class="section-label">Kepemimpinan</p>
+        <div style="max-width:720px;margin:0 auto;text-align:center;">
+          <div class="reveal" style="margin-bottom:3rem;">
+            <p class="section-label" style="justify-content:center;">Kepemimpinan</p>
             <h2 class="section-title">Pengalaman Organisasi</h2>
-            <div class="accent-line"></div>
+            <div class="accent-line" style="margin:0 auto;"></div>
           </div>
-          <div id="org-list"></div>
         </div>
+        <div id="org-list"></div>
       </div>
     </section>
 

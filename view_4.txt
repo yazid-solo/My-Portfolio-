@@ -1,0 +1,61 @@
+      image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=400&q=80"
+    },
+    {
+      icon: "🚀",
+      title: "Modern Frontend",
+      desc: "Mengembangkan antarmuka web dinamis berskala menengah menggunakan framework seperti React dan Vue.js, dipadukan dengan Tailwind CSS.",
+      color: "rgba(168,85,247,0.2)",
+      accentColor: "#a855f7",
+      glowColor: "rgba(168,85,247,0.3)",
+      borderHover: "rgba(168,85,247,0.4)",
+      level: 3,
+      tags: ["React", "Vue.js", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&q=80"
+    },
+    {
+      icon: "🐳",
+      title: "Eksplorasi DevOps",
+      desc: "Mempelajari dan mempraktikkan kontainerisasi menggunakan Docker untuk menciptakan lingkungan pengembangan yang konsisten dan terisolasi.",
+      color: "rgba(14,165,233,0.2)",
+      accentColor: "#0ea5e9",
+      glowColor: "rgba(14,165,233,0.3)",
+      borderHover: "rgba(14,165,233,0.4)",
+      level: 3,
+      tags: ["Docker", "Container", "Learning"],
+      image: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400&q=80"
+    }
+  ],
+
+  stats: [
+    { label: "Semester Aktif", value: "4" },
+    { label: "Proyek Personal", value: "5+" },
+    { label: "Sertifikat", value: "5" },
+    { label: "Organisasi", value: "3" }
+  ],
+
+  tools: [
+    { name: "html5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", color: "#e34f26" },
+    { name: "css3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", color: "#1572b6" },
+    { name: "javascript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg", color: "#f7df1e" },
+    { name: "python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg", color: "#3776ab" },
+    { name: "react", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", color: "#61dafb" },
+    { name: "vuejs", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg", color: "#4fc08d" },
+    { name: "nodejs", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg", color: "#339933" },
+    { name: "figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", color: "#f24e1e" },
+    { name: "git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg", color: "#f05032" },
+    { name: "github", icon: "https://cdn.simpleicons.org/github/white", color: "#ffffff" },
+    { name: "vercel", icon: "https://cdn.simpleicons.org/vercel/white", style: "width: 20px; height: 20px;", color: "#ffffff" },
+    { name: "postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg", color: "#ff6c37" },
+    { name: "mysql", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", color: "#4479a1" },
+    { name: "postgresql", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg", color: "#336791" },
+    { name: "supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg", color: "#3ecf8e" },
+    { name: "canva", icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg", style: "width: 28px; height: 28px;", color: "#00c4cc" },
+    { name: "photoshop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg", color: "#31a8ff" },
+    { name: "ms excel", icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg", style: "width: 24px; height: 24px;", color: "#107c41" },
+    { name: "ms word", icon: "https://api.iconify.design/vscode-icons/file-type-word.svg", style: "width: 24px; height: 24px;", color: "#2b579a" },
+    { name: "docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", color: "#2496ed" }
+  ],
+
+  skills: [
+    {
+      category: "Programming",

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id" data-accent="cyan">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Halaman Tidak Ditemukan</title>
+  
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="display:flex;flex-direction:column;min-height:100vh;">
+
+  <!-- Nav Inject -->
+  <div id="nav-inject"></div>
+
+  <main style="flex:1;display:flex;align-items:center;justify-content:center;">
+    <section class="section-pad" style="width:100%;text-align:center;padding-top:calc(5rem + 68px);">
+      <div class="container" style="max-width:600px;">
+        
+        <div style="font-family:var(--font-mono);font-size:6rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:1rem;text-shadow:0 0 30px rgba(var(--accent-rgb),0.5);">
+          404
+        </div>
+        
+        <h1 style="font-size:2rem;font-weight:700;margin-bottom:1rem;">
+          Halaman Tidak Ditemukan
+        </h1>
+        <p style="color:var(--text-muted);font-size:0.95rem;max-width:420px;margin:0 auto 2.5rem;line-height:1.8;">
+          Sepertinya halaman yang Anda cari sudah dipindahkan, dihapus, atau mungkin belum pernah ada.
+        </p>
+        
+        <!-- Terminal-style hint -->
+        <div class="glass-card" style="display:inline-block;padding:1rem 1.5rem;text-align:left;font-family:var(--font-mono);font-size:0.8rem;margin-bottom:2rem;border-left:3px solid var(--accent);">
+          <div style="color:var(--text-dim);margin-bottom:0.4rem;">$ find page --name "requested"</div>
+          <div style="color:#ef4444;">Error: No matching file found</div>
+          <div style="color:var(--accent);">→ Try navigating home instead</div>
+        </div>
+        
+        <br>
+
+        <!-- CTA Buttons -->
+        <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+          <a href="index.html" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Kembali ke Beranda
+          </a>
+          <a href="projects.html" class="btn-ghost">
+            Lihat Proyek
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-inject"></div>
+
+  <script src="data/profile.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

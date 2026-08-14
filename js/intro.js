@@ -380,7 +380,7 @@
         </div>
         <div>
           <div class="intro-name">Muchamad <span>Yazid</span> Ardani</div>
-          <div class="intro-tagline" style="margin-top:0.4rem;">// Informatika · Web Dev · UI Learner</div>
+          <div class="intro-tagline" style="margin-top:0.4rem;">// Informatika · Full-Stack · Tech Enthusiast</div>
         </div>
         <div class="intro-bar-wrap" id="intro-wrap-div" style="transition: opacity 0.4s ease;">
           <div class="intro-bar-fill" id="intro-fill"></div>
@@ -452,6 +452,24 @@
         }, 300);
       });
     }
+
+    // ── Safety timeout: jika intro tidak selesai dalam 8 detik, lewati otomatis ──
+    const safetyTimeout = setTimeout(() => {
+      if (document.getElementById('page-intro-overlay')) {
+        overlay.classList.add('intro-exit');
+        document.body.style.overflow = '';
+        document.documentElement.classList.remove('intro-loading');
+        document.documentElement.classList.add('intro-finished');
+        document.dispatchEvent(new CustomEvent('introFinished'));
+        sessionStorage.setItem('introPlayed', '1');
+        setTimeout(() => overlay.remove(), 800);
+      }
+    }, 8000);
+
+    // Batalkan safety timeout jika pengguna klik Enter lebih awal
+    if (enterBtn) {
+      enterBtn.addEventListener('click', () => clearTimeout(safetyTimeout), { once: true });
+    }
   }
 
   /* ═══════════════════════════════════════════════════════════════
@@ -472,7 +490,6 @@
         transition:
           opacity 0.7s cubic-bezier(0.4,0,0.2,1),
           transform 0.7s cubic-bezier(0.34,1.56,0.64,1);
-        will-change: opacity, transform;
       }
       .sr4d.sr-visible {
         opacity: 1;
