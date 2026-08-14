@@ -1252,12 +1252,40 @@ function renderOrgExperience() {
 function renderLanguages() {
   const el = document.getElementById('lang-list');
   if (!el) return;
-  el.innerHTML = PROFILE.languages.map(l => `
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--border);">
-      <span style="font-size:0.875rem;font-weight:500;">${l.lang}</span>
-      <span style="font-size:0.75rem;color:var(--accent);font-family:var(--font-mono);">${l.level}</span>
-    </div>
-  `).join('');
+  el.innerHTML = `<div style="display:flex; flex-direction:column; gap:0.85rem;">` + PROFILE.languages.map(l => {
+    let pct = 40;
+    let color = "var(--accent)";
+    let rgb = "var(--accent-rgb)"; // Ensure var works or use default hex
+    
+    const lvl = l.level.toLowerCase();
+    if (lvl.includes("native") || lvl.includes("fasih")) {
+      pct = 100; color = "#10b981"; rgb = "16,185,129"; // Green
+    } else if (lvl.includes("menengah") || lvl.includes("intermediate")) {
+      pct = 70; color = "#3b82f6"; rgb = "59,130,246"; // Blue
+    } else {
+      pct = 35; color = "#f59e0b"; rgb = "245,158,11"; // Orange
+    }
+
+    return `
+      <div style="position:relative; overflow:hidden; padding:1rem 1.15rem; border-radius:14px; background:linear-gradient(145deg, rgba(255,255,255,0.05), rgba(0,0,0,0.2)); border:1px solid rgba(255,255,255,0.08); box-shadow: 4px 4px 10px rgba(0,0,0,0.3), -2px -2px 8px rgba(255,255,255,0.02), inset 1px 1px 2px rgba(255,255,255,0.1); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);"
+           onmouseover="this.style.transform='translateY(-3px) scale(1.01)'; this.style.boxShadow='6px 10px 20px rgba(0,0,0,0.4), -2px -2px 10px rgba(255,255,255,0.03), inset 1px 1px 3px rgba(255,255,255,0.2)'; this.style.borderColor='rgba(${rgb},0.4)'"
+           onmouseout="this.style.transform='none'; this.style.boxShadow='4px 4px 10px rgba(0,0,0,0.3), -2px -2px 8px rgba(255,255,255,0.02), inset 1px 1px 2px rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.08)'">
+        
+        <!-- Decorative Glow -->
+        <div style="position:absolute; top:-30%; right:-5%; width:90px; height:90px; background:radial-gradient(circle, rgba(${rgb},0.15), transparent 70%); border-radius:50%; pointer-events:none;"></div>
+        
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; position:relative; z-index:2;">
+          <span style="font-size:0.95rem; font-weight:700; color:#fff; letter-spacing:0.3px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">${l.lang}</span>
+          <span style="font-size:0.7rem; padding:0.25rem 0.6rem; border-radius:20px; background:rgba(${rgb},0.1); color:${color}; border:1px solid rgba(${rgb},0.3); font-family:var(--font-mono); font-weight:700; text-transform:uppercase; letter-spacing:1px; box-shadow: 0 0 10px rgba(${rgb},0.15);">${l.level}</span>
+        </div>
+        
+        <!-- 3D Progress Bar -->
+        <div style="width:100%; height:6px; background:rgba(0,0,0,0.35); border-radius:10px; overflow:hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.05); position:relative; z-index:2;">
+          <div style="width:${pct}%; height:100%; background:linear-gradient(90deg, ${color}, #fff); border-radius:10px; box-shadow: 0 0 10px ${color}, inset 0 -2px 4px rgba(0,0,0,0.2); transition: width 1s ease-in-out;"></div>
+        </div>
+      </div>
+    `;
+  }).join('') + `</div>`;
 }
 
 /* ===================== PROJECTS ===================== */
