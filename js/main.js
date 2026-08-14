@@ -597,6 +597,7 @@ function renderFeaturedProjects() {
     width: 320px;
     height: 420px;
     transform-style: preserve-3d;
+    will-change: transform;
   `;
 
   // ── Generate HTML untuk setiap kartu ─────────────────────────────────────
@@ -613,7 +614,7 @@ function renderFeaturedProjects() {
         width: 100%; height: 100%;
         transform: rotateY(${itemAngle}deg) translateZ(${radius}px);
         transform-origin: center center;
-        transition: opacity 0.3s linear;
+        will-change: transform, opacity;
       ">
         <div class="proj-card-4d"
           style="width:100%; height:100%; cursor:pointer;
@@ -738,8 +739,12 @@ function renderFeaturedProjects() {
       // Mengurangi opacity kartu yang berada di belakang
       const opacity = Math.max(0.1, 1 - (normalizedAngle / 150));
       item.style.opacity = opacity;
+      
       // Mencegah interaksi pointer pada kartu di belakang
-      item.style.pointerEvents = opacity < 0.6 ? 'none' : 'auto';
+      const newPointer = opacity < 0.6 ? 'none' : 'auto';
+      if (item.style.pointerEvents !== newPointer) {
+        item.style.pointerEvents = newPointer;
+      }
     });
   }
 

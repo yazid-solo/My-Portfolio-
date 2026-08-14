@@ -88,15 +88,9 @@ const Animations = (() => {
         glareInner = glareWrapper.querySelector('.glare-inner');
       }
 
-      let isHovering = false;
-
       card.addEventListener('mouseenter', () => {
-        isHovering = true;
-        // Biarkan efek transition CSS masuk dulu sesaat, lalu matikan transisi transform
-        // agar mousemove sangat responsif dan tidak delay/jitter
-        setTimeout(() => {
-          if (isHovering) card.style.transition = 'transform 0s, box-shadow 0.45s, border-color 0.45s';
-        }, 300);
+        // Gunakan transisi cepat untuk transform agar pergerakan tilt mengikuti mouse dengan sangat mulus (tidak lag/patah)
+        card.style.transition = 'transform 0.15s ease-out, box-shadow 0.4s ease, border-color 0.4s ease';
       });
 
       let ticking = false;
@@ -137,10 +131,9 @@ const Animations = (() => {
       });
       
       card.addEventListener('mouseleave', () => {
-        isHovering = false;
         // Kembalikan transisi supaya bisa balik perlahan (smooth reset)
-        card.style.transition = '';
-        card.style.transform = ''; // Biarkan CSS mengatur transform resetnya
+        card.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease, border-color 0.6s ease';
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
         card.style.zIndex = '';
         if (glareInner) {
             glareInner.style.opacity = '0';
