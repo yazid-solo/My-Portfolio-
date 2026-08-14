@@ -1492,7 +1492,7 @@ img, video { max-width: 100%; height: auto; display: block; }
 }
 
 /* ─── Global: prevent horizontal scroll ─────────────────── */
-html, body { overflow-x: hidden; max-width: 100vw; }
+html, body { overflow-x: hidden; max-width: 100vw; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; }
 section, main, footer, header { overflow-x: hidden; }
 
 /* ─── Navbar ─────────────────────────────────────────────── */
