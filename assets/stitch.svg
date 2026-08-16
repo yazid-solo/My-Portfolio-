@@ -1,10 +1,4 @@
-<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="st-g" x1="0" y1="0" x2="256" y2="256">
-      <stop offset="0%" stop-color="#ec4899"/>
-      <stop offset="100%" stop-color="#8b5cf6"/>
-    </linearGradient>
-  </defs>
-  <path d="M168 64 C168 40 144 24 128 24 C88 24 64 48 64 88 C64 128 128 144 128 168 C128 192 112 216 88 216 C64 216 48 192 48 192 L32 216 C32 216 56 240 88 240 C128 240 152 216 152 176 C152 136 88 120 88 96 C88 72 104 48 128 48 C152 48 168 72 168 72 Z" fill="url(#st-g)"/>
-  <circle cx="128" cy="128" r="120" stroke="url(#st-g)" stroke-width="8" opacity="0.5"/>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="32" fill="#FFA1E0"/>
+  <path fill="black" d="M208,216H48a16,16,0,0,1-13.24-25L96,99.82V40h-8a8,8,0,0,1,0-16h80a8,8,0,0,1,0,16h-8V99.82L221.24,191A16,16,0,0,1,208,216Zm-25.07-16L158,163.46a7.61,7.61,0,0,1,1.06-2.54l-58-18.78A7.88,7.88,0,0,1,98,138.83L73.07,200Z"/>
 </svg>

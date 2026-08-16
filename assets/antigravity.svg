@@ -1,10 +1,11 @@
-<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+  <title>Antigravity</title>
   <defs>
-    <linearGradient id="ag-g" x1="0" y1="0" x2="256" y2="256">
-      <stop offset="0%" stop-color="#00d4ff"/>
-      <stop offset="100%" stop-color="#8b5cf6"/>
+    <linearGradient id="antiGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff7a00" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#00aaff" />
     </linearGradient>
   </defs>
-  <path d="M128 32 L40 200 H80 L104 144 H152 L176 200 H216 L128 32 Z M128 88 L142 120 H114 Z" fill="url(#ag-g)"/>
-  <circle cx="128" cy="128" r="120" stroke="url(#ag-g)" stroke-width="8" opacity="0.5"/>
+  <path d="M21.751 22.607c1.34 1.005 3.35.335 1.508-1.508C17.73 15.74 18.904 1 12.037 1 5.17 1 6.342 15.74.815 21.1c-2.01 2.009.167 2.511 1.507 1.506 5.192-3.517 4.857-9.714 9.715-9.714 4.857 0 4.522 6.197 9.714 9.715z" fill="url(#antiGradient)" />
 </svg>
