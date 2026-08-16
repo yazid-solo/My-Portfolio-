@@ -317,9 +317,9 @@ const PROFILE = {
     },
     {
       title: "Coding Camp – Intro to Software Engineering",
-      organizer: "DBS Foundation / Dicoding",
-      period: "2024",
-      desc: "Pelatihan fundamental rekayasa perangkat lunak (Software Engineering). Mencakup penguasaan metodologi pengembangan, penerapan algoritma dasar, hingga praktik pembuatan aplikasi web mandiri.",
+      organizer: "RevoU",
+      period: "2026",
+      desc: "Pelatihan rekayasa perangkat lunak (Software Engineering) program 1 minggu bersertifikat dari RevoU. Mencakup metodologi pengembangan, penerapan logika dasar pemrograman, hingga pengenalan praktik pembuatan aplikasi web.",
       image: "assets/Foto-Sertifikat/Sertifikat Dicoding.png",
       url: "assets/Sertifikat/CCSE.pdf"
     },
@@ -332,7 +332,7 @@ const PROFILE = {
       url: "assets/Sertifikat/Sertifikat Samsung Innovation Campus.pdf"
     },
     {
-      title: "Integration AI in Penetration Testing",
+      title: "Integrating AI in Penetration Testing - Best Practices",
       organizer: "Codelamp Indonesia",
       period: "2026",
       desc: "Pelatihan spesialisasi keamanan siber yang membahas praktik terbaik (best practices) integrasi Kecerdasan Buatan (AI) dalam simulasi penetrasi sistem (Penetration Testing) dan evaluasi kerentanan IT.",
@@ -380,7 +380,7 @@ const PROFILE = {
       url: "assets/Sertifikat/Sertifikat OpenRouter for Beginner Developers.pdf"
     },
     {
-      title: "Coding Camp – Pengenalan Web & Persiapan Lingkungan Kerja",
+      title: "Pengenalan Web & Persiapan Lingkungan Kerja",
       organizer: "Codelamp Indonesia",
       period: "2026",
       desc: "Pelatihan dasar untuk calon web developer. Memperkenalkan cara kerja internet dan web, instalasi tools pengembangan (VS Code, browser DevTools, Node.js), serta konfigurasi lingkungan kerja yang profesional sebelum mulai coding.",
@@ -388,7 +388,7 @@ const PROFILE = {
       url: "assets/Sertifikat/Pengenalan Web & Persiapan Lingkungan Kerja.pdf"
     },
     {
-      title: "Introduction to JavaScript & Development Environment Setup",
+      title: "Introduction to JavaScript and Development Environment Setup",
       organizer: "Codelamp Indonesia",
       period: "2026",
       desc: "Pelatihan pengenalan JavaScript sebagai bahasa pemrograman web. Mencakup sintaks dasar, tipe data, fungsi, event handling, serta konfigurasi environment pengembangan untuk memulai proyek JavaScript secara mandiri.",
@@ -452,24 +452,24 @@ const PROFILE = {
     // ── BOOTCAMP & PELATIHAN UTAMA ──
     { name: "Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative Academy", issuer: "Stechoq Academy x Innovative Academy", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.png", pdfUrl: "assets/Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.pdf"},
     { name: "Samsung Innovation Campus Batch 7", issuer: "Samsung / Dibimbing.id", year: "2025/2026", image: "assets/Foto-Sertifikat/Sertifikat Samsung Innovation Campus.png", pdfUrl: "assets/Sertifikat/Sertifikat Samsung Innovation Campus.pdf" },
-    { name: "Coding Camp – Intro to Software Engineering", issuer: "DBS Foundation / Dicoding", year: "2024", image: "assets/Foto-Sertifikat/Sertifikat Dicoding.png", pdfUrl: "assets/Sertifikat/CCSE.pdf" },
+    { name: "Coding Camp – Intro to Software Engineering", issuer: "RevoU", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Dicoding.png", pdfUrl: "assets/Sertifikat/CCSE.pdf" },
     // ── KURSUS AI & DEVELOPER ──
     { name: "AI Productivity and AI API Integration for Developers", issuer:"Hacktiv8", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat AI Productivity and AI API Integration for Developers.png", pdfUrl:"assets/Sertifikat/AI Productivity and AI API Integration for Developers.pdf" },
     { name: "AI Praktis untuk Produktivitas", issuer:"Dicoding", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat AI Praktis untuk Produktivitas.png", pdfUrl:"assets/Sertifikat/AI Praktis untuk Produktivitas.pdf" },
     { name: "AI-Powered Software Engineering Practical AI Skills for Beginner", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.png", pdfUrl: "assets/Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.pdf"},
     { name: "One API, Many AI Models: OpenRouter for Beginner Developers", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat OpenRouter for Beginner Developers.png", pdfUrl: "assets/Sertifikat/Sertifikat OpenRouter for Beginner Developers.pdf"},
     // ── KURSUS KEAMANAN SIBER ──
-    { name: "Integrating AI in Penetration Testing-Best Practices", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Codelamp .png", pdfUrl: "assets/Sertifikat/Sertifikat CodeLamp Integration AI in penetration Testing.pdf"},
+    { name: "Integrating AI in Penetration Testing - Best Practices", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Codelamp .png", pdfUrl: "assets/Sertifikat/Sertifikat CodeLamp Integration AI in penetration Testing.pdf"},
     { name: "Think Like a Pentester: Web Penetration Testing Fundamentals", issuer:"Codelamp Indonesia", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.png", pdfUrl:"assets/Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.pdf" },
     { name: "Breaking the Pocket: Intro to Mobile App Penetration Testing", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Breaking the Pocket Intro to Mobile App Penetration Testing.png", pdfUrl: "assets/Sertifikat/Sertifikat Intro to Mobile App Penetration Testing.pdf" },
     { name: "IT Audit Fundamentals & Professional Standards", issuer:"Codelamp Indonesia", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.png", pdfUrl:"assets/Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.pdf" },
     { name: "Third-Party Risk Management for Vendors", issuer:"CodeLamp Indonesia", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat Third-Party Risk Management for Vendors.png", pdfUrl:"assets/Sertifikat/Sertifikat Third-Party Risk Management for Vendors.pdf"},
     // ── KURSUS WEB & PROGRAMMING DASAR ──
-    { name: "Introduction to javascript and Development Environment Setup", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Introduction to JavaScript and Development Environment Setup.png", pdfUrl: "assets/Sertifikat/Sertifikat Introduction to JavaScript and Development Environment Setup.pdf" },
-    { name: "Introduction to Version Control and Git Installation", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Introduction to Version Control & Git Installation.png", pdfUrl: "assets/Sertifikat/Sertifikat Introduction to Version Control & Git Installation.pdf"},
+    { name: "Introduction to JavaScript and Development Environment Setup", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Introduction to JavaScript and Development Environment Setup.png", pdfUrl: "assets/Sertifikat/Sertifikat Introduction to JavaScript and Development Environment Setup.pdf" },
+    { name: "Introduction to Version Control & Git Installation", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Introduction to Version Control & Git Installation.png", pdfUrl: "assets/Sertifikat/Sertifikat Introduction to Version Control & Git Installation.pdf"},
     { name: "Pengenalan Web & Persiapan Lingkungan Kerja", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Pengenalan Web & Persiapan Lingkungan Kerja.png", pdfUrl: "assets/Sertifikat/Pengenalan Web & Persiapan Lingkungan Kerja.pdf"},
     { name: "Stop Designing Without Structure", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Stop Designing Without Structure.png", pdfUrl: "assets/Sertifikat/Sertifikat Stop Designing Without Structure.pdf"},
-    { name: "Kenapa Game Roblox Kamu Gampang Di-Hack", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.png", pdfUrl: "assets/Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.pdf"},
+    { name: "Kenapa Game Roblox Kamu Gampang Di-Hack?", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.png", pdfUrl: "assets/Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.pdf"},
     { name: "Web 3 On Campus", issuer: "Kampus / UPbit Indonesia / IDNFT", year: "2025", image: "assets/Foto-Sertifikat/Sertifikat Web3.png", pdfUrl: "assets/Sertifikat/Sertifikat Web3.pdf "},
     // ── PENGHARGAAN & LAINNYA ──
     { name: "Ketua UKM Badminton Universitas Nahdlatul Ulama Yogyakarta", issuer:"UNU Yogyakarta", year:"2025/2026", image:"assets/Foto-Sertifikat/Sertifikat Ketua UKM Badminton UNUYO.png", pdfUrl:"assets/Sertifikat/Sertifikat UKM Ketua Badminton UNUYO.pdf" },
