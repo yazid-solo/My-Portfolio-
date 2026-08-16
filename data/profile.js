@@ -580,7 +580,7 @@ const PROJECTS = [
     tags: ["HTML", "CSS", "JavaScript"],
     desc: "Website portofolio personal interaktif bergaya modern minimalis (Glassmorphism & 3D tilt). Dibangun dari nol menggunakan Vanilla HTML, CSS, dan JavaScript murni tanpa framework, menampilkan performa animasi yang mulus dan sangat responsif.",
     features: ["Animasi 3D & Tilt Hover Native", "Sistem Navigasi Dinamis via DOM", "Render Konten Otomatis via JSON", "Performa Ringan (Tanpa Framework)", "Desain Responsif Mobile-First"],
-    demo: "",
+    demo: "https://portfolio-yazid-ardani.vercel.app/",
     github: "https://github.com/yazid-solo/My-Portfolio-",
     image: "assets/Foto_Project/Portfolio.png",
     status: "Selesai & dalam pengembangan",
