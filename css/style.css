@@ -1602,6 +1602,13 @@ section, main, footer, header { overflow-x: hidden; }
   }
 }
 
+@media (max-width: 480px) {
+  #robot-scene {
+    transform: scale(0.45) !important;
+    margin-top: -180px !important; margin-bottom: -180px !important;
+  }
+}
+
 /* ─── Hero Stats Bar ─────────────────────────────────────── */
 @media (max-width: 900px) {
   #hero-stats {
