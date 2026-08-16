@@ -1659,6 +1659,14 @@ function renderTrainingBtn(displayCount) {
 window.toggleTraining = function() {
   isTrainingExpanded = !isTrainingExpanded;
   renderTraining();
+  
+  // Make newly rendered cards visible immediately since they miss the initial scroll observer
+  setTimeout(() => {
+    document.querySelectorAll('#training-list .reveal').forEach(el => {
+      el.classList.add('visible', 'active');
+    });
+  }, 50);
+
   // Optional: scroll back slightly if collapsing
   if (!isTrainingExpanded) {
     const section = document.getElementById('training-section');
@@ -1800,6 +1808,19 @@ function renderCertsBtn(displayCount) {
 window.toggleCerts = function() {
   isCertsExpanded = !isCertsExpanded;
   renderCertificates();
+
+  setTimeout(() => {
+    document.querySelectorAll('#certs-list .reveal').forEach(el => {
+      el.classList.add('visible', 'active');
+    });
+  }, 50);
+  
+  if (!isCertsExpanded) {
+    const section = document.querySelector('#certs-list');
+    if (section && section.previousElementSibling) {
+       section.previousElementSibling.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 };
 
 /* ===================== CONTACT ===================== */
