@@ -411,7 +411,7 @@ const PROFILE = {
       org: "UNU Yogyakarta",
       period: "2025 – 2026",
       desc: "Mengatur jadwal, sarana, perlengkapan olahraga, dan mengkoordinasi semua anggota UKM.",
-      icon: "assets/Foto_Logo/logo Ukm Badminton UNUYO.svg",
+      icon: "assets/Foto_Logo/Logo Ukm Badminton UNUYO.svg",
       image: "https://awsimages.detik.net.id/community/media/visual/2022/10/18/ilustrasi-badminton-4.jpeg?w=1200"
     },
      {
