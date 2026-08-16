@@ -364,10 +364,10 @@ const PROFILE = {
       url: "assets/Sertifikat/AI Productivity and AI API Integration for Developers.pdf"
     },
     {
-      title: "AI-Powered Software Engineering Practical AI Skills for Beginner",
+      title: "AI-Powered Software Engineering: Practical AI Skills for Beginner",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan rekayasa perangkat lunak berbasis AI untuk pemula. Membahas cara mengintegrasikan kecerdasan buatan ke dalam alur pengembangan software, mulai dari code generation hingga debugging otomatis dengan bantuan AI.",
+      desc: "Pelatihan penerapan AI dalam proses rekayasa perangkat lunak. Mencakup penggunaan AI tools untuk mendukung siklus pengembangan software — mulai dari perencanaan, penulisan kode, debugging, hingga dokumentasi yang lebih efisien.",
       image: "assets/Foto-Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.png",
       url: "assets/Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.pdf"
     },
@@ -375,44 +375,35 @@ const PROFILE = {
       title: "One API, Many AI Models: OpenRouter for Beginner Developers",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan penggunaan OpenRouter sebagai gateway tunggal untuk mengakses berbagai model AI (GPT, Claude, Gemini, dan lainnya) melalui satu API yang terpadu — cocok untuk developer pemula yang ingin membangun aplikasi berbasis AI.",
+      desc: "Pelatihan penggunaan OpenRouter API untuk mengakses dan mengintegrasikan berbagai model AI (LLM) ke dalam aplikasi dengan satu antarmuka. Topik mencakup manajemen API key, pemilihan model, dan implementasi dasar di proyek nyata.",
       image: "assets/Foto-Sertifikat/Sertifikat OpenRouter for Beginner Developers.png",
       url: "assets/Sertifikat/Sertifikat OpenRouter for Beginner Developers.pdf"
     },
     {
-      title: "IT Audit Fundamentals & Professional Standards",
+      title: "Coding Camp – Pengenalan Web & Persiapan Lingkungan Kerja",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan dasar-dasar audit teknologi informasi yang mencakup standar profesional IT audit, metodologi penilaian risiko sistem, serta praktik tata kelola dan kepatuhan (compliance) di lingkungan IT.",
-      image: "assets/Foto-Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.png",
-      url: "assets/Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.pdf"
+      desc: "Pelatihan dasar untuk calon web developer. Memperkenalkan cara kerja internet dan web, instalasi tools pengembangan (VS Code, browser DevTools, Node.js), serta konfigurasi lingkungan kerja yang profesional sebelum mulai coding.",
+      image: "assets/Foto-Sertifikat/Sertifikat Pengenalan Web & Persiapan Lingkungan Kerja.png",
+      url: "assets/Sertifikat/Pengenalan Web & Persiapan Lingkungan Kerja.pdf"
     },
     {
-      title: "Think Like a Pentester: Web Penetration Testing Fundamentals",
+      title: "Introduction to JavaScript & Development Environment Setup",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan keamanan siber yang mengajarkan cara berpikir seperti seorang pentester profesional. Mencakup teknik dasar pengujian penetrasi web, identifikasi celah keamanan (vulnerability), dan metodologi penilaian keamanan aplikasi web.",
-      image: "assets/Foto-Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.png",
-      url: "assets/Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.pdf"
+      desc: "Pelatihan pengenalan JavaScript sebagai bahasa pemrograman web. Mencakup sintaks dasar, tipe data, fungsi, event handling, serta konfigurasi environment pengembangan untuk memulai proyek JavaScript secara mandiri.",
+      image: "assets/Foto-Sertifikat/Sertifikat Introduction to JavaScript and Development Environment Setup.png",
+      url: "assets/Sertifikat/Sertifikat Introduction to JavaScript and Development Environment Setup.pdf"
     },
     {
-      title: "Breaking the Pocket: Intro to Mobile App Penetration Testing",
+      title: "Introduction to Version Control & Git Installation",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan pengantar penetration testing khusus aplikasi mobile. Membahas teknik dasar analisis keamanan APK Android, identifikasi celah umum pada aplikasi mobile, dan simulasi serangan sederhana pada lingkungan pengujian.",
-      image: "assets/Foto-Sertifikat/Sertifikat Breaking the Pocket Intro to Mobile App Penetration Testing.png",
-      url: "assets/Sertifikat/Sertifikat Intro to Mobile App Penetration Testing.pdf"
-    },
-    {
-      title: "Stop Designing Without Structure",
-      organizer: "Codelamp Indonesia",
-      period: "2026",
-      desc: "Pelatihan desain UI/UX yang menekankan pentingnya sistem desain yang terstruktur. Membahas penggunaan komponen yang konsisten, hierarki visual, grid system, dan prinsip-prinsip desain yang terorganisasi untuk menghasilkan antarmuka yang profesional.",
-      image: "assets/Foto-Sertifikat/Sertifikat Stop Designing Without Structure.png",
-      url: "assets/Sertifikat/Sertifikat Stop Designing Without Structure.pdf"
+      desc: "Pelatihan dasar sistem version control menggunakan Git. Meliputi konsep repository, commit, branching, merge, serta konfigurasi awal Git dan koneksi ke GitHub sebagai platform kolaborasi kode.",
+      image: "assets/Foto-Sertifikat/Sertifikat Introduction to Version Control & Git Installation.png",
+      url: "assets/Sertifikat/Sertifikat Introduction to Version Control & Git Installation.pdf"
     }
   ],
-
 
   organization: [
     {
