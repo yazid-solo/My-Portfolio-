@@ -68,7 +68,6 @@ html[data-accent="emerald"] { --accent: #10b981; --accent-rgb: 16, 185, 129; }
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  overscroll-behavior-y: none; /* Native app feel, no pull-to-refresh bounce */
 }
 
 /* FOUC Prevention for Intro */
@@ -125,7 +124,6 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
-  overscroll-behavior-y: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility; /* Sharper text rendering */
@@ -136,7 +134,6 @@ body {
 .glass-card, .tilt-card, .reveal, .btn-primary, .btn-ghost, .filter-pill, .nav-link, .social-icon {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  touch-action: manipulation; /* Improves mobile tap responsiveness */
 }
 
 /* Scrollbar */
