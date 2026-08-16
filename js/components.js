@@ -142,7 +142,12 @@ const Components = (() => {
           <path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </button>
-      ${NAV_LINKS.map(l => `<a href="${l.href}" class="mobile-nav-link ${activePage === l.href ? 'active' : ''}">${l.label}</a>`).join('')  function renderFooter() {
+      ${NAV_LINKS.map(l => `<a href="${l.href}" class="mobile-nav-link ${activePage === l.href ? 'active' : ''}">${l.label}</a>`).join('')}
+    </div>
+    `;
+  }
+
+  function renderFooter() {
     return `
     <style>
       .pro-footer {
