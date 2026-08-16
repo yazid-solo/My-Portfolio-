@@ -1297,35 +1297,36 @@ function renderOrgExperience() {
       <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(8,13,26,0.98) 5%, rgba(15,22,41,0.85) 40%, rgba(15,23,42,0.4) 100%); z-index:1; pointer-events:none; transition:all 0.6s ease;" class="org-gradient-overlay"></div>
       
       <!-- Content Container (Floats forward on hover) -->
-      <div style="position:relative; z-index:2; display:flex; gap:1.8rem; align-items:flex-start; transform:translateZ(25px); transition:transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); transform-style:preserve-3d;" class="org-content-wrap">
+      <div style="position:relative; z-index:2; display:flex; flex-direction:column; gap:1.4rem; align-items:flex-start; transform:translateZ(25px); transition:transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); transform-style:preserve-3d;" class="org-content-wrap">
         
-        <!-- 3D Icon Box -->
-        <div style="flex-shrink:0; transform:translateZ(10px); transition:transform 0.6s ease;" class="org-icon-container">
-          <div style="width:72px; height:72px; border-radius:20px; background:linear-gradient(135deg, rgba(30,41,59,0.9), rgba(10,15,25,0.95)); border:1px solid rgba(255,255,255,0.1); border-top-color:rgba(255,255,255,0.3); border-left-color:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 25px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -4px 10px rgba(0,0,0,0.5), 0 0 15px rgba(var(--accent-rgb),0.3); position:relative; overflow:hidden; transform-style:preserve-3d;" class="org-icon-wrap">
-            <div style="position:absolute; top:0; left:-100%; width:50%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent); transform:skewX(-25deg); animation:orgIconSweep 3.5s infinite linear;"></div>
-            <img src="${o.icon}" alt="${o.org}" style="width:65%; height:65%; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.8)); transform:translateZ(20px); animation:orgAmbientFloat 3s infinite alternate ease-in-out;" onerror="this.style.display='none'">
+        <!-- Header row (Icon + Title) -->
+        <div style="display:flex; justify-content:flex-start; align-items:center; gap:1.2rem; width:100%; transform-style:preserve-3d;">
+          <!-- 3D Icon Box -->
+          <div style="flex-shrink:0; transform:translateZ(10px); transition:transform 0.6s ease;" class="org-icon-container">
+            <div style="width:68px; height:68px; border-radius:18px; background:linear-gradient(135deg, rgba(30,41,59,0.9), rgba(10,15,25,0.95)); border:1px solid rgba(255,255,255,0.1); border-top-color:rgba(255,255,255,0.3); border-left-color:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 25px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -4px 10px rgba(0,0,0,0.5), 0 0 15px rgba(var(--accent-rgb),0.3); position:relative; overflow:hidden; transform-style:preserve-3d;" class="org-icon-wrap">
+              <div style="position:absolute; top:0; left:-100%; width:50%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent); transform:skewX(-25deg); animation:orgIconSweep 3.5s infinite linear;"></div>
+              <img src="${o.icon}" alt="${o.org}" style="width:65%; height:65%; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.8)); transform:translateZ(20px); animation:orgAmbientFloat 3s infinite alternate ease-in-out;" onerror="this.style.display='none'">
+            </div>
+          </div>
+          
+          <div style="flex: 1 1 0%; min-width: 0; transform:translateZ(15px);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.3rem;">
+              <h3 style="font-size:1.3rem; font-weight:800; letter-spacing:0.5px; color:#fff; text-shadow:0 3px 6px rgba(0,0,0,0.7); margin:0; line-height:1.2; word-break:normal;" class="org-role-title">${o.role}</h3>
+              <span style="font-size:0.75rem; font-family:var(--font-mono); font-weight:800; color:var(--accent); background:rgba(var(--accent-rgb),0.15); backdrop-filter:blur(5px); border:1px solid rgba(var(--accent-rgb),0.4); padding:4px 12px; border-radius:99px; box-shadow:0 4px 12px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.1); white-space:nowrap; transition:all 0.4s ease; flex-shrink:0;" class="org-badge">${o.period}</span>
+            </div>
+            <p style="font-size:0.95rem; font-weight:700; color:var(--accent); filter:brightness(1.15); margin:0; font-family:var(--font-mono); letter-spacing:0.5px; text-shadow:0 2px 4px rgba(0,0,0,0.5); word-break:normal;">${o.org}</p>
           </div>
         </div>
         
-        <!-- Text & Description -->
+        <!-- Text & Description (Full Width) -->
         <div style="flex: 1 1 0%; min-width: 0; width: 100%; transform-style:preserve-3d;">
-          <!-- Header row -->
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.8rem; margin-bottom:1rem; transform:translateZ(15px); width:100%;">
-            <div style="flex: 1; min-width: 0;">
-              <h3 style="font-size:1.35rem; font-weight:800; letter-spacing:0.5px; color:#fff; text-shadow:0 3px 6px rgba(0,0,0,0.7); margin:0; line-height:1.2; word-wrap:break-word;" class="org-role-title">${o.role}</h3>
-              <p style="font-size:0.95rem; font-weight:700; color:var(--accent); filter:brightness(1.15); margin-top:0.5rem; font-family:var(--font-mono); letter-spacing:0.5px; text-shadow:0 2px 4px rgba(0,0,0,0.5); word-wrap:break-word;">${o.org}</p>
-            </div>
-            <span style="font-size:0.75rem; font-family:var(--font-mono); font-weight:800; color:var(--accent); background:rgba(var(--accent-rgb),0.15); backdrop-filter:blur(5px); border:1px solid rgba(var(--accent-rgb),0.4); padding:6px 14px; border-radius:99px; box-shadow:0 4px 12px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.1); white-space:nowrap; transition:all 0.4s ease; flex-shrink:0;" class="org-badge">${o.period}</span>
-          </div>
-          
           <!-- Structured Description Box -->
-          <div style="margin-top:1.5rem; padding-left:1.4rem; border-left:3px solid var(--accent); position:relative; transform:translateZ(20px); transition:transform 0.5s ease; border-radius:0 8px 8px 0; overflow:hidden; width:100%;" class="org-desc-box">
+          <div style="padding-left:1.2rem; border-left:3px solid var(--accent); position:relative; transform:translateZ(20px); transition:transform 0.5s ease; border-radius:0 8px 8px 0; overflow:hidden; width:100%;" class="org-desc-box">
             <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(var(--accent-rgb),0.1) 0%, transparent 100%); z-index:0; pointer-events:none;"></div>
-            <p style="position:relative; z-index:1; font-size:0.95rem; line-height:1.8; color:rgba(255,255,255,0.85); text-align:justify; margin:0; text-shadow:0 1px 3px rgba(0,0,0,0.7); font-weight:500; width:100%;">
+            <p style="position:relative; z-index:1; font-size:0.95rem; line-height:1.7; color:rgba(255,255,255,0.9); text-align:left; margin:0; text-shadow:0 1px 3px rgba(0,0,0,0.7); font-weight:500; width:100%;">
               ${o.desc}
             </p>
           </div>
-          
         </div>
       </div>
       
