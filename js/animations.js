@@ -103,18 +103,18 @@ const Animations = (() => {
             const cx = rect.width / 2;
             const cy = rect.height / 2;
             
-            // Tilt math (Extreme 4D Gahar)
-            const rx = ((y - cy) / cy) * -12; // intensitas dinaikkan drastis untuk efek realistis
-            const ry = ((x - cx) / cx) * 12;
+            // Tilt math (Smooth 4D Normal)
+            const rx = ((y - cy) / cy) * -6; // diturunkan agar pergerakan lebih halus
+            const ry = ((x - cx) / cx) * 6;
             
             card.style.setProperty('--rx', `${rx}deg`);
             card.style.setProperty('--ry', `${ry}deg`);
             
             // Sesuaikan transform dengan jenis kartu. about-stat-card diangkat lebih tinggi.
             if (card.classList.contains('about-stat-card')) {
-              card.style.transform = `translateY(-12px) scale3d(1.06, 1.06, 1.06) perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+              card.style.transform = `translateY(-10px) scale3d(1.04, 1.04, 1.04) perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`;
             } else {
-              card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.05, 1.05, 1.05) translateY(-6px)`;
+              card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.03, 1.03, 1.03) translateY(-5px)`;
             }
             
             card.style.zIndex = '50'; // supaya tidak tertutup elemen lain saat hover

@@ -753,7 +753,7 @@ function renderFeaturedProjects() {
   let dragStartRot = 0;
   let paused = false;
   let resumeTimer = null;
-  const AUTO_ROT_SPEED = 0.35; // kecepatan mutar 3D dinaikkan agar lebih gahar
+  const AUTO_ROT_SPEED = 0.2; // kecepatan mutar 3D dinormalkan kembali
 
   function updateCards() {
     // Translate Z -radius memundurkan titik tengah carousel agar kartu terdepan ukurannya normal
@@ -781,9 +781,9 @@ function renderFeaturedProjects() {
       targetRotation -= AUTO_ROT_SPEED;
     }
     
-    // Smooth interpolasi rotasi (lebih responsif)
+    // Smooth interpolasi rotasi
     const diff = targetRotation - currentRotation;
-    currentRotation += diff * 0.15;
+    currentRotation += diff * 0.1;
     
     updateCards();
     requestAnimationFrame(tick);
