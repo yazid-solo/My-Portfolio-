@@ -103,18 +103,18 @@ const Animations = (() => {
             const cx = rect.width / 2;
             const cy = rect.height / 2;
             
-            // Tilt math (Smooth 4D)
-            const rx = ((y - cy) / cy) * -4; // intensitas 4D feel dikurangi agar lebih natural
-            const ry = ((x - cx) / cx) * 4;
+            // Tilt math (Extreme 4D Gahar)
+            const rx = ((y - cy) / cy) * -12; // intensitas dinaikkan drastis untuk efek realistis
+            const ry = ((x - cx) / cx) * 12;
             
             card.style.setProperty('--rx', `${rx}deg`);
             card.style.setProperty('--ry', `${ry}deg`);
             
             // Sesuaikan transform dengan jenis kartu. about-stat-card diangkat lebih tinggi.
             if (card.classList.contains('about-stat-card')) {
-              card.style.transform = `translateY(-8px) scale3d(1.03, 1.03, 1.03) perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+              card.style.transform = `translateY(-12px) scale3d(1.06, 1.06, 1.06) perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`;
             } else {
-              card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02, 1.02, 1.02)`;
+              card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.05, 1.05, 1.05) translateY(-6px)`;
             }
             
             card.style.zIndex = '50'; // supaya tidak tertutup elemen lain saat hover
@@ -131,9 +131,9 @@ const Animations = (() => {
       });
       
       card.addEventListener('mouseleave', () => {
-        // Kembalikan transisi supaya bisa balik perlahan (smooth reset)
-        card.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease, border-color 0.6s ease';
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        // Kembalikan transisi supaya bisa balik perlahan dengan efek pegas (spring physics)
+        card.style.transition = 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.8s ease, border-color 0.8s ease';
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1) translateY(0)';
         card.style.zIndex = '';
         if (glareInner) {
             glareInner.style.opacity = '0';
