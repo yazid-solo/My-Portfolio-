@@ -127,12 +127,14 @@ function renderHeroStats() {
       
       @media (max-width: 768px) {
         #hero-stats {
+          position: relative;
+          top: auto;
+          margin-top: 2rem;
           width: 100%;
           right: auto;
           left: 0;
           flex-wrap: wrap; /* Izinkan elemen turun ke baris baru */
           border-radius: 12px;
-          top: calc(100% + 1rem);
         }
         .stat-item-premium {
           min-width: 50%; /* Membuat kotak menjadi 2 baris x 2 kolom */
