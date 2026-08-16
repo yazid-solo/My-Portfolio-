@@ -1656,26 +1656,45 @@ function renderTrainingBtn(displayCount) {
 }
 
 window.toggleTraining = function() {
-  isTrainingExpanded = !isTrainingExpanded;
-  
   const displayCount = 4;
   const cards = document.querySelectorAll('#training-list .training-card-item');
-  cards.forEach((card, i) => {
-    if (i >= displayCount) {
-      card.style.display = isTrainingExpanded ? 'block' : 'none';
-      if (isTrainingExpanded) {
-        // Ensure they become visible immediately when expanding
-        card.classList.add('visible', 'active');
-      }
-    }
-  });
 
-  renderTrainingBtn(displayCount);
-
-  // Optional: scroll back slightly if collapsing
   if (!isTrainingExpanded) {
+    // EXPAND
+    isTrainingExpanded = true;
+    cards.forEach((card, i) => {
+      if (i >= displayCount) {
+        card.style.display = 'block';
+        setTimeout(() => { card.classList.add('visible', 'active'); }, 10);
+      }
+    });
+    renderTrainingBtn(displayCount);
+  } else {
+    // COLLAPSE
+    isTrainingExpanded = false;
+    renderTrainingBtn(displayCount);
+
+    // Start fade out transition
+    cards.forEach((card, i) => {
+      if (i >= displayCount) {
+        card.classList.remove('visible', 'active');
+      }
+    });
+
+    // Scroll back
     const section = document.getElementById('training-section');
     if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Wait for transition before hiding completely
+    setTimeout(() => {
+      if (!isTrainingExpanded) {
+        cards.forEach((card, i) => {
+          if (i >= displayCount) {
+            card.style.display = 'none';
+          }
+        });
+      }
+    }, 400);
   }
 };
 
@@ -1811,26 +1830,44 @@ function renderCertsBtn(displayCount) {
 }
 
 window.toggleCerts = function() {
-  isCertsExpanded = !isCertsExpanded;
-  
   const displayCount = 4;
   const cards = document.querySelectorAll('#certs-list .cert-card-item');
-  cards.forEach((card, i) => {
-    if (i >= displayCount) {
-      card.style.display = isCertsExpanded ? 'flex' : 'none';
-      if (isCertsExpanded) {
-        card.classList.add('visible', 'active');
-      }
-    }
-  });
 
-  renderCertsBtn(displayCount);
-  
   if (!isCertsExpanded) {
+    // EXPAND
+    isCertsExpanded = true;
+    cards.forEach((card, i) => {
+      if (i >= displayCount) {
+        card.style.display = 'flex';
+        setTimeout(() => { card.classList.add('visible', 'active'); }, 10);
+      }
+    });
+    renderCertsBtn(displayCount);
+  } else {
+    // COLLAPSE
+    isCertsExpanded = false;
+    renderCertsBtn(displayCount);
+
+    cards.forEach((card, i) => {
+      if (i >= displayCount) {
+        card.classList.remove('visible', 'active');
+      }
+    });
+
     const section = document.querySelector('#certs-list');
     if (section && section.previousElementSibling) {
        section.previousElementSibling.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    setTimeout(() => {
+      if (!isCertsExpanded) {
+        cards.forEach((card, i) => {
+          if (i >= displayCount) {
+            card.style.display = 'none';
+          }
+        });
+      }
+    }, 400);
   }
 };
 
