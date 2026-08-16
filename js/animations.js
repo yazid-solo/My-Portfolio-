@@ -70,9 +70,6 @@ const Animations = (() => {
     
     // Memberikan efek tilt 4D premium ke SEMUA jenis kartu, bukan cuma tilt-card
     const cards = document.querySelectorAll('.tilt-card, .glass-card, .project-card, .about-stat-card, .org-card-premium');
-    
-    // OPTIMASI PERFORMA: Mobile devices tidak perlu efek tilt yang boros GPU
-    if (window.innerWidth < 768) return;
 
     cards.forEach(card => {
       // Inject glare elements dynamic

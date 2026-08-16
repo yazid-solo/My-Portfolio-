@@ -85,29 +85,73 @@ function renderHeroStats() {
     { label: "Sertifikat", value: certCount }
   ];
 
-  // Styling premium & gahar 4D untuk Container
-  el.style.cssText = `
-    display: flex;
-    background: linear-gradient(145deg, rgba(15,22,41,0.95), rgba(8,13,26,0.98));
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3), 0 0 20px rgba(0,212,255,0.05);
-    position: absolute;
-    top: calc(100% + 2.5rem);
-    right: 0;
-    overflow: hidden;
-    z-index: 3;
-    width: max-content;
-    max-width: none;
-    flex-wrap: nowrap;
-  `;
+  // Styling premium & gahar 4D untuk Container dengan dukungan Media Query Mobile
+  if (!document.getElementById('hero-stats-responsive-style')) {
+    const style = document.createElement('style');
+    style.id = 'hero-stats-responsive-style';
+    style.innerHTML = `
+      #hero-stats {
+        display: flex;
+        background: linear-gradient(145deg, rgba(15,22,41,0.95), rgba(8,13,26,0.98));
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3), 0 0 20px rgba(0,212,255,0.05);
+        position: absolute;
+        top: calc(100% + 2.5rem);
+        right: 0;
+        overflow: hidden;
+        z-index: 3;
+        width: max-content;
+        max-width: none;
+        flex-wrap: nowrap;
+      }
+      .stat-item-premium {
+        flex: 1; 
+        min-width: 120px; 
+        padding: 1.4rem 1.8rem; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        position: relative; 
+        transition: background 0.3s var(--ease);
+      }
+      .stat-item-premium:hover {
+        background: rgba(255,255,255,0.03);
+      }
+      .stat-item-divider {
+        position: absolute;
+        left: 0; top: 20%; bottom: 20%; width: 1px;
+        background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent);
+      }
+      
+      @media (max-width: 768px) {
+        #hero-stats {
+          width: 100%;
+          right: auto;
+          left: 0;
+          flex-wrap: wrap; /* Izinkan elemen turun ke baris baru */
+          border-radius: 12px;
+          top: calc(100% + 1rem);
+        }
+        .stat-item-premium {
+          min-width: 50%; /* Membuat kotak menjadi 2 baris x 2 kolom */
+          padding: 1rem;
+        }
+        .stat-item-divider {
+          display: none; /* Sembunyikan garis agar rapi saat wrap */
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  el.removeAttribute('style'); // Hapus sisa inline style yang mengunci max-width
 
   el.innerHTML = dynamicStats.map((s, i) => `
-    <div style="flex:1; min-width:120px; padding:1.4rem 1.8rem; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; transition:background 0.3s var(--ease);"
-         onmouseover="this.style.background='rgba(255,255,255,0.03)'"
-         onmouseout="this.style.background='transparent'">
+    <div class="stat-item-premium">
       <!-- Divider vertical -->
-      ${i > 0 ? '<div style="position:absolute;left:0;top:20%;bottom:20%;width:1px;background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent);"></div>' : ''}
+      ${i > 0 ? '<div class="stat-item-divider"></div>' : ''}
       
       <div 
         class="stat-counter-target" 
