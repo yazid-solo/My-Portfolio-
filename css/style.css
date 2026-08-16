@@ -2112,4 +2112,9 @@ section, main, footer, header { overflow-x: hidden; }
   #hero-scroll-indicator { 
     display: none !important; 
   }
+  /* Hapus garis scroll biru di HP agar menggunakan scrollbar bawaan yang rapi/tersembunyi */
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+  }
 }

@@ -135,6 +135,7 @@ function renderHeroStats() {
           left: 0;
           flex-wrap: wrap; /* Izinkan elemen turun ke baris baru */
           border-radius: 12px;
+          overflow: visible !important; /* Mencegah font terpotong di dalam container */
         }
         .stat-item-premium {
           min-width: 50%; /* Membuat kotak menjadi 2 baris x 2 kolom */
