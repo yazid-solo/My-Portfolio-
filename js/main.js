@@ -1776,7 +1776,22 @@ function renderTraining() {
   
   const displayCount = 4;
   // Render ALL items, but initially hide the ones beyond displayCount
-  el.innerHTML = PROFILE.training.map((t, i) => `
+  el.innerHTML = `
+    <style>
+      @media (max-width: 640px) {
+        .training-card-body {
+          grid-template-columns: 1fr !important;
+          gap: 1rem !important;
+          padding: 1.25rem !important;
+        }
+        .training-card-btns {
+          flex-direction: row !important;
+          flex-wrap: wrap;
+          margin-top: 0.5rem;
+        }
+      }
+    </style>
+  ` + PROFILE.training.map((t, i) => `
     <div class="glass-card tilt-card reveal reveal-delay-${i+1} training-card-item" style="display: ${i < displayCount ? 'block' : 'none'}; padding:0; position:relative; overflow:hidden; border:1px solid rgba(0,212,255,0.2); box-shadow:0 8px 32px rgba(0,0,0,0.3); border-radius:18px;">
       
       <!-- Background pattern -->
@@ -1785,7 +1800,7 @@ function renderTraining() {
       <!-- Right Image/Glow Overlay -->
       <div style="position:absolute; top:0; right:0; bottom:0; width:40%; background-image:url('${t.image || ''}'); background-size:cover; background-position:center; opacity:0.1; z-index:0; mask-image: linear-gradient(to right, transparent, black 60%); -webkit-mask-image: linear-gradient(to right, transparent, black 60%);"></div>
 
-      <div style="padding:1.75rem; position:relative; z-index:2; display:grid; grid-template-columns: 1fr auto; gap:1.5rem; align-items:center;">
+      <div class="training-card-body" style="padding:1.75rem; position:relative; z-index:2; display:grid; grid-template-columns: 1fr auto; gap:1.5rem; align-items:center;">
         
         <div>
           <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.65rem; margin-bottom:0.75rem;">
@@ -1811,7 +1826,7 @@ function renderTraining() {
         </div>
 
         <!-- Buttons/Links -->
-        <div style="display:flex; flex-direction:column; gap:0.65rem;">
+        <div class="training-card-btns" style="display:flex; flex-direction:column; gap:0.65rem;">
           ${t.image ? `<button onclick="openImageModal('${t.image}')" class="btn-ghost" style="padding:8px 14px; font-size:0.75rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg> Lihat Sertifikat</button>` : ''}
           ${t.url ? `<a href="${t.url}" target="_blank" rel="noopener" class="btn-primary" style="padding:8px 14px; font-size:0.75rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg> PDF View</a>` : ''}
         </div>
