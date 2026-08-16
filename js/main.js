@@ -1117,12 +1117,17 @@ function renderTimeline() {
         overflow: hidden;
         border-right: 1px solid rgba(255,255,255,0.08);
         position: relative;
-        transform: translateZ(10px);
         transition: transform 0.5s;
         box-shadow: 8px 0 20px rgba(0,0,0,0.4);
       }
       @media (max-width: 768px) {
-        .edu-image-wrap { border-radius: 24px 24px 0 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+        .edu-image-wrap { 
+          border-radius: 24px 24px 0 0; 
+          border-right: none; 
+          border-bottom: 1px solid rgba(255,255,255,0.08); 
+          box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+          max-width: 100% !important; 
+        }
       }
       .edu-card-3d:hover .edu-content-wrap {
         transform: translateZ(35px);
@@ -1894,6 +1899,12 @@ function renderEducationCards() {
   el.style.position = 'relative';
   
   el.innerHTML = `
+    <style>
+      .resume-edu-card { padding: 0 !important; }
+      @media (max-width: 768px) {
+        .resume-edu-img { max-width: 100% !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      }
+    </style>
     <!-- Glowing Vertical Line -->
     <div style="position:absolute; top:2rem; bottom:0; left:16px; width:4px; background:linear-gradient(to bottom, var(--accent), rgba(var(--accent-rgb),0.1) 80%, transparent); border-radius:4px; box-shadow:0 0 20px rgba(var(--accent-rgb), 0.8); z-index:0;"></div>
     
@@ -1905,9 +1916,9 @@ function renderEducationCards() {
           <!-- Horizontal Connector -->
           <div style="position:absolute; top:3rem; left:28px; width:1.5rem; height:2px; background:linear-gradient(to right, var(--accent), transparent); opacity:0.6; z-index:1;"></div>
           
-          <div class="glass-card tilt-card" style="display:flex; flex-wrap:wrap; overflow:hidden; background:var(--surface2); padding:0; border:1px solid rgba(255,255,255,0.08); box-shadow:0 15px 40px rgba(0,0,0,0.5);">
+          <div class="glass-card tilt-card resume-edu-card" style="display:flex; flex-wrap:wrap; overflow:hidden; background:var(--surface2); padding:0; border:1px solid rgba(255,255,255,0.08); box-shadow:0 15px 40px rgba(0,0,0,0.5);">
              <!-- Image side -->
-             <div style="flex: 0 0 auto; width: 100%; max-width: 240px; position:relative; background:var(--bg3); min-height: 180px; cursor:pointer;" onclick="openImageModal('${edu.image}')" title="Klik untuk perbesar">
+             <div class="resume-edu-img" style="flex: 0 0 auto; width: 100%; max-width: 240px; position:relative; background:var(--bg3); min-height: 180px; cursor:pointer;" onclick="openImageModal('${edu.image}')" title="Klik untuk perbesar">
                <img src="${edu.image}" alt="${edu.institution}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.8; transition:transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s;" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.08)'" onmouseout="this.style.opacity='0.8'; this.style.transform='scale(1)'">
                <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; background:rgba(0,0,0,0.4); transition:opacity 0.3s ease; color:#fff;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
