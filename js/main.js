@@ -282,9 +282,10 @@ const HL_ICONS = {
   </svg>`,
   "Integrasi AI": `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs><linearGradient id="ai-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f9a8d4"/><stop offset="100%" stop-color="#ec4899"/></linearGradient></defs>
-    <path d="M16 4l2.5 6.5L25 13l-6.5 2.5L16 22l-2.5-6.5L7 13l6.5-2.5L16 4z" fill="url(#ai-g)"/>
-    <path d="M24 20l1.5 3.5L29 25l-3.5 1.5L24 30l-1.5-3.5L19 25l3.5-1.5L24 20z" fill="#f472b6" opacity="0.8"/>
-    <path d="M8 22l1 2.5L11.5 25.5L9 26.5L8 29l-1-2.5L4.5 25.5L7 24.5L8 22z" fill="#f472b6" opacity="0.6"/>
+    <rect x="2" y="6" width="28" height="20" rx="4" fill="rgba(236,72,153,0.1)" stroke="url(#ai-g)" stroke-width="2"/>
+    <circle cx="16" cy="16" r="14" fill="url(#ai-g)" opacity="0.1" />
+    <path d="M12 2v4M20 2v4M12 26v4M20 26v4M2 12h4M2 20h4M26 12h4M26 20h4" stroke="url(#ai-g)" stroke-width="2" stroke-linecap="round"/>
+    <text x="16" y="21" font-family="var(--font-display, sans-serif)" font-weight="800" font-size="13" fill="url(#ai-g)" text-anchor="middle" letter-spacing="1">AI</text>
   </svg>`
 };
 
