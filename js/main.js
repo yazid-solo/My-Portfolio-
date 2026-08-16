@@ -1576,10 +1576,15 @@ function renderExperience() {
   `).join('');
 }
 
+let isTrainingExpanded = false;
 function renderTraining() {
   const el = document.getElementById('training-list');
   if (!el || !PROFILE.training) return;
-  el.innerHTML = PROFILE.training.map((t, i) => `
+  
+  const displayCount = 4;
+  const dataToRender = isTrainingExpanded ? PROFILE.training : PROFILE.training.slice(0, displayCount);
+
+  el.innerHTML = dataToRender.map((t, i) => `
     <div class="glass-card tilt-card reveal reveal-delay-${i+1}" style="padding:0; position:relative; overflow:hidden; border:1px solid rgba(0,212,255,0.2); box-shadow:0 8px 32px rgba(0,0,0,0.3); border-radius:18px;">
       
       <!-- Background pattern -->
@@ -1621,7 +1626,45 @@ function renderTraining() {
       </div>
     </div>
   `).join('');
+
+  renderTrainingBtn(displayCount);
 }
+
+function renderTrainingBtn(displayCount) {
+  const btnContainer = document.getElementById('training-btn-container');
+  if (!btnContainer) return;
+  
+  if (PROFILE.training.length <= displayCount) {
+    btnContainer.innerHTML = '';
+    return;
+  }
+
+  if (isTrainingExpanded) {
+    btnContainer.innerHTML = `
+      <button onclick="toggleTraining()" class="btn-ghost" style="padding:10px 24px; font-weight:600; border-radius:99px; display:inline-flex; align-items:center; gap:8px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+        Tampilkan Lebih Sedikit
+      </button>
+    `;
+  } else {
+    btnContainer.innerHTML = `
+      <button onclick="toggleTraining()" class="btn-ghost" style="padding:10px 24px; font-weight:600; border-radius:99px; display:inline-flex; align-items:center; gap:8px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        Lihat Semua (${PROFILE.training.length})
+      </button>
+    `;
+  }
+}
+
+window.toggleTraining = function() {
+  isTrainingExpanded = !isTrainingExpanded;
+  renderTraining();
+  // Optional: scroll back slightly if collapsing
+  if (!isTrainingExpanded) {
+    const section = document.getElementById('training-section');
+    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
 
 function renderEducationCards() {
   const el = document.getElementById('resume-education-list');
@@ -1683,10 +1726,15 @@ function renderEducationCards() {
   `;
 }
 
+let isCertsExpanded = false;
 function renderCertificates() {
   const el = document.getElementById('certs-list');
   if (!el) return;
-  el.innerHTML = PROFILE.certificates.map(c => `
+
+  const displayCount = 4;
+  const dataToRender = isCertsExpanded ? PROFILE.certificates : PROFILE.certificates.slice(0, displayCount);
+
+  el.innerHTML = dataToRender.map(c => `
     <div class="project-card tilt-card reveal" style="background:var(--surface2); display:flex; flex-direction:column; height:100%;">
       <div style="flex:0 0 auto; overflow:hidden; height:180px; position:relative; background:var(--bg3); cursor:pointer;" onclick="openImageModal('${c.image}')" title="Klik untuk perbesar sertifikat">
         <!-- Certificate Image Thumbnail -->
@@ -1719,7 +1767,40 @@ function renderCertificates() {
       </div>
     </div>
   `).join('');
+
+  renderCertsBtn(displayCount);
 }
+
+function renderCertsBtn(displayCount) {
+  const btnContainer = document.getElementById('certs-btn-container');
+  if (!btnContainer) return;
+  
+  if (PROFILE.certificates.length <= displayCount) {
+    btnContainer.innerHTML = '';
+    return;
+  }
+
+  if (isCertsExpanded) {
+    btnContainer.innerHTML = `
+      <button onclick="toggleCerts()" class="btn-ghost" style="padding:10px 24px; font-weight:600; border-radius:99px; display:inline-flex; align-items:center; gap:8px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+        Tampilkan Lebih Sedikit
+      </button>
+    `;
+  } else {
+    btnContainer.innerHTML = `
+      <button onclick="toggleCerts()" class="btn-ghost" style="padding:10px 24px; font-weight:600; border-radius:99px; display:inline-flex; align-items:center; gap:8px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        Lihat Semua (${PROFILE.certificates.length})
+      </button>
+    `;
+  }
+}
+
+window.toggleCerts = function() {
+  isCertsExpanded = !isCertsExpanded;
+  renderCertificates();
+};
 
 /* ===================== CONTACT ===================== */
 function initContact() {
