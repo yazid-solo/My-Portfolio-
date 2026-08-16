@@ -1285,83 +1285,104 @@ function renderOrgExperience() {
   `;
 
   el.innerHTML = sortedOrg.map((o, i) => `
-    <div class="org-card-premium reveal sr4d tilt-card" data-delay="${(i%5)+1}" style="position:relative; background:rgba(15,23,42,0.4); border-radius:24px; padding:2rem; overflow:hidden; border:1px solid rgba(var(--accent-rgb),0.2); box-shadow:0 15px 35px rgba(0,0,0,0.4), inset 0 0 20px rgba(var(--accent-rgb), 0.05); backdrop-filter:blur(15px); display:flex; flex-direction:column; justify-content:space-between; transition:all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); transform-style:preserve-3d; min-height: 280px;">
+    <div class="org-card-premium reveal sr4d tilt-card" data-delay="${(i%5)+1}" style="position:relative; background:linear-gradient(145deg, rgba(15,22,41,0.9) 0%, rgba(8,13,26,0.95) 100%); border-radius:24px; padding:2.5rem; overflow:hidden; border:1px solid rgba(255,255,255,0.08); border-top:1px solid rgba(255,255,255,0.2); border-left:1px solid rgba(255,255,255,0.15); box-shadow:0 15px 35px rgba(0,0,0,0.5), inset 0 2px 5px rgba(255,255,255,0.05); backdrop-filter:blur(20px); display:flex; flex-direction:column; justify-content:space-between; transition:transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.6s ease; transform-style:preserve-3d; perspective:1500px; min-height:300px; z-index:1;">
       
       <!-- Animated Background Glow -->
-      <div style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(var(--accent-rgb),0.2) 0%, transparent 60%); opacity:0; z-index:0; transition:opacity 0.6s ease;" class="org-hover-glow"></div>
+      <div style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(var(--accent-rgb),0.25) 0%, transparent 70%); opacity:0; z-index:0; transition:opacity 0.6s ease; pointer-events:none;" class="org-hover-glow"></div>
       
       <!-- Background Image Layer -->
-      <div style="position:absolute; inset:0; background-image:url('${o.image}'); background-size:cover; background-position:center; opacity:0.35; z-index:0; transition:all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); filter:grayscale(30%); mix-blend-mode: screen;" class="org-bg-img"></div>
+      <div style="position:absolute; inset:0; background-image:url('${o.image}'); background-size:cover; background-position:center; opacity:0.3; z-index:0; transition:all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); filter:grayscale(40%) blur(1px); mix-blend-mode:screen;" class="org-bg-img"></div>
       
-      <!-- Gradient Overlay for readability -->
-      <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(8,13,26,0.95) 10%, rgba(15,23,42,0.4) 100%); z-index:1; pointer-events:none; transition:all 0.6s ease;" class="org-gradient-overlay"></div>
+      <!-- Dark Gradient Overlay for 3D Depth & Text Readability -->
+      <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(8,13,26,0.98) 5%, rgba(15,22,41,0.85) 40%, rgba(15,23,42,0.4) 100%); z-index:1; pointer-events:none; transition:all 0.6s ease;" class="org-gradient-overlay"></div>
       
-      <!-- Content -->
-      <div style="position:relative; z-index:2; display:flex; gap:1.5rem; align-items:flex-start; transform:translateZ(30px); transition:transform 0.5s ease;" class="org-content-wrap">
-        <!-- Icon Wrapper -->
-        <div style="flex-shrink:0;">
-          <div style="width:64px; height:64px; border-radius:18px; background:linear-gradient(135deg, #0f172a, #080d1a); border:1px solid rgba(var(--accent-rgb),0.4); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 20px rgba(0,0,0,0.5), inset 0 0 15px rgba(var(--accent-rgb),0.1); overflow:hidden; transition:all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);" class="org-icon-wrap">
-            <img src="${o.icon}" alt="${o.org}" style="width:65%; height:65%; object-fit:contain; filter:drop-shadow(0 2px 5px rgba(0,212,255,0.8));" onerror="this.style.display='none'">
+      <!-- Content Container (Floats forward on hover) -->
+      <div style="position:relative; z-index:2; display:flex; gap:1.8rem; align-items:flex-start; transform:translateZ(25px); transition:transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); transform-style:preserve-3d;" class="org-content-wrap">
+        
+        <!-- 3D Icon Box -->
+        <div style="flex-shrink:0; transform:translateZ(10px); transition:transform 0.6s ease;" class="org-icon-container">
+          <div style="width:72px; height:72px; border-radius:20px; background:linear-gradient(135deg, rgba(30,41,59,0.9), rgba(10,15,25,0.95)); border:1px solid rgba(255,255,255,0.1); border-top-color:rgba(255,255,255,0.3); border-left-color:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 25px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -4px 10px rgba(0,0,0,0.5), 0 0 15px rgba(var(--accent-rgb),0.3); position:relative; overflow:hidden; transform-style:preserve-3d;" class="org-icon-wrap">
+            <div style="position:absolute; top:0; left:-100%; width:50%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent); transform:skewX(-25deg); animation:orgIconSweep 3.5s infinite linear;"></div>
+            <img src="${o.icon}" alt="${o.org}" style="width:65%; height:65%; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.8)); transform:translateZ(20px); animation:orgAmbientFloat 3s infinite alternate ease-in-out;" onerror="this.style.display='none'">
           </div>
         </div>
         
-        <!-- Header text -->
-        <div style="flex:1;">
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.5rem;">
+        <!-- Text & Description -->
+        <div style="flex:1; transform-style:preserve-3d;">
+          <!-- Header row -->
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.8rem; margin-bottom:1rem; transform:translateZ(15px);">
             <div>
-              <h3 style="font-size:1.15rem; font-weight:800; letter-spacing:0.5px; color:#fff; text-shadow:0 2px 4px rgba(0,0,0,0.5); margin:0; transition:color 0.3s ease;" class="org-role-title">${o.role}</h3>
-              <p style="font-size:0.85rem; font-weight:600; color:var(--accent); margin-top:0.3rem; font-family:var(--font-mono); letter-spacing:0.5px;">${o.org}</p>
+              <h3 style="font-size:1.35rem; font-weight:800; letter-spacing:0.5px; color:#fff; text-shadow:0 3px 6px rgba(0,0,0,0.7); margin:0; line-height:1.2;" class="org-role-title">${o.role}</h3>
+              <p style="font-size:0.95rem; font-weight:700; color:var(--accent); filter:brightness(1.15); margin-top:0.5rem; font-family:var(--font-mono); letter-spacing:0.5px; text-shadow:0 2px 4px rgba(0,0,0,0.5);">${o.org}</p>
             </div>
-            <span style="font-size:0.7rem; font-family:var(--font-mono); font-weight:700; color:#fff; background:rgba(var(--accent-rgb),0.1); border:1px solid rgba(var(--accent-rgb),0.3); padding:0.4rem 0.85rem; border-radius:99px; box-shadow:0 0 10px rgba(var(--accent-rgb),0.1); white-space:nowrap; transition:all 0.3s ease;" class="org-badge">${o.period}</span>
+            <span style="font-size:0.75rem; font-family:var(--font-mono); font-weight:800; color:var(--accent); background:rgba(var(--accent-rgb),0.15); backdrop-filter:blur(5px); border:1px solid rgba(var(--accent-rgb),0.4); padding:6px 14px; border-radius:99px; box-shadow:0 4px 12px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.1); white-space:nowrap; transition:all 0.4s ease;" class="org-badge">${o.period}</span>
           </div>
           
-          <div style="width:35px; height:3px; background:linear-gradient(90deg, var(--accent), transparent); margin:1.2rem 0; border-radius:2px; transition:width 0.4s ease;" class="org-line"></div>
+          <!-- Structured Description Box -->
+          <div style="margin-top:1.5rem; padding-left:1.4rem; border-left:3px solid var(--accent); position:relative; transform:translateZ(20px); transition:transform 0.5s ease; border-radius:0 8px 8px 0; overflow:hidden;" class="org-desc-box">
+            <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(var(--accent-rgb),0.1) 0%, transparent 100%); z-index:0; pointer-events:none;"></div>
+            <p style="position:relative; z-index:1; font-size:0.95rem; line-height:1.8; color:rgba(255,255,255,0.85); text-align:justify; margin:0; text-shadow:0 1px 3px rgba(0,0,0,0.7); font-weight:500;">
+              ${o.desc}
+            </p>
+          </div>
           
-          <p style="font-size:0.85rem; line-height:1.7; color:var(--text-dim); text-align:justify; transition:color 0.3s ease;">
-            ${o.desc}
-          </p>
         </div>
       </div>
       
       <style>
+        @keyframes orgIconSweep {
+          0% { left: -100%; }
+          20% { left: 200%; }
+          100% { left: 200%; }
+        }
+        @keyframes orgAmbientFloat {
+          0% { transform: translateY(0) translateZ(20px); }
+          100% { transform: translateY(-5px) translateZ(20px); }
+        }
         .org-card-premium:hover { 
-          transform: translateY(-15px) scale(1.02); 
-          box-shadow: 0 40px 80px rgba(0,0,0,0.7), 0 0 50px rgba(var(--accent-rgb),0.25); 
-          border-color: rgba(var(--accent-rgb),0.8);
-          background: rgba(15,23,42,0.5);
+          transform: scale(1.025) rotateX(4deg) rotateY(-4deg) translateY(-10px); 
+          box-shadow: 0 35px 70px rgba(0,0,0,0.8), inset 0 3px 6px rgba(255,255,255,0.2), 0 0 50px rgba(var(--accent-rgb),0.2); 
+          z-index: 10;
         }
         .org-card-premium:hover .org-bg-img { 
-          opacity: 0.8; 
-          filter: grayscale(0%) blur(0px); 
-          transform: scale(1.12); 
+          opacity: 0.85; 
+          filter: grayscale(10%) blur(0px); 
+          transform: scale(1.15) translateZ(-20px); 
         }
         .org-card-premium:hover .org-gradient-overlay {
-          background: linear-gradient(to top, rgba(8,13,26,0.98) 20%, rgba(15,23,42,0.6) 100%);
+          background: linear-gradient(to top, rgba(8,13,26,0.98) 15%, rgba(15,22,41,0.65) 100%);
         }
         .org-card-premium:hover .org-content-wrap {
-          transform: translateZ(50px);
+          transform: translateZ(45px);
+        }
+        .org-card-premium:hover .org-icon-container {
+          transform: translateZ(30px);
         }
         .org-card-premium:hover .org-icon-wrap { 
-          transform: translateZ(20px) translateY(-8px) scale(1.2) rotate(8deg); 
-          box-shadow: 0 20px 40px rgba(var(--accent-rgb),0.6), inset 0 0 30px rgba(var(--accent-rgb),0.8); 
-          border-color: var(--accent); 
+          transform: scale(1.15) rotate(6deg) translateY(-5px); 
+          box-shadow: 0 25px 45px rgba(0,0,0,0.8), inset 0 3px 6px rgba(255,255,255,0.3), inset 0 -4px 10px rgba(0,0,0,0.6), 0 0 35px rgba(var(--accent-rgb),0.6); 
+          border-color: rgba(255,255,255,0.5); 
         }
         .org-card-premium:hover .org-hover-glow { 
           opacity: 1; 
         }
-        .org-card-premium:hover .org-line {
-          width: 60px;
-          background: linear-gradient(90deg, #fff, var(--accent));
-          box-shadow: 0 0 10px var(--accent);
+        .org-card-premium:hover .org-desc-box {
+          transform: translateZ(35px);
+          border-left-width: 4px;
         }
         .org-card-premium:hover .org-role-title {
           color: #fff;
-          text-shadow: 0 0 15px rgba(var(--accent-rgb), 0.8);
+          text-shadow: 0 4px 15px rgba(var(--accent-rgb), 0.9);
         }
         .org-card-premium:hover .org-badge {
-          background: rgba(var(--accent-rgb),0.3);
-          border-color: var(--accent);
-          box-shadow: 0 0 15px rgba(var(--accent-rgb),0.4);
+          background: rgba(var(--accent-rgb),0.25);
+          border-color: rgba(255,255,255,0.3);
+          box-shadow: 0 8px 20px rgba(var(--accent-rgb),0.4), inset 0 2px 4px rgba(255,255,255,0.2);
+          color: #fff;
+        }
+        @media (max-width: 640px) {
+          .org-content-wrap { flex-direction: column; gap: 1rem; }
+          .org-card-premium { padding: 1.8rem; }
         }
       </style>
     </div>
