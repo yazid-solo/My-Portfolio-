@@ -362,8 +362,57 @@ const PROFILE = {
       desc: "Pelatihan tingkat lanjut bagi software developer mengenai arsitektur dan integrasi Application Programming Interface (API) berbasis Machine Learning/AI ke dalam sistem perangkat lunak modern.",
       image: "assets/Foto-Sertifikat/Sertifikat AI Productivity and AI API Integration for Developers.png",
       url: "assets/Sertifikat/AI Productivity and AI API Integration for Developers.pdf"
+    },
+    {
+      title: "AI-Powered Software Engineering Practical AI Skills for Beginner",
+      organizer: "Codelamp Indonesia",
+      period: "2026",
+      desc: "Pelatihan rekayasa perangkat lunak berbasis AI untuk pemula. Membahas cara mengintegrasikan kecerdasan buatan ke dalam alur pengembangan software, mulai dari code generation hingga debugging otomatis dengan bantuan AI.",
+      image: "assets/Foto-Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.png",
+      url: "assets/Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.pdf"
+    },
+    {
+      title: "One API, Many AI Models: OpenRouter for Beginner Developers",
+      organizer: "Codelamp Indonesia",
+      period: "2026",
+      desc: "Pelatihan penggunaan OpenRouter sebagai gateway tunggal untuk mengakses berbagai model AI (GPT, Claude, Gemini, dan lainnya) melalui satu API yang terpadu — cocok untuk developer pemula yang ingin membangun aplikasi berbasis AI.",
+      image: "assets/Foto-Sertifikat/Sertifikat OpenRouter for Beginner Developers.png",
+      url: "assets/Sertifikat/Sertifikat OpenRouter for Beginner Developers.pdf"
+    },
+    {
+      title: "IT Audit Fundamentals & Professional Standards",
+      organizer: "Codelamp Indonesia",
+      period: "2026",
+      desc: "Pelatihan dasar-dasar audit teknologi informasi yang mencakup standar profesional IT audit, metodologi penilaian risiko sistem, serta praktik tata kelola dan kepatuhan (compliance) di lingkungan IT.",
+      image: "assets/Foto-Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.png",
+      url: "assets/Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.pdf"
+    },
+    {
+      title: "Think Like a Pentester: Web Penetration Testing Fundamentals",
+      organizer: "Codelamp Indonesia",
+      period: "2026",
+      desc: "Pelatihan keamanan siber yang mengajarkan cara berpikir seperti seorang pentester profesional. Mencakup teknik dasar pengujian penetrasi web, identifikasi celah keamanan (vulnerability), dan metodologi penilaian keamanan aplikasi web.",
+      image: "assets/Foto-Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.png",
+      url: "assets/Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.pdf"
+    },
+    {
+      title: "Breaking the Pocket: Intro to Mobile App Penetration Testing",
+      organizer: "Codelamp Indonesia",
+      period: "2026",
+      desc: "Pelatihan pengantar penetration testing khusus aplikasi mobile. Membahas teknik dasar analisis keamanan APK Android, identifikasi celah umum pada aplikasi mobile, dan simulasi serangan sederhana pada lingkungan pengujian.",
+      image: "assets/Foto-Sertifikat/Sertifikat Breaking the Pocket Intro to Mobile App Penetration Testing.png",
+      url: "assets/Sertifikat/Sertifikat Intro to Mobile App Penetration Testing.pdf"
+    },
+    {
+      title: "Stop Designing Without Structure",
+      organizer: "Codelamp Indonesia",
+      period: "2026",
+      desc: "Pelatihan desain UI/UX yang menekankan pentingnya sistem desain yang terstruktur. Membahas penggunaan komponen yang konsisten, hierarki visual, grid system, dan prinsip-prinsip desain yang terorganisasi untuk menghasilkan antarmuka yang profesional.",
+      image: "assets/Foto-Sertifikat/Sertifikat Stop Designing Without Structure.png",
+      url: "assets/Sertifikat/Sertifikat Stop Designing Without Structure.pdf"
     }
   ],
+
 
   organization: [
     {
@@ -411,7 +460,13 @@ const PROFILE = {
   certificates: [
     { name: "Ketua UKM Badminton Universitas Nahdlatul Ulama Yogyakarta", issuer:"UNU Yogyakarta", year:"2025/2026", image:"assets/Foto-Sertifikat/Sertifikat Ketua UKM Badminton UNUYO.png", pdfUrl:"assets/Sertifikat/Sertifikat UKM Ketua Badminton UNUYO.pdf" },
     { name: "Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative Academy", issuer: "Stechoq Academy x Innovative Academy", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.png", pdfUrl: "assets/Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.pdf"},
+    { name: "AI-Powered Software Engineering Practical AI Skills for Beginner", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.png", pdfUrl: "assets/Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.pdf"},
+    { name: "One API, Many AI Models: OpenRouter for Beginner Developers", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat OpenRouter for Beginner Developers.png", pdfUrl: "assets/Sertifikat/Sertifikat OpenRouter for Beginner Developers.pdf"},
+    { name: "IT Audit Fundamentals & Professional Standards", issuer:"Codelamp Indonesia", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.png", pdfUrl:"assets/Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.pdf" },
+    { name: "Think Like a Pentester: Web Penetration Testing Fundamentals", issuer:"Codelamp Indonesia", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.png", pdfUrl:"assets/Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.pdf" },
+    { name: "Breaking the Pocket: Intro to Mobile App Penetration Testing", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Breaking the Pocket Intro to Mobile App Penetration Testing.png", pdfUrl: "assets/Sertifikat/Sertifikat Intro to Mobile App Penetration Testing.pdf" },
     { name: "AI Praktis untuk Produktivitas", issuer:"Dicoding", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat AI Praktis untuk Produktivitas.png", pdfUrl:"assets/Sertifikat/AI Praktis untuk Produktivitas.pdf" },
+    { name: "Stop Designing Without Structure", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Stop Designing Without Structure.png", pdfUrl: "assets/Sertifikat/Sertifikat Stop Designing Without Structure.pdf"},
     { name: "AI Productivity and AI API Integration for Developers", issuer:"Hacktiv8", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat AI Productivity and AI API Integration for Developers.png", pdfUrl:"assets/Sertifikat/AI Productivity and AI API Integration for Developers.pdf" },
     { name: "Third-Party Risk Management for Vendors", issuer:"CodeLamp Indonesia", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat Third-Party Risk Management for Vendors.png", pdfUrl:"assets/Sertifikat/Sertifikat Third-Party Risk Management for Vendors.pdf"},
     { name: "Kenapa Game Roblox Kamu Gampang Di-Hack", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.png", pdfUrl: "assets/Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.pdf"},
