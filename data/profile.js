@@ -489,7 +489,7 @@ const PROFILE = {
  * DATA PROYEK
  * ===========
  * Tambah objek baru di sini untuk menambahkan project.
- * Kategori: "web" | "ui" | "mini" | "akademik"
+ * Kategori: "web" | "ui" | "mini"
  */
 const PROJECTS = [
   {
@@ -524,7 +524,7 @@ const PROJECTS = [
     title: "Warehouse-System",
     category: "web",
     tags: ["Vite", "Bootstrap", "Node.js", "PostgreSQL"],
-    desc: "Sistem Informasi Manajemen Gudang (WMS) kolaboratif. Dibangun bersama tim bootcamp menggunakan Vite dan Node.js Express, dengan basis data PostgreSQL untuk memfasilitasi pelacakan barang dan manajemen inventaris secara real-time.",
+    desc: "Sistem Informasi Manajemen Gudang (WMS) kolaboratif. Dibangun bersama tim bootcamp Stechoq Academy x Innovative Academy menggunakan Vite dan Node.js Express, dengan basis data PostgreSQL untuk memfasilitasi pelacakan barang dan manajemen inventaris secara real-time.",
     features: ["Autentikasi User (JWT)", "Manajemen Inventaris Gudang", "CRUD Data Master Barang", "Integrasi RESTful API", "Desain Responsif Clean UI"],
     demo: "",
     github: "https://gitlab.com/bootcamp-stechoq/warehouse-system-cihuy",
@@ -574,7 +574,7 @@ const PROJECTS = [
   {
     id: 7,
     title: "Kalkulator Akademik IPK",
-    category: "akademik",
+    category: "mini",
     tags: ["HTML", "CSS", "JavaScript"],
     desc: "Tugas mata kuliah Dasar Pemrograman. Aplikasi berbasis web interaktif untuk menghitung Indeks Prestasi Kumulatif (IPK) mahasiswa secara presisi berdasarkan input nilai huruf dan bobot SKS.",
     features: ["Perhitungan IPK Instan", "Validasi Bobot SKS Dinamis", "Konversi Nilai Huruf ke Angka", "Antarmuka Minimalis yang Mudah Digunakan"],
@@ -587,7 +587,7 @@ const PROJECTS = [
   {
     id: 8,
     title: "CASHNOTE",
-    category: "akademik",
+    category: "web",
     tags: ["React", "Vite", "FastAPI", "Supabase", "Tailwind CSS"],
     desc: "Sistem Pencatatan Keuangan Pribadi (Cash Note). Merupakan hasil tugas akademik perkuliahan yang dikerjakan secara tim (kolaboratif), dibangun menggunakan arsitektur modern untuk membantu pengguna memantau arus kas, pengeluaran, dan pemasukan secara komprehensif.",
     features: ["Aplikasi Web Responsif", "Autentikasi Pengguna Aman", "CRUD Transaksi Keuangan", "Integrasi RESTful API Backend", "Dashboard Analitik Visual"],
