@@ -976,15 +976,61 @@ kbd {
 
 .about-stat-icon {
   font-size: 1.6rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(10, 15, 25, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.3);
+  border-left-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.6), 
+    inset 0 2px 5px rgba(255, 255, 255, 0.15),
+    inset 0 -4px 15px rgba(0, 0, 0, 0.5),
+    0 0 15px color-mix(in srgb, var(--c, var(--accent)) 30%, transparent);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.about-stat-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transform: skewX(-25deg);
+  animation: shine-sweep 4s infinite linear;
+}
+
+@keyframes shine-sweep {
+  0% { left: -100%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
+}
+
+.about-stat-icon svg {
+  transform: translateZ(20px);
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.8));
+  animation: ambient-float 3s infinite alternate ease-in-out;
 }
 
 .about-stat-card:hover .about-stat-icon {
-  transform: scale(1.1) rotate(8deg) translateY(-4px);
-  filter: drop-shadow(0 10px 15px color-mix(in srgb, var(--c, var(--accent)) 60%, transparent));
+  transform: scale(1.15) rotateX(12deg) rotateY(-12deg) translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.8), 
+    inset 0 3px 6px rgba(255, 255, 255, 0.25),
+    inset 0 -4px 15px rgba(0, 0, 0, 0.6),
+    0 0 30px color-mix(in srgb, var(--c, var(--accent)) 70%, transparent);
 }
 
 .about-stat-card .stat-number {
