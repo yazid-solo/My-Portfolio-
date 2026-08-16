@@ -2103,3 +2103,13 @@ section, main, footer, header { overflow-x: hidden; }
   70% { background: linear-gradient(90deg, rgba(239,68,68, 0) 70%, rgba(239,68,68,0.8) 100%); opacity: 1; }
   95% { background: linear-gradient(90deg, rgba(239,68,68, 0) 90%, rgba(239,68,68,0.8) 100%); opacity: 0; }
 }
+
+@media (max-width: 768px) {
+  #hero { 
+    overflow: visible !important; 
+    overflow-x: hidden !important; 
+  }
+  #hero-scroll-indicator { 
+    display: none !important; 
+  }
+}
