@@ -1817,7 +1817,6 @@ section, main, footer, header { overflow-x: hidden; }
 @media (max-width: 640px) {
   .section-title { font-size: clamp(1.5rem, 7vw, 2rem) !important; }
   .glass-card { padding: 1.25rem !important; }
-  .reveal { overflow-x: hidden; }
   .sr4d-left  { transform: translateY(20px) scale(0.96) !important; }
   .sr4d-right { transform: translateY(20px) scale(0.96) !important; }
   .sr4d-left.sr-visible, .sr4d-right.sr-visible {
