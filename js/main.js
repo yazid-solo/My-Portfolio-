@@ -1044,48 +1044,120 @@ function renderTimeline() {
   el.style.position = 'relative';
   
   el.innerHTML = `
+    <style>
+      .edu-card-3d {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 24px;
+        background: linear-gradient(145deg, rgba(15,22,41,0.95) 0%, rgba(8,13,26,0.98) 100%);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-top-color: rgba(255,255,255,0.25);
+        border-left-color: rgba(255,255,255,0.15);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.1);
+        transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.5s ease;
+        transform-style: preserve-3d;
+        perspective: 1500px;
+        z-index: 1;
+      }
+      .edu-card-3d:hover {
+        transform: scale(1.025) rotateX(3deg) rotateY(-3deg) translateY(-8px);
+        box-shadow: 0 35px 70px rgba(0,0,0,0.8), inset 0 3px 6px rgba(255,255,255,0.2), 0 0 45px rgba(var(--accent-rgb), 0.18);
+        z-index: 10;
+      }
+      .edu-image-wrap {
+        border-radius: 24px 0 0 24px;
+        overflow: hidden;
+        border-right: 1px solid rgba(255,255,255,0.08);
+        position: relative;
+        transform: translateZ(10px);
+        transition: transform 0.5s;
+        box-shadow: 8px 0 20px rgba(0,0,0,0.4);
+      }
+      @media (max-width: 768px) {
+        .edu-image-wrap { border-radius: 24px 24px 0 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+      }
+      .edu-card-3d:hover .edu-content-wrap {
+        transform: translateZ(35px);
+      }
+      .edu-content-wrap {
+        transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+        transform-style: preserve-3d;
+      }
+      .edu-node-3d {
+        position: absolute;
+        top: 2.5rem;
+        left: 2px;
+        width: 32px;
+        height: 32px;
+        background: radial-gradient(circle at 30% 30%, #fff, var(--accent));
+        border-radius: 50%;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.7), inset 0 -4px 8px rgba(0,0,0,0.5), 0 0 25px var(--accent);
+        z-index: 2;
+        animation: float-node 3s infinite alternate ease-in-out;
+      }
+      @keyframes float-node {
+        0% { transform: translateY(0) scale(1); filter: brightness(1); }
+        100% { transform: translateY(-5px) scale(1.08); filter: brightness(1.2); box-shadow: 0 12px 30px rgba(0,0,0,0.8), inset 0 -4px 8px rgba(0,0,0,0.5), 0 0 40px var(--accent); }
+      }
+      .edu-line-3d {
+        position: absolute;
+        top: 2rem;
+        bottom: 0;
+        left: 14px;
+        width: 8px;
+        background: linear-gradient(to bottom, var(--accent) 0%, rgba(var(--accent-rgb),0.3) 50%, transparent 100%);
+        border-radius: 8px;
+        box-shadow: inset 0 2px 6px rgba(255,255,255,0.6), 0 0 25px rgba(var(--accent-rgb), 0.7);
+        z-index: 0;
+      }
+    </style>
     <!-- Glowing Vertical Line -->
-    <div style="position:absolute; top:2rem; bottom:0; left:16px; width:4px; background:linear-gradient(to bottom, var(--accent), rgba(var(--accent-rgb),0.1) 80%, transparent); border-radius:4px; box-shadow:0 0 20px rgba(var(--accent-rgb), 0.8); z-index:0;"></div>
+    <div class="edu-line-3d"></div>
     
-    <div style="display:flex; flex-direction:column; gap:3rem;">
+    <div style="display:flex; flex-direction:column; gap:3.5rem;">
       ${PROFILE.education.map((edu, i) => `
-        <div class="reveal reveal-delay-${i}" style="position:relative; padding-left:3.5rem;">
-          <!-- Glowing Dot on Line -->
-          <div style="position:absolute; top:2.5rem; left:8px; width:20px; height:20px; background:var(--bg); border:4px solid var(--accent); border-radius:50%; box-shadow:0 0 15px var(--accent), inset 0 0 5px var(--accent); z-index:2; animation:pulse-dot 3s infinite;"></div>
+        <div class="reveal reveal-delay-${i}" style="position:relative; padding-left:4rem;">
+          <!-- Glowing Node -->
+          <div class="edu-node-3d"></div>
           <!-- Horizontal Connector -->
-          <div style="position:absolute; top:3rem; left:28px; width:1.5rem; height:2px; background:linear-gradient(to right, var(--accent), transparent); opacity:0.6; z-index:1;"></div>
+          <div style="position:absolute; top:3.4rem; left:32px; width:2rem; height:6px; border-radius:6px; background:linear-gradient(to right, var(--accent), transparent); opacity:0.9; z-index:1; box-shadow:inset 0 1px 3px rgba(255,255,255,0.4), 0 4px 10px rgba(0,0,0,0.6);"></div>
           
-          <div class="glass-card tilt-card" style="display:flex; flex-wrap:wrap; overflow:hidden; background:var(--surface2); padding:0; border:1px solid rgba(255,255,255,0.08); box-shadow:0 15px 40px rgba(0,0,0,0.5);">
+          <div class="edu-card-3d">
+             <!-- Background Shimmer -->
+             <div style="position:absolute;inset:0;background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,0.03) 50%,transparent 80%);transform:skewX(-20deg);pointer-events:none;z-index:0;"></div>
+             
              <!-- Image side -->
-             <div style="flex: 0 0 auto; width: 100%; max-width: 240px; position:relative; background:var(--bg3); min-height: 180px; cursor:pointer;" onclick="openImageModal('${edu.image}')" title="Klik untuk perbesar">
-               <img src="${edu.image}" alt="${edu.institution}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.8; transition:transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s;" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.08)'" onmouseout="this.style.opacity='0.8'; this.style.transform='scale(1)'">
-               <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; background:rgba(0,0,0,0.4); transition:opacity 0.3s ease; color:#fff;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
-                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+             <div class="edu-image-wrap" style="flex: 0 0 auto; width: 100%; max-width: 270px; min-height: 220px; cursor:pointer;" onclick="openImageModal('${edu.image}')" title="Klik untuk perbesar">
+               <div style="position:absolute;inset:0;background:rgba(0,0,0,0.1);box-shadow:inset 0 0 30px rgba(0,0,0,0.8);z-index:1;pointer-events:none;"></div>
+               <img src="${edu.image}" alt="${edu.institution}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.9; transition:transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.7s;" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='0.9'; this.style.transform='scale(1)'">
+               <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; background:rgba(0,0,0,0.5); backdrop-filter:blur(3px); transition:opacity 0.4s ease; color:#fff; z-index:2;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.7));"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                </div>
              </div>
              
              <!-- Content side -->
-             <div style="flex: 1 1 0%; padding:2.5rem 2rem; display:flex; flex-direction:column; justify-content:center; position:relative;">
+             <div class="edu-content-wrap" style="flex: 1 1 0%; padding:2.8rem 2.4rem; display:flex; flex-direction:column; justify-content:center; position:relative; z-index:2;">
                 <!-- Decorative background number -->
-                <div style="position:absolute; top:-10px; right:15px; font-size:7rem; font-weight:900; color:var(--text); opacity:0.02; z-index:0; pointer-events:none; font-family:var(--font-display);">${i+1}</div>
+                <div style="position:absolute; top:-15px; right:20px; font-size:9rem; font-weight:900; color:var(--text); opacity:0.04; z-index:0; pointer-events:none; font-family:var(--font-display); text-shadow:0 10px 25px rgba(0,0,0,0.6); transform:translateZ(-15px);">${i+1}</div>
                 
-                <div style="position:relative; z-index:1;">
-                  <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
-                    <h3 style="font-size:1.4rem; font-weight:800; line-height:1.3; text-shadow:0 2px 4px rgba(0,0,0,0.6);">${edu.institution}</h3>
-                    <span style="font-size:0.75rem; color:var(--accent); background:rgba(var(--accent-rgb),0.1); backdrop-filter:blur(6px); padding:5px 14px; border-radius:99px; border:1px solid rgba(var(--accent-rgb),0.3); white-space:nowrap; display:inline-flex; align-items:center; gap:6px; font-weight:700; box-shadow:0 0 15px rgba(var(--accent-rgb),0.15);">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <div style="position:relative; z-index:1; transform-style:preserve-3d;">
+                  <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.8rem; margin-bottom:1.2rem; transform:translateZ(20px);">
+                    <h3 style="font-size:1.65rem; font-weight:800; line-height:1.3; text-shadow:0 4px 12px rgba(0,0,0,0.8);">${edu.institution}</h3>
+                    <span style="font-size:0.8rem; color:var(--accent); background:rgba(var(--accent-rgb),0.15); backdrop-filter:blur(10px); padding:8px 18px; border-radius:99px; border:1px solid rgba(var(--accent-rgb),0.4); white-space:nowrap; display:inline-flex; align-items:center; gap:8px; font-weight:800; box-shadow:0 6px 20px rgba(var(--accent-rgb),0.3), inset 0 1px 3px rgba(255,255,255,0.3);">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                       ${edu.period}
                     </span>
                   </div>
-                  <p style="font-size:1rem; font-weight:700; color:var(--text-muted); margin-bottom:1rem; display:flex; align-items:center; gap:6px;">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                  <p style="font-size:1.15rem; font-weight:800; color:var(--accent); filter:brightness(1.2); margin-bottom:1.4rem; display:flex; align-items:center; gap:8px; transform:translateZ(15px); text-shadow:0 3px 8px rgba(0,0,0,0.6);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="filter:drop-shadow(0 3px 5px rgba(0,0,0,0.7));"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
                     ${edu.degree}
                   </p>
-                  <p style="font-size:0.925rem; color:var(--text-dim); line-height:1.75; margin-bottom:1.5rem;">${edu.desc}</p>
+                  <p style="font-size:1rem; color:var(--text-dim); line-height:1.8; margin-bottom:2rem; transform:translateZ(10px); text-shadow:0 2px 4px rgba(0,0,0,0.9);">${edu.desc}</p>
                   
-                  <div style="display:flex; align-items:center; flex-wrap:wrap; gap:1rem;">
-                    ${edu.current ? '<span style="display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;color:#10b981;background:rgba(16,185,129,0.1);padding:6px 14px;border-radius:99px;font-weight:700;border:1px solid rgba(16,185,129,0.3);box-shadow:0 0 12px rgba(16,185,129,0.2);"><span style="width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 10px #10b981; animation:pulse-dot 2s infinite;"></span> Sedang Ditempuh</span>' : '<span style="display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--text-dim);font-weight:600;padding:6px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:99px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Lulus / Selesai</span>'}
-                    ${edu.mapUrl ? `<a href="${edu.mapUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--accent);border:1px solid var(--border-accent);padding:6px 14px;border-radius:99px;text-decoration:none;transition:all 0.3s;font-weight:600;" onmouseover="this.style.background='var(--accent-dim)'; this.style.boxShadow='0 0 12px rgba(var(--accent-rgb),0.3)';" onmouseout="this.style.background='transparent'; this.style.boxShadow='none';"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Lihat Lokasi</a>` : ''}
+                  <div style="display:flex; align-items:center; flex-wrap:wrap; gap:1.2rem; transform:translateZ(25px);">
+                    ${edu.current ? '<span style="display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;color:#10b981;background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(16,185,129,0.05));padding:10px 20px;border-radius:99px;font-weight:800;border:1px solid rgba(16,185,129,0.5);box-shadow:0 8px 20px rgba(16,185,129,0.3), inset 0 2px 4px rgba(255,255,255,0.2);"><span style="width:10px;height:10px;border-radius:50%;background:#34d399;box-shadow:0 0 15px #34d399; animation:pulse-dot 1.5s infinite;"></span> Sedang Ditempuh</span>' : '<span style="display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--text-dim);font-weight:700;padding:10px 20px;background:linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.2);border-radius:99px;box-shadow:0 6px 15px rgba(0,0,0,0.4), inset 0 2px 5px rgba(255,255,255,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Lulus / Selesai</span>'}
+                    ${edu.mapUrl ? `<a href="${edu.mapUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--accent);border:1px solid rgba(var(--accent-rgb),0.5);background:rgba(var(--accent-rgb),0.1);padding:10px 20px;border-radius:99px;text-decoration:none;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);font-weight:800;box-shadow:0 6px 20px rgba(0,0,0,0.4), inset 0 2px 4px rgba(255,255,255,0.1);" onmouseover="this.style.transform='translateY(-4px)'; this.style.background='rgba(var(--accent-rgb),0.25)'; this.style.boxShadow='0 12px 25px rgba(var(--accent-rgb),0.5), inset 0 2px 6px rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(var(--accent-rgb),0.1)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.4), inset 0 2px 4px rgba(255,255,255,0.1)';"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,0.6));"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Lihat Lokasi</a>` : ''}
                   </div>
                 </div>
              </div>
