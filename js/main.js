@@ -344,12 +344,21 @@ function renderHighlights() {
         position:absolute;border-radius:50%;pointer-events:none;
         animation: hlParticleFloat linear infinite;
       }
+      @keyframes hlAmbientFloat {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-6px); }
+      }
+      @keyframes hlIconSweep {
+        0% { left: -100%; }
+        20% { left: 200%; }
+        100% { left: 200%; }
+      }
       .hl-icon-new {
-        animation: hlIconPulse 3s ease-in-out infinite;
-        transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease !important;
+        transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.5s ease !important;
       }
       .hl-card-new:hover .hl-icon-new {
-        transform: rotate(-10deg) scale(1.15) !important;
+        transform: scale(1.15) rotateX(12deg) rotateY(-12deg) translateY(-8px) !important;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.8), inset 0 3px 6px rgba(255,255,255,0.25), inset 0 -4px 15px rgba(0,0,0,0.6), 0 0 30px var(--glow-c) !important;
       }
       .hl-bar-fill-new {
         animation: hlBarFill 1.2s cubic-bezier(0.4,0,0.2,1) both;
@@ -470,13 +479,22 @@ function renderHighlights() {
 
           <!-- Icon with glow ring -->
           <div class="hl-icon-new" style="
-            width:56px;height:56px;border-radius:18px;
+            width:64px;height:64px;border-radius:18px;
             display:flex;align-items:center;justify-content:center;
-            background:linear-gradient(135deg,rgba(255,255,255,0.09),rgba(255,255,255,0.02));
-            border:1px solid rgba(255,255,255,0.12);
-            box-shadow:0 8px 24px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.1),0 0 0 0 ${glowC};
+            background:linear-gradient(135deg,rgba(30,41,59,0.9) 0%,rgba(10,15,25,0.95) 100%);
+            border:1px solid rgba(255,255,255,0.1);
+            border-top-color:rgba(255,255,255,0.3);
+            border-left-color:rgba(255,255,255,0.2);
+            box-shadow:0 10px 20px rgba(0,0,0,0.6),inset 0 2px 5px rgba(255,255,255,0.15),inset 0 -4px 15px rgba(0,0,0,0.5),0 0 15px ${glowC};
             --hl-rgb:${h.accentColor ? h.accentColor.replace(/[^,\d]/g,'').split(',').slice(0,3).join(',') : '0,212,255'};
-          ">${svgIcon}</div>
+            --glow-c:${glowC};
+            position:relative; overflow:hidden; transform-style:preserve-3d; perspective:1000px;
+          ">
+            <div style="position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);transform:skewX(-25deg);animation:hlIconSweep 4s infinite linear;"></div>
+            <div style="transform:translateZ(20px); filter:drop-shadow(0 8px 12px rgba(0,0,0,0.8)); animation:hlAmbientFloat 3s infinite alternate ease-in-out;">
+              ${svgIcon}
+            </div>
+          </div>
 
           <!-- Level pill -->
           ${h.level !== undefined ? `
