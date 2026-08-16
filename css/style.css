@@ -273,6 +273,7 @@ body::before {
   cursor: pointer; font-size: 0.8rem;
   color: var(--text-muted);
   transition: background 0.15s;
+  white-space: nowrap;
 }
 .accent-opt:hover { background: var(--accent-dim); color: var(--text); }
 .accent-swatch {
