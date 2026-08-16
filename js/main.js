@@ -707,7 +707,7 @@ function renderFeaturedProjects() {
             
             <div style="position:absolute;top:12px;right:12px;z-index:3;">
               <span class="status-badge ${p.status === 'Selesai' ? 'status-done' : 'status-wip'}"
-                style="backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:0.65rem;">
+                style="background:rgba(15, 23, 42, 0.85);font-size:0.65rem;">
                 ${p.status}
               </span>
             </div>
@@ -716,8 +716,8 @@ function renderFeaturedProjects() {
               <span style="font-family:var(--font-mono);font-size:0.6rem;font-weight:700;
                 letter-spacing:0.1em;text-transform:uppercase;
                 padding:3px 9px;border-radius:99px;
-                background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);
-                color:rgba(255,255,255,0.6);backdrop-filter:blur(8px);">
+                background:rgba(15, 23, 42, 0.85);border:1px solid rgba(255,255,255,0.12);
+                color:rgba(255,255,255,0.8);">
                 ${p.category || 'web'}
               </span>
             </div>

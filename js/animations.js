@@ -29,13 +29,18 @@ const Animations = (() => {
   function initScrollProgress() {
     const bar = document.getElementById('scroll-progress');
     if (!bar) return;
+    
+    let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    window.addEventListener('resize', () => {
+      totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    }, { passive: true });
+
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrolled = window.scrollY;
-          const total = document.documentElement.scrollHeight - window.innerHeight;
-          bar.style.width = `${(scrolled / total) * 100}%`;
+          bar.style.width = `${(scrolled / totalHeight) * 100}%`;
           ticking = false;
         });
         ticking = true;
@@ -66,6 +71,9 @@ const Animations = (() => {
     // Memberikan efek tilt 4D premium ke SEMUA jenis kartu, bukan cuma tilt-card
     const cards = document.querySelectorAll('.tilt-card, .glass-card, .project-card, .about-stat-card, .org-card-premium');
     
+    // OPTIMASI PERFORMA: Mobile devices tidak perlu efek tilt yang boros GPU
+    if (window.innerWidth < 768) return;
+
     cards.forEach(card => {
       // Inject glare elements dynamic
       let glareWrapper = card.querySelector('.glare-wrapper');
@@ -89,8 +97,8 @@ const Animations = (() => {
       }
 
       card.addEventListener('mouseenter', () => {
-        // Gunakan transisi cepat untuk transform agar pergerakan tilt mengikuti mouse dengan sangat mulus (tidak lag/patah)
-        card.style.transition = 'transform 0.15s ease-out, box-shadow 0.4s ease, border-color 0.4s ease';
+        card.style.transition = 'transform 0.1s ease-out';
+        card.style.willChange = 'transform';
       });
 
       let ticking = false;
@@ -103,26 +111,17 @@ const Animations = (() => {
             const cx = rect.width / 2;
             const cy = rect.height / 2;
             
-            // Tilt math (Smooth 4D Normal)
-            const rx = ((y - cy) / cy) * -6; // diturunkan agar pergerakan lebih halus
-            const ry = ((x - cx) / cx) * 6;
+            // Tilt math (Sangat Ringan, max rotasi dikurangi untuk hemat repaint)
+            const rx = ((y - cy) / cy) * -4;
+            const ry = ((x - cx) / cx) * 4;
             
-            card.style.setProperty('--rx', `${rx}deg`);
-            card.style.setProperty('--ry', `${ry}deg`);
+            card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02, 1.02, 1.02)`;
+            card.style.zIndex = '50';
             
-            // Sesuaikan transform dengan jenis kartu. about-stat-card diangkat lebih tinggi.
-            if (card.classList.contains('about-stat-card')) {
-              card.style.transform = `translateY(-10px) scale3d(1.04, 1.04, 1.04) perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-            } else {
-              card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.03, 1.03, 1.03) translateY(-5px)`;
-            }
-            
-            card.style.zIndex = '50'; // supaya tidak tertutup elemen lain saat hover
-            
-            // Glare math (moves opposite to tilt)
+            // Glare math
             if (glareInner) {
               glareInner.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-              glareInner.style.opacity = '1';
+              glareInner.style.opacity = '0.6';
             }
             ticking = false;
           });
@@ -131,10 +130,10 @@ const Animations = (() => {
       });
       
       card.addEventListener('mouseleave', () => {
-        // Kembalikan transisi supaya bisa balik perlahan dengan efek pegas (spring physics)
-        card.style.transition = 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.8s ease, border-color 0.8s ease';
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1) translateY(0)';
+        card.style.transition = 'transform 0.5s ease-out';
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
         card.style.zIndex = '';
+        card.style.willChange = 'auto';
         if (glareInner) {
             glareInner.style.opacity = '0';
         }
