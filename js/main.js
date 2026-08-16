@@ -1582,10 +1582,9 @@ function renderTraining() {
   if (!el || !PROFILE.training) return;
   
   const displayCount = 4;
-  const dataToRender = isTrainingExpanded ? PROFILE.training : PROFILE.training.slice(0, displayCount);
-
-  el.innerHTML = dataToRender.map((t, i) => `
-    <div class="glass-card tilt-card reveal reveal-delay-${i+1}" style="padding:0; position:relative; overflow:hidden; border:1px solid rgba(0,212,255,0.2); box-shadow:0 8px 32px rgba(0,0,0,0.3); border-radius:18px;">
+  // Render ALL items, but initially hide the ones beyond displayCount
+  el.innerHTML = PROFILE.training.map((t, i) => `
+    <div class="glass-card tilt-card reveal reveal-delay-${i+1} training-card-item" style="display: ${i < displayCount ? 'block' : 'none'}; padding:0; position:relative; overflow:hidden; border:1px solid rgba(0,212,255,0.2); box-shadow:0 8px 32px rgba(0,0,0,0.3); border-radius:18px;">
       
       <!-- Background pattern -->
       <div style="position:absolute; inset:0; background-image: linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px); background-size: 20px 20px; z-index:0; pointer-events:none; opacity:0.6;"></div>
@@ -1658,14 +1657,20 @@ function renderTrainingBtn(displayCount) {
 
 window.toggleTraining = function() {
   isTrainingExpanded = !isTrainingExpanded;
-  renderTraining();
   
-  // Make newly rendered cards visible immediately since they miss the initial scroll observer
-  setTimeout(() => {
-    document.querySelectorAll('#training-list .reveal').forEach(el => {
-      el.classList.add('visible', 'active');
-    });
-  }, 50);
+  const displayCount = 4;
+  const cards = document.querySelectorAll('#training-list .training-card-item');
+  cards.forEach((card, i) => {
+    if (i >= displayCount) {
+      card.style.display = isTrainingExpanded ? 'block' : 'none';
+      if (isTrainingExpanded) {
+        // Ensure they become visible immediately when expanding
+        card.classList.add('visible', 'active');
+      }
+    }
+  });
+
+  renderTrainingBtn(displayCount);
 
   // Optional: scroll back slightly if collapsing
   if (!isTrainingExpanded) {
@@ -1740,10 +1745,10 @@ function renderCertificates() {
   if (!el) return;
 
   const displayCount = 4;
-  const dataToRender = isCertsExpanded ? PROFILE.certificates : PROFILE.certificates.slice(0, displayCount);
-
-  el.innerHTML = dataToRender.map(c => `
-    <div class="project-card tilt-card reveal" style="background:var(--surface2); display:flex; flex-direction:column; height:100%;">
+  
+  // Render ALL items, but initially hide the ones beyond displayCount
+  el.innerHTML = PROFILE.certificates.map((c, i) => `
+    <div class="project-card tilt-card reveal cert-card-item" style="display: ${i < displayCount ? 'flex' : 'none'}; background:var(--surface2); flex-direction:column; height:100%;">
       <div style="flex:0 0 auto; overflow:hidden; height:180px; position:relative; background:var(--bg3); cursor:pointer;" onclick="openImageModal('${c.image}')" title="Klik untuk perbesar sertifikat">
         <!-- Certificate Image Thumbnail -->
         <img src="${c.image}" alt="${c.name}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.85; transition:transform 0.4s var(--ease), opacity 0.4s var(--ease);" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.05)'" onmouseout="this.style.opacity='0.85'; this.style.transform='scale(1)'">
@@ -1807,13 +1812,19 @@ function renderCertsBtn(displayCount) {
 
 window.toggleCerts = function() {
   isCertsExpanded = !isCertsExpanded;
-  renderCertificates();
+  
+  const displayCount = 4;
+  const cards = document.querySelectorAll('#certs-list .cert-card-item');
+  cards.forEach((card, i) => {
+    if (i >= displayCount) {
+      card.style.display = isCertsExpanded ? 'flex' : 'none';
+      if (isCertsExpanded) {
+        card.classList.add('visible', 'active');
+      }
+    }
+  });
 
-  setTimeout(() => {
-    document.querySelectorAll('#certs-list .reveal').forEach(el => {
-      el.classList.add('visible', 'active');
-    });
-  }, 50);
+  renderCertsBtn(displayCount);
   
   if (!isCertsExpanded) {
     const section = document.querySelector('#certs-list');
