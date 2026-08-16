@@ -131,7 +131,7 @@ body {
 }
 
 /* Hardware Acceleration & Smoothness Optimizations */
-.glass-card, .tilt-card, .reveal, .btn-primary, .btn-ghost, .filter-pill, .nav-link, .social-icon {
+.glass-card, .tilt-card, .btn-primary, .btn-ghost, .filter-pill, .nav-link, .social-icon {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -198,8 +198,8 @@ body::before {
 
 #navbar.scrolled .nav-wrapper {
   background: var(--surface);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
   border-color: var(--border);
   box-shadow: 0 10px 40px rgba(0,0,0,0.3);
 }
@@ -389,11 +389,11 @@ kbd {
   border-top-color: rgba(255, 255, 255, 0.12);
   border-left-color: rgba(255, 255, 255, 0.12);
   border-radius: 16px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  animation: ambient-float 8s ease-in-out infinite alternate;
+  /* Removed ambient-float here because animating massive backdrop-filter kills scroll FPS */
 }
 .glass-card:hover {
   border-color: var(--border-accent);
@@ -930,7 +930,8 @@ kbd {
   transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.45s var(--ease), box-shadow 0.45s var(--ease);
   cursor: default;
   box-shadow: 0 8px 30px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.1);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .about-stat-card::before {
@@ -1033,7 +1034,6 @@ kbd {
 .about-stat-icon svg {
   transform: translateZ(20px);
   filter: drop-shadow(0 8px 12px rgba(0,0,0,0.8));
-  animation: ambient-float 3s infinite alternate ease-in-out;
 }
 
 .about-stat-card:hover .about-stat-icon {
@@ -1241,8 +1241,9 @@ footer {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 20px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  transform-style: preserve-3d;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: all 0.4s var(--ease);
   margin-bottom: 1rem;
   cursor: default;
