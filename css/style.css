@@ -58,11 +58,17 @@ html[data-accent="violet"] { --accent: #8b5cf6; --accent-rgb: 139, 92, 246; }
 html[data-accent="emerald"] { --accent: #10b981; --accent-rgb: 16, 185, 129; }
 
 /* === RESET & BASE === */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  -webkit-tap-highlight-color: transparent; /* Remove mobile tap blue flash */
+}
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overscroll-behavior-y: none; /* Native app feel, no pull-to-refresh bounce */
 }
 
 /* FOUC Prevention for Intro */
@@ -119,9 +125,18 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
+  overscroll-behavior-y: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility; /* Sharper text rendering */
   transition: background 0.4s var(--ease), color 0.3s var(--ease);
+}
+
+/* Hardware Acceleration & Smoothness Optimizations */
+.glass-card, .tilt-card, .reveal, .btn-primary, .btn-ghost, .filter-pill, .nav-link, .social-icon {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  touch-action: manipulation; /* Improves mobile tap responsiveness */
 }
 
 /* Scrollbar */
