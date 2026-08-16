@@ -148,7 +148,7 @@ github.com/yazid-solo  |  yazid-solo.github.io
 ### 📊 Produktivitas
 `Microsoft Word & Excel` · `Google Docs & Sheets` · `Google Colab` · `GitLab`
 
-### 🤖 AI Tools (Aktif Digunakan)
+### ⚡ AI Tools (Aktif Digunakan)
 `ChatGPT` · `Claude AI` · `GitHub Copilot` · `Google Gemini`
 
 ---
