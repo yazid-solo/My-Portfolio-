@@ -409,7 +409,7 @@ const PROFILE = {
     {
       role: "Ketua UKM Badminton",
       org: "UNU Yogyakarta",
-      period: "2025 – Sekarang",
+      period: "2025 – 2026",
       desc: "Mengatur jadwal, sarana, perlengkapan olahraga, dan mengkoordinasi semua anggota UKM.",
       icon: "assets/Foto_Logo/logo Ukm Badminton UNUYO.svg",
       image: "https://awsimages.detik.net.id/community/media/visual/2022/10/18/ilustrasi-badminton-4.jpeg?w=1200"

@@ -136,12 +136,6 @@ const Components = (() => {
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" role="dialog" aria-label="Navigation menu">
-      <button id="mobile-close" style="position:absolute;top:1.5rem;right:1.5rem;" class="icon-btn" aria-label="Close menu">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" fill="none" opacity="0.5"/>
-          <path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
       ${NAV_LINKS.map(l => `<a href="${l.href}" class="mobile-nav-link ${activePage === l.href ? 'active' : ''}">${l.label}</a>`).join('')}
     </div>
     `;
@@ -446,7 +440,6 @@ const Components = (() => {
   function initMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
-    const mobileClose = document.getElementById('mobile-close');
     if (!hamburger || !mobileMenu) return;
 
     hamburger.style.display = 'flex';
@@ -455,17 +448,34 @@ const Components = (() => {
     const mq = window.matchMedia('(max-width: 768px)');
     const updateVisibility = (e) => {
       hamburger.style.display = e.matches ? 'flex' : 'none';
+      if (!e.matches && mobileMenu.classList.contains('open')) {
+        // Reset if window gets big
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="7" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="11" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>`;
+      }
     };
     mq.addEventListener('change', updateVisibility);
     updateVisibility(mq);
 
     hamburger.addEventListener('click', () => {
-      mobileMenu.classList.add('open');
-      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.toggle('open');
+      const isOpen = mobileMenu.classList.contains('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      if (isOpen) {
+        hamburger.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>`;
+      } else {
+        hamburger.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="7" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="11" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>`;
+      }
     });
-    mobileClose?.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
+
+    // Close when clicking a link
+    mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="7" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="11" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>`;
+      });
     });
   }
 

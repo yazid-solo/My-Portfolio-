@@ -361,7 +361,7 @@ kbd {
   background: rgba(8, 13, 26, 0.95);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  z-index: 200; /* Harus lebih tinggi dari navbar (100) agar tombol close bisa diklik */
+  z-index: 90; /* Dibawah navbar (100) agar logo & hamburger tetap terlihat/bisa diklik */
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 1.8rem;
