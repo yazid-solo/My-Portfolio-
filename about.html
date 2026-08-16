@@ -458,6 +458,7 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       display: inline;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
     }
     @keyframes cursorBlink {
       0%, 100% { opacity: 1; }
@@ -470,6 +471,31 @@
       transform: translateX(4px);
       box-shadow: 0 4px 20px rgba(0,0,0,0.25);
     }
+    
+    .wave-icon-3d {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: bottom;
+      margin-left: 6px;
+      width: 44px;
+      height: 44px;
+      opacity: 0;
+      transform: scale(0.5) rotate(20deg);
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+      animation: pop-in-wave 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, wave-continuous 2.5s ease-in-out infinite alternate 0.6s;
+    }
+
+    @keyframes pop-in-wave {
+      to { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+
+    @keyframes wave-continuous {
+      0% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.15) rotate(18deg); filter: drop-shadow(0 10px 20px rgba(var(--accent-rgb), 0.5)); }
+      75% { transform: scale(1.05) rotate(-8deg); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
   </style>
 
   <script>
@@ -478,7 +504,7 @@
       const headingEl = document.getElementById('bio-heading');
       const cursorEl  = document.getElementById('bio-cursor');
       const parasEl   = document.getElementById('bio-paragraphs');
-      const fullText  = 'Halo, saya Yazid 👋';
+      const fullText  = 'Halo, saya Yazid ';
       let   charIndex = 0;
       let   started   = false;
 
@@ -486,10 +512,12 @@
         if (charIndex < fullText.length) {
           headingEl.textContent += fullText.charAt(charIndex);
           charIndex++;
-          // slow down on emoji (multi-codepoint)
-          const delay = charIndex > 17 ? 120 : 55;
+          const delay = charIndex > 15 ? 100 : 60;
           setTimeout(typeWriter, delay);
         } else {
+          // Append 3D waving hand image
+          headingEl.innerHTML += `<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Wave" class="wave-icon-3d" loading="eager">`;
+          
           // Hide cursor, show paragraphs
           setTimeout(() => {
             if (cursorEl) cursorEl.style.display = 'none';
