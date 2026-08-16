@@ -1308,20 +1308,20 @@ function renderOrgExperience() {
         </div>
         
         <!-- Text & Description -->
-        <div style="flex:1; transform-style:preserve-3d;">
+        <div style="flex: 1 1 0%; min-width: 0; width: 100%; transform-style:preserve-3d;">
           <!-- Header row -->
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.8rem; margin-bottom:1rem; transform:translateZ(15px);">
-            <div>
-              <h3 style="font-size:1.35rem; font-weight:800; letter-spacing:0.5px; color:#fff; text-shadow:0 3px 6px rgba(0,0,0,0.7); margin:0; line-height:1.2;" class="org-role-title">${o.role}</h3>
-              <p style="font-size:0.95rem; font-weight:700; color:var(--accent); filter:brightness(1.15); margin-top:0.5rem; font-family:var(--font-mono); letter-spacing:0.5px; text-shadow:0 2px 4px rgba(0,0,0,0.5);">${o.org}</p>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.8rem; margin-bottom:1rem; transform:translateZ(15px); width:100%;">
+            <div style="flex: 1; min-width: 0;">
+              <h3 style="font-size:1.35rem; font-weight:800; letter-spacing:0.5px; color:#fff; text-shadow:0 3px 6px rgba(0,0,0,0.7); margin:0; line-height:1.2; word-wrap:break-word;" class="org-role-title">${o.role}</h3>
+              <p style="font-size:0.95rem; font-weight:700; color:var(--accent); filter:brightness(1.15); margin-top:0.5rem; font-family:var(--font-mono); letter-spacing:0.5px; text-shadow:0 2px 4px rgba(0,0,0,0.5); word-wrap:break-word;">${o.org}</p>
             </div>
-            <span style="font-size:0.75rem; font-family:var(--font-mono); font-weight:800; color:var(--accent); background:rgba(var(--accent-rgb),0.15); backdrop-filter:blur(5px); border:1px solid rgba(var(--accent-rgb),0.4); padding:6px 14px; border-radius:99px; box-shadow:0 4px 12px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.1); white-space:nowrap; transition:all 0.4s ease;" class="org-badge">${o.period}</span>
+            <span style="font-size:0.75rem; font-family:var(--font-mono); font-weight:800; color:var(--accent); background:rgba(var(--accent-rgb),0.15); backdrop-filter:blur(5px); border:1px solid rgba(var(--accent-rgb),0.4); padding:6px 14px; border-radius:99px; box-shadow:0 4px 12px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.1); white-space:nowrap; transition:all 0.4s ease; flex-shrink:0;" class="org-badge">${o.period}</span>
           </div>
           
           <!-- Structured Description Box -->
-          <div style="margin-top:1.5rem; padding-left:1.4rem; border-left:3px solid var(--accent); position:relative; transform:translateZ(20px); transition:transform 0.5s ease; border-radius:0 8px 8px 0; overflow:hidden;" class="org-desc-box">
+          <div style="margin-top:1.5rem; padding-left:1.4rem; border-left:3px solid var(--accent); position:relative; transform:translateZ(20px); transition:transform 0.5s ease; border-radius:0 8px 8px 0; overflow:hidden; width:100%;" class="org-desc-box">
             <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(var(--accent-rgb),0.1) 0%, transparent 100%); z-index:0; pointer-events:none;"></div>
-            <p style="position:relative; z-index:1; font-size:0.95rem; line-height:1.8; color:rgba(255,255,255,0.85); text-align:justify; margin:0; text-shadow:0 1px 3px rgba(0,0,0,0.7); font-weight:500;">
+            <p style="position:relative; z-index:1; font-size:0.95rem; line-height:1.8; color:rgba(255,255,255,0.85); text-align:justify; margin:0; text-shadow:0 1px 3px rgba(0,0,0,0.7); font-weight:500; width:100%;">
               ${o.desc}
             </p>
           </div>
