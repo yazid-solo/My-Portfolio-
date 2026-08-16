@@ -66,8 +66,8 @@ html[data-accent="emerald"] { --accent: #10b981; --accent-rgb: 16, 185, 129; }
 }
 
 html {
-  scroll-behavior: smooth;
   font-size: 16px;
+  /* scroll-behavior: smooth; Disabled because it causes scroll lag on some mice/devices */
 }
 
 /* FOUC Prevention for Intro */
@@ -159,10 +159,10 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  /* SVG noise causes massive scroll lag on many GPUs, disabling for 60fps performance */
+  /* background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); */
   pointer-events: none;
   z-index: 0;
-  opacity: 0.4;
 }
 
 /* === SCROLL PROGRESS === */
