@@ -219,23 +219,33 @@ dinamis, dan keranjang belanja — dibangun berbasis dokumentasi Swagger API.
 ---
 
 ## 🖊️ BAGIAN 8 — SERTIFIKAT
-*(Daftar lengkap — pilih 7–10 yang paling relevan untuk posisi yang dilamar)*
+*(Strategi Pemilihan Sertifikat — JANGAN masukkan semuanya. Maksimal pilih 3-5 yang paling berbobot)*
 
-1. Professional Developer Bootcamp Program Batch 1 — *Stechoq Academy x Innovative Academy (2026)*
-2. AI Productivity and AI API Integration for Developers — *Hacktiv8 (2026)*
-3. AI Praktis untuk Produktivitas — *Dicoding (2026)*
-4. Samsung Innovation Campus Batch 7 — *Samsung / Dibimbing.id (2025/2026)*
-5. Integration AI in Penetration Testing — *CodeLamp Indonesia (2026)*
-6. Third-Party Risk Management for Vendors — *CodeLamp Indonesia (2026)*
-7. Introduction to JavaScript & Development Environment Setup — *CodeLamp Indonesia (2026)*
-8. Introduction to Version Control & Git Installation — *CodeLamp Indonesia (2026)*
-9. Pengenalan Web & Persiapan Lingkungan Kerja — *CodeLamp Indonesia (2026)*
-10. Coding Camp – Intro to Software Engineering — *DBS Foundation / Dicoding (2024)*
-11. Web 3 On Campus — *UPbit Indonesia / IDNFT (2025)*
-12. International Conference: Indonesia–Russia Cooperation — *UNU Yogyakarta (2024)*
-13. Praktek Kerja Lapangan — *Band Motor Yogyakarta / SMK Al-Munawwir (2024)*
-14. Lomba Kaligrafi Al-Mizan Fest 1444 H — *Se-DIY & Jateng (2023)*
-15. Ketua UKM Badminton — *UNU Yogyakarta (2025/2026)*
+**⭐ Wajib Dimasukkan (The "Must-Haves")**
+Sertifikat ini menunjukkan bahwa Anda ditempa di kurikulum industri yang keras dan kredibel. Masukkan ini di urutan paling atas:
+1. **Professional Developer Bootcamp Program Batch 1** — *Stechoq Academy x Innovative Academy (2026)*
+2. **Samsung Innovation Campus Batch 7** — *Samsung / Dibimbing.id (2025/2026)*
+3. **Coding Camp – Intro to Software Engineering** — *RevoU (2026)*
+
+**🎯 Pilih Berdasarkan Posisi yang Dilamar (Pilih 1-2 Saja)**
+*Jika melamar sebagai **Software Engineer / AI Integrator**:*
+- **AI Productivity and AI API Integration for Developers** — *Hacktiv8 (2026)*
+- **AI-Powered Software Engineering** — *Codelamp Indonesia (2026)*
+
+*Jika melamar sebagai **Cyber Security / Penetration Tester**:*
+- **Integrating AI in Penetration Testing - Best Practices** — *Codelamp Indonesia (2026)*
+- **Think Like a Pentester: Web Penetration Testing** — *Codelamp Indonesia (2026)*
+
+**❌ JANGAN Dimasukkan ke CV (Simpan Saja di Web Portofolio)**
+Sertifikat berikut ini sifatnya sangat dasar (*fundamental*). Kemampuan ini sudah dibuktikan lewat bagian proyek Anda, jadi hanya akan memenuhi ruang CV jika dipaksa masuk:
+- *Introduction to JavaScript and Development Environment Setup*
+- *Introduction to Version Control & Git Installation*
+- *Pengenalan Web & Persiapan Lingkungan Kerja*
+- *Kenapa Game Roblox Kamu Gampang Di-Hack?*
+
+**🔄 Pindahkan ke Kategori Lain**
+- **Ketua UKM Badminton** ➔ Masukkan ke bagian Pengalaman Organisasi.
+- **Praktek Kerja Lapangan (Band Motor / JASATEC)** ➔ Masukkan ke bagian Pengalaman Magang/Kerja, BUKAN sertifikat.
 
 ---
 
