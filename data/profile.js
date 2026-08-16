@@ -164,13 +164,10 @@ const PROFILE = {
     { name: "ms excel", icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg", style: "width: 24px; height: 24px;", color: "#107c41" },
     { name: "ms word", icon: "https://api.iconify.design/vscode-icons/file-type-word.svg", style: "width: 24px; height: 24px;", color: "#2b579a" },
     { name: "docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", color: "#2496ed" },
-    { name: "stitch", icon: "assets/stitch.svg", style: "width: 28px; height: 28px;", color: "#FFA1E0" },
     { name: "ChatGPT", icon: "https://api.iconify.design/simple-icons:openai.svg?color=white", color: "#10a37f" },
     { name: "GitHub Copilot", icon: "https://api.iconify.design/simple-icons:githubcopilot.svg?color=white", color: "#ffffff" },
     { name: "Claude AI", icon: "assets/claude.svg", color: "#d97757" },
-    { name: "Google Gemini", icon: "assets/gemini.svg", color: "#1a73e8" },
-    { name: "Antigravity IDE", icon: "assets/antigravity.svg", color: "#ff00ff" },
-    { name: "Kiro", icon: "assets/kiro.svg", color: "#ffff00" }
+    { name: "Google Gemini", icon: "assets/gemini.svg", color: "#1a73e8" }
   ],
 
   skills: [
@@ -205,10 +202,7 @@ const PROFILE = {
         { name: "ChatGPT", icon: "https://api.iconify.design/simple-icons:openai.svg?color=white" },
         { name: "GitHub Copilot", icon: "https://api.iconify.design/simple-icons:githubcopilot.svg?color=white" },
         { name: "Claude AI", icon: "assets/claude.svg" },
-        { name: "Google Gemini", icon: "assets/gemini.svg" },
-        { name: "Antigravity IDE", icon: "assets/antigravity.svg" },
-        { name: "Kiro", icon: "assets/kiro.svg" },
-        { name: "Stitch", icon: "assets/stitch.svg" }
+        { name: "Google Gemini", icon: "assets/gemini.svg" }
       ]
     },
     {
