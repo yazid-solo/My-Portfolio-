@@ -257,6 +257,34 @@ const HL_ICONS = {
     <line x1="6" y1="20" x2="15" y2="20" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
     <rect x="14" y="14" width="15" height="14" rx="3" fill="url(#doc-g2)" opacity="0.9"/>
     <path d="M19 19l2 2 4-4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`,
+  "Backend & Database": `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="db-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#93c5fd"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs>
+    <ellipse cx="16" cy="9" rx="10" ry="4" fill="url(#db-g)" opacity="0.9"/>
+    <path d="M6 9v7c0 2.2 4.5 4 10 4s10-1.8 10-4V9" stroke="#3b82f6" stroke-width="2" fill="none"/>
+    <path d="M6 16v7c0 2.2 4.5 4 10 4s10-1.8 10-4v-7" stroke="#3b82f6" stroke-width="2" fill="none"/>
+    <ellipse cx="16" cy="16" rx="10" ry="4" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.6"/>
+  </svg>`,
+  "Modern Frontend": `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="react-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d8b4fe"/><stop offset="100%" stop-color="#a855f7"/></linearGradient></defs>
+    <circle cx="16" cy="16" r="3" fill="#c084fc"/>
+    <ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(30 16 16)" stroke="url(#react-g)" stroke-width="1.5" fill="none"/>
+    <ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(90 16 16)" stroke="url(#react-g)" stroke-width="1.5" fill="none"/>
+    <ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(150 16 16)" stroke="url(#react-g)" stroke-width="1.5" fill="none"/>
+  </svg>`,
+  "Eksplorasi DevOps": `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="docker-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7dd3fc"/><stop offset="100%" stop-color="#0ea5e9"/></linearGradient></defs>
+    <path d="M4 18c0 3.3 5 6 12 6s12-2.7 12-6c0-1.5-1.5-3-4-4H8c-2.5 1-4 2.5-4 4z" fill="url(#docker-g)" opacity="0.9"/>
+    <rect x="10" y="10" width="4" height="4" rx="1" fill="#38bdf8"/>
+    <rect x="15" y="10" width="4" height="4" rx="1" fill="#38bdf8"/>
+    <rect x="10" y="5" width="4" height="4" rx="1" fill="#38bdf8"/>
+    <circle cx="22" cy="18" r="1.5" fill="white" opacity="0.8"/>
+  </svg>`,
+  "Integrasi AI": `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="ai-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f9a8d4"/><stop offset="100%" stop-color="#ec4899"/></linearGradient></defs>
+    <path d="M16 4l2.5 6.5L25 13l-6.5 2.5L16 22l-2.5-6.5L7 13l6.5-2.5L16 4z" fill="url(#ai-g)"/>
+    <path d="M24 20l1.5 3.5L29 25l-3.5 1.5L24 30l-1.5-3.5L19 25l3.5-1.5L24 20z" fill="#f472b6" opacity="0.8"/>
+    <path d="M8 22l1 2.5L11.5 25.5L9 26.5L8 29l-1-2.5L4.5 25.5L7 24.5L8 22z" fill="#f472b6" opacity="0.6"/>
   </svg>`
 };
 
