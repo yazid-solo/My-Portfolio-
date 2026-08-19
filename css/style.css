@@ -399,7 +399,10 @@ kbd {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  /* Removed ambient-float here because animating massive backdrop-filter kills scroll FPS */
+  /* Hardware acceleration for mobile performance */
+  transform: translateZ(0);
+  will-change: transform, backdrop-filter;
+  backface-visibility: hidden;
 }
 .glass-card:hover {
   border-color: var(--border-accent);
@@ -652,6 +655,9 @@ kbd {
   border-radius: 50%;
   filter: blur(80px);
   pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform, filter;
+  backface-visibility: hidden;
 }
 
 /* === PROJECT CARDS === */
@@ -1153,9 +1159,9 @@ footer {
   background: var(--bg);
   z-index: 99999;
   pointer-events: none;
+  pointer-events: none;
   opacity: 0;
-  backdrop-filter: blur(0px);
-  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 #page-transition.active { 
   opacity: 1; 
@@ -1251,6 +1257,9 @@ footer {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: all 0.4s var(--ease);
+  transform: translateZ(0);
+  will-change: transform, backdrop-filter;
+  backface-visibility: hidden;
   margin-bottom: 1rem;
   cursor: default;
 }
