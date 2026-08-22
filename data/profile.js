@@ -15,7 +15,7 @@ const PROFILE = {
   location: "Yogyakarta, Indonesia",
   github: "https://github.com/yazid-solo",
   linkedin: "https://www.linkedin.com/in/muhammad-yazid-ardani-127a19343/",
-  instagram: "https://www.instagram.com/muhzee17/", 
+  instagram: "https://www.instagram.com/muhzee17/",
   whatsapp: "https://wa.me/6281915680315",
   university: "Universitas Nahdlatul Ulama Yogyakarta",
   semester: 5,
@@ -414,7 +414,7 @@ const PROFILE = {
       icon: "assets/Foto_Logo/Logo Ukm Badminton UNUYO.svg",
       image: "https://awsimages.detik.net.id/community/media/visual/2022/10/18/ilustrasi-badminton-4.jpeg?w=1200"
     },
-     {
+    {
       role: "Dep. Organisasi",
       org: "PAC IPNU Mantrijeron",
       period: "2026 - Sekarang",
@@ -423,7 +423,7 @@ const PROFILE = {
       image: "https://pbs.twimg.com/profile_images/1437565816036229121/NrGG35Q-_400x400.jpg"
     },
     {
-      role:"Media JQH Kaligrafi",
+      role: "Media JQH Kaligrafi",
       org: "UNU Yogyakarta",
       period: "2025 - Sekarang",
       desc: "Mengelola media sosial JQH Kaligrafi Universitas Nahdlatul Ulama Yogyakarta, mempublikasikan karya kaligrafi dan informasi seputar kegiatan JQH Kaligrafi.",
@@ -450,29 +450,29 @@ const PROFILE = {
 
   certificates: [
     // ── BOOTCAMP & PELATIHAN UTAMA ──
-    { name: "Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative Academy", issuer: "Stechoq Academy x Innovative Academy", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.png", pdfUrl: "assets/Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.pdf"},
+    { name: "Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative Academy", issuer: "Stechoq Academy x Innovative Academy", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.png", pdfUrl: "assets/Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.pdf" },
     { name: "Samsung Innovation Campus Batch 7", issuer: "Samsung / Dibimbing.id", year: "2025/2026", image: "assets/Foto-Sertifikat/Sertifikat Samsung Innovation Campus.png", pdfUrl: "assets/Sertifikat/Sertifikat Samsung Innovation Campus.pdf" },
     { name: "Coding Camp – Intro to Software Engineering", issuer: "RevoU", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Dicoding.png", pdfUrl: "assets/Sertifikat/CCSE.pdf" },
     // ── KURSUS AI & DEVELOPER ──
-    { name: "AI Productivity and AI API Integration for Developers", issuer:"Hacktiv8", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat AI Productivity and AI API Integration for Developers.png", pdfUrl:"assets/Sertifikat/AI Productivity and AI API Integration for Developers.pdf" },
-    { name: "AI Praktis untuk Produktivitas", issuer:"Dicoding", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat AI Praktis untuk Produktivitas.png", pdfUrl:"assets/Sertifikat/AI Praktis untuk Produktivitas.pdf" },
-    { name: "AI-Powered Software Engineering Practical AI Skills for Beginner", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.png", pdfUrl: "assets/Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.pdf"},
-    { name: "One API, Many AI Models: OpenRouter for Beginner Developers", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat OpenRouter for Beginner Developers.png", pdfUrl: "assets/Sertifikat/Sertifikat OpenRouter for Beginner Developers.pdf"},
+    { name: "AI Productivity and AI API Integration for Developers", issuer: "Hacktiv8", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat AI Productivity and AI API Integration for Developers.png", pdfUrl: "assets/Sertifikat/AI Productivity and AI API Integration for Developers.pdf" },
+    { name: "AI Praktis untuk Produktivitas", issuer: "Dicoding", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat AI Praktis untuk Produktivitas.png", pdfUrl: "assets/Sertifikat/AI Praktis untuk Produktivitas.pdf" },
+    { name: "AI-Powered Software Engineering Practical AI Skills for Beginner", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.png", pdfUrl: "assets/Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.pdf" },
+    { name: "One API, Many AI Models: OpenRouter for Beginner Developers", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat OpenRouter for Beginner Developers.png", pdfUrl: "assets/Sertifikat/Sertifikat OpenRouter for Beginner Developers.pdf" },
     // ── KURSUS KEAMANAN SIBER ──
-    { name: "Integrating AI in Penetration Testing - Best Practices", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Codelamp .png", pdfUrl: "assets/Sertifikat/Sertifikat CodeLamp Integration AI in penetration Testing.pdf"},
-    { name: "Think Like a Pentester: Web Penetration Testing Fundamentals", issuer:"Codelamp Indonesia", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.png", pdfUrl:"assets/Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.pdf" },
+    { name: "Integrating AI in Penetration Testing - Best Practices", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Codelamp .png", pdfUrl: "assets/Sertifikat/Sertifikat CodeLamp Integration AI in penetration Testing.pdf" },
+    { name: "Think Like a Pentester: Web Penetration Testing Fundamentals", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.png", pdfUrl: "assets/Sertifikat/Sertifikat Think Like a Pentester Web Penetration Testing Fundamentals.pdf" },
     { name: "Breaking the Pocket: Intro to Mobile App Penetration Testing", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Breaking the Pocket Intro to Mobile App Penetration Testing.png", pdfUrl: "assets/Sertifikat/Sertifikat Intro to Mobile App Penetration Testing.pdf" },
-    { name: "IT Audit Fundamentals & Professional Standards", issuer:"Codelamp Indonesia", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.png", pdfUrl:"assets/Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.pdf" },
-    { name: "Third-Party Risk Management for Vendors", issuer:"CodeLamp Indonesia", year:"2026", image:"assets/Foto-Sertifikat/Sertifikat Third-Party Risk Management for Vendors.png", pdfUrl:"assets/Sertifikat/Sertifikat Third-Party Risk Management for Vendors.pdf"},
+    { name: "IT Audit Fundamentals & Professional Standards", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.png", pdfUrl: "assets/Sertifikat/Sertifikat IT Audit Fundamentals & Professional Standards.pdf" },
+    { name: "Third-Party Risk Management for Vendors", issuer: "CodeLamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Third-Party Risk Management for Vendors.png", pdfUrl: "assets/Sertifikat/Sertifikat Third-Party Risk Management for Vendors.pdf" },
     // ── KURSUS WEB & PROGRAMMING DASAR ──
     { name: "Introduction to JavaScript and Development Environment Setup", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Introduction to JavaScript and Development Environment Setup.png", pdfUrl: "assets/Sertifikat/Sertifikat Introduction to JavaScript and Development Environment Setup.pdf" },
-    { name: "Introduction to Version Control & Git Installation", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Introduction to Version Control & Git Installation.png", pdfUrl: "assets/Sertifikat/Sertifikat Introduction to Version Control & Git Installation.pdf"},
-    { name: "Pengenalan Web & Persiapan Lingkungan Kerja", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Pengenalan Web & Persiapan Lingkungan Kerja.png", pdfUrl: "assets/Sertifikat/Pengenalan Web & Persiapan Lingkungan Kerja.pdf"},
-    { name: "Stop Designing Without Structure", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Stop Designing Without Structure.png", pdfUrl: "assets/Sertifikat/Sertifikat Stop Designing Without Structure.pdf"},
-    { name: "Kenapa Game Roblox Kamu Gampang Di-Hack?", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.png", pdfUrl: "assets/Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.pdf"},
-    { name: "Web 3 On Campus", issuer: "Kampus / UPbit Indonesia / IDNFT", year: "2025", image: "assets/Foto-Sertifikat/Sertifikat Web3.png", pdfUrl: "assets/Sertifikat/Sertifikat Web3.pdf "},
+    { name: "Introduction to Version Control & Git Installation", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Introduction to Version Control & Git Installation.png", pdfUrl: "assets/Sertifikat/Sertifikat Introduction to Version Control & Git Installation.pdf" },
+    { name: "Pengenalan Web & Persiapan Lingkungan Kerja", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Pengenalan Web & Persiapan Lingkungan Kerja.png", pdfUrl: "assets/Sertifikat/Pengenalan Web & Persiapan Lingkungan Kerja.pdf" },
+    { name: "Stop Designing Without Structure", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Stop Designing Without Structure.png", pdfUrl: "assets/Sertifikat/Sertifikat Stop Designing Without Structure.pdf" },
+    { name: "Kenapa Game Roblox Kamu Gampang Di-Hack?", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.png", pdfUrl: "assets/Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.pdf" },
+    { name: "Web 3 On Campus", issuer: "Kampus / UPbit Indonesia / IDNFT", year: "2025", image: "assets/Foto-Sertifikat/Sertifikat Web3.png", pdfUrl: "assets/Sertifikat/Sertifikat Web3.pdf " },
     // ── PENGHARGAAN & LAINNYA ──
-    { name: "Ketua UKM Badminton Universitas Nahdlatul Ulama Yogyakarta", issuer:"UNU Yogyakarta", year:"2025/2026", image:"assets/Foto-Sertifikat/Sertifikat Ketua UKM Badminton UNUYO.png", pdfUrl:"assets/Sertifikat/Sertifikat UKM Ketua Badminton UNUYO.pdf" },
+    { name: "Ketua UKM Badminton Universitas Nahdlatul Ulama Yogyakarta", issuer: "UNU Yogyakarta", year: "2025/2026", image: "assets/Foto-Sertifikat/Sertifikat Ketua UKM Badminton UNUYO.png", pdfUrl: "assets/Sertifikat/Sertifikat UKM Ketua Badminton UNUYO.pdf" },
     { name: "International Conference: Indonesia-Russia Cooperation", issuer: "UNU Yogyakarta & Rusia", year: "2024", image: "assets/Foto-Sertifikat/Sertifikat International Conference.png", pdfUrl: "assets/Sertifikat/Sertifikat International Conference.pdf" },
     { name: "Praktek Kerja Lapangan – Band Motor", issuer: "Band Motor Yogyakarta / SMK Al-Munawwir Krapyak", year: "2024", image: "assets/Foto-Sertifikat/Sertifikat Kerja Lapangan.png", pdfUrl: "assets/Sertifikat/Sertifikat Praktik Kerja Lapangan.pdf" },
     { name: "Lomba Kaligrafi Al-Mizan Fest 1444 H", issuer: "Panitia Al-Mizan", year: "2023", image: "assets/Foto-Sertifikat/Sertifikat Lomba Kaligrafi.png", pdfUrl: "assets/Sertifikat/Sertifikat Lomba Kaligrafi.pdf" }
@@ -532,43 +532,43 @@ const PROJECTS = [
     year: "2026"
   },
   {
-    id: 11, 
+    id: 11,
     title: "UI/UX Design: Vareway",
     category: "ui",
     tags: ["Figma", "UI/UX", "Prototyping", "Team Collaboration"],
     desc: "Desain antarmuka platform EduTech interaktif hasil kerja sama tim yang menyediakan alur belajar terstruktur (Learning Path). Tampilan ini dirancang secara kolaboratif untuk membimbing pengguna memilih kurikulum sesuai kebutuhan industri—seperti Front-End, Cyber Security, hingga Machine Learning—dengan gaya visual yang modern dan memotivasi pelajar.",
     features: ["Interactive Prototype", "Design System", "Auto Layout", "EduTech Platform", "Responsive Web"],
-    demo: "", 
-    embed: "https://embed.figma.com/design/ixlEcoPHDG9k8gMxtuR4PZ/VAREWAY?node-id=3-2&embed-host=share", 
-    github: "", 
+    demo: "",
+    embed: "https://embed.figma.com/design/ixlEcoPHDG9k8gMxtuR4PZ/VAREWAY?node-id=3-2&embed-host=share",
+    github: "",
     image: "assets/Foto_Project/Desain UI Vareway.jpeg",
     status: "Selesai & Butuh Pengembangan",
     year: "2026"
   },
   {
-    id: 10, 
+    id: 10,
     title: "UI/UX Design: Warehouse-System",
     category: "ui",
     tags: ["Figma", "UI/UX", "Prototyping", "Team Collaboration"],
     desc: "Rancangan dasbor web (B2B) hasil kolaborasi tim untuk manajemen sistem pergudangan yang komprehensif. Desain bersama ini mencakup modul pemantauan stok (Storage Bin), pendataan aset, hingga pengelolaan pemasok (Supplier). Antarmuka difokuskan pada penyajian ringkasan data yang padat namun tetap bersih dan mudah dibaca oleh operator.",
     features: ["Interactive Prototype", "Design System", "Auto Layout", "Dashboard UI", "B2B WebApp"],
-    demo: "", 
-    embed: "https://embed.figma.com/design/nK44ZokkywTLLl932sC77Y/stechoq?node-id=109-219&embed-host=share", 
-    github: "", 
+    demo: "",
+    embed: "https://embed.figma.com/design/nK44ZokkywTLLl932sC77Y/stechoq?node-id=109-219&embed-host=share",
+    github: "",
     image: "assets/Foto_Project/Desain UI Warehouse-System.png",
     status: "Selesai & Butuh Pengembangan",
     year: "2026"
   },
   {
-    id: 9, 
+    id: 9,
     title: "UI/UX Design: Warmindo Delivery",
     category: "ui",
     tags: ["Figma", "UI/UX", "Prototyping", "Team Collaboration"],
     desc: "Desain antarmuka aplikasi mobile (Food Delivery) hasil kolaborasi tim yang dirancang khusus untuk memudahkan pemesanan menu Warmindo secara online. Fokus desain kami ada pada tata letak yang bersih, navigasi kategori makanan yang cepat, serta pengalaman pengguna yang intuitif agar proses pemesanan menjadi lebih praktis.",
     features: ["Interactive Prototype", "Design System", "Auto Layout", "Mobile App Design", "User Flow"],
-    demo: "", 
-    embed: "https://embed.figma.com/design/8goiC7Nu277CYpj2Ns4no8/warmindo?node-id=0-1&embed-host=share", 
-    github: "", 
+    demo: "",
+    embed: "https://embed.figma.com/design/8goiC7Nu277CYpj2Ns4no8/warmindo?node-id=0-1&embed-host=share",
+    github: "",
     image: "assets/Foto_Project/Desain UI Warmindo Delivery.png",
     status: "Selesai & Butuh Pengembangan",
     year: "2026"
