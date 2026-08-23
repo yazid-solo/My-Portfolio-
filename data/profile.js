@@ -284,9 +284,9 @@ const PROFILE = {
       image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/XStrV8xPTqCzMZFT7",
       tasks: [
-        "{ id: "Memasarkan produk secara langsung ke konsumen melalui pameran UMKM dan pasar lokal.", en: "Marketed products directly to consumers through MSME exhibitions and local markets." }",
-        "{ id: "Membangun relasi dan mengedukasi calon konsumen mengenai keunggulan produk ramah lingkungan.", en: "Built relationships and educated prospective consumers on the benefits of eco-friendly products." }",
-        "{ id: "Mengelola promosi digital melalui media sosial (Instagram, TikTok, WhatsApp) untuk memperluas jangkauan.", en: "Managed digital promotions via social media (Instagram, TikTok, WhatsApp) to expand reach." }"
+        { id: "Memasarkan produk secara langsung ke konsumen melalui pameran UMKM dan pasar lokal.", en: "Marketed products directly to consumers through MSME exhibitions and local markets." },
+        { id: "Membangun relasi dan mengedukasi calon konsumen mengenai keunggulan produk ramah lingkungan.", en: "Built relationships and educated prospective consumers on the benefits of eco-friendly products." },
+        { id: "Mengelola promosi digital melalui media sosial (Instagram, TikTok, WhatsApp) untuk memperluas jangkauan.", en: "Managed digital promotions via social media (Instagram, TikTok, WhatsApp) to expand reach." }
       ]
     },
     {
@@ -310,9 +310,9 @@ const PROFILE = {
       image: "https://png.pngtree.com/background/20230912/original/pngtree-mechanics-in-auto-repair-shop-apprentice-honest-uniform-photo-picture-image_5052771.jpg",
       mapUrl: "https://maps.app.goo.gl/eyYpXecH4JVaXpVh8",
       tasks: [
-        "{ id: "Mempraktikkan perawatan berkala kendaraan bermotor, termasuk proses tune-up dan penggantian pelumas.", en: "Performed periodic maintenance on motor vehicles, including tune-up processes and oil changes." }",
-        "{ id: "Menangani kelistrikan dasar seperti inspeksi dan substitusi AKI kendaraan.", en: "Handled basic electrical issues such as vehicle battery inspection and substitution." }",
-        "{ id: "Berkontribusi pada operasional harian bengkel sambil melatih ketanggapan dan keandalan teknis.", en: "Contributed to daily workshop operations while training responsiveness and technical reliability." }"
+        { id: "Mempraktikkan perawatan berkala kendaraan bermotor, termasuk proses tune-up dan penggantian pelumas.", en: "Performed periodic maintenance on motor vehicles, including tune-up processes and oil changes." },
+        { id: "Menangani kelistrikan dasar seperti inspeksi dan substitusi AKI kendaraan.", en: "Handled basic electrical issues such as vehicle battery inspection and substitution." },
+        { id: "Berkontribusi pada operasional harian bengkel sambil melatih ketanggapan dan keandalan teknis.", en: "Contributed to daily workshop operations while training responsiveness and technical reliability." }
       ]
     }
   ],
