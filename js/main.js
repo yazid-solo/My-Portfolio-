@@ -2272,6 +2272,10 @@ window.addEventListener('languageChanged', () => {
   } else {
     if (typeof initHome === 'function') initHome();
   }
+  
+  if (typeof Animations !== 'undefined' && typeof Animations.init === 'function') {
+    setTimeout(() => Animations.init(), 100);
+  }
 });
 
 
