@@ -1497,8 +1497,8 @@ function initProjects() {
       return;
     }
 
-    el.innerHTML = filtered.map(p => `
-      <div class="project-card tilt-card" onclick="openModal(${p.id})" tabindex="0" role="button" aria-label="Lihat detail ${window.t(p.title)}" onkeypress="if(event.key==='Enter')openModal(${p.id})">
+    el.innerHTML = filtered.map((p, index) => `
+      <div class="project-card tilt-card sr4d" data-delay="${(index % 5) + 1}" onclick="openModal(${p.id})" tabindex="0" role="button" aria-label="Lihat detail ${window.t(p.title)}" onkeypress="if(event.key==='Enter')openModal(${p.id})">
         <div style="overflow:hidden;height:200px;">
           <img src="${p.image}" alt="${window.t(p.title)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
         </div>
