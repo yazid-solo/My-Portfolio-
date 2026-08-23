@@ -627,7 +627,7 @@ function renderHighlights() {
             "
             onmouseover="this.style.background='rgba(255,255,255,0.09)';this.style.color='#fff';this.style.borderColor='${borderH}';"
             onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.color='rgba(255,255,255,0.7)';this.style.borderColor='rgba(255,255,255,0.1)';"
-            >${tag}</span>
+            >${typeof tag === 'object' ? window.t(tag) : tag}</span>
           `).join('')}
         </div>
         ` : ''}
