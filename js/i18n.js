@@ -8,6 +8,12 @@ window.I18N = {
   
   // Static dictionary for hardcoded HTML text
   dict: {
+    // Level translations
+    lvl_dasar: { id: "Dasar", en: "Basic" },
+    lvl_mempelajari: { id: "Mempelajari", en: "Learning" },
+    lvl_menengah: { id: "Dasar-Menengah", en: "Basic-Intermediate" },
+    lvl_advanced: { id: "Lanjutan", en: "Advanced" },
+
     // Navbar
     nav_home: { id: "Beranda", en: "Home" },
     nav_about: { id: "Tentang", en: "About" },

@@ -418,7 +418,14 @@ function renderHighlights() {
     document.head.appendChild(style);
   }
 
-  const levelLabels = ['','PEMULA','DASAR','MENENGAH','MAHIR','EXPERT'];
+  const levelLabels = [
+    '',
+    window.t({id: 'PEMULA', en: 'BEGINNER'}),
+    window.t({id: 'DASAR', en: 'BASIC'}),
+    window.t({id: 'MENENGAH', en: 'INTERMEDIATE'}),
+    window.t({id: 'MAHIR', en: 'ADVANCED'}),
+    window.t({id: 'EXPERT', en: 'EXPERT'})
+  ];
   const levelPct    = [0, 20, 40, 60, 80, 100];
 
   el.innerHTML = PROFILE.highlights.map((h, i) => {
@@ -587,7 +594,7 @@ function renderHighlights() {
         ${h.level !== undefined ? `
         <div style="margin-bottom:1rem;">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-            <span style="font-family:var(--font-mono);font-size:0.6rem;color:rgba(255,255,255,0.35);letter-spacing:0.08em;">PROGRES</span>
+            <span style="font-family:var(--font-mono);font-size:0.6rem;color:rgba(255,255,255,0.35);letter-spacing:0.08em;">${window.t({id: 'PROGRES', en: 'PROGRESS'})}</span>
             <span style="font-family:var(--font-mono);font-size:0.6rem;font-weight:700;color:${accent};">${pct}%</span>
           </div>
           <div style="
@@ -1549,18 +1556,8 @@ function openModal(id) {
   const hasDemo   = p.demo   && p.demo   !== '#';
   const hasGithub = p.github && p.github !== '#';
 
-  const demoBtnHTML = hasDemo
-    ? `<a href="${p.demo}" target="_blank" rel="noopener" class="btn-primary" style="flex:1;justify-content:center;">
-         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-         Live Demo
-       </a>`
-    : `<button disabled title="Demo belum tersedia untuk proyek ini" style="flex:1;justify-content:center;padding:0.6rem 1rem;border-radius:10px;border:1px dashed rgba(255,255,255,0.12);background:rgba(255,255,255,0.02);color:var(--text-dim);font-size:0.875rem;cursor:not-allowed;display:flex;align-items:center;gap:6px;font-family:inherit;">
-         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-         Demo Belum Tersedia
-       </button>`;
-
   const isGitLab = hasGithub && p.github.includes('gitlab');
-  const repoLabel = isGitLab ? 'Lihat GitLab' : 'Lihat GitHub';
+  const repoLabel = isGitLab ? window.t({id: 'Lihat GitLab', en: 'View GitLab'}) : window.t({id: 'Lihat GitHub', en: 'View GitHub'});
   const repoIcon = isGitLab 
     ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.955 13.587l-1.342-4.135-2.664-8.189c-.135-.423-.73-.423-.867 0L16.418 9.45H7.582L4.918 1.263c-.137-.423-.73-.423-.867 0L1.387 9.452.045 13.587c-.121.38.016.795.344 1.033l11.611 8.442 11.611-8.442c.328-.238.465-.653.344-1.033z"/></svg>`
     : `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>`;
@@ -1568,7 +1565,7 @@ function openModal(id) {
   const githubBtnHTML = hasGithub
     ? `<a href="${p.github}" target="_blank" rel="noopener" class="btn-ghost" style="flex:1;justify-content:center;">
          ${repoIcon}
-         ${repoLabel}
+         ${window.t(repoLabel)}
        </a>`
     : (p.category === 'ui' || p.embed) 
       ? '' 
@@ -1587,7 +1584,7 @@ function openModal(id) {
       ? ''
       : `<button disabled title="Demo belum tersedia untuk proyek ini" style="flex:1;justify-content:center;padding:0.6rem 1rem;border-radius:10px;border:1px dashed rgba(255,255,255,0.12);background:rgba(255,255,255,0.02);color:var(--text-dim);font-size:0.875rem;cursor:not-allowed;display:flex;align-items:center;gap:6px;font-family:inherit;">
          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-         Demo Belum Tersedia
+         ${window.t({id: 'Demo Belum Tersedia', en: 'Demo Unavailable'})}
        </button>`;
 
   box.innerHTML = `
@@ -1623,7 +1620,10 @@ function openModal(id) {
       <div style="margin-bottom:1.5rem;">
         <h4 style="font-size:0.75rem;font-family:var(--font-mono);color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Tech Stack</h4>
         <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          ${p.tags.map(t => `<span class="project-tag">${window.t(t)}</span>`).join('')}
+            ${p.tags.map(t => {
+              const tagText = typeof t === 'object' ? window.t(t) : t;
+              return `<span class="project-tag">${tagText}</span>`;
+            }).join('')}
         </div>
       </div>
 

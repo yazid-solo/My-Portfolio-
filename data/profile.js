@@ -40,37 +40,37 @@ const PROFILE = {
     {
       icon: "🎯",
       title: { id: "Fokus Belajar", en: "Focus on Learning" },
-      desc: "Belajar konsisten tiap hari — dari dokumentasi resmi, video tutorial, hingga proyek latihan mandiri yang nyata.",
+      desc: { id: "Belajar konsisten tiap hari — dari dokumentasi resmi, video tutorial, hingga proyek latihan mandiri yang nyata.", en: "Learning consistently every day — from official docs and video tutorials to real independent practice projects." },
       color: "rgba(99,102,241,0.2)",
       accentColor: "#818cf8",
       glowColor: "rgba(99,102,241,0.3)",
       borderHover: "rgba(99,102,241,0.4)",
       level: 3,
-      tags: ["Self-learning", "Dokumentasi", "Praktik"],
+      tags: [{id: "Self-learning", en: "Self-learning"}, {id: "Dokumentasi", en: "Documentation"}, {id: "Praktik", en: "Practice"}],
       image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&q=80"
     },
     {
       icon: "💻",
       title: { id: "Web Dev Dasar", en: "Basic Web Dev" },
-      desc: "Membangun antarmuka dengan HTML, CSS, dan JavaScript — sedang aktif menuju level menengah dengan proyek nyata.",
+      desc: { id: "Membangun antarmuka dengan HTML, CSS, dan JavaScript — sedang aktif menuju level menengah dengan proyek nyata.", en: "Building interfaces with HTML, CSS, and JavaScript — actively progressing towards intermediate level with real projects." },
       color: "rgba(20,184,166,0.2)",
       accentColor: "#2dd4bf",
       glowColor: "rgba(20,184,166,0.3)",
       borderHover: "rgba(20,184,166,0.4)",
       level: 3,
-      tags: ["HTML", "CSS", "JavaScript"],
+      tags: [{id: "HTML", en: "HTML"}, {id: "CSS", en: "CSS"}, {id: "JavaScript", en: "JavaScript"}],
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80"
     },
     {
       icon: "🎨",
       title: { id: "UI yang Rapi", en: "Neat UI Design" },
-      desc: "Merancang antarmuka yang bersih dan intuitif menggunakan Figma — dari wireframe hingga prototype interaktif.",
+      desc: { id: "Merancang antarmuka yang bersih dan intuitif menggunakan Figma — dari wireframe hingga prototype interaktif.", en: "Designing clean and intuitive interfaces using Figma — from wireframes to interactive prototypes." },
       color: "rgba(244,63,94,0.2)",
       accentColor: "#fb7185",
       glowColor: "rgba(244,63,94,0.3)",
       borderHover: "rgba(244,63,94,0.4)",
       level: 3,
-      tags: ["Figma", "Prototyping", "UI Design"],
+      tags: [{id: "Figma", en: "Figma"}, {id: "Prototyping", en: "Prototyping"}, {id: "UI Design", en: "UI Design"}],
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80"
     },
     {
@@ -82,19 +82,19 @@ const PROFILE = {
       glowColor: "rgba(245,158,11,0.3)",
       borderHover: "rgba(245,158,11,0.4)",
       level: 3,
-      tags: ["Analitis", "Logika", "Adaptif"],
+      tags: [{id: "Analitis", en: "Analytical"}, {id: "Logika", en: "Logical"}, {id: "Adaptif", en: "Adaptive"}],
       image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&q=80"
     },
     {
       icon: "📄",
       title: { id: "Office & Produktivitas", en: "Office & Productivity" },
-      desc: "Mahir menggunakan Microsoft Office (Word, Excel, PowerPoint) & Google Workspace — diasah intensif lewat tugas akademik dan pelaporan data profesional.",
+      desc: { id: "Mahir menggunakan Microsoft Office (Word, Excel, PowerPoint) & Google Workspace — diasah intensif lewat tugas akademik dan pelaporan data profesional.", en: "Proficient in using Microsoft Office (Word, Excel, PowerPoint) & Google Workspace — intensively honed through academic assignments and professional data reporting." },
       color: "rgba(16,185,129,0.2)",
       accentColor: "#34d399",
       glowColor: "rgba(16,185,129,0.3)",
       borderHover: "rgba(16,185,129,0.4)",
       level: 3,
-      tags: ["Ms. Word", "Ms. Excel", "Google Docs", "Sheets"],
+      tags: [{id: "Ms. Word", en: "Ms. Word"}, {id: "Ms. Excel", en: "Ms. Excel"}, {id: "Google Docs", en: "Google Docs"}, {id: "Sheets", en: "Sheets"}],
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80"
     },
     {
@@ -134,15 +134,15 @@ const PROFILE = {
       image: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400&q=80"
     },
     {
-      icon: "⚡",
-      title: "Integrasi AI",
-      desc: "Memanfaatkan AI (ChatGPT, Claude, Copilot) untuk meningkatkan produktivitas—mulai dari manajemen tugas, riset, problem-solving, hingga penyelesaian proyek secara efisien dan profesional.",
-      color: "rgba(168,85,247,0.2)",
-      accentColor: "#a855f7",
-      glowColor: "rgba(168,85,247,0.3)",
-      borderHover: "rgba(168,85,247,0.4)",
+      icon: "🤖",
+      title: { id: "AI Assistants", en: "AI Assistants" },
+      desc: { id: "Memposisikan AI sebagai rekan kolaborasi (pair-programming) untuk riset, men-debug kode, dan menulis dokumentasi lebih cepat.", en: "Positioning AI as a collaborative partner (pair-programming) for faster research, debugging, and documentation writing." },
+      color: "rgba(217,70,239,0.2)",
+      accentColor: "#e879f9",
+      glowColor: "rgba(217,70,239,0.3)",
+      borderHover: "rgba(217,70,239,0.4)",
       level: 3,
-      tags: ["AI Tools", "Debugging", "Efisiensi"],
+      tags: [{id: "ChatGPT", en: "ChatGPT"}, {id: "Claude", en: "Claude"}, {id: "Copilot", en: "Copilot"}],
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&q=80"
     }
   ],
@@ -189,24 +189,24 @@ const PROFILE = {
       category: "Programming",
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80",
       items: [
-        { name: "HTML", level: "Dasar", pct: 60, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
-        { name: "CSS", level: "Dasar", pct: 55, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
-        { name: "JavaScript", level: "Dasar", pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
-        { name: "Python", level: "Dasar", pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
-        { name: "React", level: "Mempelajari", pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
-        { name: "Vite", level: "Mempelajari", pct: 25, icon: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg" },
-        { name: "Node.js", level: "Mempelajari", pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" }
+        { name: "HTML", level: { id: "Dasar", en: "Basic" }, pct: 60, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+        { name: "CSS", level: { id: "Dasar", en: "Basic" }, pct: 55, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+        { name: "JavaScript", level: { id: "Dasar", en: "Basic" }, pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+        { name: "Python", level: { id: "Dasar", en: "Basic" }, pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+        { name: "React", level: { id: "Mempelajari", en: "Learning" }, pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+        { name: "Vite", level: { id: "Mempelajari", en: "Learning" }, pct: 25, icon: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg" },
+        { name: "Node.js", level: { id: "Mempelajari", en: "Learning" }, pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" }
       ]
     },
     {
       category: "Tools & Design",
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80",
       items: [
-        { name: "Figma UI/UX", level: "Dasar", pct: 50, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
-        { name: "Canva", level: "Dasar-Menengah", pct: 65, icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg" },
-        { name: "Adobe Photoshop", level: "Dasar", pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" },
-        { name: "Git / GitHub", level: "Dasar", pct: 45, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
-        { name: "Docker", level: "Mempelajari", pct: 25, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" }
+        { name: "Figma UI/UX", level: { id: "Dasar", en: "Basic" }, pct: 50, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
+        { name: "Canva", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 65, icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg" },
+        { name: "Adobe Photoshop", level: { id: "Dasar", en: "Basic" }, pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" },
+        { name: "Git / GitHub", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+        { name: "Docker", level: { id: "Mempelajari", en: "Learning" }, pct: 25, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" }
       ]
     },
     {
@@ -226,18 +226,18 @@ const PROFILE = {
       category: "Database & API",
       image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
       items: [
-        { name: "MySQL", level: "Dasar", pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
-        { name: "PostgreSQL", level: "Dasar", pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
-        { name: "Supabase", level: "Dasar", pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
-        { name: "Postman", level: "Dasar", pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" }
+        { name: "MySQL", level: { id: "Dasar", en: "Basic" }, pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+        { name: "PostgreSQL", level: { id: "Dasar", en: "Basic" }, pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+        { name: "Supabase", level: { id: "Dasar", en: "Basic" }, pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
+        { name: "Postman", level: { id: "Dasar", en: "Basic" }, pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" }
       ]
     },
     {
       category: "Produktivitas & Office",
       image: "https://images.unsplash.com/photo-1554415707-6e8cfc938c23?w=600&q=80",
       items: [
-        { name: "Ms. Excel / Sheets", level: "Dasar-Menengah", pct: 60, icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg" },
-        { name: "Ms. Word / Docs", level: "Menengah", pct: 75, icon: "https://api.iconify.design/vscode-icons/file-type-word.svg" }
+        { name: "Ms. Excel / Sheets", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 60, icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg" },
+        { name: "Ms. Word / Docs", level: { id: "Menengah", en: "Intermediate" }, pct: 75, icon: "https://api.iconify.design/vscode-icons/file-type-word.svg" }
       ]
     }
   ],
@@ -491,8 +491,8 @@ const PROFILE = {
 
   languages: [
     { lang: "Indonesia", level: "Native" },
-    { lang: "Arab", level: "Dasar" },
-    { lang: "Inggris", level: "Dasar" }
+    { lang: "Arab", level: { id: "Dasar", en: "Basic" } },
+    { lang: "Inggris", level: { id: "Dasar", en: "Basic" } }
   ]
 };
 
