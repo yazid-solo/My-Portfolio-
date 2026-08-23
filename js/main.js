@@ -785,7 +785,7 @@ function renderFeaturedProjects() {
               margin-bottom:0.5rem;letter-spacing:-0.01em;">${window.t(p.title)}</h3>
               
             <p style="font-size:0.8rem;color:#5a7090;line-height:1.7;margin-bottom:0.9rem;">
-              ${p.desc.substring(0, 90)}...
+              ${window.t(p.desc).substring(0, 90)}...
             </p>
             
             <div style="display:flex;flex-wrap:wrap;gap:5px;align-items:center;">
@@ -1320,7 +1320,8 @@ function renderOrgExperience() {
   
   // Sort by year / status
   const sortedOrg = [...PROFILE.organization].sort((a, b) => {
-    const getScore = (str) => {
+    const getScore = (val) => {
+      const str = typeof val === 'object' ? (val.id || '') : (val || '');
       if (str.toLowerCase().includes('sekarang')) return 9999;
       const m = str.match(/\d{4}/g);
       return m ? Math.max(...m.map(Number)) : 0;
@@ -1357,16 +1358,17 @@ function renderOrgExperience() {
           <div style="flex-shrink:0; transform:translateZ(10px); transition:transform 0.6s ease;" class="org-icon-container">
             <div style="width:68px; height:68px; border-radius:18px; background:linear-gradient(135deg, rgba(30,41,59,0.9), rgba(10,15,25,0.95)); border:1px solid rgba(255,255,255,0.1); border-top-color:rgba(255,255,255,0.3); border-left-color:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; box-shadow:0 12px 25px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.1), inset 0 -4px 10px rgba(0,0,0,0.5), 0 0 15px rgba(var(--accent-rgb),0.3); position:relative; overflow:hidden; transform-style:preserve-3d;" class="org-icon-wrap">
               <div style="position:absolute; top:0; left:-100%; width:50%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent); transform:skewX(-25deg); animation:orgIconSweep 3.5s infinite linear;"></div>
-              <img src="${o.icon}" alt="${o.org}" style="width:65%; height:65%; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.8)); transform:translateZ(20px); animation:orgAmbientFloat 3s infinite alternate ease-in-out;" onerror="this.style.display='none'">
+              <img src="${o.icon}" alt="${window.t(o.org)}" style="width:65%; height:65%; object-fit:contain; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.8)); transform:translateZ(20px); animation:orgAmbientFloat 3s infinite alternate ease-in-out;" onerror="this.style.display='none'">
             </div>
           </div>
           
-          <div style="flex: 1 1 0%; min-width: 0; transform:translateZ(15px);">
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.3rem;">
-              <h3 style="font-size:1.3rem; font-weight:800; letter-spacing:0.5px; color:#fff; text-shadow:0 3px 6px rgba(0,0,0,0.7); margin:0; line-height:1.2; word-break:normal;" class="org-role-title">${o.role}</h3>
-              <span style="font-size:0.75rem; font-family:var(--font-mono); font-weight:800; color:var(--accent); background:rgba(var(--accent-rgb),0.15); backdrop-filter:blur(5px); border:1px solid rgba(var(--accent-rgb),0.4); padding:4px 12px; border-radius:99px; box-shadow:0 4px 12px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.1); white-space:nowrap; transition:all 0.4s ease; flex-shrink:0;" class="org-badge">${o.period}</span>
+          <!-- Title & Org Wrap -->
+          <div style="display:flex; flex-direction:column; gap:0.4rem; flex:1; transform-style:preserve-3d;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+              <h3 style="font-size:1.3rem; font-weight:800; letter-spacing:0.5px; color:#fff; text-shadow:0 3px 6px rgba(0,0,0,0.7); margin:0; line-height:1.2; word-break:normal;" class="org-role-title">${window.t(o.role)}</h3>
+              <span style="font-size:0.75rem; font-family:var(--font-mono); font-weight:800; color:var(--accent); background:rgba(var(--accent-rgb),0.15); backdrop-filter:blur(5px); border:1px solid rgba(var(--accent-rgb),0.4); padding:4px 12px; border-radius:99px; box-shadow:0 4px 12px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.1); white-space:nowrap; transition:all 0.4s ease; flex-shrink:0;" class="org-badge">${window.t(o.period)}</span>
             </div>
-            <p style="font-size:0.95rem; font-weight:700; color:var(--accent); filter:brightness(1.15); margin:0; font-family:var(--font-mono); letter-spacing:0.5px; text-shadow:0 2px 4px rgba(0,0,0,0.5); word-break:normal;">${o.org}</p>
+            <p style="font-size:0.95rem; font-weight:700; color:var(--accent); filter:brightness(1.15); margin:0; font-family:var(--font-mono); letter-spacing:0.5px; text-shadow:0 2px 4px rgba(0,0,0,0.5); word-break:normal;">${window.t(o.org)}</p>
           </div>
         </div>
         
@@ -1376,7 +1378,7 @@ function renderOrgExperience() {
           <div style="padding-left:1.2rem; border-left:3px solid var(--accent); position:relative; transform:translateZ(20px); transition:transform 0.5s ease; border-radius:0 8px 8px 0; overflow:hidden; width:100%;" class="org-desc-box">
             <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(var(--accent-rgb),0.1) 0%, transparent 100%); z-index:0; pointer-events:none;"></div>
             <p style="position:relative; z-index:1; font-size:0.95rem; line-height:1.7; color:rgba(255,255,255,0.9); text-align:left; margin:0; text-shadow:0 1px 3px rgba(0,0,0,0.7); font-weight:500; width:100%;">
-              ${o.desc}
+              ${window.t(o.desc)}
             </p>
           </div>
         </div>
@@ -1506,7 +1508,7 @@ function initProjects() {
             <h3 style="font-size:0.95rem;font-weight:700;">${window.t(p.title)}</h3>
             <span class="status-badge ${p.status === 'Selesai' ? 'status-done' : 'status-wip'}">${p.status}</span>
           </div>
-          <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;margin-bottom:0.75rem;">${p.desc.substring(0,110)}...</p>
+          <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;margin-bottom:0.75rem;">${window.t(p.desc).substring(0,110)}...</p>
           <div style="display:flex;flex-wrap:wrap;gap:4px;">
             ${p.tags.slice(0,4).map(t => `<span class="project-tag">${window.t(t)}</span>`).join('')}
           </div>
