@@ -8,8 +8,14 @@
 const PROFILE = {
   name: "Muchamad Yazid Ardani",
   nickname: "Yazid",
-  tagline: "Informatics Student · Aspiring Web Dev · Tech Enthusiast",
-  taglineSub: "Mahasiswa Semester 5 yang sedang membangun fondasi di dunia teknologi — satu baris kode dalam satu waktu.",
+  tagline: {
+    id: "Mahasiswa Informatika • Calon Web Dev • Antusias Teknologi",
+    en: "Informatics Student • Aspiring Web Dev • Tech Enthusiast"
+  },
+  taglineSub: {
+    id: "Mahasiswa Semester 5 yang sedang membangun fondasi di dunia teknologi — satu baris kode dalam satu waktu.",
+    en: "5th Semester Student building a foundation in the tech world — one line of code at a time."
+  },
   email: "muhzee16@gmail.com",
   phone: "+62819 1568 0315",
   location: "Yogyakarta, Indonesia",
@@ -21,9 +27,14 @@ const PROFILE = {
   semester: 5,
   faculty: "Fakultas Teknologi Informasi",
   major: "Teknik Informatika",
-  semester: 5,
-  bio: `Saya adalah mahasiswa aktif Semester 5 Prodi Informatika yang disiplin, cepat belajar, dan memiliki minat besar di bidang teknologi — khususnya web development dan desain UI. Saat ini saya fokus membangun keahlian nyata melalui eksplorasi kode dan proyek-proyek personal yang menantang. Dalam alur kerja, saya terbiasa memanfaatkan kapabilitas AI (seperti ChatGPT, Claude, dan Copilot) secara komprehensif sebagai asisten produktivitas—tidak hanya untuk problem-solving, tetapi juga untuk perencanaan proyek, riset, manajemen waktu, dan optimalisasi alur kerja harian.`,
-  about: `Dengan latar belakang yang beragam — dari teknik otomotif, magang lapangan, hingga affiliate marketing — saya terbiasa melakukan troubleshooting dan beradaptasi dengan cepat. Saya percaya bahwa problem-solving di dunia nyata sama pentingnya dengan logika kode. Saat ini saya mendalami web development dan UI/UX, sembari mengasah kemampuan kolaborasi tim dan pelaporan data yang terstruktur. Saya juga secara aktif mengintegrasikan berbagai alat Kecerdasan Buatan (AI) ke dalam workflow harian guna memaksimalkan produktivitas secara menyeluruh—mulai dari riset, analisis data, hingga penyelesaian kendala teknis secara presisi dan terukur.`,
+  bio: {
+    id: `Saya adalah mahasiswa aktif Semester 5 Prodi Informatika yang disiplin, cepat belajar, dan memiliki minat besar di bidang teknologi — khususnya web development dan desain UI. Saat ini saya fokus membangun keahlian nyata melalui eksplorasi kode dan proyek-proyek personal yang menantang. Dalam alur kerja, saya terbiasa memanfaatkan kapabilitas AI (seperti ChatGPT, Claude, dan Copilot) secara komprehensif sebagai asisten produktivitas—tidak hanya untuk problem-solving, tetapi juga untuk perencanaan proyek, riset, manajemen waktu, dan optimalisasi alur kerja harian.`,
+    en: `I am a disciplined and fast-learning 5th-semester Informatics student with a strong passion for technology—especially web development and UI design. I currently focus on building practical skills through code exploration and challenging personal projects. In my workflow, I regularly leverage AI capabilities (like ChatGPT, Claude, and Copilot) comprehensively as productivity assistants—not just for problem-solving, but also for project planning, research, time management, and optimizing daily workflows.`
+  },
+  about: {
+    id: `Dengan latar belakang yang beragam — dari teknik otomotif, magang lapangan, hingga affiliate marketing — saya terbiasa melakukan troubleshooting dan beradaptasi dengan cepat. Saya percaya bahwa problem-solving di dunia nyata sama pentingnya dengan logika kode. Saat ini saya mendalami web development dan UI/UX, sembari mengasah kemampuan kolaborasi tim dan pelaporan data yang terstruktur. Saya juga secara aktif mengintegrasikan berbagai alat Kecerdasan Buatan (AI) ke dalam workflow harian guna memaksimalkan produktivitas secara menyeluruh—mulai dari riset, analisis data, hingga penyelesaian kendala teknis secara presisi dan terukur.`,
+    en: `With a diverse background—from automotive engineering and field internships to affiliate marketing—I am accustomed to troubleshooting and adapting quickly. I believe real-world problem-solving is just as crucial as code logic. I am currently deepening my knowledge in web development and UI/UX while honing my team collaboration and structured data reporting skills. I also actively integrate various Artificial Intelligence (AI) tools into my daily workflow to maximize overall productivity—from research and data analysis to precise and measurable technical issue resolution.`
+  },
 
   highlights: [
     {

@@ -294,7 +294,7 @@
             <!-- Premium Badge -->
             <div class="hero-badge" style="background:linear-gradient(135deg,rgba(var(--accent-rgb),0.12),rgba(139,92,246,0.08));border:1px solid rgba(var(--accent-rgb),0.35);padding:0.4rem 1.1rem 0.4rem 0.7rem;margin-bottom:1.75rem;box-shadow:0 0 20px rgba(var(--accent-rgb),0.15);">
               <span style="box-shadow:0 0 8px var(--accent);"></span>
-              <span style="font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;">Tersedia untuk Kolaborasi &amp; Belajar</span>
+              <span style="font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;" data-i18n="hero_status_pill">Tersedia untuk Kolaborasi &amp; Belajar</span>
             </div>
 
             <!-- Name with Typewriter -->
@@ -321,7 +321,7 @@
               <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,rgba(var(--accent-rgb),0.9) 0%,transparent 50%);"></div>
               <div style="position:absolute;bottom:-40px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(var(--accent-rgb),0.08),transparent 70%);pointer-events:none;"></div>
 
-              <p style="margin:0;color:#c8d8f2;line-height:1.9;font-size:0.95rem;font-weight:400;">
+              <p style="margin:0;color:#c8d8f2;line-height:1.9;font-size:0.95rem;font-weight:400;" data-i18n="hero_tagline">
                 Mahasiswa Informatika <strong style="color:#fff;font-weight:700;">Semester 5</strong> di <strong style="color:var(--accent);font-weight:600;">UNU Yogyakarta</strong> yang sedang fokus mendalami dunia <em>Software Engineering</em>. Sejauh ini, saya banyak mengulik seputar pengembangan <em>Web</em>, merancang <span style="color:var(--accent);font-weight:700;">API & Database</span>, eksplorasi <span style="color:var(--accent);font-weight:700;">UI/UX</span>, sampai mencoba kontainerisasi dengan <em>Docker</em>. Walaupun masih berproses, saya terbiasa belajar mandiri maupun kolaborasi tim. Selain menulis kode, saya juga cukup luwes mengoperasikan tools <span style="color:var(--accent);font-weight:700;">Office & Manajemen Data</span>. Untuk mengakselerasi proses belajar dan pengerjaan tugas, saya rutin tandem dengan <strong style="color:var(--accent);font-weight:600;">AI Assistants</strong>—baik itu untuk riset ide, membaca dokumentasi, atau sekadar <em>debugging</em> error.
               </p>
 
@@ -337,11 +337,11 @@
 
             <!-- CTA -->
             <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:2rem;">
-              <a href="projects.html" class="btn-primary">
+              <a href="projects.html" class="btn-primary" data-i18n="hero_btn_projects">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                 Lihat Projects
               </a>
-              <a href="contact.html" class="btn-ghost">
+              <a href="contact.html" class="btn-ghost" data-i18n="hero_btn_contact">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
                 Hubungi Saya
               </a>
@@ -830,7 +830,8 @@
   <!-- FOOTER INJECT -->
   <div id="footer-inject"></div>
 
-  <!-- Scripts -->
+  <!-- CORE DATA & LOGIC -->
+  <script src="js/i18n.js"></script>
   <script src="data/profile.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/animations.js"></script>

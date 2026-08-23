@@ -7,19 +7,19 @@
 const Components = (() => {
 
   const NAV_LINKS = [
-    { href: 'index.html', label: 'Beranda', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    { href: 'index.html', label: '<span data-i18n="nav_home">Beranda</span>', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#0066cc"/></linearGradient></defs>
       <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1h-5v-5H9v5H4a1 1 0 01-1-1V10.5z" fill="url(#hg)" opacity="0.9"/>
       <rect x="9" y="16" width="6" height="6" rx="1" fill="rgba(255,255,255,0.4)"/>
       <path d="M3 10.5L12 3l9 7.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
     </svg>` },
-    { href: 'about.html', label: 'Tentang', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    { href: 'about.html', label: '<span data-i18n="nav_about">Tentang</span>', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs><radialGradient id="ag" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#fda4af"/><stop offset="100%" stop-color="#e11d48"/></radialGradient></defs>
       <circle cx="12" cy="7.5" r="4" fill="url(#ag)"/>
       <path d="M4 21c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#fb7185" stroke-width="2" stroke-linecap="round" fill="none"/>
       <circle cx="12" cy="7.5" r="1.5" fill="white" opacity="0.7"/>
     </svg>` },
-    { href: 'projects.html', label: 'Proyek', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    { href: 'projects.html', label: '<span data-i18n="nav_projects">Proyek</span>', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs>
       <rect x="2" y="3" width="8" height="8" rx="2" fill="url(#pg)"/>
       <rect x="14" y="3" width="8" height="8" rx="2" fill="#10b981" opacity="0.7"/>
@@ -27,7 +27,7 @@ const Components = (() => {
       <rect x="14" y="15" width="8" height="6" rx="2" fill="url(#pg)"/>
       <path d="M6 7l1.5 1.5L10 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>` },
-    { href: 'resume.html', label: 'Resume', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    { href: 'resume.html', label: '<span data-i18n="nav_resume">Resume</span>', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#d97706"/></linearGradient></defs>
       <path d="M6 2h9l4 4v16a1 1 0 01-1 1H6a1 1 0 01-1-1V3a1 1 0 011-1z" fill="url(#rg)" opacity="0.9"/>
       <path d="M14 2v5h5" stroke="#92400e" stroke-width="1.2" fill="none"/>
@@ -95,10 +95,13 @@ const Components = (() => {
             <!-- Status badge -->
             <div class="hide-mobile" style="display:flex;align-items:center;gap:6px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:99px;padding:5px 12px;font-size:0.72rem;font-weight:600;color:#10b981;letter-spacing:0.04em;">
               <span style="display:block;width:6px;height:6px;background:#10b981;border-radius:50%;box-shadow:0 0 8px #10b981;animation:pulse-dot 2s infinite;"></span>
-              OPEN TO WORK
+              <span data-i18n="nav_open_to_work">OPEN TO WORK</span>
             </div>
 
-
+            <!-- Language Switcher -->
+            <button id="lang-btn" class="icon-btn" title="Ganti Bahasa / Change Language" aria-label="Change language" style="font-family: var(--font-display); font-weight: 800; font-size: 0.85rem; color: var(--text);">
+              ID
+            </button>
 
             <!-- Accent Switcher -->
             <div style="position:relative;">
@@ -358,7 +361,7 @@ const Components = (() => {
           <div style="display:flex; flex-direction:column;">
             <div class="logo-text" style="font-size:1.8rem; margin-bottom:1.25rem; text-shadow: 0 4px 15px rgba(var(--accent-rgb),0.3);">&lt;${PROFILE.nickname || 'Yazid'} /&gt;</div>
             <p class="footer-desc">
-              Membangun antarmuka digital yang cerdas dan interaktif. Berfokus pada arsitektur perangkat lunak skala tinggi dan pengalaman pengguna kelas premium.
+              ${window.t ? window.t(PROFILE.bio).substring(0, 150) + "..." : PROFILE.bio}
             </p>
             <div class="social-row">
               <a href="${PROFILE.github}" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
@@ -385,21 +388,21 @@ const Components = (() => {
           <div style="display:flex; flex-direction:column;">
             <h4 class="footer-heading">Navigasi Sistem</h4>
             <ul class="footer-links">
-              <li><a href="index.html">Beranda Utama</a></li>
-              <li><a href="about.html">Tentang Saya</a></li>
-              <li><a href="projects.html">Proyek & Portofolio</a></li>
-              <li><a href="resume.html">Resume & Kualifikasi</a></li>
+              <li><a href="index.html" data-i18n="nav_home">Beranda Utama</a></li>
+              <li><a href="about.html" data-i18n="nav_about">Tentang Saya</a></li>
+              <li><a href="projects.html" data-i18n="nav_projects">Proyek & Portofolio</a></li>
+              <li><a href="resume.html" data-i18n="nav_resume">Resume & Kualifikasi</a></li>
             </ul>
           </div>
           
           <!-- Column 3: Collaboration Bento CTA -->
           <div class="footer-bento">
-            <h4 class="footer-heading" style="margin-bottom: 1rem; font-size:1.25rem;">Mulai Eksekusi Proyek</h4>
-            <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; line-height:1.7; margin-bottom:1.8rem; max-width: 300px;">
+            <h4 class="footer-heading" style="margin-bottom: 1rem; font-size:1.25rem;" data-i18n="footer_collab_title">Mulai Eksekusi Proyek</h4>
+            <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; line-height:1.7; margin-bottom:1.8rem; max-width: 300px;" data-i18n="footer_collab_desc">
               Memiliki ide visi tingkat tinggi atau sekadar mencari talenta rekayasa lunak elit? Mari rakit mahakarya bersama.
             </p>
             <a href="contact.html" class="btn-footer-collab">
-              Mulai Diskusi
+              <span data-i18n="footer_collab_btn">Mulai Diskusi</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
                 <path d="M14 7l5 5-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -412,18 +415,18 @@ const Components = (() => {
         <!-- Bottom Section -->
         <div class="footer-bottom">
           <div style="color:rgba(255,255,255,0.6); font-family: var(--font-mono); font-size: 0.85rem;">
-            © ${new Date().getFullYear()} ${PROFILE.name}. Hak Cipta & Kekayaan Intelektual Dilindungi.
+            © ${new Date().getFullYear()} ${PROFILE.name}. <span data-i18n="footer_copyright">Hak Cipta & Kekayaan Intelektual Dilindungi.</span>
           </div>
           <div style="display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap; justify-content: center;">
             <div class="footer-status-pill">
               <div class="status-dot"></div>
-              <span style="font-weight: 700; letter-spacing: 0.1em; color:rgba(255,255,255,0.9); font-family: var(--font-mono); font-size: 0.8rem;">TERSEDIA UNTUK KERJA SAMA</span>
+              <span style="font-weight: 700; letter-spacing: 0.1em; color:rgba(255,255,255,0.9); font-family: var(--font-mono); font-size: 0.8rem;" data-i18n="footer_status">TERSEDIA UNTUK KERJA SAMA</span>
             </div>
             <button class="btt-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Kembali ke atas">
               <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
                 <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
               </svg>
-              <span class="text">KEMBALI KE ATAS</span>
+              <span class="text" data-i18n="footer_btt">KEMBALI KE ATAS</span>
               <span class="circle"></span>
               <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
                 <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
