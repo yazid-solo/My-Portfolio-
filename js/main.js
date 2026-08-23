@@ -1459,7 +1459,8 @@ function renderLanguages() {
     let color = "var(--accent)";
     let rgb = "var(--accent-rgb)"; // Ensure var works or use default hex
     
-    const lvl = l.level.toLowerCase();
+    const rawLevel = typeof l.level === 'object' ? window.t(l.level) : l.level;
+    const lvl = rawLevel.toLowerCase();
     if (lvl.includes("native") || lvl.includes("fasih")) {
       pct = 100; color = "#10b981"; rgb = "16,185,129"; // Green
     } else if (lvl.includes("menengah") || lvl.includes("intermediate")) {
