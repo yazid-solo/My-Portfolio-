@@ -1362,9 +1362,8 @@ function renderOrgExperience() {
             </div>
           </div>
           
-          <!-- Title & Org Wrap -->
-          <div style="display:flex; flex-direction:column; gap:0.4rem; flex:1; transform-style:preserve-3d;">
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+          <div style="flex: 1 1 0%; min-width: 0; transform:translateZ(15px);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.3rem;">
               <h3 style="font-size:1.3rem; font-weight:800; letter-spacing:0.5px; color:#fff; text-shadow:0 3px 6px rgba(0,0,0,0.7); margin:0; line-height:1.2; word-break:normal;" class="org-role-title">${window.t(o.role)}</h3>
               <span style="font-size:0.75rem; font-family:var(--font-mono); font-weight:800; color:var(--accent); background:rgba(var(--accent-rgb),0.15); backdrop-filter:blur(5px); border:1px solid rgba(var(--accent-rgb),0.4); padding:4px 12px; border-radius:99px; box-shadow:0 4px 12px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.1); white-space:nowrap; transition:all 0.4s ease; flex-shrink:0;" class="org-badge">${window.t(o.period)}</span>
             </div>
