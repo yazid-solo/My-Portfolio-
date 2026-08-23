@@ -178,7 +178,47 @@ window.I18N = {
     con_form_email: { id: "Alamat Email", en: "Email Address" },
     con_form_subject: { id: "Topik Pembicaraan (Opsional)", en: "Topic (Optional)" },
     con_form_msg: { id: "Tulis pesan Anda di sini...", en: "Write your message here..." },
-    con_form_btn: { id: "Kirim Pesan Sekarang", en: "Send Message Now" }
+    con_form_btn: { id: "Kirim Pesan Sekarang", en: "Send Message Now" },
+
+    // Extra translations for index.html
+    idx_skill_pre: { id: "Apa yang saya bawa", en: "What I bring" },
+    idx_skill_h2_1: { id: "Keahlian &amp;", en: "Skills &amp;" },
+    idx_skill_h2_2: { id: "Fokus Saya", en: "My Focus" },
+    idx_skill_post: { id: "Portfolio", en: "Portfolio" },
+    idx_skill_t2: { id: "Selalu Mengasah Skill", en: "Always Sharpening Skills" },
+
+    // Extra translations for about.html
+    abt_h2_org: { id: "Pengalaman Organisasi", en: "Organizational Experience" },
+    abt_h2_edu: { id: "Riwayat Pendidikan", en: "Educational Background" },
+    
+    // Extra translations for projects.html
+    prj_hero_desc: { id: "Kumpulan studi kasus, proyek personal, dan eksplorasi teknologi. Dibangun untuk memecahkan masalah nyata melalui desain dan barisan kode.", en: "A collection of case studies, personal projects, and tech explorations. Built to solve real problems through design and code." },
+    prj_hero_repo: { id: "Saya terus belajar dan mengeksplorasi tantangan pengembangan perangkat lunak baru. Follow GitHub saya untuk update kode dan teknologi terbaru.", en: "I continuously learn and explore new software development challenges. Follow my GitHub for the latest code and technology updates." },
+
+    // Extra translations for resume.html
+    res_cv_label: { id: "📄 File CV", en: "📄 CV File" },
+    res_cv_update: { id: "🗓️ Diperbarui 2026", en: "🗓️ Updated 2026" },
+    res_cv_click: { id: "👁️ Klik untuk Lihat", en: "👁️ Click to View" },
+    res_cv_download: { id: "Download CV", en: "Download CV" },
+    res_chart_t1: { id: "Skill & Tools", en: "Skills & Tools" },
+    res_chart_sub: { id: "// Level jujur berdasarkan pemahaman aktual, bukan klaim berlebihan.", en: "// Honest levels based on actual understanding, not exaggerated claims." },
+    res_add_skills: { id: "Kemampuan Tambahan", en: "Additional Skills" },
+    res_add_digital: { id: "Penggunaan Alat Digital", en: "Digital Tool Usage" },
+    res_hist_work: { id: "Riwayat Kerja & Magang", en: "Work & Internship History" },
+    res_hist_train: { id: "Pelatihan & Bootcamp", en: "Training & Bootcamps" },
+    res_hist_cert: { id: "Sertifikat & Penghargaan", en: "Certificates & Awards" },
+
+    // Extra translations for contact.html
+    con_hero_desc: { id: "Terbuka untuk diskusi pengembangan teknologi, kolaborasi proyek, atau peluang magang yang menantang.", en: "Open to discussing tech development, project collaboration, or challenging internship opportunities." },
+    con_status_avail: { id: "Tersedia", en: "Available" },
+    con_status_desc: { id: "Terbuka untuk proyek kolaborasi, diskusi teknologi, serta peluang magang atau proyek freelance.", en: "Open for collaborative projects, tech discussions, internships, or freelance projects." },
+    con_send_msg: { id: "Kirim Pesan", en: "Send Message" },
+    con_send_desc: { id: "Silakan isi form di bawah ini untuk mengirim pesan via email atau WhatsApp secara langsung.", en: "Please fill out the form below to send a message via email or WhatsApp directly." },
+    con_btn_wa: { id: "Kirim via WA", en: "Send via WA" },
+    con_btn_em: { id: "Kirim Email", en: "Send Email" },
+    con_lbl_msg: { id: "Pesan Anda", en: "Your Message" },
+    con_lbl_sub: { id: "Subjek (Opsional)", en: "Subject (Optional)" },
+
   },
 
   /**
