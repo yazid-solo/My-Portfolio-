@@ -79,10 +79,10 @@ function renderHeroStats() {
   const trainingCount = (PROFILE.training && PROFILE.training.length) ? PROFILE.training.length : 0;
 
   const dynamicStats = [
-    { label: "Semester Aktif", value: PROFILE.semester || 4 },
-    { label: "Proyek Personal", value: projectCount },
-    { label: "Pelatihan", value: trainingCount },
-    { label: "Sertifikat", value: certCount }
+    { label: window.t({id: "Semester Aktif", en: "Active Semester"}), value: PROFILE.semester || 4 },
+    { label: window.t({id: "Proyek Personal", en: "Personal Projects"}), value: projectCount },
+    { label: window.t({id: "Pelatihan", en: "Training"}), value: trainingCount },
+    { label: window.t({id: "Sertifikat", en: "Certificates"}), value: certCount }
   ];
 
   // Styling premium & gahar 4D untuk Container dengan dukungan Media Query Mobile

@@ -49,7 +49,7 @@ window.I18N = {
     idx_proj_title1: { id: "Proyek ", en: "Featured " },
     idx_proj_title2: { id: "Pilihan", en: "Projects" },
     idx_proj_desc: { id: "// karya nyata dari proses belajar mandiri", en: "// real work from self-taught learning process" },
-    idx_proj_btn: { id: "<span>Lihat Semua</span>", en: "<span>View All</span>" },
+    idx_proj_btn: { id: "Lihat Semua", en: "View All" },
     idx_skills_label: { id: "SKILLS", en: "SKILLS" },
     idx_skills_title: { id: "Teknologi & Tools", en: "Technologies & Tools" },
     idx_about_label: { id: "Tentang Saya", en: "About Me" },
@@ -62,6 +62,16 @@ window.I18N = {
       en: `Starting my journey as an automotive mechanic to now diving deep into software engineering has shaped me into a resilient and adaptable <em>problem solver</em>. My expertise focuses on the <strong style="color:#fff;">Web Development</strong> ecosystem, <strong style="color:#fff;">API & Database</strong>, and <strong style="color:#fff;">UI/UX Design</strong>. I combine these technical skills with neat data management practices (Office), version control via <strong style="color:#fff;">Git</strong>, and deployment basics (<strong style="color:#fff;">Docker</strong>). In my daily life, I integrate <strong>Artificial Intelligence (AI)</strong> assistants into my workflow to multiply productivity and produce much more efficient digital solutions.`
     },
     idx_about_btn: { id: "Baca Selengkapnya", en: "Read More" },
+    idx_stat_sem: { id: "Semester Aktif", en: "Active Semester" },
+    idx_stat_sem_sub: { id: "Mahasiswa Aktif", en: "Active Student" },
+    idx_stat_proj: { id: "Proyek Latihan", en: "Practice Projects" },
+    idx_stat_proj_sub: { id: "Terus Bertambah", en: "Keep Growing" },
+    idx_stat_cert: { id: "Sertifikat", en: "Certificates" },
+    idx_stat_cert_sub: { id: "Tervalidasi Resmi", en: "Officially Validated" },
+    idx_stat_org: { id: "Organisasi", en: "Organization" },
+    idx_stat_org_sub: { id: "Aktif Berpartisipasi", en: "Active Participation" },
+    idx_stat_train: { id: "Pelatihan yang Diikuti", en: "Attended Training" },
+    idx_stat_train_sub: { id: "PELATIHAN & KURSUS", en: "TRAINING & COURSES" },
 
     // ==========================================
     // ABOUT PAGE
@@ -100,13 +110,17 @@ window.I18N = {
     prj_title1: { id: "Katalog", en: "Project" },
     prj_title2: { id: "Karya", en: "Catalog" },
     prj_subtitle: { id: "// eksplorasi, dedikasi, dan eksekusi", en: "// exploration, dedication, and execution" },
+    prj_karya_label: { id: "Karya Saya", en: "My Work" },
     prj_filter_all: { id: "Semua", en: "All" },
     prj_filter_web: { id: "Web Dev", en: "Web Dev" },
     prj_filter_ui: { id: "UI/UX", en: "UI/UX" },
+    prj_filter_ui_d: { id: "UI Design", en: "UI Design" },
     prj_filter_mini: { id: "Mini Apps", en: "Mini Apps" },
     prj_search: { id: "Cari proyek...", en: "Search projects..." },
     prj_modal_features: { id: "Fitur Utama", en: "Key Features" },
     prj_modal_tech: { id: "Tech Stack", en: "Tech Stack" },
+    prj_coming_soon: { id: "Lebih Banyak Project Coming Soon", en: "More Projects Coming Soon" },
+    prj_view_github: { id: "Lihat GitHub Repository", en: "View GitHub Repository" },
 
     // ==========================================
     // RESUME PAGE
@@ -114,6 +128,26 @@ window.I18N = {
     res_title1: { id: "Perjalanan", en: "Career" },
     res_title2: { id: "Karir", en: "Journey" },
     res_subtitle: { id: "// jejak langkah dan pencapaian", en: "// footsteps and achievements" },
+    res_prof_label: { id: "Profil Profesional", en: "Professional Profile" },
+    res_prof_title: { id: "Ringkasan Profil", en: "Profile Summary" },
+    res_prof_p1: { 
+      id: `Seorang <strong style="color:var(--text);font-weight:700;">Tech Enthusiast</strong> dan pembelajar cepat yang aktif mengeksplorasi ekosistem <strong style="color:var(--accent);font-weight:600;">Web Development</strong>, perancangan <strong style="color:var(--accent);font-weight:600;">API & Database</strong>, hingga desain <strong style="color:var(--accent);font-weight:600;">UI/UX</strong>. Saya juga terus memperluas wawasan ke ranah <em>DevOps</em> dasar melalui penggunaan <strong>Docker</strong>. Berbekal mentalitas tangguh dari latar belakang mekanik lapangan, saya memiliki daya adaptasi dan <em>problem-solving</em> yang kuat, didukung oleh kecakapan manajerial dan pelaporan data yang rapi. Selain itu, saya menjadikan teknologi <strong style="color:var(--accent);font-weight:600;">Kecerdasan Buatan (AI)</strong> sebagai instrumen untuk mendongkrak produktivitas harian—mulai dari tahap riset, perencanaan alur kerja, hingga penyelesaian kendala teknis dan <em>debugging</em>.`, 
+      en: `A <strong style="color:var(--text);font-weight:700;">Tech Enthusiast</strong> and fast learner actively exploring the <strong style="color:var(--accent);font-weight:600;">Web Development</strong> ecosystem, <strong style="color:var(--accent);font-weight:600;">API & Database</strong> design, and <strong style="color:var(--accent);font-weight:600;">UI/UX</strong> design. I also continue to expand my knowledge into basic <em>DevOps</em> through the use of <strong>Docker</strong>. Armed with a resilient mentality from a field mechanic background, I have strong adaptability and <em>problem-solving</em> skills, supported by neat managerial and data reporting abilities. Additionally, I utilize <strong style="color:var(--accent);font-weight:600;">Artificial Intelligence (AI)</strong> technology as an instrument to boost daily productivity—from the research phase, workflow planning, to solving technical constraints and <em>debugging</em>.`
+    },
+    res_prof_p2: { 
+      id: `Saya siap menghadapi tantangan teknis, berkolaborasi dalam tim pengembangan yang dinamis (<em>Agile</em>), dan berdedikasi penuh terhadap kualitas sistem. Fokus utama saya adalah <strong style="color:var(--text);font-weight:700;">memberikan solusi digital yang komprehensif</strong> bagi perusahaan, sembari terus bertumbuh menjadi talenta teknologi andal melalui praktik industri nyata.`,
+      en: `I am ready to face technical challenges, collaborate in dynamic development teams (<em>Agile</em>), and am fully dedicated to system quality. My main focus is to <strong style="color:var(--text);font-weight:700;">provide comprehensive digital solutions</strong> for companies, while continuing to grow into a reliable tech talent through real industry practices.`
+    },
+    res_prof_stat1: { id: "Proyek Selesai", en: "Completed Projects" },
+    res_prof_stat2: { id: "Sertifikat", en: "Certificates" },
+    res_prof_stat3: { id: "Pengalaman Kerja", en: "Work Experience" },
+    res_sec_kemampuan: { id: "Kemampuan", en: "Skills" },
+    res_sec_belajar: { id: "Pengalaman Belajar", en: "Learning Experience" },
+    res_sec_pencapaian: { id: "Pencapaian", en: "Achievements" },
+    res_sec_akademik: { id: "Akademik", en: "Academic" },
+    res_title_pendidikan: { id: "Pendidikan", en: "Education" },
+    res_btn_more: { id: "Tampilkan Lebih Banyak", en: "Show More" },
+    res_btn_less: { id: "Tampilkan Sedikit", en: "Show Less" },
     res_btn_cv: { id: "Download CV Utama (ATS)", en: "Download Main CV (ATS)" },
     res_btn_cv_btn: { id: "Download CV Lengkap", en: "Download Full CV" },
     res_stat_proj: { id: "Proyek", en: "Projects" },
