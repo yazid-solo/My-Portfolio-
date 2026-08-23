@@ -1978,7 +1978,7 @@ function renderCertificates() {
   const el = document.getElementById('certs-list');
   if (!el) return;
 
-  const displayCount = 4;
+  const displayCount = 6;
   
   // Render ALL items, but initially hide the ones beyond displayCount
   el.innerHTML = PROFILE.certificates.map((c, i) => `
