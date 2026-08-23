@@ -526,6 +526,19 @@ const Components = (() => {
     inject();
     initMobileMenu();
     initPageTransitions();
+
+    // Setup Lang Switcher Logic
+    const langBtn = document.getElementById('lang-btn');
+    if (langBtn && window.I18N) {
+      langBtn.textContent = window.I18N.lang.toUpperCase();
+      langBtn.addEventListener('click', () => {
+        window.I18N.toggleLang();
+        langBtn.textContent = window.I18N.lang.toUpperCase();
+      });
+    }
+
+    // Initial Translation
+    if (window.I18N) window.I18N.translateDOM();
   }
 
   return { init };
