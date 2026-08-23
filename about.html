@@ -40,12 +40,12 @@
         <!-- Badge -->
         <div class="reveal" style="display:inline-flex;align-items:center;gap:8px;padding:0.35rem 1rem 0.35rem 0.6rem;border:1px solid rgba(var(--accent-rgb),0.25);border-radius:99px;background:rgba(var(--accent-rgb),0.06);margin-bottom:1.25rem;backdrop-filter:blur(8px);">
           <span style="width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse-dot 2s infinite;box-shadow:0 0 6px var(--accent);"></span>
-          <span style="font-family:var(--font-mono);font-size:0.72rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">mengenal saya</span>
+          <span style="font-family:var(--font-mono);font-size:0.72rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;" data-i18n="abt_badge">mengenal saya</span>
         </div>
 
         <!-- Main Heading -->
         <h1 class="reveal" style="font-size:clamp(2.5rem,6vw,4.2rem);font-weight:800;letter-spacing:-0.035em;line-height:1.05;margin-bottom:1rem;">
-          <span style="display:block;color:var(--text);">Tentang</span>
+          <span style="display:block;color:var(--text);" data-i18n="abt_h1">Tentang</span>
           <span style="display:block;background:linear-gradient(125deg,#ffffff 20%,var(--accent) 55%,#8b5cf6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Yazid Ardani</span>
         </h1>
 
@@ -58,15 +58,15 @@
         <div class="reveal" style="display:flex;flex-wrap:wrap;gap:1.2rem;">
           <div class="about-hero-stat tilt-card" style="--sc:#00d4ff;">
             <span class="about-hero-stat-num" style="color:#00d4ff;">Sem. 5</span>
-            <span class="about-hero-stat-label">Informatika</span>
+            <span class="about-hero-stat-label" data-i18n="abt_stat1_lbl">Informatika</span>
           </div>
           <div class="about-hero-stat tilt-card" style="--sc:#8b5cf6;">
             <span class="about-hero-stat-num" style="color:#8b5cf6;">3+</span>
-            <span class="about-hero-stat-label">Bidang Keahlian</span>
+            <span class="about-hero-stat-label" data-i18n="abt_stat2_lbl">Bidang Keahlian</span>
           </div>
           <div class="about-hero-stat tilt-card" style="--sc:#10b981;">
             <span class="about-hero-stat-num" style="color:#10b981;">2+</span>
-            <span class="about-hero-stat-label">Tahun Belajar</span>
+            <span class="about-hero-stat-label" data-i18n="abt_stat3_lbl">Tahun Belajar</span>
           </div>
           <div class="about-hero-stat tilt-card" style="--sc:#f59e0b;">
             <span class="about-hero-stat-num" style="color:#f59e0b;">Open</span>
@@ -231,7 +231,7 @@
               
               <a href="contact.html" class="btn-primary" style="margin-top:1.75rem;width:100%;justify-content:center;font-size:0.9rem;padding:0.85rem;font-weight:700;box-shadow:0 10px 25px rgba(var(--accent-rgb),0.4);">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                Hubungi Saya
+                <span data-i18n="abt_contact">Hubungi Saya</span>
               </a>
             </div>
           </div>
@@ -298,8 +298,8 @@
     <section class="section-pad" style="background:var(--bg2);">
       <div class="container">
         <div class="reveal" style="margin-bottom:3rem;">
-          <p class="section-label">Prinsip Saya</p>
-          <h2 class="section-title">Nilai yang Saya Pegang</h2>
+          <p class="section-label" data-i18n="abt_prin_lbl">Prinsip Saya</p>
+          <h2 class="section-title" data-i18n="abt_prin_h2">Nilai yang Saya Pegang</h2>
           <div class="accent-line"></div>
         </div>
         <div id="values-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%, 280px), 1fr));gap:1rem;"></div>
@@ -311,8 +311,8 @@
       <div class="container">
         <div style="max-width:720px;margin:0 auto;">
           <div class="reveal" style="margin-bottom:3rem;">
-            <p class="section-label">Latar Belakang</p>
-            <h2 class="section-title">Riwayat Pendidikan</h2>
+            <p class="section-label" data-i18n="abt_edu_lbl">Latar Belakang</p>
+            <h2 class="section-title" data-i18n="abt_edu_h2">Riwayat Pendidikan</h2>
             <div class="accent-line"></div>
           </div>
           <div id="education-timeline"></div>
@@ -325,8 +325,8 @@
       <div class="container">
         <div style="max-width:720px;margin:0 auto;text-align:center;">
           <div class="reveal" style="margin-bottom:3rem;">
-            <p class="section-label" style="justify-content:center;">Kepemimpinan</p>
-            <h2 class="section-title">Pengalaman Organisasi</h2>
+            <p class="section-label" style="justify-content:center;" data-i18n="abt_org_lbl">Kepemimpinan</p>
+            <h2 class="section-title" data-i18n="abt_org_h2">Pengalaman Organisasi</h2>
             <div class="accent-line" style="margin:0 auto;"></div>
           </div>
         </div>
@@ -588,8 +588,8 @@
               </div>
             </div>
             
-            <h2 class="cta-title">Tertarik Berkolaborasi?</h2>
-            <p class="cta-desc">Saya terbuka untuk proyek pengembangan perangkat lunak, eksplorasi teknologi masa depan, diskusi ide inovatif, serta peluang profesional tingkat lanjut.</p>
+            <h2 class="cta-title" data-i18n="abt_cta_h2">Tertarik Berkolaborasi?</h2>
+            <p class="cta-desc" data-i18n="abt_cta_p">Saya terbuka untuk proyek pengembangan perangkat lunak, eksplorasi teknologi masa depan, diskusi ide inovatif, serta peluang profesional tingkat lanjut.</p>
             
             <div class="cta-action-group">
               <a href="contact.html" class="cta-btn-primary">
@@ -597,7 +597,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="filter:drop-shadow(0 2px 2px rgba(0,0,0,0.3));"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
               <a href="resume.html" class="cta-btn-ghost">
-                <span>Lihat Resume Resmi</span>
+                <span data-i18n="abt_cta_btn2">Lihat Resume Resmi</span>
               </a>
             </div>
           </div>
@@ -766,3 +766,4 @@
   <script src="js/intro.js"></script>
 </body>
 </html>
+

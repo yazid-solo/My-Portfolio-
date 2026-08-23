@@ -574,13 +574,13 @@ function renderHighlights() {
           font-size:1.1rem;font-weight:900;margin-bottom:0.55rem;
           letter-spacing:-0.025em;color:#ffffff;line-height:1.2;
           text-shadow:0 2px 8px rgba(0,0,0,0.7);
-        ">${h.title}</h3>
+        ">${window.t(h.title)}</h3>
 
         <!-- Description -->
         <p style="
           font-size:0.835rem;color:#94adc8;line-height:1.75;
           font-weight:400;margin-bottom:1.25rem;
-        ">${h.desc}</p>
+        ">${window.t(h.desc)}</p>
 
         <!-- Animated progress bar -->
         ${h.level !== undefined ? `
@@ -737,7 +737,7 @@ function renderFeaturedProjects() {
           <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,${glow},transparent);z-index:5;"></div>
           
           <div style="position:relative;height:200px;overflow:hidden;">
-            <img src="${p.image}" alt="${p.title}" loading="lazy" class="proj-img-4d"
+            <img src="${p.image}" alt="${window.t(p.title)}" loading="lazy" class="proj-img-4d"
               style="width:100%;height:100%;object-fit:cover;
                 transform:scale(1.04) translate(0,0);
                 transition:transform 6s cubic-bezier(0.25,0.46,0.45,0.94);
@@ -782,7 +782,7 @@ function renderFeaturedProjects() {
               pointer-events:none;border-radius:50%;"></div>
               
             <h3 style="font-size:1.1rem;font-weight:800;line-height:1.3;color:#fff;
-              margin-bottom:0.5rem;letter-spacing:-0.01em;">${p.title}</h3>
+              margin-bottom:0.5rem;letter-spacing:-0.01em;">${window.t(p.title)}</h3>
               
             <p style="font-size:0.8rem;color:#5a7090;line-height:1.7;margin-bottom:0.9rem;">
               ${p.desc.substring(0, 90)}...
@@ -794,7 +794,7 @@ function renderFeaturedProjects() {
                   padding:3px 8px;border-radius:6px;
                   background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
                   color:rgba(255,255,255,0.4);letter-spacing:0.04em;text-transform:uppercase;">
-                  ${t}
+                  ${window.t(t)}
                 </span>`).join('')}
               <span style="margin-left:auto;font-size:0.75rem;color:rgba(255,255,255,0.2);font-weight:700;">
                 ${p.year || ''}
@@ -953,10 +953,10 @@ function renderTools() {
       <div class="tool-glow" style="background: ${t.color || 'var(--accent)'};"></div>
       <div class="tool-icon-ring">
         <div class="tool-icon-inner">
-          <img src="${t.icon}" alt="${t.name}" loading="lazy" width="26" height="26" style="${t.style || ''}" onerror="this.style.display='none'">
+          <img src="${t.icon}" alt="${window.t(t.name)}" loading="lazy" width="26" height="26" style="${t.style || ''}" onerror="this.style.display='none'">
         </div>
       </div>
-      <span class="tool-name">${t.name}</span>
+      <span class="tool-name">${window.t(t.name)}</span>
     </div>
   `).join('');
 
@@ -1182,7 +1182,7 @@ function renderTimeline() {
              <!-- Image side -->
              <div class="edu-image-wrap" style="flex: 0 0 auto; width: 100%; max-width: 270px; min-height: 220px; cursor:pointer;" onclick="openImageModal('${edu.image}')" title="Klik untuk perbesar">
                <div style="position:absolute;inset:0;background:rgba(0,0,0,0.1);box-shadow:inset 0 0 30px rgba(0,0,0,0.8);z-index:1;pointer-events:none;"></div>
-               <img src="${edu.image}" alt="${edu.institution}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.9; transition:transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.7s;" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='0.9'; this.style.transform='scale(1)'">
+               <img src="${edu.image}" alt="${window.t(edu.institution)}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.9; transition:transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.7s;" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='0.9'; this.style.transform='scale(1)'">
                <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; background:rgba(0,0,0,0.5); backdrop-filter:blur(3px); transition:opacity 0.4s ease; color:#fff; z-index:2;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.7));"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                </div>
@@ -1195,17 +1195,17 @@ function renderTimeline() {
                 
                 <div style="position:relative; z-index:1; transform-style:preserve-3d;">
                   <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.8rem; margin-bottom:1.2rem; transform:translateZ(20px);">
-                    <h3 style="font-size:1.65rem; font-weight:800; line-height:1.3; text-shadow:0 4px 12px rgba(0,0,0,0.8);">${edu.institution}</h3>
+                    <h3 style="font-size:1.65rem; font-weight:800; line-height:1.3; text-shadow:0 4px 12px rgba(0,0,0,0.8);">${window.t(edu.institution)}</h3>
                     <span style="font-size:0.8rem; color:var(--accent); background:rgba(var(--accent-rgb),0.15); backdrop-filter:blur(10px); padding:8px 18px; border-radius:99px; border:1px solid rgba(var(--accent-rgb),0.4); white-space:nowrap; display:inline-flex; align-items:center; gap:8px; font-weight:800; box-shadow:0 6px 20px rgba(var(--accent-rgb),0.3), inset 0 1px 3px rgba(255,255,255,0.3);">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                      ${edu.period}
+                      ${window.t(edu.period)}
                     </span>
                   </div>
                   <p style="font-size:1.15rem; font-weight:800; color:var(--accent); filter:brightness(1.2); margin-bottom:1.4rem; display:flex; align-items:center; gap:8px; transform:translateZ(15px); text-shadow:0 3px 8px rgba(0,0,0,0.6);">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="filter:drop-shadow(0 3px 5px rgba(0,0,0,0.7));"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                    ${edu.degree}
+                    ${window.t(edu.degree)}
                   </p>
-                  <p style="font-size:1rem; color:var(--text-dim); line-height:1.8; margin-bottom:2rem; transform:translateZ(10px); text-shadow:0 2px 4px rgba(0,0,0,0.9);">${edu.desc}</p>
+                  <p style="font-size:1rem; color:var(--text-dim); line-height:1.8; margin-bottom:2rem; transform:translateZ(10px); text-shadow:0 2px 4px rgba(0,0,0,0.9);">${window.t(edu.desc)}</p>
                   
                   <div style="display:flex; align-items:center; flex-wrap:wrap; gap:1.2rem; transform:translateZ(25px);">
                     ${edu.current ? '<span style="display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;color:#10b981;background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(16,185,129,0.05));padding:10px 20px;border-radius:99px;font-weight:800;border:1px solid rgba(16,185,129,0.5);box-shadow:0 8px 20px rgba(16,185,129,0.3), inset 0 2px 4px rgba(255,255,255,0.2);"><span style="width:10px;height:10px;border-radius:50%;background:#34d399;box-shadow:0 0 15px #34d399; animation:pulse-dot 1.5s infinite;"></span> Sedang Ditempuh</span>' : '<span style="display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--text-dim);font-weight:700;padding:10px 20px;background:linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.2);border-radius:99px;box-shadow:0 6px 15px rgba(0,0,0,0.4), inset 0 2px 5px rgba(255,255,255,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Lulus / Selesai</span>'}
@@ -1469,7 +1469,7 @@ function renderLanguages() {
         
         <div style="display:flex; justify-content:space-between; align-items:center; position:relative; z-index:2;">
           <span style="font-size:0.95rem; font-weight:700; color:#fff; letter-spacing:0.3px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">${l.lang}</span>
-          <span style="font-size:0.7rem; padding:0.25rem 0.6rem; border-radius:20px; background:rgba(${rgb},0.1); color:${color}; border:1px solid rgba(${rgb},0.3); font-family:var(--font-mono); font-weight:700; text-transform:uppercase; letter-spacing:1px; box-shadow: 0 0 10px rgba(${rgb},0.15);">${l.level}</span>
+          <span style="font-size:0.7rem; padding:0.25rem 0.6rem; border-radius:20px; background:rgba(${rgb},0.1); color:${color}; border:1px solid rgba(${rgb},0.3); font-family:var(--font-mono); font-weight:700; text-transform:uppercase; letter-spacing:1px; box-shadow: 0 0 10px rgba(${rgb},0.15);">${window.t(l.level)}</span>
         </div>
       </div>
     `;
@@ -1497,18 +1497,18 @@ function initProjects() {
     }
 
     el.innerHTML = filtered.map(p => `
-      <div class="project-card tilt-card" onclick="openModal(${p.id})" tabindex="0" role="button" aria-label="Lihat detail ${p.title}" onkeypress="if(event.key==='Enter')openModal(${p.id})">
+      <div class="project-card tilt-card" onclick="openModal(${p.id})" tabindex="0" role="button" aria-label="Lihat detail ${window.t(p.title)}" onkeypress="if(event.key==='Enter')openModal(${p.id})">
         <div style="overflow:hidden;height:200px;">
-          <img src="${p.image}" alt="${p.title}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+          <img src="${p.image}" alt="${window.t(p.title)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
         </div>
         <div style="padding:1.25rem;">
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem;margin-bottom:0.5rem;">
-            <h3 style="font-size:0.95rem;font-weight:700;">${p.title}</h3>
+            <h3 style="font-size:0.95rem;font-weight:700;">${window.t(p.title)}</h3>
             <span class="status-badge ${p.status === 'Selesai' ? 'status-done' : 'status-wip'}">${p.status}</span>
           </div>
           <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;margin-bottom:0.75rem;">${p.desc.substring(0,110)}...</p>
           <div style="display:flex;flex-wrap:wrap;gap:4px;">
-            ${p.tags.slice(0,4).map(t => `<span class="project-tag">${t}</span>`).join('')}
+            ${p.tags.slice(0,4).map(t => `<span class="project-tag">${window.t(t)}</span>`).join('')}
           </div>
         </div>
       </div>
@@ -1590,17 +1590,17 @@ function openModal(id) {
 
   box.innerHTML = `
     <div style="position:relative;">
-      <img src="${p.image}" alt="${p.title}" style="width:100%;height:240px;object-fit:cover;border-radius:20px 20px 0 0;" loading="lazy">
+      <img src="${p.image}" alt="${window.t(p.title)}" style="width:100%;height:240px;object-fit:cover;border-radius:20px 20px 0 0;" loading="lazy">
       <button onclick="closeModal()" style="position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.2);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;" aria-label="Tutup modal">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
     <div style="padding:1.5rem;">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;">${p.title}</h2>
+        <h2 style="font-size:1.25rem;font-weight:800;">${window.t(p.title)}</h2>
         <span class="status-badge ${p.status === 'Selesai' ? 'status-done' : 'status-wip'}">${p.status}</span>
       </div>
-      <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">${p.desc}</p>
+      <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">${window.t(p.desc)}</p>
       
       ${p.embed ? `
       <div style="margin-bottom:1.25rem;">
@@ -1614,14 +1614,14 @@ function openModal(id) {
       <div style="margin-bottom:1.25rem;">
         <h4 style="font-size:0.75rem;font-family:var(--font-mono);color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Fitur</h4>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
-          ${p.features.map(f => `<li style="font-size:0.85rem;color:var(--text-muted);display:flex;gap:0.5rem;"><span style="color:var(--accent);">▸</span>${f}</li>`).join('')}
+          ${p.features.map(f => `<li style="font-size:0.85rem;color:var(--text-muted);display:flex;gap:0.5rem;"><span style="color:var(--accent);">▸</span>${window.t(f)}</li>`).join('')}
         </ul>
       </div>
 
       <div style="margin-bottom:1.5rem;">
         <h4 style="font-size:0.75rem;font-family:var(--font-mono);color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Tech Stack</h4>
         <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          ${p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}
+          ${p.tags.map(t => `<span class="project-tag">${window.t(t)}</span>`).join('')}
         </div>
       </div>
 
@@ -1733,17 +1733,17 @@ function renderExperience() {
       <!-- Header Section with Background Image -->
       <div style="padding:1.5rem 1.5rem 1.2rem; background-image: linear-gradient(135deg, rgba(8, 12, 20, 0.95) 0%, rgba(8, 12, 20, 0.7) 100%), url('${exp.image || ''}'); background-position: center; background-size: cover; border-bottom:1px solid var(--border);">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.5rem;">
-          <h3 style="font-size:1.15rem; font-weight:800; color:#ffffff; line-height:1.3; text-shadow:0 2px 4px rgba(0,0,0,0.5);">${exp.role}</h3>
+          <h3 style="font-size:1.15rem; font-weight:800; color:#ffffff; line-height:1.3; text-shadow:0 2px 4px rgba(0,0,0,0.5);">${window.t(exp.role)}</h3>
           <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--accent); background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); padding:4px 12px; border-radius:99px; border:1px solid rgba(255,255,255,0.1); white-space:nowrap; display:inline-flex; align-items:center; gap:6px;">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            ${exp.period}
+            ${window.t(exp.period)}
           </span>
         </div>
         
         <div style="display:flex; align-items:center; flex-wrap:wrap; gap:0.75rem;">
           <p style="font-size:0.9rem; font-weight:700; color:var(--accent); display:flex; align-items:center; gap:6px; text-shadow:0 2px 4px rgba(0,0,0,0.5);">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-            ${exp.company}
+            ${window.t(exp.company)}
           </p>
           <span style="font-size:0.75rem; color:#e2e8f0; background:rgba(0,0,0,0.5); backdrop-filter:blur(4px); padding:2px 8px; border-radius:4px; font-weight:600; border:1px solid rgba(255,255,255,0.1);">${exp.type}</span>
           
@@ -1759,7 +1759,7 @@ function renderExperience() {
               <span style="color:var(--accent); margin-top:3px; flex-shrink:0;">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
               </span>
-              ${t}
+              ${window.t(t)}
             </li>
           `).join('')}
         </ul>
@@ -1809,11 +1809,11 @@ function renderTraining() {
             </span>
             <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--text-muted); display:inline-flex; align-items:center; gap:4px;">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              ${t.period}
+              ${window.t(t.period)}
             </span>
           </div>
           
-          <h3 style="font-size:1.15rem; font-weight:800; color:var(--text); margin-bottom:0.4rem; line-height:1.3; text-shadow:0 1px 2px rgba(0,0,0,0.5);">${t.title}</h3>
+          <h3 style="font-size:1.15rem; font-weight:800; color:var(--text); margin-bottom:0.4rem; line-height:1.3; text-shadow:0 1px 2px rgba(0,0,0,0.5);">${window.t(t.title)}</h3>
           
           <p style="font-size:0.875rem; font-weight:700; color:var(--accent); display:flex; align-items:center; gap:6px; margin-bottom:1rem;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
@@ -1821,7 +1821,7 @@ function renderTraining() {
           </p>
           
           <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.7; max-width:600px;">
-            ${t.desc}
+            ${window.t(t.desc)}
           </p>
         </div>
 
@@ -1934,7 +1934,7 @@ function renderEducationCards() {
           <div class="glass-card tilt-card resume-edu-card" style="display:flex; flex-wrap:wrap; overflow:hidden; background:var(--surface2); padding:0; border:1px solid rgba(255,255,255,0.08); box-shadow:0 15px 40px rgba(0,0,0,0.5);">
              <!-- Image side -->
              <div class="resume-edu-img" style="flex: 0 0 auto; width: 100%; max-width: 240px; position:relative; background:var(--bg3); min-height: 180px; cursor:pointer;" onclick="openImageModal('${edu.image}')" title="Klik untuk perbesar">
-               <img src="${edu.image}" alt="${edu.institution}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.8; transition:transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s;" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.08)'" onmouseout="this.style.opacity='0.8'; this.style.transform='scale(1)'">
+               <img src="${edu.image}" alt="${window.t(edu.institution)}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.8; transition:transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s;" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.08)'" onmouseout="this.style.opacity='0.8'; this.style.transform='scale(1)'">
                <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; background:rgba(0,0,0,0.4); transition:opacity 0.3s ease; color:#fff;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                </div>
@@ -1947,17 +1947,17 @@ function renderEducationCards() {
                 
                 <div style="position:relative; z-index:1;">
                   <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
-                    <h3 style="font-size:1.4rem; font-weight:800; line-height:1.3; text-shadow:0 2px 4px rgba(0,0,0,0.6);">${edu.institution}</h3>
+                    <h3 style="font-size:1.4rem; font-weight:800; line-height:1.3; text-shadow:0 2px 4px rgba(0,0,0,0.6);">${window.t(edu.institution)}</h3>
                     <span style="font-size:0.75rem; color:var(--accent); background:rgba(var(--accent-rgb),0.1); backdrop-filter:blur(6px); padding:5px 14px; border-radius:99px; border:1px solid rgba(var(--accent-rgb),0.3); white-space:nowrap; display:inline-flex; align-items:center; gap:6px; font-weight:700; box-shadow:0 0 15px rgba(var(--accent-rgb),0.15);">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                      ${edu.period}
+                      ${window.t(edu.period)}
                     </span>
                   </div>
                   <p style="font-size:1rem; font-weight:700; color:var(--text-muted); margin-bottom:1rem; display:flex; align-items:center; gap:6px;">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                    ${edu.degree}
+                    ${window.t(edu.degree)}
                   </p>
-                  <p style="font-size:0.925rem; color:var(--text-dim); line-height:1.75; margin-bottom:1.5rem;">${edu.desc}</p>
+                  <p style="font-size:0.925rem; color:var(--text-dim); line-height:1.75; margin-bottom:1.5rem;">${window.t(edu.desc)}</p>
                   
                   <div style="display:flex; align-items:center; flex-wrap:wrap; gap:1rem;">
                     ${edu.current ? '<span style="display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;color:#10b981;background:rgba(16,185,129,0.1);padding:6px 14px;border-radius:99px;font-weight:700;border:1px solid rgba(16,185,129,0.3);box-shadow:0 0 12px rgba(16,185,129,0.2);"><span style="width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 10px #10b981; animation:pulse-dot 2s infinite;"></span> Sedang Ditempuh</span>' : '<span style="display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--text-dim);font-weight:600;padding:6px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:99px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Lulus / Selesai</span>'}
@@ -1984,7 +1984,7 @@ function renderCertificates() {
     <div class="project-card tilt-card reveal cert-card-item" style="display: ${i < displayCount ? 'flex' : 'none'}; background:var(--surface2); flex-direction:column; height:100%;">
       <div style="flex:0 0 auto; overflow:hidden; height:180px; position:relative; background:var(--bg3); cursor:pointer;" onclick="openImageModal('${c.image}')" title="Klik untuk perbesar sertifikat">
         <!-- Certificate Image Thumbnail -->
-        <img src="${c.image}" alt="${c.name}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.85; transition:transform 0.4s var(--ease), opacity 0.4s var(--ease);" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.05)'" onmouseout="this.style.opacity='0.85'; this.style.transform='scale(1)'">
+        <img src="${c.image}" alt="${window.t(c.name)}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.85; transition:transform 0.4s var(--ease), opacity 0.4s var(--ease);" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.05)'" onmouseout="this.style.opacity='0.85'; this.style.transform='scale(1)'">
         
         <!-- Hover Overlay -->
         <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; background:rgba(0,0,0,0.4); transition:opacity 0.3s ease; color:#fff;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
@@ -1997,7 +1997,7 @@ function renderCertificates() {
         </div>
       </div>
       <div style="flex:1 1 auto; padding:1.25rem; display:flex; flex-direction:column;">
-        <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.35rem; line-height:1.4;">${c.name}</h4>
+        <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.35rem; line-height:1.4;">${window.t(c.name)}</h4>
         <p style="font-size:0.8rem; color:var(--text-muted); font-family:var(--font-mono); display:flex; align-items:center; gap:6px; margin-bottom:1rem; flex:1 1 auto;">
           <span style="color:var(--accent);">🏛</span> ${c.issuer}
         </p>
@@ -2252,3 +2252,28 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   observer.observe(document.body, { childList: true, subtree: true });
 });
+
+
+// i18n Event Listener for Dynamic Re-rendering
+window.addEventListener('languageChanged', () => {
+  if (typeof syncGlobalStats === 'function') syncGlobalStats();
+  
+  const path = window.location.pathname.toLowerCase();
+  if (path.includes('projects')) {
+    if (typeof initProjects === 'function') initProjects();
+  } else if (path.includes('resume')) {
+    if (typeof initResume === 'function') initResume();
+  } else if (path.includes('about')) {
+    if (typeof initAbout === 'function') initAbout();
+  } else if (path.includes('contact')) {
+    if (typeof initContact === 'function') initContact();
+  } else {
+    if (typeof initHome === 'function') initHome();
+  }
+});
+
+
+
+
+
+

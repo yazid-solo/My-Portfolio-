@@ -39,7 +39,7 @@ const PROFILE = {
   highlights: [
     {
       icon: "🎯",
-      title: "Fokus Belajar",
+      title: { id: "Fokus Belajar", en: "Focus on Learning" },
       desc: "Belajar konsisten tiap hari — dari dokumentasi resmi, video tutorial, hingga proyek latihan mandiri yang nyata.",
       color: "rgba(99,102,241,0.2)",
       accentColor: "#818cf8",
@@ -51,7 +51,7 @@ const PROFILE = {
     },
     {
       icon: "💻",
-      title: "Web Dev Dasar",
+      title: { id: "Web Dev Dasar", en: "Basic Web Dev" },
       desc: "Membangun antarmuka dengan HTML, CSS, dan JavaScript — sedang aktif menuju level menengah dengan proyek nyata.",
       color: "rgba(20,184,166,0.2)",
       accentColor: "#2dd4bf",
@@ -63,7 +63,7 @@ const PROFILE = {
     },
     {
       icon: "🎨",
-      title: "UI yang Rapi",
+      title: { id: "UI yang Rapi", en: "Neat UI Design" },
       desc: "Merancang antarmuka yang bersih dan intuitif menggunakan Figma — dari wireframe hingga prototype interaktif.",
       color: "rgba(244,63,94,0.2)",
       accentColor: "#fb7185",
@@ -75,8 +75,8 @@ const PROFILE = {
     },
     {
       icon: "🧩",
-      title: "Problem Solving",
-      desc: "Senang memecah masalah kompleks menjadi langkah-langkah kecil yang terstruktur dan dapat diselesaikan satu per satu.",
+      title: { id: "Problem Solving", en: "Problem Solving" },
+      desc: { id: "Senang memecah masalah kompleks menjadi langkah-langkah kecil yang terstruktur dan dapat diselesaikan satu per satu.", en: "Enjoy breaking down complex problems into small, structured steps that can be solved one by one." },
       color: "rgba(245,158,11,0.2)",
       accentColor: "#fbbf24",
       glowColor: "rgba(245,158,11,0.3)",
@@ -87,7 +87,7 @@ const PROFILE = {
     },
     {
       icon: "📄",
-      title: "Office & Produktivitas",
+      title: { id: "Office & Produktivitas", en: "Office & Productivity" },
       desc: "Mahir menggunakan Microsoft Office (Word, Excel, PowerPoint) & Google Workspace — diasah intensif lewat tugas akademik dan pelaporan data profesional.",
       color: "rgba(16,185,129,0.2)",
       accentColor: "#34d399",
@@ -99,8 +99,8 @@ const PROFILE = {
     },
     {
       icon: "⚙️",
-      title: "Backend & Database",
-      desc: "Membangun sistem backend dan RESTful API menggunakan Node.js dan FastAPI, serta manajemen basis data dengan PostgreSQL dan Supabase.",
+      title: { id: "Backend & Database", en: "Backend & Database" },
+      desc: { id: "Membangun sistem backend dan RESTful API menggunakan Node.js dan FastAPI, serta manajemen basis data dengan PostgreSQL dan Supabase.", en: "Building backend systems and RESTful APIs using Node.js and FastAPI, along with database management using PostgreSQL and Supabase." },
       color: "rgba(59,130,246,0.2)",
       accentColor: "#3b82f6",
       glowColor: "rgba(59,130,246,0.3)",
@@ -111,8 +111,8 @@ const PROFILE = {
     },
     {
       icon: "🚀",
-      title: "Modern Frontend",
-      desc: "Mengembangkan antarmuka web dinamis berskala menengah menggunakan framework modern seperti React dan Vite, dipadukan dengan Tailwind CSS.",
+      title: { id: "Modern Frontend", en: "Modern Frontend" },
+      desc: { id: "Mengembangkan antarmuka web dinamis berskala menengah menggunakan framework modern seperti React dan Vite, dipadukan dengan Tailwind CSS.", en: "Developing medium-scale dynamic web interfaces using modern frameworks like React and Vite, combined with Tailwind CSS." },
       color: "rgba(168,85,247,0.2)",
       accentColor: "#a855f7",
       glowColor: "rgba(168,85,247,0.3)",
@@ -123,8 +123,8 @@ const PROFILE = {
     },
     {
       icon: "🐳",
-      title: "Eksplorasi DevOps",
-      desc: "Mempelajari dan mempraktikkan kontainerisasi menggunakan Docker untuk menciptakan lingkungan pengembangan yang konsisten dan terisolasi.",
+      title: { id: "Eksplorasi DevOps", en: "DevOps Exploration" },
+      desc: { id: "Mempelajari dan mempraktikkan kontainerisasi menggunakan Docker untuk menciptakan lingkungan pengembangan yang konsisten dan terisolasi.", en: "Learning and practicing containerization using Docker to create consistent and isolated development environments." },
       color: "rgba(14,165,233,0.2)",
       accentColor: "#0ea5e9",
       glowColor: "rgba(14,165,233,0.3)",
@@ -244,30 +244,30 @@ const PROFILE = {
 
   education: [
     {
-      institution: "Universitas Nahdlatul Ulama Yogyakarta",
-      degree: "S1 Teknik Informatika",
+      institution: { id: "Universitas Nahdlatul Ulama Yogyakarta", en: "Nahdlatul Ulama University of Yogyakarta" },
+      degree: { id: "S1 Teknik Informatika", en: "Bachelor's Degree in Informatics" },
       period: "2024 – Sekarang",
-      desc: "Berfokus pada pengembangan perangkat lunak, struktur data, dan sistem informasi. Aktif bereksplorasi dengan teknologi web masa kini melalui proyek latihan mandiri.",
+      desc: { id: "Berfokus pada pengembangan perangkat lunak, struktur data, dan sistem informasi. Aktif bereksplorasi dengan teknologi web masa kini melalui proyek latihan mandiri.", en: "Focusing on software development, data structures, and information systems. Actively exploring modern web technologies through self-taught practice projects." },
       current: true,
       image: "assets/UNU JOGJA.png",
       bgImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/nGRUfRuPUjgTZYW89"
     },
     {
-      institution: "SMK Al-Munawwir Yogyakarta",
-      degree: "Teknik Kendaraan Ringan Otomotif (TKRO)",
+      institution: { id: "SMK Al-Munawwir Yogyakarta", en: "Al-Munawwir Vocational High School Yogyakarta" },
+      degree: { id: "Teknik Kendaraan Ringan Otomotif (TKRO)", en: "Light Vehicle Automotive Engineering" },
       period: "2021 – 2024",
-      desc: "Menyelesaikan pendidikan vokasi teknis dan praktik lapangan, ditunjang dengan pembentukan karakter kedisiplinan dan integritas di lingkungan pesantren terpadu.",
+      desc: { id: "Menyelesaikan pendidikan vokasi teknis dan praktik lapangan, ditunjang dengan pembentukan karakter kedisiplinan dan integritas di lingkungan pesantren terpadu.", en: "Completed technical vocational education and field practice, supported by character building in discipline and integrity within an integrated boarding school environment." },
       current: false,
       image: "assets/SMK Almunawwir.png",
       bgImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/Yaf47HziSARyHBvZ6"
     },
     {
-      institution: "MTS Riyadlus Sholihin, Probolinggo",
-      degree: "Madrasah Tsanawiyah",
+      institution: { id: "MTS Riyadlus Sholihin, Probolinggo", en: "MTS Riyadlus Sholihin, Probolinggo" },
+      degree: { id: "Madrasah Tsanawiyah", en: "Junior High School" },
       period: "2016 – 2019",
-      desc: "Membangun fondasi karakter, wawasan kebangsaan, dan tata krama yang kuat melalui pendidikan menengah berbasis nilai-nilai luhur pesantren.",
+      desc: { id: "Membangun fondasi karakter, wawasan kebangsaan, dan tata krama yang kuat melalui pendidikan menengah berbasis nilai-nilai luhur pesantren.", en: "Building a strong foundation of character, national insight, and good manners through secondary education based on noble Islamic boarding school values." },
       current: false,
       image: "assets/MTS Riyadlus Sholihin.png",
       bgImage: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
@@ -277,22 +277,22 @@ const PROFILE = {
 
   experience: [
     {
-      role: "Affiliate Marketer & Sales",
-      company: "Binco Ran Nusantara",
-      period: "Juli - Agustus 2024",
+      role: { id: "Affiliate Marketer & Sales", en: "Affiliate Marketer & Sales" },
+      company: { id: "Binco Ran Nusantara", en: "Binco Ran Nusantara" },
+      period: { id: "Juli - Agustus 2024", en: "July - August 2024" },
       type: "Freelance",
       image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/XStrV8xPTqCzMZFT7",
       tasks: [
-        "Memasarkan produk secara langsung ke konsumen melalui pameran UMKM dan pasar lokal.",
-        "Membangun relasi dan mengedukasi calon konsumen mengenai keunggulan produk ramah lingkungan.",
-        "Mengelola promosi digital melalui media sosial (Instagram, TikTok, WhatsApp) untuk memperluas jangkauan."
+        "{ id: "Memasarkan produk secara langsung ke konsumen melalui pameran UMKM dan pasar lokal.", en: "Marketed products directly to consumers through MSME exhibitions and local markets." }",
+        "{ id: "Membangun relasi dan mengedukasi calon konsumen mengenai keunggulan produk ramah lingkungan.", en: "Built relationships and educated prospective consumers on the benefits of eco-friendly products." }",
+        "{ id: "Mengelola promosi digital melalui media sosial (Instagram, TikTok, WhatsApp) untuk memperluas jangkauan.", en: "Managed digital promotions via social media (Instagram, TikTok, WhatsApp) to expand reach." }"
       ]
     },
     {
-      role: "Mekanik Lapangan (Magang)",
-      company: "JASATEC Yogyakarta",
-      period: "April - Juni 2024",
+      role: { id: "Mekanik Lapangan (Magang)", en: "Field Mechanic (Intern)" },
+      company: { id: "JASATEC Yogyakarta", en: "JASATEC Yogyakarta" },
+      period: { id: "April - Juni 2024", en: "April - June 2024" },
       type: "Praktik Kerja Lapangan (PKL)",
       image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/TATmJDyaN5MEzLCB6",
@@ -303,16 +303,16 @@ const PROFILE = {
       ]
     },
     {
-      role: "Teknisi Pemeliharaan (Magang)",
-      company: "Band Motor Yogyakarta",
+      role: { id: "Teknisi Pemeliharaan (Magang)", en: "Maintenance Technician (Intern)" },
+      company: { id: "Band Motor Yogyakarta", en: "Band Motor Yogyakarta" },
       type: "Praktik Kerja Lapangan (PKL)",
-      period: "Desember 2023 - Maret 2024",
+      period: { id: "Desember 2023 - Maret 2024", en: "December 2023 - March 2024" },
       image: "https://png.pngtree.com/background/20230912/original/pngtree-mechanics-in-auto-repair-shop-apprentice-honest-uniform-photo-picture-image_5052771.jpg",
       mapUrl: "https://maps.app.goo.gl/eyYpXecH4JVaXpVh8",
       tasks: [
-        "Mempraktikkan perawatan berkala kendaraan bermotor, termasuk proses tune-up dan penggantian pelumas.",
-        "Menangani kelistrikan dasar seperti inspeksi dan substitusi AKI kendaraan.",
-        "Berkontribusi pada operasional harian bengkel sambil melatih ketanggapan dan keandalan teknis."
+        "{ id: "Mempraktikkan perawatan berkala kendaraan bermotor, termasuk proses tune-up dan penggantian pelumas.", en: "Performed periodic maintenance on motor vehicles, including tune-up processes and oil changes." }",
+        "{ id: "Menangani kelistrikan dasar seperti inspeksi dan substitusi AKI kendaraan.", en: "Handled basic electrical issues such as vehicle battery inspection and substitution." }",
+        "{ id: "Berkontribusi pada operasional harian bengkel sambil melatih ketanggapan dan keandalan teknis.", en: "Contributed to daily workshop operations while training responsiveness and technical reliability." }"
       ]
     }
   ],
@@ -421,31 +421,31 @@ const PROFILE = {
       role: "Ketua UKM Badminton",
       org: "UNU Yogyakarta",
       period: "2025 – 2026",
-      desc: "Mengatur jadwal, sarana, perlengkapan olahraga, dan mengkoordinasi semua anggota UKM.",
+      desc: { id: "Mengatur jadwal, sarana, perlengkapan olahraga, dan mengkoordinasi semua anggota UKM.", en: "Managed schedules, facilities, sports equipment, and coordinated all UKM members." },
       icon: "assets/Foto_Logo/Logo Ukm Badminton UNUYO.svg",
       image: "https://awsimages.detik.net.id/community/media/visual/2022/10/18/ilustrasi-badminton-4.jpeg?w=1200"
     },
     {
-      role: "Dep. Organisasi",
+      role: { id: "Dep. Organisasi", en: "Organization Department" },
       org: "PAC IPNU Mantrijeron",
-      period: "2026 - Sekarang",
-      desc: "Bertanggung jawab atas administrasi, keanggotaan, dan pengembangan struktur organisasi PAC IPNU Mantrijeron.",
+      period: { id: "2026 - Sekarang", en: "2026 - Present" },
+      desc: { id: "Bertanggung jawab atas administrasi, keanggotaan, dan pengembangan struktur organisasi PAC IPNU Mantrijeron.", en: "Responsible for administration, membership, and developing the organizational structure of PAC IPNU Mantrijeron." },
       icon: "assets/Foto_Logo/Logo IPNU Mantrijeron.svg",
       image: "https://pbs.twimg.com/profile_images/1437565816036229121/NrGG35Q-_400x400.jpg"
     },
     {
-      role: "Media JQH Kaligrafi",
+      role: { id: "Media JQH Kaligrafi", en: "JQH Calligraphy Media" },
       org: "UNU Yogyakarta",
-      period: "2025 - Sekarang",
-      desc: "Mengelola media sosial JQH Kaligrafi Universitas Nahdlatul Ulama Yogyakarta, mempublikasikan karya kaligrafi dan informasi seputar kegiatan JQH Kaligrafi.",
+      period: { id: "2025 - Sekarang", en: "2025 - Present" },
+      desc: { id: "Mengelola media sosial JQH Kaligrafi Universitas Nahdlatul Ulama Yogyakarta, mempublikasikan karya kaligrafi dan informasi seputar kegiatan JQH Kaligrafi.", en: "Managed social media for JQH Calligraphy at Nahdlatul Ulama University of Yogyakarta, publishing calligraphy artworks and information regarding JQH activities." },
       icon: "assets/Foto_Logo/Logo JQH Kaligrafi UNUYO.svg",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQg0P5XRZsapBUYv9eowWhhSTZPT7gMQ0mvA&s"
     },
     {
-      role: "Ketua Irmas Darussalam",
+      role: { id: "Ketua Irmas Darussalam", en: "Head of Irmas Darussalam" },
       org: "Irmas Darussalam",
       period: "2024 – 2025",
-      desc: "Memimpin organisasi remaja masjid, menghimpun pemuda dan membuat perencanaan program keberlanjutan.",
+      desc: { id: "Memimpin organisasi remaja masjid, menghimpun pemuda dan membuat perencanaan program keberlanjutan.", en: "Led the mosque youth organization, gathered youth, and planned sustainable programs." },
       icon: "https://img.icons8.com/fluency/96/mosque.png",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQg0P5XRZsapBUYv9eowWhhSTZPT7gMQ0mvA&s"
     },
@@ -508,8 +508,8 @@ const PROJECTS = [
     title: "CMS Sibuku",
     category: "web",
     tags: ["React", "FastAPI", "Supabase"],
-    desc: "Platform e-commerce spesialis literatur dengan fitur Content Management System (CMS) lengkap. Merupakan hasil tugas akademik perkuliahan yang dikerjakan secara kolaboratif (tim), menggunakan arsitektur React dan Supabase untuk mengelola transaksi jual-beli, inventaris buku, dan data pelanggan secara terpusat.",
-    features: ["Sistem Manajemen Konten (CMS)", "Katalog Buku Dinamis", "Autentikasi Multi-Role (Admin/User)", "Keranjang Belanja (Cart System)", "Integrasi RESTful API Backend"],
+    desc: { id: "Platform e-commerce spesialis literatur dengan fitur Content Management System (CMS) lengkap. Merupakan hasil tugas akademik perkuliahan yang dikerjakan secara kolaboratif (tim), menggunakan arsitektur React dan Supabase untuk mengelola transaksi jual-beli, inventaris buku, dan data pelanggan secara terpusat.", en: "E-commerce platform specializing in literature with a complete Content Management System (CMS). A collaborative academic project built with React and Supabase to centrally manage transactions, book inventory, and customer data." },
+    features: [{ id: "Sistem Manajemen Konten (CMS)", en: "Content Management System (CMS)" }, { id: "Katalog Buku Dinamis", en: "Dynamic Book Catalog" }, { id: "Autentikasi Multi-Role (Admin/User)", en: "Multi-Role Authentication (Admin/User)" }, { id: "Keranjang Belanja (Cart System)", en: "Shopping Cart System" }, { id: "Integrasi RESTful API Backend", en: "RESTful API Backend Integration" }],
     demo: "https://si-buku-sigma.vercel.app/",
     github: "https://github.com/yazid-solo/SiBuku",
     image: "assets/Foto_Project/CMS_Sibuku.png",
@@ -521,8 +521,8 @@ const PROJECTS = [
     title: "JogjaCourt",
     category: "web",
     tags: ["React", "Tailwind CSS", "FastAPI", "Supabase"],
-    desc: "Platform reservasi lapangan olahraga khusus area Yogyakarta. Memungkinkan admin mengelola jadwal dan pengguna melakukan booking secara mandiri. Dibangun menggunakan arsitektur modern React (Frontend) yang terintegrasi dengan FastAPI dan Supabase (Backend).",
-    features: ["Sistem Booking Real-time", "Dashboard Admin & User", "Sistem Autentikasi & Otorisasi", "Manajemen Lapangan & Pembayaran", "Desain UI/UX Modern & Responsif"],
+    desc: { id: "Platform reservasi lapangan olahraga khusus area Yogyakarta. Memungkinkan admin mengelola jadwal dan pengguna melakukan booking secara mandiri. Dibangun menggunakan arsitektur modern React (Frontend) yang terintegrasi dengan FastAPI dan Supabase (Backend).", en: "Sports field reservation platform specifically for the Yogyakarta area. Allows admins to manage schedules and users to book independently. Built using modern React architecture integrated with FastAPI and Supabase." },
+    features: [{ id: "Sistem Booking Real-time", en: "Real-time Booking System" }, { id: "Dashboard Admin & User", en: "Admin & User Dashboard" }, { id: "Sistem Autentikasi & Otorisasi", en: "Authentication & Authorization System" }, { id: "Manajemen Lapangan & Pembayaran", en: "Field & Payment Management" }, { id: "Desain UI/UX Modern & Responsif", en: "Modern & Responsive UI/UX Design" }],
     demo: "https://jogja-court.vercel.app/",
     github: "https://github.com/yazid-solo/Sistem-Boking-Lapangan-Badminton",
     image: "assets/Foto_Project/Sistem_boking_Lap.Badminton.png",
@@ -534,8 +534,8 @@ const PROJECTS = [
     title: "Warehouse-System",
     category: "web",
     tags: ["Vite", "Bootstrap", "Node.js", "PostgreSQL"],
-    desc: "Sistem Informasi Manajemen Gudang (WMS) kolaboratif. Dibangun bersama tim bootcamp Stechoq Academy x Innovative Academy menggunakan Vite dan Node.js Express, dengan basis data PostgreSQL untuk memfasilitasi pelacakan barang dan manajemen inventaris secara real-time.",
-    features: ["Autentikasi User (JWT)", "Manajemen Inventaris Gudang", "CRUD Data Master Barang", "Integrasi RESTful API", "Desain Responsif Clean UI"],
+    desc: { id: "Sistem Informasi Manajemen Gudang (WMS) kolaboratif. Dibangun bersama tim bootcamp Stechoq Academy x Innovative Academy menggunakan Vite dan Node.js Express, dengan basis data PostgreSQL untuk memfasilitasi pelacakan barang dan manajemen inventaris secara real-time.", en: "Collaborative Warehouse Management Information System (WMS). Built with the Stechoq Academy x Innovative Academy bootcamp team using Vite and Node.js Express, with a PostgreSQL database to facilitate real-time item tracking and inventory management." },
+    features: [{ id: "Autentikasi User (JWT)", en: "User Authentication (JWT)" }, { id: "Manajemen Inventaris Gudang", en: "Warehouse Inventory Management" }, { id: "CRUD Data Master Barang", en: "CRUD Master Data Goods" }, { id: "Integrasi RESTful API", en: "RESTful API Integration" }, { id: "Desain Responsif Clean UI", en: "Responsive Clean UI Design" }],
     demo: "",
     github: "https://gitlab.com/bootcamp-stechoq/warehouse-system-cihuy",
     image: "assets/Foto_Project/Warehouse-system.png",
@@ -586,11 +586,11 @@ const PROJECTS = [
   },
   {
     id: 1,
-    title: "Portofolio Website",
+    title: { id: "Portofolio Website", en: "Portfolio Website" },
     category: "web",
     tags: ["HTML", "CSS", "JavaScript"],
-    desc: "Website portofolio personal interaktif bergaya modern minimalis (Glassmorphism & 3D tilt). Dibangun dari nol menggunakan Vanilla HTML, CSS, dan JavaScript murni tanpa framework, menampilkan performa animasi yang mulus dan sangat responsif.",
-    features: ["Animasi 3D & Tilt Hover Native", "Sistem Navigasi Dinamis via DOM", "Render Konten Otomatis via JSON", "Performa Ringan (Tanpa Framework)", "Desain Responsif Mobile-First"],
+    desc: { id: "Website portofolio personal interaktif bergaya modern minimalis (Glassmorphism & 3D tilt). Dibangun dari nol menggunakan Vanilla HTML, CSS, dan JavaScript murni tanpa framework, menampilkan performa animasi yang mulus dan sangat responsif.", en: "Interactive personal portfolio website with a modern minimalist style (Glassmorphism & 3D tilt). Built from scratch using Vanilla HTML, CSS, and pure JavaScript without frameworks, featuring smooth animation performance and highly responsive design." },
+    features: [{ id: "Animasi 3D & Tilt Hover Native", en: "Native 3D Animation & Tilt Hover" }, { id: "Sistem Navigasi Dinamis via DOM", en: "Dynamic Navigation System via DOM" }, { id: "Render Konten Otomatis via JSON", en: "Automated Content Rendering via JSON" }, { id: "Performa Ringan (Tanpa Framework)", en: "Lightweight Performance (No Framework)" }, { id: "Desain Responsif Mobile-First", en: "Mobile-First Responsive Design" }],
     demo: "https://portfolio-yazid-ardani.vercel.app/",
     github: "https://github.com/yazid-solo/My-Portfolio-",
     image: "assets/Foto_Project/Portfolio.png",
@@ -603,7 +603,7 @@ const PROJECTS = [
     category: "web",
     tags: ["React", "Vite", "FastAPI", "Supabase", "Tailwind CSS"],
     desc: "Sistem Pencatatan Keuangan Pribadi (Cash Note). Merupakan hasil tugas akademik perkuliahan yang dikerjakan secara tim (kolaboratif), dibangun menggunakan arsitektur modern untuk membantu pengguna memantau arus kas, pengeluaran, dan pemasukan secara komprehensif.",
-    features: ["Aplikasi Web Responsif", "Autentikasi Pengguna Aman", "CRUD Transaksi Keuangan", "Integrasi RESTful API Backend", "Dashboard Analitik Visual"],
+    features: ["Aplikasi Web Responsif", "Autentikasi Pengguna Aman", "CRUD Transaksi Keuangan", { id: "Integrasi RESTful API Backend", en: "RESTful API Backend Integration" }, "Dashboard Analitik Visual"],
     demo: "",
     github: "https://github.com/shonyaballqis/cash-note-pbo.git",
     image: "assets/Foto_Project/CASHNOTE.jpeg",
@@ -615,8 +615,8 @@ const PROJECTS = [
     title: "Warmindo App",
     category: "mini",
     tags: ["JavaScript", "HTML", "CSS", "FastAPI", "Supabase", "REST API"],
-    desc: "Aplikasi web pemesanan makanan dan sistem manajemen kasir ringan (POS). Mengintegrasikan FastAPI dan Supabase di sisi backend untuk pemrosesan pesanan yang cepat, serta Vanilla JS di sisi frontend untuk manajemen menu yang efisien.",
-    features: ["Sistem Kasir (POS) Interaktif", "Manajemen Menu Makanan (CRUD)", "Integrasi Backend FastAPI", "Database Real-time Supabase", "Antarmuka Ramah Pengguna"],
+    desc: { id: "Aplikasi web pemesanan makanan dan sistem manajemen kasir ringan (POS). Mengintegrasikan FastAPI dan Supabase di sisi backend untuk pemrosesan pesanan yang cepat, serta Vanilla JS di sisi frontend untuk manajemen menu yang efisien.", en: "Food ordering web app and lightweight point-of-sale (POS) system. Integrates FastAPI and Supabase on the backend for fast order processing, and Vanilla JS on the frontend for efficient menu management." },
+    features: [{ id: "Sistem Kasir (POS) Interaktif", en: "Interactive POS System" }, { id: "Manajemen Menu Makanan (CRUD)", en: "Food Menu Management (CRUD)" }, { id: "Integrasi Backend FastAPI", en: "FastAPI Backend Integration" }, { id: "Database Real-time Supabase", en: "Real-time Database with Supabase" }, { id: "Antarmuka Ramah Pengguna", en: "User-Friendly Interface" }],
     demo: "",
     github: "https://github.com/yazid-solo/Warmindo-App",
     image: "assets/Foto_Project/Warmindo_app.png",
@@ -628,8 +628,8 @@ const PROJECTS = [
     title: "UI Design: Warmindo UMKM",
     category: "ui",
     tags: ["Figma", "UI Design", "UMKM"],
-    desc: "Desain UI/UX landing page komersial untuk bisnis kuliner lokal (Warmindo). Mencakup 9 section responsif yang dirancang khusus untuk meningkatkan konversi dan daya tarik visual pelanggan.",
-    features: ["9 section lengkap", "Mobile-first design", "Komponen reusable di Figma", "Palet warna kuliner yang hangat"],
+    desc: { id: "Desain UI/UX landing page komersial untuk bisnis kuliner lokal (Warmindo). Mencakup 9 section responsif yang dirancang khusus untuk meningkatkan konversi dan daya tarik visual pelanggan.", en: "Commercial UI/UX landing page design for a local culinary business (Warmindo). Includes 9 responsive sections specifically designed to increase conversion and visual appeal to customers." },
+    features: [{ id: "9 section lengkap", en: "9 complete sections" }, { id: "Mobile-first design", en: "Mobile-first design" }, { id: "Komponen reusable di Figma", en: "Reusable components in Figma" }, { id: "Palet warna kuliner yang hangat", en: "Warm culinary color palette" }],
     demo: "",
     embed: "",
     github: "",
@@ -639,7 +639,7 @@ const PROJECTS = [
   },
   {
     id: 7,
-    title: "Kalkulator Akademik IPK",
+    title: { id: "Kalkulator Akademik IPK", en: "GPA Academic Calculator" },
     category: "mini",
     tags: ["HTML", "CSS", "JavaScript"],
     desc: "Tugas mata kuliah Dasar Pemrograman. Aplikasi berbasis web interaktif untuk menghitung Indeks Prestasi Kumulatif (IPK) mahasiswa secara presisi berdasarkan input nilai huruf dan bobot SKS.",
@@ -656,3 +656,10 @@ const PROJECTS = [
 if (typeof module !== "undefined") {
   module.exports = { PROFILE, PROJECTS };
 }
+
+
+
+
+
+
+

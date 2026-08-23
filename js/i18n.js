@@ -61,7 +61,90 @@ window.I18N = {
       id: `Mengawali perjalanan dari mekanik bengkel otomotif hingga kini mendalami rekayasa perangkat lunak telah membentuk saya menjadi <em>problem solver</em> yang tangguh dan mudah beradaptasi. Fokus keahlian saya mencakup ekosistem <strong style="color:#fff;">Web Development</strong>, <strong style="color:#fff;">API & Database</strong>, hingga <strong style="color:#fff;">UI/UX Design</strong>. Saya memadukan keterampilan teknis ini dengan praktik pengelolaan data (Office) yang rapi, kontrol versi via <strong style="color:#fff;">Git</strong>, dan dasar <em>deployment</em> (<strong style="color:#fff;">Docker</strong>). Di keseharian, saya mengintegrasikan asisten <strong>Kecerdasan Buatan (AI)</strong> ke dalam alur kerja untuk melipatgandakan produktivitas dan menghasilkan solusi digital yang jauh lebih efisien.`,
       en: `Starting my journey as an automotive mechanic to now diving deep into software engineering has shaped me into a resilient and adaptable <em>problem solver</em>. My expertise focuses on the <strong style="color:#fff;">Web Development</strong> ecosystem, <strong style="color:#fff;">API & Database</strong>, and <strong style="color:#fff;">UI/UX Design</strong>. I combine these technical skills with neat data management practices (Office), version control via <strong style="color:#fff;">Git</strong>, and deployment basics (<strong style="color:#fff;">Docker</strong>). In my daily life, I integrate <strong>Artificial Intelligence (AI)</strong> assistants into my workflow to multiply productivity and produce much more efficient digital solutions.`
     },
-    idx_about_btn: { id: "Baca Selengkapnya", en: "Read More" }
+    idx_about_btn: { id: "Baca Selengkapnya", en: "Read More" },
+
+    // ==========================================
+    // ABOUT PAGE
+    // ==========================================
+    abt_title1: { id: "Lebih Dekat", en: "Closer" },
+    abt_title2: { id: "dengan Saya", en: "with Me" },
+    abt_subtitle: { id: "// cerita di balik barisan kode", en: "// the story behind the lines of code" },
+    abt_header: { id: "Membangun Solusi lewat", en: "Building Solutions through" },
+    abt_header_hl: { id: "Eksplorasi & Logika", en: "Exploration & Logic" },
+    abt_p1: { 
+      id: "Halo! Saya Yazid, seorang tech-enthusiast yang memulai perjalanan dari dunia mekanik otomotif sebelum akhirnya jatuh cinta pada rekayasa perangkat lunak. Bagi saya, memecahkan *bug* pada kode memiliki kepuasan yang sama dengan merakit kembali komponen mesin—keduanya membutuhkan ketelitian, logika terstruktur, dan kesabaran.",
+      en: "Hello! I'm Yazid, a tech-enthusiast who started the journey from the automotive mechanics world before falling in love with software engineering. For me, solving a *bug* in code gives the same satisfaction as reassembling engine components—both require precision, structured logic, and patience."
+    },
+    abt_p2: {
+      id: "Sebagai Mahasiswa Informatika Semester 5, saya berfokus pada pengembangan *Web* (Frontend & Backend), perancangan *UI/UX*, hingga mengeksplorasi *DevOps* (Docker). Di luar kelas, saya menghabiskan waktu bereksplorasi membangun proyek nyata, mengikuti bootcamp, dan mengelola komunitas.",
+      en: "As a 5th-semester Informatics Student, I focus on *Web* development (Frontend & Backend), *UI/UX* design, and exploring *DevOps* (Docker). Outside of class, I spend my time exploring by building real projects, joining bootcamps, and managing communities."
+    },
+    abt_p3: {
+      id: "Satu hal yang membedakan alur kerja saya adalah integrasi mendalam dengan <strong style=\"color:var(--accent);\">Kecerdasan Buatan (AI)</strong>. Saya memposisikan AI sebagai asisten *pair-programming* harian untuk mempercepat riset, menulis dokumentasi, dan men-debug aplikasi, sehingga saya dapat berfokus pada arsitektur dan inovasi.",
+      en: "One thing that distinguishes my workflow is the deep integration with <strong style=\"color:var(--accent);\">Artificial Intelligence (AI)</strong>. I position AI as a daily *pair-programming* assistant to accelerate research, write documentation, and debug applications, allowing me to focus on architecture and innovation."
+    },
+    abt_principle_title: { id: "Prinsip Kerja Saya", en: "My Work Principles" },
+    abt_pr1_title: { id: "Pembelajar Cepat", en: "Fast Learner" },
+    abt_pr1_desc: { id: "Teknologi bergerak cepat. Saya terbiasa membaca dokumentasi dan beradaptasi dengan *tools* baru dalam hitungan hari.", en: "Technology moves fast. I'm used to reading documentation and adapting to new *tools* in a matter of days." },
+    abt_pr2_title: { id: "Kolaboratif", en: "Collaborative" },
+    abt_pr2_desc: { id: "Kode yang baik adalah yang bisa dibaca tim. Saya mengedepankan komunikasi, *Git flow* yang rapi, dan empati dalam tim.", en: "Good code is readable by the team. I prioritize communication, neat *Git flow*, and empathy within the team." },
+    abt_pr3_title: { id: "Berorientasi Detail", en: "Detail Oriented" },
+    abt_pr3_desc: { id: "Mulai dari presisi *pixel* pada UI hingga penanganan *error* pada API, detail kecil menentukan kualitas produk.", en: "From *pixel* precision on the UI to *error* handling on the API, small details determine product quality." },
+    abt_cta_title: { id: "Siap Memulai Sesuatu yang Besar?", en: "Ready to Start Something Big?" },
+    abt_cta_desc: { id: "Mari diskusikan ide Anda dan ubah menjadi solusi digital yang nyata.", en: "Let's discuss your ideas and turn them into real digital solutions." },
+    abt_cta_btn: { id: "Mari Berkolaborasi", en: "Let's Collaborate" },
+
+    // ==========================================
+    // PROJECTS PAGE
+    // ==========================================
+    prj_title1: { id: "Katalog", en: "Project" },
+    prj_title2: { id: "Karya", en: "Catalog" },
+    prj_subtitle: { id: "// eksplorasi, dedikasi, dan eksekusi", en: "// exploration, dedication, and execution" },
+    prj_filter_all: { id: "Semua", en: "All" },
+    prj_filter_web: { id: "Web Dev", en: "Web Dev" },
+    prj_filter_ui: { id: "UI/UX", en: "UI/UX" },
+    prj_filter_mini: { id: "Mini Apps", en: "Mini Apps" },
+    prj_search: { id: "Cari proyek...", en: "Search projects..." },
+    prj_modal_features: { id: "Fitur Utama", en: "Key Features" },
+    prj_modal_tech: { id: "Tech Stack", en: "Tech Stack" },
+
+    // ==========================================
+    // RESUME PAGE
+    // ==========================================
+    res_title1: { id: "Perjalanan", en: "Career" },
+    res_title2: { id: "Karir", en: "Journey" },
+    res_subtitle: { id: "// jejak langkah dan pencapaian", en: "// footsteps and achievements" },
+    res_btn_cv: { id: "Download CV Utama (ATS)", en: "Download Main CV (ATS)" },
+    res_btn_cv_btn: { id: "Download CV Lengkap", en: "Download Full CV" },
+    res_stat_proj: { id: "Proyek", en: "Projects" },
+    res_stat_cert: { id: "Sertifikasi", en: "Certifications" },
+    res_stat_exp: { id: "Pengalaman", en: "Experience" },
+    res_tab_edu: { id: "Pendidikan & Organisasi", en: "Education & Organization" },
+    res_tab_exp: { id: "Pengalaman & Keahlian", en: "Experience & Skills" },
+    res_tab_cert: { id: "Sertifikasi & Pelatihan", en: "Certifications & Training" },
+    res_sect_edu: { id: "Riwayat Pendidikan", en: "Education History" },
+    res_sect_org: { id: "Pengalaman Organisasi", en: "Organization Experience" },
+    res_sect_exp: { id: "Pengalaman Profesional", en: "Professional Experience" },
+    res_sect_skill: { id: "Distribusi Keahlian", en: "Skills Distribution" },
+    res_sect_lang: { id: "Bahasa", en: "Languages" },
+    res_sect_cert: { id: "Sertifikasi Profesional", en: "Professional Certifications" },
+    res_sect_train: { id: "Pelatihan & Bootcamp", en: "Training & Bootcamp" },
+
+    // ==========================================
+    // CONTACT PAGE
+    // ==========================================
+    con_title1: { id: "Mari", en: "Let's" },
+    con_title2: { id: "Berdiskusi", en: "Discuss" },
+    con_subtitle: { id: "// punya ide gila? mari kita wujudkan", en: "// have a crazy idea? let's make it happen" },
+    con_card_email: { id: "Email Saya", en: "My Email" },
+    con_card_phone: { id: "Telepon / WA", en: "Phone / WA" },
+    con_card_loc: { id: "Lokasi", en: "Location" },
+    con_form_title: { id: "Kirim Pesan Langsung", en: "Send Direct Message" },
+    con_form_name: { id: "Nama Lengkap", en: "Full Name" },
+    con_form_email: { id: "Alamat Email", en: "Email Address" },
+    con_form_subject: { id: "Topik Pembicaraan (Opsional)", en: "Topic (Optional)" },
+    con_form_msg: { id: "Tulis pesan Anda di sini...", en: "Write your message here..." },
+    con_form_btn: { id: "Kirim Pesan Sekarang", en: "Send Message Now" }
   },
 
   /**
