@@ -426,7 +426,8 @@ function renderHighlights() {
     const glowC  = h.glowColor   || 'rgba(0,212,255,0.3)';
     const borderH= h.borderHover || 'rgba(0,212,255,0.4)';
     const delay  = i * 130;
-    const svgIcon= HL_ICONS[h.title] || h.icon;
+    const titleKey = typeof h.title === 'object' ? h.title.id : h.title;
+    const svgIcon= HL_ICONS[titleKey] || HL_ICONS[h.title] || h.icon;
     
     // Variasi dinamis 50% / 55% jika levelnya 3 (menengah), bisa di-override dengan h.progress
     const pct    = h.progress || (h.level === 3 ? (i % 2 === 0 ? 55 : 50) : levelPct[h.level]) || 60;
