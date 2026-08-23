@@ -39,7 +39,29 @@ window.I18N = {
     hero_btn_contact: {
       id: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> Hubungi Saya`,
       en: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> Contact Me`
-    }
+    },
+
+    // Index (Other Sections)
+    idx_focus_desc: {
+      id: "Masih dalam proses belajar secara intensif — inilah area yang saya tekuni sungguh-sungguh untuk memecahkan masalah lewat barisan kode.",
+      en: "Still in an intensive learning process — this is the area I seriously pursue to solve problems through lines of code."
+    },
+    idx_proj_title1: { id: "Proyek ", en: "Featured " },
+    idx_proj_title2: { id: "Pilihan", en: "Projects" },
+    idx_proj_desc: { id: "// karya nyata dari proses belajar mandiri", en: "// real work from self-taught learning process" },
+    idx_proj_btn: { id: "<span>Lihat Semua</span>", en: "<span>View All</span>" },
+    idx_skills_label: { id: "SKILLS", en: "SKILLS" },
+    idx_skills_title: { id: "Teknologi & Tools", en: "Technologies & Tools" },
+    idx_about_label: { id: "Tentang Saya", en: "About Me" },
+    idx_about_title: {
+      id: `Satu Perjalanan,<br><span style="background:linear-gradient(135deg,var(--accent),rgba(var(--accent-rgb),0.5));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Banyak Pelajaran</span>`,
+      en: `One Journey,<br><span style="background:linear-gradient(135deg,var(--accent),rgba(var(--accent-rgb),0.5));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Many Lessons</span>`
+    },
+    idx_about_desc: {
+      id: `Mengawali perjalanan dari mekanik bengkel otomotif hingga kini mendalami rekayasa perangkat lunak telah membentuk saya menjadi <em>problem solver</em> yang tangguh dan mudah beradaptasi. Fokus keahlian saya mencakup ekosistem <strong style="color:#fff;">Web Development</strong>, <strong style="color:#fff;">API & Database</strong>, hingga <strong style="color:#fff;">UI/UX Design</strong>. Saya memadukan keterampilan teknis ini dengan praktik pengelolaan data (Office) yang rapi, kontrol versi via <strong style="color:#fff;">Git</strong>, dan dasar <em>deployment</em> (<strong style="color:#fff;">Docker</strong>). Di keseharian, saya mengintegrasikan asisten <strong>Kecerdasan Buatan (AI)</strong> ke dalam alur kerja untuk melipatgandakan produktivitas dan menghasilkan solusi digital yang jauh lebih efisien.`,
+      en: `Starting my journey as an automotive mechanic to now diving deep into software engineering has shaped me into a resilient and adaptable <em>problem solver</em>. My expertise focuses on the <strong style="color:#fff;">Web Development</strong> ecosystem, <strong style="color:#fff;">API & Database</strong>, and <strong style="color:#fff;">UI/UX Design</strong>. I combine these technical skills with neat data management practices (Office), version control via <strong style="color:#fff;">Git</strong>, and deployment basics (<strong style="color:#fff;">Docker</strong>). In my daily life, I integrate <strong>Artificial Intelligence (AI)</strong> assistants into my workflow to multiply productivity and produce much more efficient digital solutions.`
+    },
+    idx_about_btn: { id: "Baca Selengkapnya", en: "Read More" }
   },
 
   /**
