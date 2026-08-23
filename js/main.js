@@ -1488,8 +1488,8 @@ function initProjects() {
     if (!el) return;
     const filtered = PROJECTS.filter(p => {
       const matchCat = currentFilter === 'all' || p.category === currentFilter;
-      const matchSearch = p.title.toLowerCase().includes(currentSearch) ||
-        p.tags.some(t => t.toLowerCase().includes(currentSearch));
+      const matchSearch = window.t(p.title).toLowerCase().includes(currentSearch) ||
+        p.tags.some(t => window.t(t).toLowerCase().includes(currentSearch));
       return matchCat && matchSearch;
     });
 
