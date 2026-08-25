@@ -14,6 +14,14 @@ window.I18N = {
     lvl_menengah: { id: "Dasar-Menengah", en: "Basic-Intermediate" },
     lvl_advanced: { id: "Lanjutan", en: "Advanced" },
 
+    // Index Hero List Items
+    idx_hero_li1: { id: "Adaptif — dari bengkel ke kode", en: "Adaptive — from workshop to code" },
+    idx_hero_li2: { id: "Fokus pada Pengembangan Web, API, & Docker", en: "Focus on Web Development, API, & Docker" },
+    idx_hero_li3: { id: "kemampuan administratif menggunakan Microsoft Office (Word, Excel) & Google Workspace", en: "Administrative skills using Microsoft Office (Word, Excel) & Google Workspace" },
+    idx_hero_li4: { id: "Open to Work & Kolaborasi", en: "Open to Work & Collaboration" },
+    idx_hero_btn: { id: "Baca Selengkapnya", en: "Read More" },
+    idx_stat_detail: { id: "Lihat Detail", en: "View Details" },
+
     // Navbar
     nav_home: { id: "Beranda", en: "Home" },
     nav_about: { id: "Tentang", en: "About" },
