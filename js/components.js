@@ -360,8 +360,8 @@ const Components = (() => {
           <!-- Column 1: Brand & Bio -->
           <div style="display:flex; flex-direction:column;">
             <div class="logo-text" style="font-size:1.8rem; margin-bottom:1.25rem; text-shadow: 0 4px 15px rgba(var(--accent-rgb),0.3);">&lt;${PROFILE.nickname || 'Yazid'} /&gt;</div>
-            <p class="footer-desc">
-              ${window.t ? window.t(PROFILE.bio).substring(0, 150) + "..." : PROFILE.bio}
+            <p class="footer-desc" data-i18n="footer_bio">
+              ${window.t ? window.t(PROFILE.bio) : (PROFILE.bio.id || PROFILE.bio)}
             </p>
             <div class="social-row">
               <a href="${PROFILE.github}" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">

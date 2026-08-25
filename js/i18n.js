@@ -30,6 +30,10 @@ window.I18N = {
     nav_open_to_work: { id: "OPEN TO WORK", en: "OPEN TO WORK" },
 
     // Footer
+    footer_bio: {
+      id: `Saya adalah mahasiswa aktif Semester 5 Prodi Informatika yang disiplin, cepat belajar, dan memiliki minat besar di bidang teknologi — khususnya web development dan desain UI. Saat ini saya fokus membangun keahlian nyata melalui eksplorasi kode dan proyek-proyek personal yang menantang. Dalam alur kerja, saya terbiasa memanfaatkan kapabilitas AI (seperti ChatGPT, Claude, dan Copilot) secara komprehensif sebagai asisten produktivitas—tidak hanya untuk problem-solving, tetapi juga untuk perencanaan proyek, riset, manajemen waktu, dan optimalisasi alur kerja harian.`,
+      en: `I am a disciplined and fast-learning 5th-semester Informatics student with a strong passion for technology—especially web development and UI design. I currently focus on building practical skills through code exploration and challenging personal projects. In my workflow, I regularly leverage AI capabilities (like ChatGPT, Claude, and Copilot) comprehensively as productivity assistants—not just for problem-solving, but also for project planning, research, time management, and optimizing daily workflows.`
+    },
     footer_collab_title: { id: "Mulai Eksekusi Proyek", en: "Let's Start a Project" },
     footer_collab_desc: { id: "Memiliki ide visi tingkat tinggi atau sekadar mencari talenta rekayasa lunak elit? Mari rakit mahakarya bersama.", en: "Have a high-level vision or just looking for elite software engineering talent? Let's build a masterpiece together." },
     footer_collab_btn: { id: "Mulai Diskusi", en: "Start a Discussion" },
