@@ -13,6 +13,10 @@ window.I18N = {
     lvl_mempelajari: { id: "Mempelajari", en: "Learning" },
     lvl_menengah: { id: "Dasar-Menengah", en: "Basic-Intermediate" },
     lvl_advanced: { id: "Lanjutan", en: "Advanced" },
+    
+    lbl_in_progress: { id: "Sedang Ditempuh", en: "In Progress" },
+    lbl_graduated: { id: "Lulus / Selesai", en: "Graduated / Finished" },
+    lbl_view_location: { id: "Lihat Lokasi", en: "View Location" },
 
     // Index Hero List Items
     idx_hero_li1: { id: "Adaptif — dari bengkel ke kode", en: "Adaptive — from workshop to code" },
