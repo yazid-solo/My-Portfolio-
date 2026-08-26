@@ -96,6 +96,7 @@ window.I18N = {
     // ==========================================
     abt_badge: { id: "mengenal saya", en: "get to know me" },
     abt_h1: { id: "Tentang", en: "About" },
+    abt_hello_yazid: { id: "Halo, saya Yazid ", en: "Hello, I am Yazid " },
     abt_hero_p: {
       id: `Mahasiswa Informatika yang tengah membangun spesialisasi di ranah <strong style="color:#fff;font-weight:600;">Web Development</strong>. Mentransformasi etos kerja tangguh dari mekanik lapangan ke dunia digital, saya berkembang menjadi <strong style="color:var(--accent);font-weight:600;">problem solver</strong> adaptif yang menjunjung tinggi eksekusi sistem yang terstruktur.`,
       en: `Informatics student currently building a specialization in <strong style="color:#fff;font-weight:600;">Web Development</strong>. Transforming a resilient work ethic from field mechanics to the digital world, I am evolving into an adaptive <strong style="color:var(--accent);font-weight:600;">problem solver</strong> who upholds structured system execution.`
