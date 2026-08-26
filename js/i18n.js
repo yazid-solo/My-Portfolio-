@@ -94,6 +94,15 @@ window.I18N = {
     // ==========================================
     // ABOUT PAGE
     // ==========================================
+    abt_badge: { id: "mengenal saya", en: "get to know me" },
+    abt_h1: { id: "Tentang", en: "About" },
+    abt_hero_p: {
+      id: `Mahasiswa Informatika yang tengah membangun spesialisasi di ranah <strong style="color:#fff;font-weight:600;">Web Development</strong>. Mentransformasi etos kerja tangguh dari mekanik lapangan ke dunia digital, saya berkembang menjadi <strong style="color:var(--accent);font-weight:600;">problem solver</strong> adaptif yang menjunjung tinggi eksekusi sistem yang terstruktur.`,
+      en: `Informatics student currently building a specialization in <strong style="color:#fff;font-weight:600;">Web Development</strong>. Transforming a resilient work ethic from field mechanics to the digital world, I am evolving into an adaptive <strong style="color:var(--accent);font-weight:600;">problem solver</strong> who upholds structured system execution.`
+    },
+    abt_stat1_lbl: { id: "Informatika", en: "Informatics" },
+    abt_stat2_lbl: { id: "Bidang Keahlian", en: "Areas of Expertise" },
+    abt_stat3_lbl: { id: "Tahun Belajar", en: "Years of Study" },
     abt_title1: { id: "Lebih Dekat", en: "Closer" },
     abt_title2: { id: "dengan Saya", en: "with Me" },
     abt_subtitle: { id: "// cerita di balik barisan kode", en: "// the story behind the lines of code" },
@@ -118,6 +127,15 @@ window.I18N = {
     abt_pr2_desc: { id: "Kode yang baik adalah yang bisa dibaca tim. Saya mengedepankan komunikasi, *Git flow* yang rapi, dan empati dalam tim.", en: "Good code is readable by the team. I prioritize communication, neat *Git flow*, and empathy within the team." },
     abt_pr3_title: { id: "Berorientasi Detail", en: "Detail Oriented" },
     abt_pr3_desc: { id: "Mulai dari presisi *pixel* pada UI hingga penanganan *error* pada API, detail kecil menentukan kualitas produk.", en: "From *pixel* precision on the UI to *error* handling on the API, small details determine product quality." },
+    abt_prin_lbl: { id: "Prinsip Saya", en: "My Principles" },
+    abt_prin_h2: { id: "Nilai yang Saya Pegang", en: "Values I Hold" },
+    abt_edu_lbl: { id: "Latar Belakang", en: "Background" },
+    abt_edu_h2: { id: "Riwayat Pendidikan", en: "Educational History" },
+    abt_org_lbl: { id: "Kepemimpinan", en: "Leadership" },
+    abt_org_h2: { id: "Pengalaman Organisasi", en: "Organizational Experience" },
+    abt_cta_h2: { id: "Tertarik Berkolaborasi?", en: "Interested in Collaborating?" },
+    abt_cta_p: { id: "Saya terbuka untuk proyek pengembangan perangkat lunak, eksplorasi teknologi masa depan, diskusi ide inovatif, serta peluang profesional tingkat lanjut.", en: "I am open to software development projects, exploring future technologies, discussing innovative ideas, and advanced professional opportunities." },
+    abt_cta_btn2: { id: "Lihat Resume Resmi", en: "View Official Resume" },
     abt_cta_title: { id: "Siap Memulai Sesuatu yang Besar?", en: "Ready to Start Something Big?" },
     abt_cta_desc: { id: "Mari diskusikan ide Anda dan ubah menjadi solusi digital yang nyata.", en: "Let's discuss your ideas and turn them into real digital solutions." },
     abt_cta_btn: { id: "Mari Berkolaborasi", en: "Let's Collaborate" },
