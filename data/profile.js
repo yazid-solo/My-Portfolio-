@@ -418,7 +418,7 @@ const PROFILE = {
 
   organization: [
     {
-      role: "Ketua UKM Badminton",
+      role: { id: "Ketua UKM Badminton", en: "Head of Badminton UKM" },
       org: "UNU Yogyakarta",
       period: "2025 – 2026",
       desc: { id: "Mengatur jadwal, sarana, perlengkapan olahraga, dan mengkoordinasi semua anggota UKM.", en: "Managed schedules, facilities, sports equipment, and coordinated all UKM members." },
@@ -450,10 +450,10 @@ const PROFILE = {
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQg0P5XRZsapBUYv9eowWhhSTZPT7gMQ0mvA&s"
     },
     {
-      role: "Dep. Dakwah",
+      role: { id: "Dep. Dakwah", en: "Da'wah Department" },
       org: "PAC IPNU Mantrijeron",
       period: "2023 – 2024",
-      desc: "Mengkoordinasikan kegiatan dakwah internal maupun eksternal serta syiar keislaman.",
+      desc: { id: "Mengkoordinasikan kegiatan dakwah internal maupun eksternal serta syiar keislaman.", en: "Coordinating internal and external da'wah activities as well as Islamic propagation." },
       icon: "assets/Foto_Logo/Logo IPNU Mantrijeron.svg",
       image: "https://pbs.twimg.com/profile_images/1437565816036229121/NrGG35Q-_400x400.jpg"
     }
