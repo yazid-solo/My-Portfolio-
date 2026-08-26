@@ -322,7 +322,7 @@ const PROFILE = {
       title: "Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative Academy",
       organizer: "Stechoq Academy x Innovative Academy",
       period: "2026",
-      desc: "Bootcamp intensif berstandar industri. Bekerja secara tim (kolaboratif) dalam membangun proyek final Warehouse Management System, dengan fokus pada simulasi lingkungan kerja profesional, version control (Git), dan praktik full-stack web development.",
+      desc: { id: "Bootcamp intensif berstandar industri. Bekerja secara tim (kolaboratif) dalam membangun proyek final Warehouse Management System, dengan fokus pada simulasi lingkungan kerja profesional, version control (Git), dan praktik full-stack web development.", en: "Industry-standard intensive bootcamp. Collaborated in a team to build a final Warehouse Management System project, focusing on professional work environment simulation, version control (Git), and full-stack web development practices." },
       image: "assets/Foto-Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.png",
       url: "assets/Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.pdf"
     },
@@ -330,7 +330,7 @@ const PROFILE = {
       title: "Coding Camp – Intro to Software Engineering",
       organizer: "RevoU",
       period: "2026",
-      desc: "Pelatihan rekayasa perangkat lunak (Software Engineering) program 1 minggu bersertifikat dari RevoU. Mencakup metodologi pengembangan, penerapan logika dasar pemrograman, hingga pengenalan praktik pembuatan aplikasi web.",
+      desc: { id: "Pelatihan rekayasa perangkat lunak (Software Engineering) program 1 minggu bersertifikat dari RevoU. Mencakup metodologi pengembangan, penerapan logika dasar pemrograman, hingga pengenalan praktik pembuatan aplikasi web.", en: "1-week certified Software Engineering training program from RevoU. Covered development methodologies, basic programming logic, and introduction to web application development practices." },
       image: "assets/Foto-Sertifikat/Sertifikat Dicoding.png",
       url: "assets/Sertifikat/CCSE.pdf"
     },
@@ -338,7 +338,7 @@ const PROFILE = {
       title: "Samsung Innovation Campus Batch 7",
       organizer: "Samsung / Dibimbing.id",
       period: "2025/2026",
-      desc: "Pelatihan intensif dengan kurikulum berstandar industri. Fokus pada penguatan logika pemrograman Python, struktur data lanjutan, dan implementasi Object-Oriented Programming (OOP) melalui evaluasi proyek komprehensif.",
+      desc: { id: "Pelatihan intensif dengan kurikulum berstandar industri. Fokus pada penguatan logika pemrograman Python, struktur data lanjutan, dan implementasi Object-Oriented Programming (OOP) melalui evaluasi proyek komprehensif.", en: "Intensive training with an industry-standard curriculum. Focused on strengthening Python programming logic, advanced data structures, and implementing Object-Oriented Programming (OOP) through comprehensive project evaluation." },
       image: "assets/Foto-Sertifikat/Sertifikat Samsung Innovation Campus.png",
       url: "assets/Sertifikat/Sertifikat Samsung Innovation Campus.pdf"
     },
@@ -346,15 +346,15 @@ const PROFILE = {
       title: "Integrating AI in Penetration Testing - Best Practices",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan spesialisasi keamanan siber yang membahas praktik terbaik (best practices) integrasi Kecerdasan Buatan (AI) dalam simulasi penetrasi sistem (Penetration Testing) dan evaluasi kerentanan IT.",
+      desc: { id: "Pelatihan spesialisasi keamanan siber yang membahas praktik terbaik (best practices) integrasi Kecerdasan Buatan (AI) dalam simulasi penetrasi sistem (Penetration Testing) dan evaluasi kerentanan IT.", en: "Cybersecurity specialization training covering best practices of Artificial Intelligence (AI) integration in system Penetration Testing and IT vulnerability evaluation." },
       image: "assets/Foto-Sertifikat/Sertifikat Codelamp .png",
       url: "assets/Sertifikat/Sertifikat CodeLamp Integration AI in penetration Testing.pdf"
     },
     {
-      title: "Praktek Kerja Lapangan – Band Motor",
+      title: { id: "Praktek Kerja Lapangan – Band Motor", en: "Field Work Practice - Band Motor" },
       organizer: "Band Motor Yogyakarta",
       period: "2024",
-      desc: "Pelatihan teknis lapangan (Hands-on) di bidang mekanik otomotif. Melibatkan penanganan perawatan mesin berkala, proses overhaul (turun mesin), hingga diagnosis dan perbaikan (troubleshooting) sistem kelistrikan kendaraan.",
+      desc: { id: "Pelatihan teknis lapangan (Hands-on) di bidang mekanik otomotif. Melibatkan penanganan perawatan mesin berkala, proses overhaul (turun mesin), hingga diagnosis dan perbaikan (troubleshooting) sistem kelistrikan kendaraan.", en: "Hands-on technical training in automotive mechanics. Involved periodic engine maintenance, overhaul processes, and diagnosis and repair (troubleshooting) of vehicle electrical systems." },
       image: "assets/Foto-Sertifikat/Sertifikat Kerja Lapangan.png",
       url: "assets/Sertifikat/Sertifikat Praktik Kerja Lapangan.pdf"
     },
@@ -362,7 +362,7 @@ const PROFILE = {
       title: "AI Praktis untuk Produktivitas",
       organizer: "Dicoding",
       period: "2026",
-      desc: "Program pelatihan terapan mengenai pemanfaatan ragam instrumen Artificial Intelligence (AI) untuk mengotomatisasi tugas repetitif, memecahkan masalah komputasional, dan mengoptimalkan efisiensi alur kerja profesional.",
+      desc: { id: "Program pelatihan terapan mengenai pemanfaatan ragam instrumen Artificial Intelligence (AI) untuk mengotomatisasi tugas repetitif, memecahkan masalah komputasional, dan mengoptimalkan efisiensi alur kerja profesional.", en: "Applied training program on utilizing various Artificial Intelligence (AI) instruments to automate repetitive tasks, solve computational problems, and optimize professional workflow efficiency." },
       image: "assets/Foto-Sertifikat/Sertifikat AI Praktis untuk Produktivitas.png",
       url: "assets/Sertifikat/AI Praktis untuk Produktivitas.pdf"
     },
@@ -370,7 +370,7 @@ const PROFILE = {
       title: "AI Productivity and AI API Integration for Developers",
       organizer: "Hacktiv8",
       period: "2026",
-      desc: "Pelatihan tingkat lanjut bagi software developer mengenai arsitektur dan integrasi Application Programming Interface (API) berbasis Machine Learning/AI ke dalam sistem perangkat lunak modern.",
+      desc: { id: "Pelatihan tingkat lanjut bagi software developer mengenai arsitektur dan integrasi Application Programming Interface (API) berbasis Machine Learning/AI ke dalam sistem perangkat lunak modern.", en: "Advanced training for software developers on the architecture and integration of Machine Learning/AI-based Application Programming Interfaces (APIs) into modern software systems." },
       image: "assets/Foto-Sertifikat/Sertifikat AI Productivity and AI API Integration for Developers.png",
       url: "assets/Sertifikat/AI Productivity and AI API Integration for Developers.pdf"
     },
@@ -378,7 +378,7 @@ const PROFILE = {
       title: "AI-Powered Software Engineering: Practical AI Skills for Beginner",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan penerapan AI dalam proses rekayasa perangkat lunak. Mencakup penggunaan AI tools untuk mendukung siklus pengembangan software — mulai dari perencanaan, penulisan kode, debugging, hingga dokumentasi yang lebih efisien.",
+      desc: { id: "Pelatihan penerapan AI dalam proses rekayasa perangkat lunak. Mencakup penggunaan AI tools untuk mendukung siklus pengembangan software — mulai dari perencanaan, penulisan kode, debugging, hingga dokumentasi yang lebih efisien.", en: "Training on the application of AI in the software engineering process. Covers the use of AI tools to support the software development lifecycle — from planning, coding, and debugging to more efficient documentation." },
       image: "assets/Foto-Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.png",
       url: "assets/Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.pdf"
     },
@@ -386,7 +386,7 @@ const PROFILE = {
       title: "One API, Many AI Models: OpenRouter for Beginner Developers",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan penggunaan OpenRouter API untuk mengakses dan mengintegrasikan berbagai model AI (LLM) ke dalam aplikasi dengan satu antarmuka. Topik mencakup manajemen API key, pemilihan model, dan implementasi dasar di proyek nyata.",
+      desc: { id: "Pelatihan penggunaan OpenRouter API untuk mengakses dan mengintegrasikan berbagai model AI (LLM) ke dalam aplikasi dengan satu antarmuka. Topik mencakup manajemen API key, pemilihan model, dan implementasi dasar di proyek nyata.", en: "Training on using the OpenRouter API to access and integrate various AI models (LLMs) into applications using a single interface. Topics include API key management, model selection, and basic implementation in real-world projects." },
       image: "assets/Foto-Sertifikat/Sertifikat OpenRouter for Beginner Developers.png",
       url: "assets/Sertifikat/Sertifikat OpenRouter for Beginner Developers.pdf"
     },
@@ -394,7 +394,7 @@ const PROFILE = {
       title: "Pengenalan Web & Persiapan Lingkungan Kerja",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan dasar untuk calon web developer. Memperkenalkan cara kerja internet dan web, instalasi tools pengembangan (VS Code, browser DevTools, Node.js), serta konfigurasi lingkungan kerja yang profesional sebelum mulai coding.",
+      desc: { id: "Pelatihan dasar untuk calon web developer. Memperkenalkan cara kerja internet dan web, instalasi tools pengembangan (VS Code, browser DevTools, Node.js), serta konfigurasi lingkungan kerja yang profesional sebelum mulai coding.", en: "Basic training for aspiring web developers. Introduces how the internet and web work, installation of development tools (VS Code, browser DevTools, Node.js), and professional work environment configuration before starting to code." },
       image: "assets/Foto-Sertifikat/Sertifikat Pengenalan Web & Persiapan Lingkungan Kerja.png",
       url: "assets/Sertifikat/Pengenalan Web & Persiapan Lingkungan Kerja.pdf"
     },
@@ -402,7 +402,7 @@ const PROFILE = {
       title: "Introduction to JavaScript and Development Environment Setup",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan pengenalan JavaScript sebagai bahasa pemrograman web. Mencakup sintaks dasar, tipe data, fungsi, event handling, serta konfigurasi environment pengembangan untuk memulai proyek JavaScript secara mandiri.",
+      desc: { id: "Pelatihan pengenalan JavaScript sebagai bahasa pemrograman web. Mencakup sintaks dasar, tipe data, fungsi, event handling, serta konfigurasi environment pengembangan untuk memulai proyek JavaScript secara mandiri.", en: "Introductory training on JavaScript as a web programming language. Covers basic syntax, data types, functions, event handling, and development environment configuration to start JavaScript projects independently." },
       image: "assets/Foto-Sertifikat/Sertifikat Introduction to JavaScript and Development Environment Setup.png",
       url: "assets/Sertifikat/Sertifikat Introduction to JavaScript and Development Environment Setup.pdf"
     },
@@ -410,7 +410,7 @@ const PROFILE = {
       title: "Introduction to Version Control & Git Installation",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: "Pelatihan dasar sistem version control menggunakan Git. Meliputi konsep repository, commit, branching, merge, serta konfigurasi awal Git dan koneksi ke GitHub sebagai platform kolaborasi kode.",
+      desc: { id: "Pelatihan dasar sistem version control menggunakan Git. Meliputi konsep repository, commit, branching, merge, serta konfigurasi awal Git dan koneksi ke GitHub sebagai platform kolaborasi kode.", en: "Basic training on version control systems using Git. Covers repository concepts, commits, branching, merging, as well as initial Git configuration and connection to GitHub as a code collaboration platform." },
       image: "assets/Foto-Sertifikat/Sertifikat Introduction to Version Control & Git Installation.png",
       url: "assets/Sertifikat/Sertifikat Introduction to Version Control & Git Installation.pdf"
     }
