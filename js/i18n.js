@@ -271,6 +271,7 @@ window.I18N = {
     // Extra translations for projects.html
     prj_hero_desc: { id: "Kumpulan studi kasus, proyek personal, dan eksplorasi teknologi. Dibangun untuk memecahkan masalah nyata melalui desain dan barisan kode.", en: "A collection of case studies, personal projects, and tech explorations. Built to solve real problems through design and code." },
     prj_hero_repo: { id: "Saya terus belajar dan mengeksplorasi tantangan pengembangan perangkat lunak baru. Follow GitHub saya untuk update kode dan teknologi terbaru.", en: "I continuously learn and explore new software development challenges. Follow my GitHub for the latest code and technology updates." },
+    prj_search_placeholder: { id: "Cari di sini...", en: "Search here..." },
 
     // Extra translations for resume.html
     res_cv_label: { id: "📄 File CV", en: "📄 CV File" },
