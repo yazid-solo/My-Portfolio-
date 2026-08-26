@@ -1310,8 +1310,8 @@ function renderValues() {
         <div style="width:56px; height:56px; border-radius:14px; background:linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; color:${v.color}; box-shadow:0 8px 20px rgba(0,0,0,0.3), inset 0 0 15px ${v.color}22; transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);" class="value-icon-wrap">
           ${v.icon}
         </div>
-        <h3 style="font-size:1.15rem; font-weight:800; color:#fff; margin-bottom:0.75rem; letter-spacing:-0.01em;">${v.title}</h3>
-        <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.75; margin:0; flex-grow:1;">${v.desc}</p>
+        <h3 style="font-size:1.15rem; font-weight:800; color:#fff; margin-bottom:0.75rem; letter-spacing:-0.01em;">${window.I18N && window.I18N.dict && window.I18N.dict['abt_val'+(i+1)+'_title'] ? window.t(window.I18N.dict['abt_val'+(i+1)+'_title']) : v.title}</h3>
+        <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.75; margin:0; flex-grow:1;">${window.I18N && window.I18N.dict && window.I18N.dict['abt_val'+(i+1)+'_desc'] ? window.t(window.I18N.dict['abt_val'+(i+1)+'_desc']) : v.desc}</p>
       </div>
       
       <style>
