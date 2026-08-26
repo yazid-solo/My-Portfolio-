@@ -1717,7 +1717,7 @@ function renderSkillBars() {
             ${s.icon ? `<img src="${s.icon}" alt="${s.name}" style="width:22px;height:22px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.4));">` : ''}
             <span style="font-size:0.9rem;font-weight:700;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.8);">${s.name}</span>
           </div>
-          ${s.level ? `<span style="font-size:0.72rem;font-family:var(--font-mono);color:var(--accent);font-weight:600;background:rgba(var(--accent-rgb),0.08);padding:2px 8px;border-radius:6px;border:1px solid rgba(var(--accent-rgb),0.15);">${s.level}</span>` : ''}
+          ${s.level ? `<span style="font-size:0.72rem;font-family:var(--font-mono);color:var(--accent);font-weight:600;background:rgba(var(--accent-rgb),0.08);padding:2px 8px;border-radius:6px;border:1px solid rgba(var(--accent-rgb),0.15);">${window.t(s.level)}</span>` : ''}
         </div>
         ${s.pct ? `<div style="display:flex;gap:6px;align-items:center;">
           ${dotsHTML}
