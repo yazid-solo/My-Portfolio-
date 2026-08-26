@@ -154,6 +154,7 @@ window.I18N = {
     abt_cta_h2: { id: "Tertarik Berkolaborasi?", en: "Interested in Collaborating?" },
     abt_cta_p: { id: "Saya terbuka untuk proyek pengembangan perangkat lunak, eksplorasi teknologi masa depan, diskusi ide inovatif, serta peluang profesional tingkat lanjut.", en: "I am open to software development projects, exploring future technologies, discussing innovative ideas, and advanced professional opportunities." },
     abt_cta_btn2: { id: "Lihat Resume Resmi", en: "View Official Resume" },
+    abt_contact: { id: "Hubungi Saya", en: "Contact Me" },
     abt_cta_title: { id: "Siap Memulai Sesuatu yang Besar?", en: "Ready to Start Something Big?" },
     abt_cta_desc: { id: "Mari diskusikan ide Anda dan ubah menjadi solusi digital yang nyata.", en: "Let's discuss your ideas and turn them into real digital solutions." },
     abt_cta_btn: { id: "Mari Berkolaborasi", en: "Let's Collaborate" },
