@@ -2009,7 +2009,7 @@ function renderCertificates() {
         <div style="margin-top:auto;">
           <a href="${c.pdfUrl}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:0.75rem; color:var(--accent); border:1px solid var(--border-accent); padding:6px 12px; border-radius:8px; text-decoration:none; transition:all 0.2s; font-weight:600;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='transparent'">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
-            Buka PDF
+            ${window.t({id: "Buka PDF", en: "Open PDF"})}
           </a>
         </div>
         ` : ''}
@@ -2033,14 +2033,14 @@ function renderCertsBtn(displayCount) {
     btnContainer.innerHTML = `
       <button onclick="toggleCerts()" class="btn-ghost" style="padding:10px 24px; font-weight:600; border-radius:99px; display:inline-flex; align-items:center; gap:8px;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
-        Tampilkan Lebih Sedikit
+        ${window.t({id: "Tampilkan Lebih Sedikit", en: "Show Less"})}
       </button>
     `;
   } else {
     btnContainer.innerHTML = `
       <button onclick="toggleCerts()" class="btn-ghost" style="padding:10px 24px; font-weight:600; border-radius:99px; display:inline-flex; align-items:center; gap:8px;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        Lihat Semua (${PROFILE.certificates.length})
+        ${window.t({id: "Lihat Semua", en: "View All"})} (${PROFILE.certificates.length})
       </button>
     `;
   }
