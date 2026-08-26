@@ -280,7 +280,7 @@ const PROFILE = {
       role: { id: "Affiliate Marketer & Sales", en: "Affiliate Marketer & Sales" },
       company: { id: "Binco Ran Nusantara", en: "Binco Ran Nusantara" },
       period: { id: "Juli - Agustus 2024", en: "July - August 2024" },
-      type: "Freelance",
+      type: { id: "Pekerja Lepas (Freelance)", en: "Freelance" },
       image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/XStrV8xPTqCzMZFT7",
       tasks: [
@@ -293,19 +293,19 @@ const PROFILE = {
       role: { id: "Mekanik Lapangan (Magang)", en: "Field Mechanic (Intern)" },
       company: { id: "JASATEC Yogyakarta", en: "JASATEC Yogyakarta" },
       period: { id: "April - Juni 2024", en: "April - June 2024" },
-      type: "Praktik Kerja Lapangan (PKL)",
+      type: { id: "Praktik Kerja Lapangan (PKL)", en: "Field Work Practice (Internship)" },
       image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/TATmJDyaN5MEzLCB6",
       tasks: [
-        "Melakukan perbaikan dan perawatan berat mesin secara langsung (hands-on) di bawah supervisi teknisi.",
-        "Mendiagnosis dan melakukan troubleshooting pada masalah suspensi dan sistem kendaraan lainnya.",
-        "Pengalaman ini sangat melatih pola pikir yang sistematis dalam mencari sumber masalah, yang kini berguna dalam debugging kode."
+        { id: "Melakukan perbaikan dan perawatan berat mesin secara langsung (hands-on) di bawah supervisi teknisi.", en: "Performed hands-on heavy engine repairs and maintenance under technician supervision." },
+        { id: "Mendiagnosis dan melakukan troubleshooting pada masalah suspensi dan sistem kendaraan lainnya.", en: "Diagnosed and troubleshot issues with suspension and other vehicle systems." },
+        { id: "Pengalaman ini sangat melatih pola pikir yang sistematis dalam mencari sumber masalah, yang kini berguna dalam debugging kode.", en: "This experience trained a systematic mindset in finding the root cause of problems, which is now useful in code debugging." }
       ]
     },
     {
       role: { id: "Teknisi Pemeliharaan (Magang)", en: "Maintenance Technician (Intern)" },
       company: { id: "Band Motor Yogyakarta", en: "Band Motor Yogyakarta" },
-      type: "Praktik Kerja Lapangan (PKL)",
+      type: { id: "Praktik Kerja Lapangan (PKL)", en: "Field Work Practice (Internship)" },
       period: { id: "Desember 2023 - Maret 2024", en: "December 2023 - March 2024" },
       image: "https://png.pngtree.com/background/20230912/original/pngtree-mechanics-in-auto-repair-shop-apprentice-honest-uniform-photo-picture-image_5052771.jpg",
       mapUrl: "https://maps.app.goo.gl/eyYpXecH4JVaXpVh8",
