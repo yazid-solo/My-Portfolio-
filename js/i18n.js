@@ -273,6 +273,21 @@ window.I18N = {
     prj_hero_repo: { id: "Saya terus belajar dan mengeksplorasi tantangan pengembangan perangkat lunak baru. Follow GitHub saya untuk update kode dan teknologi terbaru.", en: "I continuously learn and explore new software development challenges. Follow my GitHub for the latest code and technology updates." },
     prj_search_placeholder: { id: "Cari di sini...", en: "Search here..." },
 
+    // Extra translations for contact.html
+    con_hero_title: { id: "Hubungi <span style='color:var(--accent);'>Saya</span>", en: "Contact <span style='color:var(--accent);'>Me</span>" },
+    con_hero_desc: { id: "Terbuka untuk diskusi pengembangan teknologi, kolaborasi proyek, atau peluang magang yang menantang.", en: "Open for tech development discussions, project collaborations, or challenging internship opportunities." },
+    con_status_avail: { id: "Tersedia", en: "Available" },
+    con_status_desc: { id: "Terbuka untuk proyek kolaborasi, diskusi teknologi, serta peluang magang atau proyek freelance.", en: "Open for collaboration projects, tech discussions, as well as internship or freelance opportunities." },
+    con_send_msg: { id: "Kirim Pesan", en: "Send Message" },
+    con_form_desc: { id: "Silakan isi form di bawah ini untuk mengirim pesan via email atau WhatsApp secara langsung.", en: "Please fill out the form below to send a message directly via email or WhatsApp." },
+    con_form_name: { id: "Nama Lengkap", en: "Full Name" },
+    con_form_email: { id: "Alamat Email", en: "Email Address" },
+    con_lbl_sub: { id: "Subjek (Opsional)", en: "Subject (Optional)" },
+    con_lbl_msg: { id: "Pesan Anda", en: "Your Message" },
+    con_btn_wa: { id: "Kirim via WA", en: "Send via WA" },
+    con_btn_email: { id: "Kirim Email", en: "Send Email" },
+    con_card_loc: { id: "Lokasi", en: "Location" },
+
     // Footer
     footer_btt: { id: "KEMBALI KE ATAS", en: "BACK TO TOP" },
     footer_btt_aria: { id: "Kembali ke atas", en: "Back to top" },
