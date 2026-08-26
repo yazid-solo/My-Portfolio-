@@ -285,6 +285,12 @@ window.I18N = {
     res_hist_work: { id: "Riwayat Kerja & Magang", en: "Work & Internship History" },
     res_hist_train: { id: "Pelatihan & Bootcamp", en: "Training & Bootcamps" },
     res_hist_cert: { id: "Sertifikat & Penghargaan", en: "Certificates & Awards" },
+    res_skill_fs: { id: "Full-Stack Dev", en: "Full-Stack Dev" },
+    res_skill_api: { id: "API & Database", en: "API & Database" },
+    res_skill_fast: { id: "Cepat Belajar", en: "Fast Learner" },
+    res_skill_team: { id: "Team & Mandiri", en: "Team & Independent" },
+    res_skill_prob: { id: "Problem Solver", en: "Problem Solver" },
+    res_skill_adapt: { id: "Adaptif & Proaktif", en: "Adaptive & Proactive" },
 
     // Extra translations for contact.html
     con_hero_desc: { id: "Terbuka untuk diskusi pengembangan teknologi, kolaborasi proyek, atau peluang magang yang menantang.", en: "Open to discussing tech development, project collaboration, or challenging internship opportunities." },
