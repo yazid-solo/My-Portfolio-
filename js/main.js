@@ -761,9 +761,9 @@ function renderFeaturedProjects() {
             </div>
             
             <div style="position:absolute;top:12px;right:12px;z-index:3;">
-              <span class="status-badge ${p.status === 'Selesai' ? 'status-done' : 'status-wip'}"
+              <span class="status-badge ${(p.status.id === 'Selesai' || p.status === 'Selesai') ? 'status-done' : 'status-wip'}"
                 style="background:rgba(15, 23, 42, 0.85);font-size:0.65rem;">
-                ${p.status}
+                ${window.t(p.status)}
               </span>
             </div>
             
@@ -1514,7 +1514,7 @@ function initProjects() {
         <div style="padding:1.25rem;">
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem;margin-bottom:0.5rem;">
             <h3 style="font-size:0.95rem;font-weight:700;">${window.t(p.title)}</h3>
-            <span class="status-badge ${p.status === 'Selesai' ? 'status-done' : 'status-wip'}">${p.status}</span>
+            <span class="status-badge ${(p.status.id === 'Selesai' || p.status === 'Selesai') ? 'status-done' : 'status-wip'}">${window.t(p.status)}</span>
           </div>
           <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;margin-bottom:0.75rem;">${window.t(p.desc).substring(0,110)}...</p>
           <div style="display:flex;flex-wrap:wrap;gap:4px;">
@@ -1598,7 +1598,7 @@ function openModal(id) {
     <div style="padding:1.5rem;">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
         <h2 style="font-size:1.25rem;font-weight:800;">${window.t(p.title)}</h2>
-        <span class="status-badge ${p.status === 'Selesai' ? 'status-done' : 'status-wip'}">${p.status}</span>
+        <span class="status-badge ${(p.status.id === 'Selesai' || p.status === 'Selesai') ? 'status-done' : 'status-wip'}">${window.t(p.status)}</span>
       </div>
       <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">${window.t(p.desc)}</p>
       

@@ -513,7 +513,7 @@ const PROJECTS = [
     demo: "https://si-buku-sigma.vercel.app/",
     github: "https://github.com/yazid-solo/SiBuku",
     image: "assets/Foto_Project/CMS_Sibuku.png",
-    status: "Selesai",
+    status: { id: "Selesai", en: "Finished" },
     year: "2026"
   },
   {
@@ -526,7 +526,7 @@ const PROJECTS = [
     demo: "https://jogja-court.vercel.app/",
     github: "https://github.com/yazid-solo/Sistem-Boking-Lapangan-Badminton",
     image: "assets/Foto_Project/Sistem_boking_Lap.Badminton.png",
-    status: "Selesai & dalam pengembangan",
+    status: { id: "Selesai & dalam pengembangan", en: "Finished & In Development" },
     year: "2026"
   },
   {
@@ -539,7 +539,7 @@ const PROJECTS = [
     demo: "",
     github: "https://gitlab.com/bootcamp-stechoq/warehouse-system-cihuy",
     image: "assets/Foto_Project/Warehouse-system.png",
-    status: "Selesai & dalam pengembangan",
+    status: { id: "Selesai & dalam pengembangan", en: "Finished & In Development" },
     year: "2026"
   },
   {
@@ -547,13 +547,13 @@ const PROJECTS = [
     title: "UI/UX Design: Vareway",
     category: "ui",
     tags: ["Figma", "UI/UX", "Prototyping", "Team Collaboration"],
-    desc: "Desain antarmuka platform EduTech interaktif hasil kerja sama tim yang menyediakan alur belajar terstruktur (Learning Path). Tampilan ini dirancang secara kolaboratif untuk membimbing pengguna memilih kurikulum sesuai kebutuhan industri—seperti Front-End, Cyber Security, hingga Machine Learning—dengan gaya visual yang modern dan memotivasi pelajar.",
-    features: ["Interactive Prototype", "Design System", "Auto Layout", "EduTech Platform", "Responsive Web"],
+    desc: { id: "Desain antarmuka platform EduTech interaktif hasil kerja sama tim yang menyediakan alur belajar terstruktur (Learning Path). Tampilan ini dirancang secara kolaboratif untuk membimbing pengguna memilih kurikulum sesuai kebutuhan industri—seperti Front-End, Cyber Security, hingga Machine Learning—dengan gaya visual yang modern dan memotivasi pelajar.", en: "Interactive EduTech platform interface design resulting from teamwork that provides a structured learning flow (Learning Path). This display is collaboratively designed to guide users in choosing a curriculum according to industry needs—such as Front-End, Cyber Security, to Machine Learning—with a modern visual style that motivates students." },
+    features: [{ id: "Interactive Prototype", en: "Interactive Prototype" }, { id: "Design System", en: "Design System" }, { id: "Auto Layout", en: "Auto Layout" }, { id: "EduTech Platform", en: "EduTech Platform" }, { id: "Responsive Web", en: "Responsive Web" }],
     demo: "",
     embed: "https://embed.figma.com/design/ixlEcoPHDG9k8gMxtuR4PZ/VAREWAY?node-id=3-2&embed-host=share",
     github: "",
     image: "assets/Foto_Project/Desain UI Vareway.jpeg",
-    status: "Selesai & Butuh Pengembangan",
+    status: { id: "Selesai & Butuh Pengembangan", en: "Finished & Needs Development" },
     year: "2026"
   },
   {
@@ -561,13 +561,13 @@ const PROJECTS = [
     title: "UI/UX Design: Warehouse-System",
     category: "ui",
     tags: ["Figma", "UI/UX", "Prototyping", "Team Collaboration"],
-    desc: "Rancangan dasbor web (B2B) hasil kolaborasi tim untuk manajemen sistem pergudangan yang komprehensif. Desain bersama ini mencakup modul pemantauan stok (Storage Bin), pendataan aset, hingga pengelolaan pemasok (Supplier). Antarmuka difokuskan pada penyajian ringkasan data yang padat namun tetap bersih dan mudah dibaca oleh operator.",
-    features: ["Interactive Prototype", "Design System", "Auto Layout", "Dashboard UI", "B2B WebApp"],
+    desc: { id: "Rancangan dasbor web (B2B) hasil kolaborasi tim untuk manajemen sistem pergudangan yang komprehensif. Desain bersama ini mencakup modul pemantauan stok (Storage Bin), pendataan aset, hingga pengelolaan pemasok (Supplier). Antarmuka difokuskan pada penyajian ringkasan data yang padat namun tetap bersih dan mudah dibaca oleh operator.", en: "Team collaboration B2B web dashboard design for comprehensive warehouse system management. This joint design includes stock monitoring modules (Storage Bin), asset data collection, and supplier management (Supplier). The interface focuses on presenting a dense but still clean and easy-to-read data summary for operators." },
+    features: [{ id: "Interactive Prototype", en: "Interactive Prototype" }, { id: "Design System", en: "Design System" }, { id: "Auto Layout", en: "Auto Layout" }, { id: "Dashboard UI", en: "Dashboard UI" }, { id: "B2B WebApp", en: "B2B WebApp" }],
     demo: "",
     embed: "https://embed.figma.com/design/nK44ZokkywTLLl932sC77Y/stechoq?node-id=109-219&embed-host=share",
     github: "",
     image: "assets/Foto_Project/Desain UI Warehouse-System.png",
-    status: "Selesai & Butuh Pengembangan",
+    status: { id: "Selesai & Butuh Pengembangan", en: "Finished & Needs Development" },
     year: "2026"
   },
   {
@@ -575,13 +575,13 @@ const PROJECTS = [
     title: "UI/UX Design: Warmindo Delivery",
     category: "ui",
     tags: ["Figma", "UI/UX", "Prototyping", "Team Collaboration"],
-    desc: "Desain antarmuka aplikasi mobile (Food Delivery) hasil kolaborasi tim yang dirancang khusus untuk memudahkan pemesanan menu Warmindo secara online. Fokus desain kami ada pada tata letak yang bersih, navigasi kategori makanan yang cepat, serta pengalaman pengguna yang intuitif agar proses pemesanan menjadi lebih praktis.",
-    features: ["Interactive Prototype", "Design System", "Auto Layout", "Mobile App Design", "User Flow"],
+    desc: { id: "Desain antarmuka aplikasi mobile (Food Delivery) hasil kolaborasi tim yang dirancang khusus untuk memudahkan pemesanan menu Warmindo secara online. Fokus desain kami ada pada tata letak yang bersih, navigasi kategori makanan yang cepat, serta pengalaman pengguna yang intuitif agar proses pemesanan menjadi lebih praktis.", en: "Mobile application interface design (Food Delivery) resulting from teamwork specifically designed to facilitate online ordering of Warmindo menus. Our design focus is on a clean layout, fast food category navigation, and an intuitive user experience so that the ordering process becomes more practical." },
+    features: [{ id: "Interactive Prototype", en: "Interactive Prototype" }, { id: "Design System", en: "Design System" }, { id: "Auto Layout", en: "Auto Layout" }, { id: "Mobile App Design", en: "Mobile App Design" }, { id: "User Flow", en: "User Flow" }],
     demo: "",
     embed: "https://embed.figma.com/design/8goiC7Nu277CYpj2Ns4no8/warmindo?node-id=0-1&embed-host=share",
     github: "",
     image: "assets/Foto_Project/Desain UI Warmindo Delivery.png",
-    status: "Selesai & Butuh Pengembangan",
+    status: { id: "Selesai & Butuh Pengembangan", en: "Finished & Needs Development" },
     year: "2026"
   },
   {
@@ -602,12 +602,12 @@ const PROJECTS = [
     title: "CASHNOTE",
     category: "web",
     tags: ["React", "Vite", "FastAPI", "Supabase", "Tailwind CSS"],
-    desc: "Sistem Pencatatan Keuangan Pribadi (Cash Note). Merupakan hasil tugas akademik perkuliahan yang dikerjakan secara tim (kolaboratif), dibangun menggunakan arsitektur modern untuk membantu pengguna memantau arus kas, pengeluaran, dan pemasukan secara komprehensif.",
-    features: ["Aplikasi Web Responsif", "Autentikasi Pengguna Aman", "CRUD Transaksi Keuangan", { id: "Integrasi RESTful API Backend", en: "RESTful API Backend Integration" }, "Dashboard Analitik Visual"],
+    desc: { id: "Sistem Pencatatan Keuangan Pribadi (Cash Note). Merupakan hasil tugas akademik perkuliahan yang dikerjakan secara tim (kolaboratif), dibangun menggunakan arsitektur modern untuk membantu pengguna memantau arus kas, pengeluaran, dan pemasukan secara komprehensif.", en: "Personal Financial Recording System (Cash Note). An academic project done collaboratively by a team, built using modern architecture to help users monitor cash flows, expenses, and income comprehensively." },
+    features: [{ id: "Aplikasi Web Responsif", en: "Responsive Web App" }, { id: "Autentikasi Pengguna Aman", en: "Secure User Authentication" }, { id: "CRUD Transaksi Keuangan", en: "Financial Transaction CRUD" }, { id: "Integrasi RESTful API Backend", en: "RESTful API Backend Integration" }, { id: "Dashboard Analitik Visual", en: "Visual Analytic Dashboard" }],
     demo: "",
     github: "https://github.com/shonyaballqis/cash-note-pbo.git",
     image: "assets/Foto_Project/CASHNOTE.jpeg",
-    status: "Selesai",
+    status: { id: "Selesai", en: "Finished" },
     year: "2026"
   },
   {
@@ -620,7 +620,7 @@ const PROJECTS = [
     demo: "",
     github: "https://github.com/yazid-solo/Warmindo-App",
     image: "assets/Foto_Project/Warmindo_app.png",
-    status: "Dalam Proses",
+    status: { id: "Dalam Proses", en: "In Progress" },
     year: "2026"
   },
   {
@@ -634,7 +634,7 @@ const PROJECTS = [
     embed: "",
     github: "",
     image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",
-    status: "Dalam Pengerjaan",
+    status: { id: "Dalam Pengerjaan", en: "In Progress" },
     year: "2025"
   },
   {
@@ -642,12 +642,12 @@ const PROJECTS = [
     title: { id: "Kalkulator Akademik IPK", en: "GPA Academic Calculator" },
     category: "mini",
     tags: ["HTML", "CSS", "JavaScript"],
-    desc: "Tugas mata kuliah Dasar Pemrograman. Aplikasi berbasis web interaktif untuk menghitung Indeks Prestasi Kumulatif (IPK) mahasiswa secara presisi berdasarkan input nilai huruf dan bobot SKS.",
-    features: ["Perhitungan IPK Instan", "Validasi Bobot SKS Dinamis", "Konversi Nilai Huruf ke Angka", "Antarmuka Minimalis yang Mudah Digunakan"],
+    desc: { id: "Tugas mata kuliah Dasar Pemrograman. Aplikasi berbasis web interaktif untuk menghitung Indeks Prestasi Kumulatif (IPK) mahasiswa secara presisi berdasarkan input nilai huruf dan bobot SKS.", en: "Programming Basics course assignment. An interactive web-based application to calculate students' Grade Point Average (GPA) precisely based on letter grades and credit weights input." },
+    features: [{ id: "Perhitungan IPK Instan", en: "Instant GPA Calculation" }, { id: "Validasi Bobot SKS Dinamis", en: "Dynamic Credit Weight Validation" }, { id: "Konversi Nilai Huruf ke Angka", en: "Letter to Number Grade Conversion" }, { id: "Antarmuka Minimalis yang Mudah Digunakan", en: "Easy to Use Minimalist Interface" }],
     demo: "",
     github: "",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80",
-    status: "Selesai",
+    status: { id: "Selesai", en: "Finished" },
     year: "2024"
   }
 ];
