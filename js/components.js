@@ -422,7 +422,7 @@ const Components = (() => {
               <div class="status-dot"></div>
               <span style="font-weight: 700; letter-spacing: 0.1em; color:rgba(255,255,255,0.9); font-family: var(--font-mono); font-size: 0.8rem;" data-i18n="footer_status">TERSEDIA UNTUK KERJA SAMA</span>
             </div>
-            <button class="btt-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Kembali ke atas">
+            <button class="btt-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Kembali ke atas" data-i18n-aria="footer_btt_aria">
               <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
                 <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
               </svg>

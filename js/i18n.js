@@ -273,6 +273,10 @@ window.I18N = {
     prj_hero_repo: { id: "Saya terus belajar dan mengeksplorasi tantangan pengembangan perangkat lunak baru. Follow GitHub saya untuk update kode dan teknologi terbaru.", en: "I continuously learn and explore new software development challenges. Follow my GitHub for the latest code and technology updates." },
     prj_search_placeholder: { id: "Cari di sini...", en: "Search here..." },
 
+    // Footer
+    footer_btt: { id: "KEMBALI KE ATAS", en: "BACK TO TOP" },
+    footer_btt_aria: { id: "Kembali ke atas", en: "Back to top" },
+
     // Extra translations for resume.html
     res_cv_label: { id: "📄 File CV", en: "📄 CV File" },
     res_cv_update: { id: "🗓️ Diperbarui 2026", en: "🗓️ Updated 2026" },
@@ -346,6 +350,14 @@ window.I18N = {
         } else {
           el.innerHTML = this.dict[key][this.lang];
         }
+      }
+    });
+
+    const ariaElements = document.querySelectorAll('[data-i18n-aria]');
+    ariaElements.forEach(el => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (this.dict[key] && this.dict[key][this.lang]) {
+        el.setAttribute('aria-label', this.dict[key][this.lang]);
       }
     });
   },
