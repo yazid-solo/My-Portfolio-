@@ -2101,11 +2101,11 @@ function initContact() {
     const msg     = document.getElementById('f-msg')?.value.trim();
 
     if (!name || !email || !msg) {
-      showFormMsg('Semua field wajib diisi (kecuali Subjek)!', 'error');
+      showFormMsg((window.I18N && window.I18N.lang === 'en') ? 'All fields are required (except Subject)!' : 'Semua field wajib diisi (kecuali Subjek)!', 'error');
       return null;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showFormMsg('Format email tidak valid.', 'error');
+      showFormMsg((window.I18N && window.I18N.lang === 'en') ? 'Invalid email format.' : 'Format email tidak valid.', 'error');
       return null;
     }
     return { name, email, subject, msg };
@@ -2120,7 +2120,7 @@ function initContact() {
 
       const text = `Halo Yazid, saya ${data.name}.\nEmail saya: ${data.email}\nTopik: ${data.subject}\n\nPesan:\n${data.msg}`;
       window.open(`${PROFILE.whatsapp}?text=${encodeURIComponent(text)}`, '_blank');
-      showFormMsg('✅ Mengalihkan ke WhatsApp. Terima kasih, ' + data.name + '!', 'success');
+      showFormMsg('✅ ' + ((window.I18N && window.I18N.lang === 'en') ? 'Redirecting to WhatsApp. Thank you, ' : 'Mengalihkan ke WhatsApp. Terima kasih, ') + data.name + '!', 'success');
       form.reset();
     });
   }
@@ -2134,7 +2134,7 @@ function initContact() {
 
       // Ubah UI tombol menjadi loading
       const originalText = btnEmail.innerHTML;
-      btnEmail.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg> Mengirim...`;
+      btnEmail.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg> ` + ((window.I18N && window.I18N.lang === 'en') ? 'Sending...' : 'Mengirim...');
       btnEmail.disabled = true;
 
       try {
@@ -2153,7 +2153,7 @@ function initContact() {
         });
 
         if (response.ok) {
-          showFormMsg('✅ Pesan berhasil dikirim. Saya akan segera membalasnya!', 'success');
+          showFormMsg('✅ ' + ((window.I18N && window.I18N.lang === 'en') ? 'Message sent successfully. I will reply shortly!' : 'Pesan berhasil dikirim. Saya akan segera membalasnya!'), 'success');
           form.reset();
         } else {
           // Fallback ke mailto jika Formspree belum disetup
@@ -2164,7 +2164,7 @@ function initContact() {
         const body = `Nama: ${data.name}\nEmail: ${data.email}\n\nPesan:\n${data.msg}`;
         const mailtoLink = `mailto:${PROFILE.email}?subject=${encodeURIComponent('Pesan dari ' + data.name + (data.subject !== '-' ? ' — ' + data.subject : ''))}&body=${encodeURIComponent(body)}`;
         window.open(mailtoLink, '_blank');
-        showFormMsg('✅ Membuka klien email Anda (Fallback). Formspree belum aktif.', 'success');
+        showFormMsg('✅ ' + ((window.I18N && window.I18N.lang === 'en') ? 'Opening your email client (Fallback).' : 'Membuka klien email Anda (Fallback). Formspree belum aktif.'), 'success');
         form.reset();
       } finally {
         // Kembalikan tombol seperti semula
