@@ -292,11 +292,11 @@
       }
 
       // Update social links from PROFILE data
-      if(window.PROFILE) {
+      if(typeof PROFILE !== 'undefined') {
         const ghBtn = document.getElementById('contact-github-btn');
         const inBtn = document.getElementById('contact-linkedin-btn');
-        if(ghBtn && window.PROFILE.github) ghBtn.href = window.PROFILE.github;
-        if(inBtn && window.PROFILE.linkedin) inBtn.href = window.PROFILE.linkedin;
+        if(ghBtn && PROFILE.github) ghBtn.href = PROFILE.github;
+        if(inBtn && PROFILE.linkedin) inBtn.href = PROFILE.linkedin;
       }
     });
   </script>
