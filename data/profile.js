@@ -175,13 +175,13 @@ const PROFILE = {
     { name: "ms excel", icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg", style: "width: 24px; height: 24px;", color: "#107c41" },
     { name: "ms word", icon: "https://api.iconify.design/vscode-icons/file-type-word.svg", style: "width: 24px; height: 24px;", color: "#2b579a" },
     { name: "docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", color: "#2496ed" },
-    { name: "stitch", icon: "assets/stitch.svg", style: "width: 28px; height: 28px;", color: "#FFA1E0" },
+    { name: "stitch", icon: "assets/Foto_Logo/stitch.svg", style: "width: 28px; height: 28px;", color: "#FFA1E0" },
     { name: "ChatGPT", icon: "https://api.iconify.design/simple-icons:openai.svg?color=white", color: "#10a37f" },
     { name: "GitHub Copilot", icon: "https://api.iconify.design/simple-icons:githubcopilot.svg?color=white", color: "#ffffff" },
-    { name: "Claude AI", icon: "assets/claude.svg", color: "#d97757" },
-    { name: "Google Gemini", icon: "assets/gemini.svg", color: "#1a73e8" },
-    { name: "Antigravity IDE", icon: "assets/antigravity.svg", color: "#ff00ff" },
-    { name: "Kiro", icon: "assets/kiro.svg", color: "#ffff00" }
+    { name: "Claude AI", icon: "assets/Foto_Logo/claude.svg", color: "#d97757" },
+    { name: "Google Gemini", icon: "assets/Foto_Logo/gemini.svg", color: "#1a73e8" },
+    { name: "Antigravity IDE", icon: "assets/Foto_Logo/antigravity.svg", color: "#ff00ff" },
+    { name: "Kiro", icon: "assets/Foto_Logo/kiro.svg", color: "#ffff00" }
   ],
 
   skills: [
@@ -215,11 +215,11 @@ const PROFILE = {
       items: [
         { name: "ChatGPT", icon: "https://api.iconify.design/simple-icons:openai.svg?color=white" },
         { name: "GitHub Copilot", icon: "https://api.iconify.design/simple-icons:githubcopilot.svg?color=white" },
-        { name: "Claude AI", icon: "assets/claude.svg" },
-        { name: "Google Gemini", icon: "assets/gemini.svg" },
-        { name: "Antigravity IDE", icon: "assets/antigravity.svg" },
-        { name: "Kiro", icon: "assets/kiro.svg" },
-        { name: "Stitch", icon: "assets/stitch.svg" }
+        { name: "Claude AI", icon: "assets/Foto_Logo/claude.svg" },
+        { name: "Google Gemini", icon: "assets/Foto_Logo/gemini.svg" },
+        { name: "Antigravity IDE", icon: "assets/Foto_Logo/antigravity.svg" },
+        { name: "Kiro", icon: "assets/Foto_Logo/kiro.svg" },
+        { name: "Stitch", icon: "assets/Foto_Logo/stitch.svg" }
       ]
     },
     {
@@ -249,7 +249,7 @@ const PROFILE = {
       period: "2024 – Sekarang",
       desc: { id: "Berfokus pada pengembangan perangkat lunak, struktur data, dan sistem informasi. Aktif bereksplorasi dengan teknologi web masa kini melalui proyek latihan mandiri.", en: "Focusing on software development, data structures, and information systems. Actively exploring modern web technologies through self-taught practice projects." },
       current: true,
-      image: "assets/UNU JOGJA.png",
+      image: "assets/Foto_Instansi/UNU JOGJA.png",
       bgImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/nGRUfRuPUjgTZYW89"
     },
@@ -259,7 +259,7 @@ const PROFILE = {
       period: "2021 – 2024",
       desc: { id: "Menyelesaikan pendidikan vokasi teknis dan praktik lapangan, ditunjang dengan pembentukan karakter kedisiplinan dan integritas di lingkungan pesantren terpadu.", en: "Completed technical vocational education and field practice, supported by character building in discipline and integrity within an integrated boarding school environment." },
       current: false,
-      image: "assets/SMK Almunawwir.png",
+      image: "assets/Foto_Instansi/SMK Almunawwir.png",
       bgImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/Yaf47HziSARyHBvZ6"
     },
@@ -269,7 +269,7 @@ const PROFILE = {
       period: "2016 – 2019",
       desc: { id: "Membangun fondasi karakter, wawasan kebangsaan, dan tata krama yang kuat melalui pendidikan menengah berbasis nilai-nilai luhur pesantren.", en: "Building a strong foundation of character, national insight, and good manners through secondary education based on noble Islamic boarding school values." },
       current: false,
-      image: "assets/MTS Riyadlus Sholihin.png",
+      image: "assets/Foto_Instansi/MTS Riyadlus Sholihin.png",
       bgImage: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/iSbbo94fYh9jnSop8"
     }
