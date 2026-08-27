@@ -2047,7 +2047,7 @@ function renderCertsBtn(displayCount) {
 }
 
 window.toggleCerts = function() {
-  const displayCount = 4;
+  const displayCount = 6;
   const cards = document.querySelectorAll('#certs-list .cert-card-item');
 
   if (!isCertsExpanded) {
