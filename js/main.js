@@ -2254,6 +2254,8 @@ document.addEventListener('DOMContentLoaded', () => {
     starTimeout = setTimeout(injectButtonStars, 150);
   });
   observer.observe(document.body, { childList: true, subtree: true });
+  // Disconnect after 5 seconds — dynamic content should be settled by then
+  setTimeout(() => observer.disconnect(), 5000);
 });
 
 

@@ -68,6 +68,10 @@ const Animations = (() => {
   function initTilt() {
     if (prefersReducedMotion) return;
     
+    // Skip on touch devices — no mousemove events, only causes visual glitches
+    const isTouchDevice = window.matchMedia('(hover: none)').matches;
+    if (isTouchDevice) return;
+    
     // Memberikan efek tilt 4D premium ke SEMUA jenis kartu, bukan cuma tilt-card
     const cards = document.querySelectorAll('.tilt-card, .glass-card, .project-card, .about-stat-card, .org-card-premium');
 
