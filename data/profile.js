@@ -343,6 +343,22 @@ const PROFILE = {
       url: "assets/Sertifikat/Sertifikat Samsung Innovation Campus.pdf"
     },
     {
+      title: "Bootcamp Sertifikasi Microsoft Office Specialist (Excel, Word, PowerPoint)",
+      organizer: "KarirNex",
+      period: "2026",
+      desc: { id: "Program intensif sertifikasi penguasaan Microsoft Office. Fokus pada pemrosesan data di Excel, penulisan dokumen profesional di Word, dan desain presentasi efektif di PowerPoint untuk menunjang produktivitas kerja.", en: "Intensive certification program for Microsoft Office mastery. Focused on data processing in Excel, professional document writing in Word, and effective presentation design in PowerPoint to support work productivity." },
+      image: "assets/Foto-Sertifikat/Sertifikat bootcamp sertifikasi microsoft office excel word powerpoint specialist.png",
+      url: "assets/Sertifikat/Sertifikat_Bootcamp_Microsoft_Office.pdf"
+    },
+    {
+      title: "Graphic Design & UI/UX Series",
+      organizer: "Dibimbing.id",
+      period: "2026",
+      desc: { id: "Pelatihan desain grafis dan antarmuka pengguna (UI/UX). Mencakup prinsip-prinsip desain visual dasar, pembuatan wireframe, hingga pengembangan purwarupa (prototyping) aplikasi berbasis pengalaman pengguna.", en: "Graphic design and user interface (UI/UX) training. Covered basic visual design principles, wireframing, and the development of user experience-driven application prototypes." },
+      image: "assets/Foto-Sertifikat/Sertifikat Graphic Design and UIUX Series.png",
+      url: "assets/Sertifikat/Sertifikat_Graphic_Design_UIUX_Series.pdf"
+    },
+    {
       title: "Integrating AI in Penetration Testing - Best Practices",
       organizer: "Codelamp Indonesia",
       period: "2026",
@@ -413,22 +429,6 @@ const PROFILE = {
       desc: { id: "Pelatihan dasar sistem version control menggunakan Git. Meliputi konsep repository, commit, branching, merge, serta konfigurasi awal Git dan koneksi ke GitHub sebagai platform kolaborasi kode.", en: "Basic training on version control systems using Git. Covers repository concepts, commits, branching, merging, as well as initial Git configuration and connection to GitHub as a code collaboration platform." },
       image: "assets/Foto-Sertifikat/Sertifikat Introduction to Version Control & Git Installation.png",
       url: "assets/Sertifikat/Sertifikat Introduction to Version Control & Git Installation.pdf"
-    },
-    {
-      title: "Bootcamp Sertifikasi Microsoft Office Specialist (Excel, Word, PowerPoint)",
-      organizer: "KarirNex",
-      period: "2026",
-      desc: { id: "Program intensif sertifikasi penguasaan Microsoft Office. Fokus pada pemrosesan data di Excel, penulisan dokumen profesional di Word, dan desain presentasi efektif di PowerPoint untuk menunjang produktivitas kerja.", en: "Intensive certification program for Microsoft Office mastery. Focused on data processing in Excel, professional document writing in Word, and effective presentation design in PowerPoint to support work productivity." },
-      image: "assets/Foto-Sertifikat/Sertifikat bootcamp sertifikasi microsoft office excel word powerpoint specialist.png",
-      url: "assets/Sertifikat/Sertifikat_Bootcamp_Microsoft_Office.pdf"
-    },
-    {
-      title: "Graphic Design & UI/UX Series",
-      organizer: "Dibimbing.id",
-      period: "2026",
-      desc: { id: "Pelatihan desain grafis dan antarmuka pengguna (UI/UX). Mencakup prinsip-prinsip desain visual dasar, pembuatan wireframe, hingga pengembangan purwarupa (prototyping) aplikasi berbasis pengalaman pengguna.", en: "Graphic design and user interface (UI/UX) training. Covered basic visual design principles, wireframing, and the development of user experience-driven application prototypes." },
-      image: "assets/Foto-Sertifikat/Sertifikat Graphic Design and UIUX Series.png",
-      url: "assets/Sertifikat/Sertifikat_Graphic_Design_UIUX_Series.pdf"
     }
   ],
 
