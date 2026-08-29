@@ -604,8 +604,8 @@ const PROJECTS = [
     tags: ["React", "Vite", "FastAPI", "Supabase", "Tailwind CSS"],
     desc: { id: "Sistem Pencatatan Keuangan Pribadi (Cash Note). Merupakan hasil tugas akademik perkuliahan yang dikerjakan secara tim (kolaboratif), dibangun menggunakan arsitektur modern untuk membantu pengguna memantau arus kas, pengeluaran, dan pemasukan secara komprehensif.", en: "Personal Financial Recording System (Cash Note). An academic project done collaboratively by a team, built using modern architecture to help users monitor cash flows, expenses, and income comprehensively." },
     features: [{ id: "Aplikasi Web Responsif", en: "Responsive Web App" }, { id: "Autentikasi Pengguna Aman", en: "Secure User Authentication" }, { id: "CRUD Transaksi Keuangan", en: "Financial Transaction CRUD" }, { id: "Integrasi RESTful API Backend", en: "RESTful API Backend Integration" }, { id: "Dashboard Analitik Visual", en: "Visual Analytic Dashboard" }],
-    demo: "",
-    github: "https://github.com/shonyaballqis/cash-note-pbo.git",
+    demo: "https://cashnote-webapp.vercel.app",
+    github: "https://github.com/yazid-solo/cash-note.git",
     image: "assets/Foto_Project/CASHNOTE.jpeg",
     status: { id: "Selesai", en: "Finished" },
     year: "2026"
