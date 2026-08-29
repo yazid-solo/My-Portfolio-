@@ -484,7 +484,7 @@ const PROFILE = {
     { name: "Kenapa Game Roblox Kamu Gampang Di-Hack?", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.png", pdfUrl: "assets/Sertifikat/Sertifikat Kenapa Game Roblox Kamu Gampang DiHack.pdf" },
     { name: "Web 3 On Campus", issuer: "Kampus / UPbit Indonesia / IDNFT", year: "2025", image: "assets/Foto-Sertifikat/Sertifikat Web3.png", pdfUrl: "assets/Sertifikat/Sertifikat Web3.pdf " },
     // ── KURSUS DESAIN & UI/UX ──
-    { name: "Graphic Design & UI/UX Series", issuer: "Dibimbing.id", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Graphic Design & UIUX Series Dibimbing.png", pdfUrl: "assets/Sertifikat/Sertifikat Graphic Design & UIUX Series Dibimbing.pdf" },
+    { name: "Graphic Design & UI/UX Series", issuer: "Dibimbing.id", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Graphic Design & UIUX Series.png", pdfUrl: "assets/Sertifikat/Sertifikat Graphic Design & UIUX Series Dibimbing.pdf" },
     // ── PENGHARGAAN & LAINNYA ──
     { name: "Ketua UKM Badminton Universitas Nahdlatul Ulama Yogyakarta", issuer: "UNU Yogyakarta", year: "2025/2026", image: "assets/Foto-Sertifikat/Sertifikat Ketua UKM Badminton UNUYO.png", pdfUrl: "assets/Sertifikat/Sertifikat UKM Ketua Badminton UNUYO.pdf" },
     { name: "International Conference: Indonesia-Russia Cooperation", issuer: "UNU Yogyakarta & Rusia", year: "2024", image: "assets/Foto-Sertifikat/Sertifikat International Conference.png", pdfUrl: "assets/Sertifikat/Sertifikat International Conference.pdf" },
