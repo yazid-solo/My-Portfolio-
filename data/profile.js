@@ -70,7 +70,7 @@ const PROFILE = {
       glowColor: "rgba(244,63,94,0.3)",
       borderHover: "rgba(244,63,94,0.4)",
       level: 3,
-      tags: [{id: "Figma", en: "Figma"}, {id: "Prototyping", en: "Prototyping"}, {id: "UI Design", en: "UI Design"}],
+      tags: [{id: "Figma", en: "Figma"}, {id: "Prototyping", en: "Prototyping"}, {id: "UI Design", en: "UI Design"}, {id: "Graphic Design", en: "Graphic Design"}],
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80"
     },
     {
@@ -237,7 +237,8 @@ const PROFILE = {
       image: "https://images.unsplash.com/photo-1554415707-6e8cfc938c23?w=600&q=80",
       items: [
         { name: "Ms. Excel / Sheets", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 60, icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg" },
-        { name: "Ms. Word / Docs", level: { id: "Menengah", en: "Intermediate" }, pct: 75, icon: "https://api.iconify.design/vscode-icons/file-type-word.svg" }
+        { name: "Ms. Word / Docs", level: { id: "Menengah", en: "Intermediate" }, pct: 75, icon: "https://api.iconify.design/vscode-icons/file-type-word.svg" },
+        { name: "Ms. PowerPoint", level: { id: "Menengah", en: "Intermediate" }, pct: 70, icon: "https://api.iconify.design/vscode-icons/file-type-powerpoint.svg" }
       ]
     }
   ],
