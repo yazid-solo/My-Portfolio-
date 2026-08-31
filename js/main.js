@@ -1696,7 +1696,7 @@ function renderSkillBars() {
         <div class="reveal" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:7px 14px;transition:all 0.2s ease;" 
              onmouseover="this.style.background='rgba(var(--accent-rgb),0.1)';this.style.borderColor='rgba(var(--accent-rgb),0.35)';" 
              onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.09)';">
-          ${s.icon ? `<img src="${s.icon}" alt="${s.name}" style="width:20px;height:20px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.5));">` : ''}
+          ${s.icon ? `<img src="${s.icon}" alt="${s.name}" style="width:20px;height:20px;object-fit:contain;flex-shrink:0;filter:${s.filter ? s.filter : 'drop-shadow(0 1px 3px rgba(0,0,0,0.5))'};">` : ''}
           <span style="font-size:0.82rem;font-weight:600;color:#e2e8f0;white-space:nowrap;">${s.name}</span>
         </div>`
       ).join('') +
