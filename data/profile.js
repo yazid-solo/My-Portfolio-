@@ -58,7 +58,7 @@ const PROFILE = {
       glowColor: "rgba(20,184,166,0.3)",
       borderHover: "rgba(20,184,166,0.4)",
       level: 3,
-      tags: [{id: "React", en: "React"}, {id: "Node.js", en: "Node.js"}, {id: "FastAPI", en: "FastAPI"}, {id: "Supabase", en: "Supabase"}],
+      tags: [{id: "React", en: "React"}, {id: "Node.js", en: "Node.js"}, {id: "FastAPI", en: "FastAPI"}],
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80"
     },
     {
