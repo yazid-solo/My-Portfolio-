@@ -195,7 +195,8 @@ const PROFILE = {
         { name: "Python", level: { id: "Dasar", en: "Basic" }, pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
         { name: "React", level: { id: "Mempelajari", en: "Learning" }, pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
         { name: "Vite", level: { id: "Mempelajari", en: "Learning" }, pct: 25, icon: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg" },
-        { name: "Node.js", level: { id: "Mempelajari", en: "Learning" }, pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" }
+        { name: "Node.js", level: { id: "Mempelajari", en: "Learning" }, pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+        { name: "FastAPI", level: { id: "Mempelajari", en: "Learning" }, pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" }
       ]
     },
     {
@@ -203,9 +204,12 @@ const PROFILE = {
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80",
       items: [
         { name: "Figma UI/UX", level: { id: "Dasar", en: "Basic" }, pct: 50, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
+        { name: "Tailwind CSS", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "https://api.iconify.design/devicon/tailwindcss.svg" },
+        { name: "Bootstrap", level: { id: "Dasar", en: "Basic" }, pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" },
         { name: "Canva", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 65, icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg" },
         { name: "Adobe Photoshop", level: { id: "Dasar", en: "Basic" }, pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" },
         { name: "Git / GitHub", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+        { name: "Vercel", level: { id: "Dasar", en: "Basic" }, pct: 50, icon: "https://cdn.simpleicons.org/vercel/white" },
         { name: "Docker", level: { id: "Mempelajari", en: "Learning" }, pct: 25, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" }
       ]
     },
