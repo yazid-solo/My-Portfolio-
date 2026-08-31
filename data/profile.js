@@ -209,7 +209,7 @@ const PROFILE = {
         { name: "Canva", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 65, icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg" },
         { name: "Adobe Photoshop", level: { id: "Dasar", en: "Basic" }, pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" },
         { name: "Git / GitHub", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
-        { name: "Vercel", level: { id: "Dasar", en: "Basic" }, pct: 50, icon: "https://cdn.simpleicons.org/vercel/white" },
+        { name: "Vercel", level: { id: "Dasar", en: "Basic" }, pct: 50, icon: "https://api.iconify.design/simple-icons:vercel.svg?color=white" },
         { name: "Docker", level: { id: "Mempelajari", en: "Learning" }, pct: 25, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" }
       ]
     },
