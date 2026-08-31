@@ -1677,19 +1677,10 @@ function renderResumeStats() {
 }
 
 function renderSkillBars() {
-  // Map percentage to dot count (1-5)
-  function pctToDots(pct) {
-    if (pct >= 75) return 5;
-    if (pct >= 60) return 4;
-    if (pct >= 45) return 3;
-    if (pct >= 30) return 2;
-    return 1;
-  }
-
   PROFILE.skills.forEach(group => {
     const el = document.getElementById(`skills-${group.category.toLowerCase().replace(/[^a-z]/g, '-')}`);
     if (!el) return;
-    
+
     // Apply background image to the card wrapper
     const cardEl = el.parentElement;
     if (cardEl && group.image) {
@@ -1700,32 +1691,19 @@ function renderSkillBars() {
       cardEl.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3)';
     }
 
-    el.innerHTML = group.items.map(s => {
-      const dots = pctToDots(s.pct);
-      const dotsHTML = Array.from({length: 5}, (_, i) => {
-        const filled = i < dots;
-        return `<span style="width:10px;height:10px;border-radius:50%;display:inline-block;transition:all 0.3s ease ${i * 0.08}s;${filled 
-          ? 'background:var(--accent);box-shadow:0 0 6px rgba(var(--accent-rgb),0.5);' 
-          : 'background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.08);'
-        }"></span>`;
-      }).join('');
-
-      return `
-      <div style="margin-bottom:1.15rem;" class="reveal">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-          <div style="display:flex;align-items:center;gap:10px;">
-            ${s.icon ? `<img src="${s.icon}" alt="${s.name}" style="width:22px;height:22px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.4));">` : ''}
-            <span style="font-size:0.9rem;font-weight:700;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.8);">${s.name}</span>
-          </div>
-          ${s.level ? `<span style="font-size:0.72rem;font-family:var(--font-mono);color:var(--accent);font-weight:600;background:rgba(var(--accent-rgb),0.08);padding:2px 8px;border-radius:6px;border:1px solid rgba(var(--accent-rgb),0.15);">${window.t(s.level)}</span>` : ''}
-        </div>
-        ${s.pct ? `<div style="display:flex;gap:6px;align-items:center;">
-          ${dotsHTML}
-        </div>` : ''}
-      </div>`;
-    }).join('');
+    el.innerHTML = `<div style="display:flex;flex-wrap:wrap;gap:0.65rem;margin-top:0.5rem;">` +
+      group.items.map(s => `
+        <div class="reveal" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:7px 14px;transition:all 0.2s ease;" 
+             onmouseover="this.style.background='rgba(var(--accent-rgb),0.1)';this.style.borderColor='rgba(var(--accent-rgb),0.35)';" 
+             onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.09)';">
+          ${s.icon ? `<img src="${s.icon}" alt="${s.name}" style="width:20px;height:20px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.5));">` : ''}
+          <span style="font-size:0.82rem;font-weight:600;color:#e2e8f0;white-space:nowrap;">${s.name}</span>
+        </div>`
+      ).join('') +
+    `</div>`;
   });
 }
+
 
 function renderExperience() {
   const el = document.getElementById('experience-list');

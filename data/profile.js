@@ -9,12 +9,12 @@ const PROFILE = {
   name: "Muchamad Yazid Ardani",
   nickname: "Yazid",
   tagline: {
-    id: "Mahasiswa Informatika • Calon Web Dev • Antusias Teknologi",
-    en: "Informatics Student • Aspiring Web Dev • Tech Enthusiast"
+    id: "Mahasiswa Informatika • Junior Web Developer • Antusias Teknologi",
+    en: "Informatics Student • Junior Web Developer • Tech Enthusiast"
   },
   taglineSub: {
-    id: "Mahasiswa Semester 5 yang sedang membangun fondasi di dunia teknologi — satu baris kode dalam satu waktu.",
-    en: "5th Semester Student building a foundation in the tech world — one line of code at a time."
+    id: "Mahasiswa Semester 5 Teknik Informatika yang aktif membangun proyek nyata di bidang Web Development dan UI/UX — bukan sekadar belajar dari tutorial.",
+    en: "5th Semester Informatics student actively building real projects in Web Development and UI/UX — not just learning from tutorials."
   },
   email: "muhzee16@gmail.com",
   phone: "+62819 1568 0315",
