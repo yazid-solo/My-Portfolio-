@@ -209,7 +209,7 @@ const PROFILE = {
         { name: "Canva", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 65, icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg" },
         { name: "Adobe Photoshop", level: { id: "Dasar", en: "Basic" }, pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" },
         { name: "Git / GitHub", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
-        { name: "Vercel", level: { id: "Dasar", en: "Basic" }, pct: 50, icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpolygon fill='white' points='256,48 496,464 16,464'/%3E%3C/svg%3E" },
+        { name: "Vercel", level: { id: "Dasar", en: "Basic" }, pct: 50, icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cG9seWdvbiBmaWxsPSJ3aGl0ZSIgcG9pbnRzPSIyNTYsNDggNDk2LDQ2NCAxNiw0NjQiLz48L3N2Zz4=" },
         { name: "Docker", level: { id: "Mempelajari", en: "Learning" }, pct: 25, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" }
       ]
     },
