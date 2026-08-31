@@ -238,7 +238,7 @@ const PROFILE = {
     },
     {
       category: "Produktivitas & Office",
-      image: "https://images.unsplash.com/photo-1554415707-6e8cfc938c23?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
       items: [
         { name: "Ms. Excel / Sheets", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 60, icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg" },
         { name: "Ms. Word / Docs", level: { id: "Menengah", en: "Intermediate" }, pct: 75, icon: "https://api.iconify.design/vscode-icons/file-type-word.svg" },
