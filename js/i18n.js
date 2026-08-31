@@ -279,7 +279,7 @@ window.I18N = {
     con_status_avail: { id: "Tersedia", en: "Available" },
     con_status_desc: { id: "Terbuka untuk proyek kolaborasi, diskusi teknologi, serta peluang magang atau proyek freelance.", en: "Open for collaboration projects, tech discussions, as well as internship or freelance opportunities." },
     con_send_msg: { id: "Kirim Pesan", en: "Send Message" },
-    con_form_desc: { id: "Silakan isi form di bawah ini untuk mengirim pesan via email atau WhatsApp secara langsung.", en: "Please fill out the form below to send a message directly via email or WhatsApp." },
+    con_form_desc: { id: "Saat ini saya terbuka untuk peluang Magang (Internship), Junior Role, maupun kolaborasi proyek lepas (Freelance). Jika Anda mencari developer yang adaptif, komunikatif, dan terbiasa bekerja dengan target, mari berdiskusi. Silakan isi form di bawah ini.", en: "I am currently open to Internship opportunities, Junior Roles, or Freelance project collaborations. If you are looking for an adaptive, communicative developer who is accustomed to working with targets, let's discuss. Please fill out the form below." },
     con_form_name: { id: "Nama Lengkap", en: "Full Name" },
     con_form_email: { id: "Alamat Email", en: "Email Address" },
     con_lbl_sub: { id: "Subjek (Opsional)", en: "Subject (Optional)" },

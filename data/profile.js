@@ -9,8 +9,8 @@ const PROFILE = {
   name: "Muchamad Yazid Ardani",
   nickname: "Yazid",
   tagline: {
-    id: "Mahasiswa Informatika • Junior Web Developer • Antusias Teknologi",
-    en: "Informatics Student • Junior Web Developer • Tech Enthusiast"
+    id: "Mahasiswa Informatika • Junior Web Developer • AI-Assisted Programmer",
+    en: "Informatics Student • Junior Web Developer • AI-Assisted Programmer"
   },
   taglineSub: {
     id: "Mahasiswa Semester 5 Teknik Informatika yang aktif membangun proyek nyata di bidang Web Development dan UI/UX — bukan sekadar belajar dari tutorial.",
@@ -28,12 +28,12 @@ const PROFILE = {
   faculty: "Fakultas Teknologi Informasi",
   major: "Teknik Informatika",
   bio: {
-    id: `Mahasiswa Informatika Semester 5 dengan fokus pada Web Development dan UI/UX. Aktif membangun keahlian melalui proyek nyata dan memanfaatkan AI (ChatGPT, Claude, Copilot) untuk mengakselerasi produktivitas, riset, serta problem-solving.`,
-    en: `5th-semester Informatics student focusing on Web Development and UI/UX. Actively building skills through real projects and leveraging AI (ChatGPT, Claude, Copilot) to accelerate productivity, research, and problem-solving.`
+    id: `Mahasiswa Informatika Semester 5 dengan spesialisasi di Web Development dan UI/UX. Berpengalaman membangun aplikasi web secara mandiri. Menguasai alur kerja modern dengan mengintegrasikan AI sebagai rekan pemrograman (Pair-Programming) untuk mempercepat siklus development, analisis bug, dan penulisan kode yang terstruktur.`,
+    en: `5th-semester Informatics student specializing in Web Development and UI/UX. Experienced in building web applications independently. Mastering modern workflows by integrating AI as a pair-programming partner to accelerate development cycles, bug analysis, and structured code writing.`
   },
   about: {
-    id: `Dengan latar belakang yang beragam — dari teknik otomotif, magang lapangan, hingga affiliate marketing — saya terbiasa melakukan troubleshooting dan beradaptasi dengan cepat. Saya percaya bahwa problem-solving di dunia nyata sama pentingnya dengan logika kode. Saat ini saya mendalami web development dan UI/UX, sembari mengasah kemampuan kolaborasi tim dan pelaporan data yang terstruktur. Saya juga secara aktif mengintegrasikan berbagai alat Kecerdasan Buatan (AI) ke dalam workflow harian guna memaksimalkan produktivitas secara menyeluruh—mulai dari riset, analisis data, hingga penyelesaian kendala teknis secara presisi dan terukur.`,
-    en: `With a diverse background—from automotive engineering and field internships to affiliate marketing—I am accustomed to troubleshooting and adapting quickly. I believe real-world problem-solving is just as crucial as code logic. I am currently deepening my knowledge in web development and UI/UX while honing my team collaboration and structured data reporting skills. I also actively integrate various Artificial Intelligence (AI) tools into my daily workflow to maximize overall productivity—from research and data analysis to precise and measurable technical issue resolution.`
+    id: `Saya memiliki perjalanan karir yang unik. Latar belakang saya di teknik otomotif melatih saya untuk berpikir secara sistematis dalam melakukan troubleshooting—kemampuan yang ternyata sangat krusial saat melakukan debugging dalam penulisan kode. Selain itu, pengalaman di bidang Affiliate Marketing mengajarkan saya tentang analisis data dan perilaku pengguna.\n\nSaat ini, saya mendalami Web Development dan UI/UX. Saya tidak hanya menulis kode, tapi fokus memecahkan masalah (problem-solving). Kombinasi antara logika sistematis mesin, pemahaman data dari marketing, dan eksekusi teknis dari programming membuat saya mampu melihat sebuah proyek web secara utuh—baik dari sisi kode maupun dari sisi bisnis dan pengguna.`,
+    en: `I have a unique career journey. My background in automotive engineering trained me to think systematically when troubleshooting—a skill that has proven crucial for debugging code. Furthermore, my experience in Affiliate Marketing taught me about data analysis and user behavior.\n\nCurrently, I am deepening my expertise in Web Development and UI/UX. I don't just write code; I focus on problem-solving. The combination of systematic machine logic, data understanding from marketing, and technical execution from programming allows me to see a web project in its entirety—both from the codebase and the business/user perspective.`
   },
 
   highlights: [
@@ -442,7 +442,7 @@ const PROFILE = {
       role: { id: "Ketua UKM Badminton", en: "Head of Badminton UKM" },
       org: "UNU Yogyakarta",
       period: "2025 – 2026",
-      desc: { id: "Mengatur jadwal, sarana, perlengkapan olahraga, dan mengkoordinasi semua anggota UKM.", en: "Managed schedules, facilities, sports equipment, and coordinated all UKM members." },
+      desc: { id: "Memimpin divisi dan anggota UKM. Bertanggung jawab dalam manajemen jadwal, alokasi anggaran operasional, dan merancang program kerja tahunan. Terbiasa memimpin rapat koordinasi dan mengambil keputusan strategis.", en: "Led the division and UKM members. Responsible for schedule management, operational budget allocation, and designing annual work programs. Accustomed to leading coordination meetings and making strategic decisions." },
       icon: "assets/Foto_Logo/Logo Ukm Badminton UNUYO.svg",
       image: "https://awsimages.detik.net.id/community/media/visual/2022/10/18/ilustrasi-badminton-4.jpeg?w=1200"
     },
@@ -450,7 +450,7 @@ const PROFILE = {
       role: { id: "Dep. Organisasi", en: "Organization Department" },
       org: "PAC IPNU Mantrijeron",
       period: { id: "2026 - Sekarang", en: "2026 - Present" },
-      desc: { id: "Bertanggung jawab atas administrasi, keanggotaan, dan pengembangan struktur organisasi PAC IPNU Mantrijeron.", en: "Responsible for administration, membership, and developing the organizational structure of PAC IPNU Mantrijeron." },
+      desc: { id: "Mengelola tata kelola administrasi dan pengarsipan data organisasi secara sistematis. Bertanggung jawab atas dokumentasi program kerja dan memastikan arus informasi berjalan lancar antar divisi.", en: "Managed administrative governance and systematic archiving of organizational data. Responsible for documenting work programs and ensuring smooth information flow across departments." },
       icon: "assets/Foto_Logo/Logo IPNU Mantrijeron.svg",
       image: "https://pbs.twimg.com/profile_images/1437565816036229121/NrGG35Q-_400x400.jpg"
     },
@@ -474,7 +474,7 @@ const PROFILE = {
       role: { id: "Dep. Dakwah", en: "Da'wah Department" },
       org: "PAC IPNU Mantrijeron",
       period: "2023 – 2024",
-      desc: { id: "Mengkoordinasikan kegiatan dakwah internal maupun eksternal serta syiar keislaman.", en: "Coordinating internal and external da'wah activities as well as Islamic propagation." },
+      desc: { id: "Mengkoordinasikan eksekusi acara skala komunitas, memimpin penjadwalan dan berkolaborasi dengan berbagai divisi untuk memastikan kelancaran program.", en: "Coordinated community-scale event executions, led scheduling, and collaborated with various divisions to ensure smooth program implementation." },
       icon: "assets/Foto_Logo/Logo IPNU Mantrijeron.svg",
       image: "https://pbs.twimg.com/profile_images/1437565816036229121/NrGG35Q-_400x400.jpg"
     }
@@ -532,7 +532,7 @@ const PROJECTS = [
     title: "CMS Sibuku",
     category: "web",
     tags: ["React", "FastAPI", "Supabase"],
-    desc: { id: "Platform e-commerce spesialis literatur dengan fitur Content Management System (CMS) lengkap. Merupakan hasil tugas akademik perkuliahan yang dikerjakan secara kolaboratif (tim), menggunakan arsitektur React dan Supabase untuk mengelola transaksi jual-beli, inventaris buku, dan data pelanggan secara terpusat.", en: "E-commerce platform specializing in literature with a complete Content Management System (CMS). A collaborative academic project built with React and Supabase to centrally manage transactions, book inventory, and customer data." },
+    desc: { id: "Membangun sistem inventarisasi dan e-commerce buku (CMS) untuk mengatasi kendala pencatatan manual. Dikembangkan secara kolaboratif menggunakan React dan Supabase. Sistem ini berhasil memusatkan data transaksi dan inventaris, serta meningkatkan efisiensi pelacakan data pelanggan secara real-time.", en: "Built a book inventory and e-commerce system (CMS) to overcome manual recording issues. Collaboratively developed using React and Supabase. The system successfully centralized transaction and inventory data, and increased the efficiency of real-time customer data tracking." },
     features: [{ id: "Sistem Manajemen Konten (CMS)", en: "Content Management System (CMS)" }, { id: "Katalog Buku Dinamis", en: "Dynamic Book Catalog" }, { id: "Autentikasi Multi-Role (Admin/User)", en: "Multi-Role Authentication (Admin/User)" }, { id: "Keranjang Belanja (Cart System)", en: "Shopping Cart System" }, { id: "Integrasi RESTful API Backend", en: "RESTful API Backend Integration" }],
     demo: "https://si-buku-sigma.vercel.app/",
     github: "https://github.com/yazid-solo/SiBuku",
@@ -545,7 +545,7 @@ const PROJECTS = [
     title: "JogjaCourt",
     category: "web",
     tags: ["React", "Tailwind CSS", "FastAPI", "Supabase"],
-    desc: { id: "Platform reservasi lapangan olahraga khusus area Yogyakarta. Memungkinkan admin mengelola jadwal dan pengguna melakukan booking secara mandiri. Dibangun menggunakan arsitektur modern React (Frontend) yang terintegrasi dengan FastAPI dan Supabase (Backend).", en: "Sports field reservation platform specifically for the Yogyakarta area. Allows admins to manage schedules and users to book independently. Built using modern React architecture integrated with FastAPI and Supabase." },
+    desc: { id: "Merespon tingginya tingkat bentrok jadwal lapangan olahraga di Yogyakarta dengan membangun platform reservasi terpusat. Menggunakan arsitektur React, FastAPI, dan Supabase untuk mengotomatisasi proses booking secara mandiri oleh pengguna, sehingga mengurangi beban kerja admin dan meminimalisir double-booking.", en: "Responded to the high rate of sports field schedule conflicts in Yogyakarta by building a centralized reservation platform. Used React, FastAPI, and Supabase architecture to automate the booking process independently by users, thereby reducing admin workload and minimizing double-booking." },
     features: [{ id: "Sistem Booking Real-time", en: "Real-time Booking System" }, { id: "Dashboard Admin & User", en: "Admin & User Dashboard" }, { id: "Sistem Autentikasi & Otorisasi", en: "Authentication & Authorization System" }, { id: "Manajemen Lapangan & Pembayaran", en: "Field & Payment Management" }, { id: "Desain UI/UX Modern & Responsif", en: "Modern & Responsive UI/UX Design" }],
     demo: "https://jogja-court.vercel.app/",
     github: "https://github.com/yazid-solo/Sistem-Boking-Lapangan-Badminton",
@@ -558,7 +558,7 @@ const PROJECTS = [
     title: "Warehouse-System",
     category: "web",
     tags: ["Vite", "Bootstrap", "Node.js", "PostgreSQL"],
-    desc: { id: "Sistem Informasi Manajemen Gudang (WMS) kolaboratif. Dibangun bersama tim bootcamp Stechoq Academy x Innovative Academy menggunakan Vite dan Node.js Express, dengan basis data PostgreSQL untuk memfasilitasi pelacakan barang dan manajemen inventaris secara real-time.", en: "Collaborative Warehouse Management Information System (WMS). Built with the Stechoq Academy x Innovative Academy bootcamp team using Vite and Node.js Express, with a PostgreSQL database to facilitate real-time item tracking and inventory management." },
+    desc: { id: "Menyelesaikan tantangan pelacakan aset gudang yang tidak akurat dengan mengembangkan Sistem Informasi Manajemen Gudang (WMS). Dibangun bersama tim bootcamp Stechoq menggunakan arsitektur Vite, Node.js Express, dan PostgreSQL. Sistem ini mengamankan rute dengan JWT Auth dan menstabilkan alur manajemen inventaris secara real-time.", en: "Solved the challenge of inaccurate warehouse asset tracking by developing a Warehouse Management Information System (WMS). Built with the Stechoq bootcamp team using Vite, Node.js Express, and PostgreSQL architecture. This system secures routes with JWT Auth and stabilizes the real-time inventory management flow." },
     features: [{ id: "Autentikasi User (JWT)", en: "User Authentication (JWT)" }, { id: "Manajemen Inventaris Gudang", en: "Warehouse Inventory Management" }, { id: "CRUD Data Master Barang", en: "CRUD Master Data Goods" }, { id: "Integrasi RESTful API", en: "RESTful API Integration" }, { id: "Desain Responsif Clean UI", en: "Responsive Clean UI Design" }],
     demo: "",
     github: "https://gitlab.com/bootcamp-stechoq/warehouse-system-cihuy",
