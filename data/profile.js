@@ -51,14 +51,14 @@ const PROFILE = {
     },
     {
       icon: "💻",
-      title: { id: "Web Dev Dasar", en: "Basic Web Dev" },
-      desc: { id: "Membangun antarmuka dengan HTML, CSS, dan JavaScript — sedang aktif menuju level menengah dengan proyek nyata.", en: "Building interfaces with HTML, CSS, and JavaScript — actively progressing towards intermediate level with real projects." },
+      title: { id: "Full-Stack Web Dev", en: "Full-Stack Web Dev" },
+      desc: { id: "Membangun aplikasi web end-to-end — dari antarmuka React di sisi frontend hingga REST API Node.js/FastAPI dan manajemen database PostgreSQL/Supabase di sisi backend.", en: "Building end-to-end web applications — from React interfaces on the frontend to Node.js/FastAPI REST APIs and PostgreSQL/Supabase database management on the backend." },
       color: "rgba(20,184,166,0.2)",
       accentColor: "#2dd4bf",
       glowColor: "rgba(20,184,166,0.3)",
       borderHover: "rgba(20,184,166,0.4)",
       level: 3,
-      tags: [{id: "HTML", en: "HTML"}, {id: "CSS", en: "CSS"}, {id: "JavaScript", en: "JavaScript"}],
+      tags: [{id: "React", en: "React"}, {id: "Node.js", en: "Node.js"}, {id: "FastAPI", en: "FastAPI"}, {id: "Supabase", en: "Supabase"}],
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80"
     },
     {
