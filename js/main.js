@@ -1524,6 +1524,13 @@ function initProjects() {
       </div>
     `).join('');
     Animations.init();
+
+    // Fix: Newly injected .sr4d elements are invisible by default.
+    // Since the user is already viewing this section when clicking the filter, 
+    // we manually add the 'sr-visible' class so they animate in gracefully.
+    setTimeout(() => {
+      el.querySelectorAll('.sr4d').forEach(card => card.classList.add('sr-visible'));
+    }, 50);
   }
 
   // Filter pills
