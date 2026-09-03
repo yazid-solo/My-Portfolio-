@@ -666,7 +666,7 @@ const PROJECTS = [
     title: { id: "Kalkulator Akademik IPK", en: "GPA Academic Calculator" },
     category: "mini",
     tags: ["HTML", "CSS", "JavaScript"],
-    desc: { id: "Tugas mata kuliah Dasar Pemrograman. Aplikasi berbasis web interaktif untuk menghitung Indeks Prestasi Kumulatif (IPK) mahasiswa secara presisi berdasarkan input nilai huruf dan bobot SKS.", en: "Programming Basics course assignment. An interactive web-based application to calculate students' Grade Point Average (GPA) precisely based on letter grades and credit weights input." },
+    desc: { id: "Mengotomatisasi perhitungan Indeks Prestasi Kumulatif (IPK) manual yang rentan kesalahan dengan membangun aplikasi kalkulator akademik interaktif. Menggunakan HTML, CSS, dan JavaScript murni, sistem ini memvalidasi bobot SKS secara dinamis dan menyajikan hasil komputasi secara instan dengan tingkat presisi tinggi.", en: "Automated the manual, error-prone process of calculating Grade Point Average (GPA) by building an interactive academic calculator application. Built using vanilla HTML, CSS, and JavaScript, the system dynamically validates credit weights and delivers high-precision instant computational results." },
     features: [{ id: "Perhitungan IPK Instan", en: "Instant GPA Calculation" }, { id: "Validasi Bobot SKS Dinamis", en: "Dynamic Credit Weight Validation" }, { id: "Konversi Nilai Huruf ke Angka", en: "Letter to Number Grade Conversion" }, { id: "Antarmuka Minimalis yang Mudah Digunakan", en: "Easy to Use Minimalist Interface" }],
     demo: "https://akademiq-app.netlify.app",
     github: "https://github.com/yazid-solo/AkademiQ.git",
