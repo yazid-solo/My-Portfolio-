@@ -668,9 +668,9 @@ const PROJECTS = [
     tags: ["HTML", "CSS", "JavaScript"],
     desc: { id: "Tugas mata kuliah Dasar Pemrograman. Aplikasi berbasis web interaktif untuk menghitung Indeks Prestasi Kumulatif (IPK) mahasiswa secara presisi berdasarkan input nilai huruf dan bobot SKS.", en: "Programming Basics course assignment. An interactive web-based application to calculate students' Grade Point Average (GPA) precisely based on letter grades and credit weights input." },
     features: [{ id: "Perhitungan IPK Instan", en: "Instant GPA Calculation" }, { id: "Validasi Bobot SKS Dinamis", en: "Dynamic Credit Weight Validation" }, { id: "Konversi Nilai Huruf ke Angka", en: "Letter to Number Grade Conversion" }, { id: "Antarmuka Minimalis yang Mudah Digunakan", en: "Easy to Use Minimalist Interface" }],
-    demo: "",
-    github: "",
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80",
+    demo: "https://akademiq-app.netlify.app",
+    github: "https://github.com/yazid-solo/AkademiQ.git",
+    image: "assets/Foto_Project/AkademiQ.jpeg",
     status: { id: "Selesai", en: "Finished" },
     year: "2024"
   }
