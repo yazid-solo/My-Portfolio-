@@ -167,6 +167,7 @@ const PROFILE = {
     { name: "git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg", color: "#f05032" },
     { name: "github", icon: "https://cdn.simpleicons.org/github/white", color: "#ffffff" },
     { name: "vercel", icon: "https://cdn.simpleicons.org/vercel/white", style: "width: 20px; height: 20px;", color: "#ffffff" },
+    { name: "netlify", icon: "https://api.iconify.design/logos:netlify-icon.svg", style: "width: 22px; height: 22px;", color: "#00C7B7" },
     { name: "postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg", color: "#ff6c37" },
     { name: "mysql", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", color: "#4479a1" },
     { name: "postgresql", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg", color: "#336791" },
@@ -212,6 +213,7 @@ const PROFILE = {
         { name: "Adobe Photoshop", level: { id: "Dasar", en: "Basic" }, pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" },
         { name: "Git / GitHub", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
         { name: "Vercel", level: { id: "Dasar", en: "Basic" }, pct: 50, icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iYmxhY2siLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoLjUpIj48cG9seWdvbiBmaWxsPSJ3aGl0ZSIgcG9pbnRzPSIyNTYsNDggNDk2LDQ2NCAxNiw0NjQiLz48L2c+PC9zdmc+" },
+        { name: "Netlify", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "https://api.iconify.design/logos:netlify-icon.svg" },
         { name: "Docker", level: { id: "Mempelajari", en: "Learning" }, pct: 25, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" }
       ]
     },
