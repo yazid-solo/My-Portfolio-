@@ -677,6 +677,28 @@ const PROJECTS = [
     image: "assets/Foto_Project/AkademiQ.jpeg",
     status: { id: "Selesai", en: "Finished" },
     year: "2024"
+  },
+  {
+    id: 12,
+    title: { id: "Canva Creative Design & Branding", en: "Canva Creative Design & Branding" },
+    category: "ui",
+    tags: ["Canva", "Graphic Design", "Branding", "Visual Layout"],
+    desc: { 
+      id: "Proyek desain grafis kreatif yang dirancang menggunakan Canva. Berfokus pada penyampaian komunikasi visual yang efektif melalui pengaturan tipografi yang rapi, hierarki visual yang jelas, dan palet warna yang konsisten. Karya ini mendemonstrasikan kemampuan menerjemahkan ide abstrak menjadi aset visual yang profesional dan berdaya tarik tinggi.", 
+      en: "A creative graphic design project designed using Canva. Focuses on delivering effective visual communication through neat typography, clear visual hierarchy, and a consistent color palette. This work demonstrates the ability to translate abstract ideas into professional and highly appealing visual assets." 
+    },
+    features: [
+      { id: "Visual Hierarchy & Tata Letak", en: "Visual Hierarchy & Layout" }, 
+      { id: "Konsistensi Identitas Merek", en: "Brand Identity Consistency" }, 
+      { id: "Desain Tipografi Modern", en: "Modern Typography Design" }, 
+      { id: "Optimalisasi Aset Digital", en: "Digital Asset Optimization" }
+    ],
+    demo: "",
+    embed: "https://www.canva.com/design/DAHO82CdT7g/xcEuPcVYgG1POlWiU8D9nw/view?embed",
+    github: "",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
+    status: { id: "Selesai", en: "Finished" },
+    year: "2025"
   }
 ];
 
