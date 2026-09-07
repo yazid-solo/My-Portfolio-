@@ -680,25 +680,25 @@ const PROJECTS = [
   },
   {
     id: 12,
-    title: { id: "Canva Creative Design & Branding", en: "Canva Creative Design & Branding" },
+    title: { id: "Certificate Design: Ruang Aksara", en: "Certificate Design: Ruang Aksara" },
     category: "ui",
-    tags: ["Canva", "Graphic Design", "Branding", "Visual Layout"],
+    tags: ["Canva", "Certificate Design", "Typography", "Visual Layout"],
     desc: { 
-      id: "Proyek desain grafis kreatif yang dirancang menggunakan Canva. Berfokus pada penyampaian komunikasi visual yang efektif melalui pengaturan tipografi yang rapi, hierarki visual yang jelas, dan palet warna yang konsisten. Karya ini mendemonstrasikan kemampuan menerjemahkan ide abstrak menjadi aset visual yang profesional dan berdaya tarik tinggi.", 
-      en: "A creative graphic design project designed using Canva. Focuses on delivering effective visual communication through neat typography, clear visual hierarchy, and a consistent color palette. This work demonstrates the ability to translate abstract ideas into professional and highly appealing visual assets." 
+      id: "Merancang desain sertifikat penghargaan resmi untuk pemenang Juara 1 Lomba Kaligrafi pada acara pameran seni 'RUANG AKSARA' yang diselenggarakan oleh JQHIAC Divisi Kaligrafi UNU Yogyakarta. Desain ini mengedepankan tata letak formal yang elegan, perpaduan tipografi serif klasik untuk memberikan kesan prestise, serta hierarki visual yang menonjolkan nama penerima penghargaan.", 
+      en: "Designed the official award certificate for the 1st Place winner of the Calligraphy Competition at the 'RUANG AKSARA' art exhibition organized by JQHIAC Calligraphy Division UNU Yogyakarta. The design emphasizes an elegant formal layout, a blend of classic serif typography to give a prestigious impression, and a visual hierarchy that highlights the award recipient's name." 
     },
     features: [
-      { id: "Visual Hierarchy & Tata Letak", en: "Visual Hierarchy & Layout" }, 
-      { id: "Konsistensi Identitas Merek", en: "Brand Identity Consistency" }, 
-      { id: "Desain Tipografi Modern", en: "Modern Typography Design" }, 
-      { id: "Optimalisasi Aset Digital", en: "Digital Asset Optimization" }
+      { id: "Desain Sertifikat Formal", en: "Formal Certificate Design" }, 
+      { id: "Tipografi & Hierarki Visual", en: "Typography & Visual Hierarchy" }, 
+      { id: "Konsistensi Identitas Acara", en: "Event Identity Consistency" }, 
+      { id: "Tata Letak Simetris", en: "Symmetrical Layout" }
     ],
     demo: "",
     embed: "https://www.canva.com/design/DAHO82CdT7g/xcEuPcVYgG1POlWiU8D9nw/view?embed",
     github: "",
     image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
     status: { id: "Selesai", en: "Finished" },
-    year: "2025"
+    year: "2026"
   }
 ];
 
