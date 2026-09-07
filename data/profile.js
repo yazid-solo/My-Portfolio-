@@ -63,8 +63,8 @@ const PROFILE = {
     },
     {
       icon: "🎨",
-      title: { id: "UI yang Rapi", en: "Neat UI Design" },
-      desc: { id: "Merancang antarmuka yang bersih dan intuitif menggunakan Figma — dari wireframe hingga prototype interaktif.", en: "Designing clean and intuitive interfaces using Figma — from wireframes to interactive prototypes." },
+      title: { id: "UI & Graphic Design", en: "UI & Graphic Design" },
+      desc: { id: "Merancang antarmuka dan aset visual grafis yang bersih dan intuitif menggunakan Figma dan Canva — dari wireframe, prototype interaktif, hingga materi komunikasi visual.", en: "Designing clean, intuitive interfaces and visual graphic assets using Figma and Canva — from wireframes and interactive prototypes to visual communication materials." },
       color: "rgba(244,63,94,0.2)",
       accentColor: "#fb7185",
       glowColor: "rgba(244,63,94,0.3)",
@@ -148,8 +148,8 @@ const PROFILE = {
   ],
 
   stats: [
-    { label: "Semester Aktif", value: "4" },
-    { label: "Proyek Personal", value: "5+" },
+    { label: "Semester Aktif", value: "5" },
+    { label: "Proyek Personal", value: "10+" },
     { label: "Sertifikat", value: "5" },
     { label: "Organisasi", value: "3" }
   ],
