@@ -1506,23 +1506,36 @@ function initProjects() {
       return;
     }
 
-    el.innerHTML = filtered.map((p, index) => `
+    el.innerHTML = filtered.map((p, index) => {
+      const categoryLabel = {
+        'fullstack': 'Full-Stack',
+        'ui': 'UI/UX & Design',
+        'mini': 'Mini App',
+        'all': 'Project'
+      }[p.category] || 'Project';
+
+      return `
       <div class="project-card tilt-card sr4d" data-delay="${(index % 5) + 1}" onclick="openModal(${p.id})" tabindex="0" role="button" aria-label="Lihat detail ${window.t(p.title)}" onkeypress="if(event.key==='Enter')openModal(${p.id})">
-        <div style="overflow:hidden;height:200px;">
-          <img src="${p.image}" alt="${window.t(p.title)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+        <div class="pc-img-wrapper">
+          <img src="${p.image}" alt="${window.t(p.title)}" loading="lazy">
+          <span class="pc-category">${categoryLabel}</span>
+          <span class="pc-year">${p.year}</span>
+          <div class="pc-arrow-hint">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
         </div>
-        <div style="padding:1.25rem;">
-          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem;margin-bottom:0.5rem;">
-            <h3 style="font-size:0.95rem;font-weight:700;">${window.t(p.title)}</h3>
+        <div class="pc-body">
+          <div class="pc-title-row">
+            <h3 class="pc-title">${window.t(p.title)}</h3>
             <span class="status-badge ${(p.status.id === 'Selesai' || p.status === 'Selesai') ? 'status-done' : 'status-wip'}">${window.t(p.status)}</span>
           </div>
-          <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;margin-bottom:0.75rem;">${window.t(p.desc).substring(0,110)}...</p>
-          <div style="display:flex;flex-wrap:wrap;gap:4px;">
+          <p class="pc-desc">${window.t(p.desc).substring(0,110)}...</p>
+          <div class="pc-tags">
             ${p.tags.slice(0,4).map(t => `<span class="project-tag">${window.t(t)}</span>`).join('')}
           </div>
         </div>
-      </div>
-    `).join('');
+      </div>`;
+    }).join('');
     Animations.init();
 
     // Fix: Newly injected .sr4d elements are invisible by default.
