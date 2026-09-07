@@ -1608,53 +1608,66 @@ function openModal(id) {
          ${window.t({id: 'Demo Belum Tersedia', en: 'Demo Unavailable'})}
        </button>`;
 
+  const categoryLabel = {
+    'fullstack': 'Full-Stack',
+    'ui': 'UI/UX & Design',
+    'mini': 'Mini App'
+  }[p.category] || 'Project';
+
   box.innerHTML = `
-    <div style="position:relative;">
-      <img src="${p.image}" alt="${window.t(p.title)}" style="width:100%;height:240px;object-fit:cover;border-radius:20px 20px 0 0;" loading="lazy">
-      <button onclick="closeModal()" style="position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.2);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;" aria-label="Tutup modal">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <div class="modal-img-header">
+      <img src="${p.image}" alt="${window.t(p.title)}" loading="lazy">
+      <span class="modal-category-chip">${categoryLabel}</span>
+      <span class="modal-year-chip">${p.year}</span>
+      <button onclick="closeModal()" class="modal-close-btn" aria-label="Tutup modal">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
-    <div style="padding:1.5rem;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
-        <h2 style="font-size:1.25rem;font-weight:800;">${window.t(p.title)}</h2>
+    <div class="modal-body">
+      <div class="modal-stagger modal-title-row">
+        <h2 class="modal-title">${window.t(p.title)}</h2>
         <span class="status-badge ${(p.status.id === 'Selesai' || p.status === 'Selesai') ? 'status-done' : 'status-wip'}">${window.t(p.status)}</span>
       </div>
-      <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.25rem;">${window.t(p.desc)}</p>
-      
+      <p class="modal-stagger modal-desc">${window.t(p.desc)}</p>
+
       ${p.embed ? `
-      <div style="margin-bottom:1.25rem;">
-        <h4 style="font-size:0.75rem;font-family:var(--font-mono);color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">Interactive Preview</h4>
-        <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid rgba(255,255,255,0.12);background:#070b13;box-shadow:0 10px 30px rgba(0,0,0,0.55);">
+      <div class="modal-stagger" style="margin-bottom:1.4rem;">
+        <div class="modal-section-label">Interactive Preview</div>
+        <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;border:1px solid rgba(255,255,255,0.1);background:#070b13;box-shadow:0 12px 40px rgba(0,0,0,0.55);">
           <iframe src="${p.embed}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen="true" loading="lazy"></iframe>
         </div>
-      </div>
-      ` : ''}
-      
-      <div style="margin-bottom:1.25rem;">
-        <h4 style="font-size:0.75rem;font-family:var(--font-mono);color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Fitur</h4>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
-          ${p.features.map(f => `<li style="font-size:0.85rem;color:var(--text-muted);display:flex;gap:0.5rem;"><span style="color:var(--accent);">▸</span>${window.t(f)}</li>`).join('')}
+      </div>` : ''}
+
+      <div class="modal-stagger" style="margin-bottom:1.4rem;">
+        <div class="modal-section-label">Fitur Utama</div>
+        <ul class="modal-feature-list">
+          ${p.features.map(f => `
+            <li class="modal-feature-item">
+              <span class="fi-dot"></span>
+              ${window.t(f)}
+            </li>`).join('')}
         </ul>
       </div>
 
-      <div style="margin-bottom:1.5rem;">
-        <h4 style="font-size:0.75rem;font-family:var(--font-mono);color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Tech Stack</h4>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;">
-            ${p.tags.map(t => {
-              const tagText = typeof t === 'object' ? window.t(t) : t;
-              return `<span class="project-tag">${tagText}</span>`;
-            }).join('')}
+      <div class="modal-stagger" style="margin-bottom:1.5rem;">
+        <div class="modal-section-label">Tech Stack</div>
+        <div class="modal-tags-wrapper">
+          ${p.tags.map(t => {
+            const tagText = typeof t === 'object' ? window.t(t) : t;
+            return `<span class="modal-tag">${tagText}</span>`;
+          }).join('')}
         </div>
       </div>
 
-      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <div class="modal-stagger modal-cta-row">
         ${isDemoBtnHTML}
         ${githubBtnHTML}
       </div>
       ${(!hasDemo && !hasGithub && !(p.category === 'ui' || p.embed)) ? `<p style="margin-top:0.75rem;font-size:0.72rem;color:var(--text-dim);text-align:center;font-style:italic;">Proyek ini belum dipublikasikan. Update segera hadir di GitHub.</p>` : ''}
     </div>
   `;
+
+
 
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
