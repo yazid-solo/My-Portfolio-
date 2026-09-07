@@ -288,7 +288,7 @@ const PROFILE = {
     {
       role: { id: "Affiliate Marketer & Sales", en: "Affiliate Marketer & Sales" },
       company: { id: "Binco Ran Nusantara", en: "Binco Ran Nusantara" },
-      period: { id: "Juli - Agustus 2024", en: "July - August 2024" },
+      period: { id: "Mei - Agustus 2024", en: "May - August 2024" },
       type: { id: "Pekerja Lepas (Freelance)", en: "Freelance" },
       image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/XStrV8xPTqCzMZFT7",
