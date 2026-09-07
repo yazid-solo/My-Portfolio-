@@ -714,15 +714,18 @@ kbd {
   position: relative;
   height: 200px;
   overflow: hidden;
+  background: linear-gradient(135deg, rgba(8,13,26,0.9) 0%, rgba(14,22,40,0.95) 100%);
 }
 .project-card .pc-img-wrapper img {
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
   display: block;
+  padding: 6px;
+  box-sizing: border-box;
 }
 .project-card:hover .pc-img-wrapper img {
-  transform: scale(1.15);
+  transform: scale(1.06);
 }
 
 /* Cinematic gradient fade from image to card body */
