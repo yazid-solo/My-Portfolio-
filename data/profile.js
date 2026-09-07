@@ -477,7 +477,7 @@ const PROFILE = {
     {
       role: { id: "Ketua Irmas Darussalam", en: "Head of Irmas Darussalam" },
       org: "Irmas Darussalam",
-      period: "2024 – 2025",
+      period: "2023 – 2024",
       desc: { id: "Memimpin organisasi remaja masjid, menghimpun pemuda dan membuat perencanaan program keberlanjutan.", en: "Led the mosque youth organization, gathered youth, and planned sustainable programs." },
       icon: "https://img.icons8.com/fluency/96/mosque.png",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQg0P5XRZsapBUYv9eowWhhSTZPT7gMQ0mvA&s"
