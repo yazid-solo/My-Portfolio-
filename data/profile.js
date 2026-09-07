@@ -184,7 +184,7 @@ const PROFILE = {
     { name: "Google Gemini", icon: "assets/Foto_Logo/gemini.svg", color: "#1a73e8" },
     { name: "Antigravity IDE", icon: "assets/Foto_Logo/antigravity.svg", color: "#ff00ff" },
     { name: "Kiro", icon: "assets/Foto_Logo/kiro.svg", color: "#ffff00" },
-    { name: "CapCut", icon: "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/capcut/default.svg", color: "#ffffff" },
+    { name: "CapCut", icon: "https://api.iconify.design/selfhst:capcut-light.svg", color: "#ffffff" },
     { name: "Swagger", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg", color: "#85ea2d" },
     { name: "phpMyAdmin", icon: "https://upload.wikimedia.org/wikipedia/commons/4/4f/PhpMyAdmin_logo.svg", color: "#6c78af" },
     { name: "Google Colab", icon: "https://api.iconify.design/simple-icons:googlecolab.svg?color=%23F9AB00", color: "#F9AB00" }
@@ -219,7 +219,7 @@ const PROFILE = {
         { name: "Vercel", level: { id: "Dasar", en: "Basic" }, pct: 50, icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iYmxhY2siLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoLjUpIj48cG9seWdvbiBmaWxsPSJ3aGl0ZSIgcG9pbnRzPSIyNTYsNDggNDk2LDQ2NCAxNiw0NjQiLz48L2c+PC9zdmc+" },
         { name: "Netlify", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "https://api.iconify.design/logos:netlify-icon.svg" },
         { name: "Docker", level: { id: "Mempelajari", en: "Learning" }, pct: 25, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
-        { name: "CapCut", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 60, icon: "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/capcut/default.svg" }
+        { name: "CapCut", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 60, icon: "https://api.iconify.design/selfhst:capcut-light.svg" }
       ]
     },
     {
