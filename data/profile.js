@@ -696,7 +696,7 @@ const PROJECTS = [
     demo: "",
     embed: "https://www.canva.com/design/DAHO82CdT7g/xcEuPcVYgG1POlWiU8D9nw/view?embed",
     github: "",
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
+    image: "assets/Foto_Project/Sertifikat Penghargaan Kaligrafi.png",
     status: { id: "Selesai", en: "Finished" },
     year: "2026"
   },
@@ -718,7 +718,7 @@ const PROJECTS = [
     demo: "",
     embed: "https://www.canva.com/design/DAHJqTp_R_c/ZeYQI7nv9Yi2tr95SYRk5w/view?embed",
     github: "",
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
+    image: "assets/Foto_Project/Struktur Kepengurusan.png",
     status: { id: "Selesai", en: "Finished" },
     year: "2026"
   },
@@ -740,7 +740,7 @@ const PROJECTS = [
     demo: "",
     embed: "https://www.canva.com/design/DAHNTkiiQU8/seqlRx_pCUnZc0XVJLMDvw/view?embed",
     github: "",
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
+    image: "assets/Foto_Project/Event Poster Ruang Aksara.png",
     status: { id: "Selesai", en: "Finished" },
     year: "2026"
   }
