@@ -721,6 +721,28 @@ const PROJECTS = [
     image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
     status: { id: "Selesai", en: "Finished" },
     year: "2026"
+  },
+  {
+    id: 14,
+    title: { id: "Event Poster: Ruang Aksara Exhibition", en: "Event Poster: Ruang Aksara Exhibition" },
+    category: "ui",
+    tags: ["Canva", "Poster Design", "Event Promotion", "Information Design"],
+    desc: { 
+      id: "Merancang poster pamflet interaktif untuk mempromosikan Pameran Seni & Lomba Kaligrafi 'RUANG AKSARA'. Menggunakan estetika modern-klasik dengan palet warna cokelat hangat dan aksen emas. Poster ini berfungsi sebagai pusat informasi komprehensif yang menampilkan jadwal acara, hadiah kompetisi, dan denah empat zona pameran (Lorong Waktu, Galeri Kompetisi, Eksibisi Karya, dan Papan Ekspresi) dengan tata letak visual yang terstruktur rapi dan mudah dibaca.", 
+      en: "Designed an interactive event poster/flyer to promote the 'RUANG AKSARA' Art Exhibition and Calligraphy Competition. Utilizing a modern-classic aesthetic with warm chocolate palettes and golden accents. The poster acts as a comprehensive information hub displaying event schedules, competition prizes, and a floor plan of four exhibition zones (Time Tunnel, Competition Gallery, Main Exhibition, and Expression Board) with a highly structured and legible visual layout." 
+    },
+    features: [
+      { id: "Desain Promosi Acara", en: "Event Promotion Design" }, 
+      { id: "Tata Letak Grid Terstruktur", en: "Structured Grid Layout" }, 
+      { id: "Estetika Modern-Klasik Islami", en: "Modern-Classic Islamic Aesthetic" }, 
+      { id: "Desain Informasi Kompleks", en: "Complex Information Design" }
+    ],
+    demo: "",
+    embed: "https://www.canva.com/design/DAHNTkiiQU8/seqlRx_pCUnZc0XVJLMDvw/view?embed",
+    github: "",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
+    status: { id: "Selesai", en: "Finished" },
+    year: "2026"
   }
 ];
 
