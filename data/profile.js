@@ -699,6 +699,28 @@ const PROJECTS = [
     image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
     status: { id: "Selesai", en: "Finished" },
     year: "2026"
+  },
+  {
+    id: 13,
+    title: { id: "Visual Infographic: Struktur Kepengurusan", en: "Visual Infographic: Organizational Structure" },
+    category: "ui",
+    tags: ["Canva", "Graphic Design", "Infographic", "Scrapbook Aesthetic"],
+    desc: { 
+      id: "Merancang desain spanduk/infografis Struktur Organisasi Pengurus JQH Kaligrafi UNU Yogyakarta periode 2025/2026. Desain ini menggunakan gaya 'Scrapbook Modern' yang mengkombinasikan foto monokrom, stiker selotip (*tape stickers*), bingkai lengkung (*arch frame*), serta aksen warna kontras bergaya *brush typography* untuk label jabatan, menciptakan visual kepengurusan yang segar, dinamis, dan artistik.", 
+      en: "Designed an organizational structure banner/infographic for the JQH Calligraphy Division of UNU Yogyakarta (2025/2026 period). The design utilizes a 'Modern Scrapbook' aesthetic, combining monochrome photos, tape stickers, arch frames, and high-contrast brush typography accents for role labels, resulting in a fresh, dynamic, and artistic visual representation of the team." 
+    },
+    features: [
+      { id: "Tema Scrapbook Modern", en: "Modern Scrapbook Aesthetic" }, 
+      { id: "Tata Letak Kolase", en: "Collage Layout Design" }, 
+      { id: "Efek Foto Monokrom", en: "Monochrome Photo Effects" }, 
+      { id: "Hierarki Tipografi Kontras", en: "High-Contrast Typography" }
+    ],
+    demo: "",
+    embed: "https://www.canva.com/design/DAHJqTp_R_c/ZeYQI7nv9Yi2tr95SYRk5w/view?embed",
+    github: "",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80",
+    status: { id: "Selesai", en: "Finished" },
+    year: "2026"
   }
 ];
 
