@@ -186,7 +186,7 @@ const PROFILE = {
     { name: "Kiro", icon: "assets/Foto_Logo/kiro.svg", color: "#ffff00" },
     { name: "CapCut", icon: "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/capcut/default.svg", color: "#ffffff" },
     { name: "Swagger", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg", color: "#85ea2d" },
-    { name: "phpMyAdmin", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/phpmyadmin.svg", color: "#6c78af" },
+    { name: "phpMyAdmin", icon: "https://upload.wikimedia.org/wikipedia/commons/4/4f/PhpMyAdmin_logo.svg", color: "#6c78af" },
     { name: "Google Colab", icon: "https://api.iconify.design/simple-icons:googlecolab.svg?color=%23F9AB00", color: "#F9AB00" }
   ],
 
@@ -244,7 +244,7 @@ const PROFILE = {
         { name: "Supabase", level: { id: "Dasar", en: "Basic" }, pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
         { name: "Postman", level: { id: "Dasar", en: "Basic" }, pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" },
         { name: "Swagger", level: { id: "Dasar", en: "Basic" }, pct: 30, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" },
-        { name: "phpMyAdmin", level: { id: "Dasar", en: "Basic" }, pct: 40, icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/phpmyadmin.svg" }
+        { name: "phpMyAdmin", level: { id: "Dasar", en: "Basic" }, pct: 40, icon: "https://upload.wikimedia.org/wikipedia/commons/4/4f/PhpMyAdmin_logo.svg" }
       ]
     },
     {
