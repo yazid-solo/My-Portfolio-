@@ -20,7 +20,7 @@ const PROFILE = {
   phone: "+62819 1568 0315",
   location: "Yogyakarta, Indonesia",
   github: "https://github.com/yazid-solo",
-  linkedin: "https://www.linkedin.com/in/muhammad-yazid-ardani-127a19343/",
+  linkedin: "https://www.linkedin.com/in/muchamad-yazid-ardani-a88a0931b/",
   instagram: "https://www.instagram.com/muhzee17/",
   whatsapp: "https://wa.me/6281915680315",
   university: "Universitas Nahdlatul Ulama Yogyakarta",
@@ -150,7 +150,7 @@ const PROFILE = {
   stats: [
     { label: "Semester Aktif", value: "5" },
     { label: "Proyek Personal", value: "10+" },
-    { label: "Sertifikat", value: "5" },
+    { label: "Sertifikat", value: "24+" },
     { label: "Organisasi", value: "3" }
   ],
 
