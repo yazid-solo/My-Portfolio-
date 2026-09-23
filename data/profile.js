@@ -13,8 +13,8 @@ const PROFILE = {
     en: "Informatics Student • Junior Web Developer • AI-Assisted Programmer"
   },
   taglineSub: {
-    id: "Mahasiswa Semester 5 Teknik Informatika yang aktif membangun proyek nyata di bidang Web Development dan UI/UX — bukan sekadar belajar dari tutorial.",
-    en: "5th Semester Informatics student actively building real projects in Web Development and UI/UX — not just learning from tutorials."
+    id: "Mahasiswa Semester 5 Teknik Informatika yang aktif membangun proyek nyata di bidang Web Development dan UI/UX, bukan cuma belajar dari tutorial.",
+    en: "5th Semester Informatics student actively building real projects in Web Development and UI/UX, not just learning from tutorials."
   },
   email: "muhzee16@gmail.com",
   phone: "+62819 1568 0315",
@@ -32,15 +32,15 @@ const PROFILE = {
     en: `5th-semester Informatics student specializing in Web Development, UI/UX, and Graphic Design. Experienced in building web applications independently. Mastering modern workflows by integrating AI as a pair-programming partner to accelerate development cycles, bug analysis, and structured code writing.`
   },
   about: {
-    id: `Saya memiliki perjalanan karir yang unik. Latar belakang saya di teknik otomotif melatih saya untuk berpikir secara sistematis dalam melakukan troubleshooting—kemampuan yang ternyata sangat krusial saat melakukan debugging dalam penulisan kode. Selain itu, pengalaman di bidang Affiliate Marketing mengajarkan saya tentang analisis data dan perilaku pengguna.\n\nSaat ini, saya mendalami Web Development, UI/UX, dan Desain Komunikasi Visual. Saya tidak hanya menulis kode, tapi fokus memecahkan masalah (problem-solving). Kombinasi antara logika sistematis mesin, pemahaman data dari marketing, dan eksekusi visual-teknis membuat saya mampu melihat sebuah proyek secara utuh—baik dari sisi kode, estetika, maupun bisnis.`,
-    en: `I have a unique career journey. My background in automotive engineering trained me to think systematically when troubleshooting—a skill that has proven crucial for debugging code. Furthermore, my experience in Affiliate Marketing taught me about data analysis and user behavior.\n\nCurrently, I am deepening my expertise in Web Development, UI/UX, and Visual Communication Design. I don't just write code; I focus on problem-solving. The combination of systematic machine logic, data understanding from marketing, and visual-technical execution allows me to see a project in its entirety—from the codebase to aesthetics and business perspective.`
+    id: `Saya memiliki perjalanan karir yang unik. Latar belakang di teknik otomotif melatih saya berpikir sistematis dalam troubleshooting, kemampuan yang ternyata sangat berguna saat debugging kode. Pengalaman di bidang Affiliate Marketing juga mengajarkan saya soal analisis data dan perilaku pengguna.\n\nSekarang saya fokus mendalami Web Development, UI/UX, dan Desain Komunikasi Visual. Saya tidak sekadar menulis kode, tapi berusaha memecahkan masalah secara menyeluruh. Kombinasi logika sistematis dari dunia mesin, pemahaman data dari marketing, dan eksekusi visual-teknis membuat saya bisa melihat sebuah proyek dari berbagai sisi, baik dari kode, estetika, maupun kebutuhan bisnisnya.`,
+    en: `I have a unique career path. My background in automotive engineering trained me to think systematically when troubleshooting, a skill that has proven very useful for debugging code. My experience in Affiliate Marketing also taught me about data analysis and user behavior.\n\nRight now I'm focused on deepening my skills in Web Development, UI/UX, and Visual Communication Design. I don't just write code, I try to solve problems comprehensively. The combination of systematic thinking from the mechanical world, data understanding from marketing, and visual-technical execution helps me see a project from multiple angles, from the codebase to aesthetics and business needs.`
   },
 
   highlights: [
     {
       icon: "🎯",
       title: { id: "Fokus Belajar", en: "Focus on Learning" },
-      desc: { id: "Belajar konsisten tiap hari — dari dokumentasi resmi, video tutorial, hingga proyek latihan mandiri yang nyata.", en: "Learning consistently every day — from official docs and video tutorials to real independent practice projects." },
+      desc: { id: "Belajar konsisten tiap hari: dari dokumentasi resmi, video tutorial, sampai proyek latihan mandiri yang nyata.", en: "Learning consistently every day: official docs, video tutorials, and real independent practice projects." },
       color: "rgba(99,102,241,0.2)",
       accentColor: "#818cf8",
       glowColor: "rgba(99,102,241,0.3)",
@@ -52,7 +52,7 @@ const PROFILE = {
     {
       icon: "💻",
       title: { id: "Full-Stack Web Dev", en: "Full-Stack Web Dev" },
-      desc: { id: "Membangun aplikasi web end-to-end — dari antarmuka React di sisi frontend hingga REST API Node.js/FastAPI dan manajemen database PostgreSQL/Supabase di sisi backend.", en: "Building end-to-end web applications — from React interfaces on the frontend to Node.js/FastAPI REST APIs and PostgreSQL/Supabase database management on the backend." },
+      desc: { id: "Membangun aplikasi web end-to-end, mulai dari antarmuka React di sisi frontend sampai REST API Node.js/FastAPI dan manajemen database PostgreSQL/Supabase di sisi backend.", en: "Building end-to-end web applications, from React interfaces on the frontend to Node.js/FastAPI REST APIs and PostgreSQL/Supabase database management on the backend." },
       color: "rgba(20,184,166,0.2)",
       accentColor: "#2dd4bf",
       glowColor: "rgba(20,184,166,0.3)",
@@ -64,7 +64,7 @@ const PROFILE = {
     {
       icon: "🎨",
       title: { id: "UI & Graphic Design", en: "UI & Graphic Design" },
-      desc: { id: "Merancang antarmuka dan aset visual grafis yang bersih dan intuitif menggunakan Figma dan Canva — dari wireframe, prototype interaktif, hingga materi komunikasi visual.", en: "Designing clean, intuitive interfaces and visual graphic assets using Figma and Canva — from wireframes and interactive prototypes to visual communication materials." },
+      desc: { id: "Merancang antarmuka dan aset visual grafis yang bersih dan intuitif menggunakan Figma dan Canva, mulai dari wireframe dan prototype interaktif sampai materi komunikasi visual.", en: "Designing clean, intuitive interfaces and visual graphic assets using Figma and Canva, from wireframes and interactive prototypes to visual communication materials." },
       color: "rgba(244,63,94,0.2)",
       accentColor: "#fb7185",
       glowColor: "rgba(244,63,94,0.3)",
@@ -88,7 +88,7 @@ const PROFILE = {
     {
       icon: "📄",
       title: { id: "Office & Produktivitas", en: "Office & Productivity" },
-      desc: { id: "Mahir menggunakan Microsoft Office (Word, Excel, PowerPoint) & Google Workspace — diasah intensif lewat tugas akademik dan pelaporan data profesional.", en: "Proficient in using Microsoft Office (Word, Excel, PowerPoint) & Google Workspace — intensively honed through academic assignments and professional data reporting." },
+      desc: { id: "Mahir menggunakan Microsoft Office (Word, Excel, PowerPoint) dan Google Workspace, diasah lewat tugas akademik dan kegiatan pelaporan di organisasi.", en: "Proficient in Microsoft Office (Word, Excel, PowerPoint) and Google Workspace, developed through academic assignments and organizational reporting activities." },
       color: "rgba(16,185,129,0.2)",
       accentColor: "#34d399",
       glowColor: "rgba(16,185,129,0.3)",
@@ -411,7 +411,7 @@ const PROFILE = {
       title: "AI-Powered Software Engineering: Practical AI Skills for Beginner",
       organizer: "Codelamp Indonesia",
       period: "2026",
-      desc: { id: "Pelatihan penerapan AI dalam proses rekayasa perangkat lunak. Mencakup penggunaan AI tools untuk mendukung siklus pengembangan software — mulai dari perencanaan, penulisan kode, debugging, hingga dokumentasi yang lebih efisien.", en: "Training on the application of AI in the software engineering process. Covers the use of AI tools to support the software development lifecycle — from planning, coding, and debugging to more efficient documentation." },
+      desc: { id: "Pelatihan penerapan AI dalam proses rekayasa perangkat lunak. Mencakup penggunaan AI tools untuk mendukung siklus pengembangan software: dari perencanaan, penulisan kode, debugging, sampai dokumentasi yang lebih efisien.", en: "Training on the application of AI in the software engineering process. Covers the use of AI tools to support the software development lifecycle: from planning, coding, and debugging to more efficient documentation." },
       image: "assets/Foto-Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.png",
       url: "assets/Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.pdf"
     },
@@ -583,7 +583,7 @@ const PROJECTS = [
     title: "UI/UX Design: Vareway",
     category: "ui",
     tags: ["Figma", "UI/UX", "Prototyping", "Team Collaboration"],
-    desc: { id: "Desain antarmuka platform EduTech interaktif hasil kerja sama tim yang menyediakan alur belajar terstruktur (Learning Path). Tampilan ini dirancang secara kolaboratif untuk membimbing pengguna memilih kurikulum sesuai kebutuhan industri—seperti Front-End, Cyber Security, hingga Machine Learning—dengan gaya visual yang modern dan memotivasi pelajar.", en: "Interactive EduTech platform interface design resulting from teamwork that provides a structured learning flow (Learning Path). This display is collaboratively designed to guide users in choosing a curriculum according to industry needs—such as Front-End, Cyber Security, to Machine Learning—with a modern visual style that motivates students." },
+    desc: { id: "Desain antarmuka platform EduTech interaktif hasil kerja sama tim yang menyediakan alur belajar terstruktur (Learning Path). Tampilan ini dirancang secara kolaboratif untuk membimbing pengguna memilih kurikulum sesuai kebutuhan industri, seperti Front-End, Cyber Security, dan Machine Learning, dengan gaya visual yang modern dan memotivasi pelajar.", en: "Interactive EduTech platform interface design resulting from teamwork that provides a structured learning flow (Learning Path). This display is collaboratively designed to guide users in choosing a curriculum according to industry needs, such as Front-End, Cyber Security, and Machine Learning, with a modern visual style that motivates students." },
     features: [{ id: "Interactive Prototype", en: "Interactive Prototype" }, { id: "Design System", en: "Design System" }, { id: "Auto Layout", en: "Auto Layout" }, { id: "EduTech Platform", en: "EduTech Platform" }, { id: "Responsive Web", en: "Responsive Web" }],
     demo: "",
     embed: "https://embed.figma.com/design/ixlEcoPHDG9k8gMxtuR4PZ/VAREWAY?node-id=3-2&embed-host=share",
