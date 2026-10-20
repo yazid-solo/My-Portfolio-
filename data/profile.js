@@ -150,7 +150,7 @@ const PROFILE = {
   stats: [
     { label: "Semester Aktif", value: "5" },
     { label: "Proyek Personal", value: "10+" },
-    { label: "Sertifikat", value: "24+" },
+    { label: "Sertifikat", value: "26+" },
     { label: "Organisasi", value: "3" }
   ],
 
@@ -336,6 +336,22 @@ const PROFILE = {
 
   training: [
     {
+      title: "Siswa Tersertifikasi Gemini - Universitas",
+      organizer: "Google for Education",
+      period: "2026",
+      desc: { id: "Sertifikasi resmi dari Google for Education atas kompetensi dasar penggunaan dan penerapan kecerdasan buatan (AI) Google Gemini di lingkungan pendidikan.", en: "Official certification from Google for Education demonstrating foundational knowledge and competence in utilizing Google Gemini AI in educational environments." },
+      image: "assets/Foto-Sertifikat/Sertifikat Gemini Student.png",
+      url: "assets/Sertifikat/Sertifikat Gemini Student.pdf"
+    },
+    {
+      title: "Learning Track Digital Marketing - Future Talent Hub 2026",
+      organizer: "Pijar Foundation x Temasek Foundation",
+      period: "2026",
+      desc: { id: "Pembelajaran intensif asinkronus bidang Digital Marketing pada program Future Talent Hub oleh Pijar Foundation bekerja sama dengan Temasek Foundation. Berhasil menyelesaikan seluruh modul kurikulum dengan Nilai Akhir 92,0 dan Predikat A (Sangat Baik).", en: "Intensive asynchronous Digital Marketing learning track under the Future Talent Hub program by Pijar Foundation in partnership with Temasek Foundation. Completed all curriculum modules with a Final Score of 92.0 and Grade A (Excellent)." },
+      image: "assets/Foto-Sertifikat/Sertifikat Learning Track Digital Marketing Future Talent Hub 2026.png",
+      url: "assets/Sertifikat/Sertifikat Learning Track Digital Marketing-Future Talent Hub 2026.pdf"
+    },
+    {
       title: "Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative Academy",
       organizer: "Stechoq Academy x Innovative Academy",
       period: "2026",
@@ -494,11 +510,13 @@ const PROFILE = {
 
   certificates: [
     // ── BOOTCAMP & PELATIHAN UTAMA ──
+    { name: "Learning Track Digital Marketing - Future Talent Hub 2026", issuer: "Pijar Foundation x Temasek Foundation", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Learning Track Digital Marketing Future Talent Hub 2026.png", pdfUrl: "assets/Sertifikat/Sertifikat Learning Track Digital Marketing-Future Talent Hub 2026.pdf" },
     { name: "Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative Academy", issuer: "Stechoq Academy x Innovative Academy", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.png", pdfUrl: "assets/Sertifikat/Sertifikat Professional Developer Bootcamp Program Batch 1 under Stechoq Academy x Innovative.pdf" },
     { name: "Samsung Innovation Campus Batch 7", issuer: "Samsung / Dibimbing.id", year: "2025/2026", image: "assets/Foto-Sertifikat/Sertifikat Samsung Innovation Campus.png", pdfUrl: "assets/Sertifikat/Sertifikat Samsung Innovation Campus.pdf" },
     { name: "Coding Camp – Intro to Software Engineering", issuer: "RevoU", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Dicoding.png", pdfUrl: "assets/Sertifikat/CCSE.pdf" },
     { name: "Bootcamp Sertifikasi Microsoft Office Specialist (Excel, Word, PowerPoint)", issuer: "KarirNex", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat bootcamp sertifikasi microsoft office excel word powerpoint specialist.png", pdfUrl: "assets/Sertifikat/Sertifikat_Bootcamp_Microsoft_Office.pdf" },
     // ── KURSUS AI & DEVELOPER ──
+    { name: "Siswa Tersertifikasi Gemini - Universitas", issuer: "Google for Education", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat Gemini Student.png", pdfUrl: "assets/Sertifikat/Sertifikat Gemini Student.pdf" },
     { name: "AI Productivity and AI API Integration for Developers", issuer: "Hacktiv8", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat AI Productivity and AI API Integration for Developers.png", pdfUrl: "assets/Sertifikat/AI Productivity and AI API Integration for Developers.pdf" },
     { name: "AI Praktis untuk Produktivitas", issuer: "Dicoding", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat AI Praktis untuk Produktivitas.png", pdfUrl: "assets/Sertifikat/AI Praktis untuk Produktivitas.pdf" },
     { name: "AI-Powered Software Engineering Practical AI Skills for Beginner", issuer: "Codelamp Indonesia", year: "2026", image: "assets/Foto-Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.png", pdfUrl: "assets/Sertifikat/Sertifikat AI-Powered Software Engineering Practical AI Skills for Beginner.pdf" },
