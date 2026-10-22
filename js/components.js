@@ -35,7 +35,7 @@ const Components = (() => {
       <line x1="8" y1="14" x2="14" y2="14" stroke="rgba(0,0,0,0.3)" stroke-width="1.5" stroke-linecap="round"/>
       <line x1="8" y1="17" x2="16" y2="17" stroke="rgba(0,0,0,0.3)" stroke-width="1.2" stroke-linecap="round"/>
     </svg>` },
-    { href: 'contact.html', label: 'Kontak', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    { href: 'contact.html', label: '<span data-i18n="nav_contact">Kontak</span>', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs>
       <rect x="2" y="4" width="20" height="16" rx="3" fill="url(#cg)" opacity="0.9"/>
       <path d="M2 7l10 7 10-7" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" fill="none"/>

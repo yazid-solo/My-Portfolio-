@@ -1247,7 +1247,7 @@ function renderValues() {
     { 
       icon: '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>', 
       title: 'Adaptif', 
-      desc: 'Dari bengkel mesin ke kode program — saya terbiasa masuk ke lingkungan baru dan cepat menyesuaikan diri.',
+      desc: 'Terbiasa menghadapi tantangan baru dan cepat menguasai ekosistem teknologi yang dinamis melalui ketekunan dan kemauan belajar tinggi.',
       bg: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80',
       color: '#fbbf24'
     },
@@ -1508,6 +1508,7 @@ function initProjects() {
 
     el.innerHTML = filtered.map((p, index) => {
       const categoryLabel = {
+        'web': 'Web Dev',
         'fullstack': 'Full-Stack',
         'ui': 'UI/UX & Design',
         'mini': 'Mini App',

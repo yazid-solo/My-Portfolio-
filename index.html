@@ -613,7 +613,7 @@
             <h2 class="section-title" style="line-height:1.15; text-shadow: 0 5px 20px rgba(0,0,0,0.9); font-weight: 800;" data-i18n="idx_about_title">Satu Perjalanan,<br><span style="background:linear-gradient(135deg,var(--accent),rgba(var(--accent-rgb),0.5));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Banyak Pelajaran</span></h2>
             <div class="accent-line" style="box-shadow: 0 0 15px var(--accent); height: 3px;"></div>
             <p style="color:var(--text-muted); line-height:1.85; margin-bottom:2rem; font-size:0.95rem; max-width:440px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);" data-i18n="idx_about_desc">
-              Mengawali perjalanan dari mekanik bengkel otomotif hingga kini mendalami rekayasa perangkat lunak telah membentuk saya menjadi <em>problem solver</em> yang tangguh dan mudah beradaptasi. Fokus keahlian saya mencakup ekosistem <strong style="color:#fff;">Web Development</strong>, <strong style="color:#fff;">API & Database</strong>, hingga <strong style="color:#fff;">UI/UX Design</strong>. Saya memadukan keterampilan teknis ini dengan praktik pengelolaan data (Office) yang rapi, kontrol versi via <strong style="color:#fff;">Git</strong>, dan dasar <em>deployment</em> (<strong style="color:#fff;">Docker</strong>). Di keseharian, saya mengintegrasikan asisten <strong>Kecerdasan Buatan (AI)</strong> ke dalam alur kerja untuk melipatgandakan produktivitas dan menghasilkan solusi digital yang jauh lebih efisien.
+              Sebagai mahasiswa Informatika yang berdedikasi pada rekayasa perangkat lunak, saya fokus membangun solusi digital yang tangguh, efisien, dan berpusat pada pengguna. Spesialisasi saya berakar pada ekosistem <strong style="color:#fff;">Web Development</strong>, arsitektur <strong style="color:#fff;">API & Database</strong>, hingga eksplorasi <strong style="color:#fff;">UI/UX Design</strong>. Saya mengombinasikan keahlian teknis ini dengan manajemen data yang rapi, kontrol versi via <strong style="color:#fff;">Git</strong>, dan dasar <em>deployment</em> (<strong style="color:#fff;">Docker</strong>). Di keseharian, saya memanfaatkan <strong>Kecerdasan Buatan (AI)</strong> untuk melipatgandakan produktivitas, riset mendalam, serta pemecahan masalah teknis.
             </p>
 
             <!-- Mini highlights -->
@@ -628,7 +628,7 @@
                     <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#g-flash-3d)" stroke="#fef08a" stroke-width="0.5" stroke-linejoin="round"></path>
                   </svg>
                 </span>
-                <span data-i18n="idx_hero_li1">Adaptif dari bengkel ke kode</span>
+                <span data-i18n="idx_hero_li1">Solusi Berbasis Logika &amp; Kode</span>
               </div>
               <div style="display:flex; align-items:center; gap:0.75rem; font-size:0.85rem; color:var(--text-muted);">
                 <span style="width:36px; height:36px; border-radius:10px; background:linear-gradient(145deg, rgba(30,41,59,0.8), rgba(15,23,42,0.9)); border:1px solid rgba(255,255,255,0.08); border-top-color:rgba(255,255,255,0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.05); display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; overflow:hidden;">
@@ -820,27 +820,6 @@
         </div>
       </div>
     </section>
-
-    <script>
-      // Automatically pull accurate data for About Section
-      document.addEventListener("DOMContentLoaded", () => {
-        if (typeof PROFILE !== 'undefined' && typeof PROJECTS !== 'undefined') {
-          // Mapping data dari PROFILE dan PROJECTS
-          const dataStats = {
-            semester: PROFILE.semester || 4,
-            project: PROJECTS.length || 0,
-            cert: (PROFILE.certificates && PROFILE.certificates.length) ? PROFILE.certificates.length : 0,
-            org: (PROFILE.organization && PROFILE.organization.length) ? PROFILE.organization.length : 0
-          };
-
-          // Update text secara dinamis
-          document.getElementById('stat-semester').textContent = dataStats.semester;
-          document.getElementById('stat-project').textContent = dataStats.project + "+";
-          document.getElementById('stat-cert').textContent = dataStats.cert;
-          document.getElementById('stat-org').textContent = dataStats.org;
-        }
-      });
-    </script>
 
   </main>
 
@@ -1044,75 +1023,55 @@
   </style>
 <script>
 /* ============================================================
-   ROBOT 4D — Cinematic Boot Sequence + Interactive Animation
+   ROBOT 4D — Interactive Animation & Performance Optimized
    ============================================================ */
 (function() {
-  const svg      = document.getElementById('robot-svg');
-  const scene    = document.getElementById('robot-scene');
-  const head     = document.getElementById('robot-head');
-  const body     = document.getElementById('robot-body');
-  const armL     = document.getElementById('arm-left');
-  const armR     = document.getElementById('arm-right');
-  const pupilL   = document.getElementById('pupil-l');
-  const pupilR   = document.getElementById('pupil-r');
-  const hlL      = document.getElementById('pupil-l-hl');
-  const hlR      = document.getElementById('pupil-r-hl');
-  const ripple   = document.getElementById('robot-ripple');
-  const bootUI   = document.getElementById('robot-boot-ui');
-  const orbit1   = document.getElementById('orbit-1');
-  const orbit2   = document.getElementById('orbit-2');
-  const orbitH   = document.getElementById('orbit-h');
-  const scanner  = document.getElementById('scan-sweeper');
-  if (!svg) return;
+  const svg    = document.getElementById('robot-svg');
+  const scene  = document.getElementById('robot-scene');
+  const head   = document.getElementById('robot-head');
+  const body   = document.getElementById('robot-body');
+  const armL   = document.getElementById('arm-left');
+  const armR   = document.getElementById('arm-right');
+  const pupilL = document.getElementById('pupil-l');
+  const pupilR = document.getElementById('pupil-r');
+  const hlL    = document.getElementById('pupil-l-hl');
+  const hlR    = document.getElementById('pupil-r-hl');
+  const ripple = document.getElementById('robot-ripple');
+  if (!svg || !scene) return;
 
   let mx = window.innerWidth / 2, my = window.innerHeight / 2;
   let headRX = 0, headRY = 0, bodyRY = 0;
   let clickJump = 0, scrollOffset = 0;
   let booted = false;
+  let isVisible = true;
+  let rafId = null;
 
-  /* ── PHASE 1: 0–0.5s — Boot UI scan beam plays (CSS handled) ── */
-
-  /* ── PHASE 2: 0.6s — Robot materializes from bottom ── */
+  // Materialize robot gracefully
   setTimeout(() => {
-    svg.style.animation = 'robotMaterialize 2.6s cubic-bezier(0.25,0.46,0.45,0.94) both';
+    svg.style.animation = 'robotMaterialize 1.8s cubic-bezier(0.25,0.46,0.45,0.94) both';
     svg.style.opacity   = '1';
-  }, 600);
+  }, 300);
 
-  /* ── PHASE 3: 1.8s — Orbit rings unfurl one by one ── */
-  setTimeout(() => {
-    if (orbit1) orbit1.style.animation = 'orbitRingUnfurl 1s ease-out both, orbitSpin 18s linear 1s infinite';
-  }, 1800);
-  setTimeout(() => {
-    if (orbit2) orbit2.style.animation = 'orbitRingUnfurl 0.9s ease-out both, orbitSpin 12s linear 0.9s infinite reverse';
-  }, 2200);
-  setTimeout(() => {
-    if (orbitH) orbitH.style.animation = 'orbitRingUnfurlH 0.8s ease-out both, orbitSpinH 9s linear 0.8s infinite';
-  }, 2600);
-
-  /* ── PHASE 4: 2.8s — Boot scan sweeper turns on ── */
-  setTimeout(() => {
-    if (scanner) scanner.style.opacity = '1';
-  }, 2800);
-
-  /* ── PHASE 5: 3.0s — Boot UI fades out ── */
-  setTimeout(() => {
-    if (bootUI) {
-      bootUI.style.animation = 'bootOverlayFade 0.6s ease-out forwards';
-      setTimeout(() => { bootUI.style.display = 'none'; }, 700);
-    }
-  }, 3000);
-
-  /* ── PHASE 6: 3.2s — Switch to perpetual float animation ── */
+  // Transition to perpetual float
   setTimeout(() => {
     svg.style.animation = 'robotAutoFloat 6s ease-in-out infinite';
     svg.style.filter    = 'drop-shadow(0 0 40px rgba(0,212,255,0.35)) drop-shadow(0 0 80px rgba(0,212,255,0.15))';
     booted = true;
-    tick(); /* start interactive loop */
-  }, 3200);
+    startLoop();
+  }, 2100);
+
+  // IntersectionObserver to pause loop when scrolled away (saves GPU/CPU for cards/data below)
+  const io = new IntersectionObserver((entries) => {
+    isVisible = entries[0].isIntersecting;
+    if (isVisible && booted && !rafId) {
+      startLoop();
+    }
+  }, { threshold: 0.05 });
+  io.observe(scene);
 
   /* ── Mouse tracking ── */
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  window.addEventListener('scroll', () => { scrollOffset = window.scrollY; }, {passive:true});
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
+  window.addEventListener('scroll', () => { scrollOffset = window.scrollY; }, { passive: true });
 
   /* ── Click: jump + glow burst + ripple ── */
   svg.addEventListener('click', () => {
@@ -1132,10 +1091,17 @@
     }
   });
 
-  /* ── Interactive tick (only runs after boot) ── */
+  function startLoop() {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(tick);
+  }
+
+  /* ── Interactive tick (pauses when out of viewport) ── */
   function tick() {
-    requestAnimationFrame(tick);
-    if (!booted) return;
+    if (!isVisible) {
+      rafId = null;
+      return;
+    }
 
     const rect = svg.getBoundingClientRect();
     const cx = rect.left + rect.width  / 2;
@@ -1152,29 +1118,25 @@
     /* Click jump damping */
     if (clickJump !== 0) { clickJump *= 0.84; if (Math.abs(clickJump) < 0.5) clickJump = 0; }
 
-    /* Scroll parallax */
-    const sPx = scrollOffset * 0.12;
-
-    /* Apply to parts (don't override CSS float animation — only sub-element transforms) */
-    head.style.transform = `rotateX(${headRX}deg) rotateY(${headRY}deg)`;
-    body.style.transform = `rotateY(${bodyRY}deg)`;
-    armL.style.transform = `rotate(${normX * -6}deg)`;
-    armR.style.transform = `rotate(${normX *  6}deg)`;
+    /* Apply to parts */
+    if (head) head.style.transform = `rotateX(${headRX}deg) rotateY(${headRY}deg)`;
+    if (body) body.style.transform = `rotateY(${bodyRY}deg)`;
+    if (armL) armL.style.transform = `rotate(${normX * -6}deg)`;
+    if (armR) armR.style.transform = `rotate(${normX *  6}deg)`;
 
     /* Pupil tracking */
     const maxP = 4;
     const pxL = Math.max(-maxP, Math.min(maxP, normX * maxP));
     const pyL = Math.max(-maxP, Math.min(maxP, normY * maxP));
-    pupilL.setAttribute('cx', 182 + pxL);
-    pupilL.setAttribute('cy', 146 + pyL);
-    hlL   .setAttribute('cx', 184 + pxL);
-    hlL   .setAttribute('cy', 144 + pyL);
-    pupilR.setAttribute('cx', 238 + pxL);
-    pupilR.setAttribute('cy', 146 + pyL);
-    hlR   .setAttribute('cx', 240 + pxL);
-    hlR   .setAttribute('cy', 144 + pyL);
+    if (pupilL) { pupilL.setAttribute('cx', 182 + pxL); pupilL.setAttribute('cy', 146 + pyL); }
+    if (hlL)    { hlL.setAttribute('cx', 184 + pxL);    hlL.setAttribute('cy', 144 + pyL); }
+    if (pupilR) { pupilR.setAttribute('cx', 238 + pxL); pupilR.setAttribute('cy', 146 + pyL); }
+    if (hlR)    { hlR.setAttribute('cx', 240 + pxL);    hlR.setAttribute('cy', 144 + pyL); }
+
+    rafId = requestAnimationFrame(tick);
   }
 })();
+
 
 // ── Animate About Stat Bars when section enters viewport ──────────────────
 (function() {
@@ -1273,14 +1235,16 @@
         setTimeout(typeNameLine2, 600);
       }
 
-      if (sessionStorage.getItem('introPlayed')) {
+      if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', startHeroAnimations);
       } else {
-        document.addEventListener('introFinished', startHeroAnimations);
+        startHeroAnimations();
       }
+      document.addEventListener('introFinished', startHeroAnimations, { once: true });
     })();
 
-    // Responsive DOM Shifting for Hero Robot
+    // Responsive DOM Shifting for Hero Robot (Optimized with state caching)
+    let currentRobotLayout = null;
     function adjustHeroRobot() {
       const robot = document.getElementById('robot-scene');
       const hero = document.getElementById('hero');
@@ -1288,28 +1252,33 @@
       
       if (!robot || !hero || !leftCol) return;
 
-      if (window.innerWidth <= 900) {
-        // Pindahkan robot jadi sibling flexbox di tengah-tengah pada mobile
+      const isMobile = window.innerWidth <= 900;
+      if (isMobile && currentRobotLayout !== 'mobile') {
+        currentRobotLayout = 'mobile';
         if (robot.parentElement.id === 'hero') {
-           leftCol.parentElement.insertBefore(robot, leftCol.nextSibling);
-           robot.style.position = '';
-           robot.style.top = '';
-           robot.style.left = '';
-           robot.style.transform = '';
+          leftCol.parentElement.insertBefore(robot, leftCol.nextSibling);
         }
-      } else {
-        // Kembalikan ke absolute positioning di #hero untuk desktop
+        robot.style.position = '';
+        robot.style.top = '';
+        robot.style.left = '';
+        robot.style.transform = '';
+      } else if (!isMobile && currentRobotLayout !== 'desktop') {
+        currentRobotLayout = 'desktop';
         if (robot.parentElement.classList.contains('hero-main-layout')) {
-           hero.insertBefore(robot, hero.children[1]); 
-           robot.style.position = 'absolute';
-           robot.style.top = '50%';
-           robot.style.left = '50%';
-           robot.style.transform = 'translate(-50%,-50%)';
+          hero.insertBefore(robot, hero.children[1]); 
         }
+        robot.style.position = 'absolute';
+        robot.style.top = '50%';
+        robot.style.left = '50%';
+        robot.style.transform = 'translate(-50%,-50%)';
       }
     }
     
-    window.addEventListener('resize', adjustHeroRobot);
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(adjustHeroRobot, 60);
+    }, { passive: true });
     document.addEventListener('DOMContentLoaded', adjustHeroRobot);
   </script>
   <script src="js/intro.js"></script>

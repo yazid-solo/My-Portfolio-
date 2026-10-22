@@ -32,9 +32,10 @@ const PROFILE = {
     en: `5th-semester Informatics student specializing in Web Development, UI/UX, and Graphic Design. Experienced in building web applications independently. Mastering modern workflows by integrating AI as a pair-programming partner to accelerate development cycles, bug analysis, and structured code writing.`
   },
   about: {
-    id: `Saya memiliki perjalanan karir yang unik. Latar belakang saya di teknik otomotif melatih saya untuk berpikir secara sistematis dalam melakukan troubleshooting, sebuah kemampuan yang ternyata sangat krusial saat melakukan debugging dalam penulisan kode. Selain itu, pengalaman di bidang Affiliate Marketing mengajarkan saya tentang analisis data dan perilaku pengguna.\n\nSaat ini, saya mendalami Web Development, UI/UX, dan Desain Komunikasi Visual. Saya tidak hanya menulis kode, tapi fokus memecahkan masalah (problem-solving). Kombinasi antara logika sistematis mesin, pemahaman data dari marketing, dan eksekusi visual-teknis membuat saya mampu melihat sebuah proyek secara utuh, baik dari sisi kode, estetika, maupun bisnis.`,
-    en: `I have a unique career journey. My background in automotive engineering trained me to think systematically when troubleshooting, a skill that has proven crucial for debugging code. Furthermore, my experience in Affiliate Marketing taught me about data analysis and user behavior.\n\nCurrently, I am deepening my expertise in Web Development, UI/UX, and Visual Communication Design. I don't just write code; I focus on problem-solving. The combination of systematic machine logic, data understanding from marketing, and visual-technical execution allows me to see a project in its entirety, from the codebase to aesthetics and business perspective.`
+    id: `Sebagai mahasiswa Teknik Informatika dengan fokus mendalam pada rekayasa perangkat lunak dan arsitektur web modern, saya memiliki komitmen kuat dalam membangun solusi digital yang tangguh, aman, dan mudah digunakan. Pendekatan analitis dan pemecahan masalah teknis melatih cara berpikir sistematis saya saat merancang struktur data, membangun RESTful API, dan melakukan debugging kode secara mendalam.\n\nSelain aspek teknis, pengalaman di bidang manajemen digital dan administrasi data memperkaya pemahaman saya tentang pengalaman pengguna (UX) serta alur kerja yang efisien. Saat ini, saya aktif mengembangkan aplikasi web modern, merancang antarmuka interaktif yang elegan, serta memanfaatkan asisten kecerdasan buatan (AI) untuk mengakselerasi iterasi pengembangan, review kode, dan optimasi performa.`,
+    en: `As an Informatics Engineering student deeply focused on software engineering and modern web architecture, I have a strong commitment to building robust, secure, and user-friendly digital solutions. An analytical problem-solving approach has trained my systematic thinking when designing data structures, building RESTful APIs, and conducting rigorous code debugging.\n\nBeyond technical code, my background in digital management and data administration enriches my understanding of user experience (UX) and efficient operational workflows. Currently, I am actively developing modern web applications, designing elegant interactive interfaces, and leveraging AI assistants to accelerate development iteration, code reviews, and performance optimization.`
   },
+
 
   highlights: [
     {
@@ -307,16 +308,16 @@ const PROFILE = {
       ]
     },
     {
-      role: { id: "Mekanik Lapangan (Magang)", en: "Field Mechanic (Intern)" },
+      role: { id: "Teknisi Lapangan (Magang)", en: "Field Technical Intern" },
       company: { id: "JASATEC Yogyakarta", en: "JASATEC Yogyakarta" },
       period: { id: "April - Juni 2024", en: "April - June 2024" },
       type: { id: "Praktik Kerja Lapangan (PKL)", en: "Field Work Practice (Internship)" },
       image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80",
       mapUrl: "https://maps.app.goo.gl/TATmJDyaN5MEzLCB6",
       tasks: [
-        { id: "Melakukan perbaikan dan perawatan berat mesin secara langsung (hands-on) di bawah supervisi teknisi.", en: "Performed hands-on heavy engine repairs and maintenance under technician supervision." },
-        { id: "Mendiagnosis dan melakukan troubleshooting pada masalah suspensi dan sistem kendaraan lainnya.", en: "Diagnosed and troubleshot issues with suspension and other vehicle systems." },
-        { id: "Pengalaman ini sangat melatih pola pikir yang sistematis dalam mencari sumber masalah, yang kini berguna dalam debugging kode.", en: "This experience trained a systematic mindset in finding the root cause of problems, which is now useful in code debugging." }
+        { id: "Melakukan inspeksi teknis dan pemeliharaan sistem di bawah supervisi langsung teknisi senior.", en: "Performed technical inspection and system maintenance under direct senior technician supervision." },
+        { id: "Mendiagnosis dan melakukan troubleshooting sistematis untuk mengidentifikasi serta menyelesaikan akar kendala teknis.", en: "Diagnosed and performed systematic troubleshooting to identify and resolve root causes of technical issues." },
+        { id: "Menerapkan standar operasional prosedur (SOP), kepatuhan keselamatan kerja, dan pencatatan log harian yang terstruktur.", en: "Applied standard operating procedures (SOP), safety compliance, and structured daily logging." }
       ]
     },
     {
@@ -327,12 +328,13 @@ const PROFILE = {
       image: "https://png.pngtree.com/background/20230912/original/pngtree-mechanics-in-auto-repair-shop-apprentice-honest-uniform-photo-picture-image_5052771.jpg",
       mapUrl: "https://maps.app.goo.gl/eyYpXecH4JVaXpVh8",
       tasks: [
-        { id: "Mempraktikkan perawatan berkala kendaraan bermotor, termasuk proses tune-up dan penggantian pelumas.", en: "Performed periodic maintenance on motor vehicles, including tune-up processes and oil changes." },
-        { id: "Menangani kelistrikan dasar seperti inspeksi dan substitusi AKI kendaraan.", en: "Handled basic electrical issues such as vehicle battery inspection and substitution." },
-        { id: "Berkontribusi pada operasional harian bengkel sambil melatih ketanggapan dan keandalan teknis.", en: "Contributed to daily workshop operations while training responsiveness and technical reliability." }
+        { id: "Menjalankan prosedur perawatan preventif berkala dan pengujian fungsional instrumen teknis.", en: "Executed scheduled preventive maintenance procedures and functional testing of technical instruments." },
+        { id: "Melakukan inspeksi kelistrikan dasar, evaluasi tegangan, serta penggantian unit daya secara presisi.", en: "Handled basic electrical inspection, voltage evaluation, and precise power unit replacement." },
+        { id: "Mendukung kelancaran operasional lapangan teknis dengan melatih ketanggapan, ketelitian, dan keandalan kerja tim.", en: "Supported technical field operational workflows by exercising responsiveness, precision, and team reliability." }
       ]
     }
   ],
+
 
   training: [
     {
@@ -403,7 +405,7 @@ const PROFILE = {
       title: { id: "Praktek Kerja Lapangan – Band Motor", en: "Field Work Practice - Band Motor" },
       organizer: "Band Motor Yogyakarta",
       period: "2024",
-      desc: { id: "Pelatihan teknis lapangan (Hands-on) di bidang mekanik otomotif. Melibatkan penanganan perawatan mesin berkala, proses overhaul (turun mesin), hingga diagnosis dan perbaikan (troubleshooting) sistem kelistrikan kendaraan.", en: "Hands-on technical training in automotive mechanics. Involved periodic engine maintenance, overhaul processes, and diagnosis and repair (troubleshooting) of vehicle electrical systems." },
+      desc: { id: "Pelatihan teknis lapangan terstruktur berstandar industri. Melibatkan pemeliharaan preventif, penerapan standar keselamatan kerja teknis, serta metode troubleshooting analitis dalam menyelesaikan kendala operasional.", en: "Structured field technical training adhering to industry standards. Involved preventive maintenance, technical safety standards compliance, and analytical troubleshooting methods in solving operational challenges." },
       image: "assets/Foto-Sertifikat/Sertifikat Kerja Lapangan.png",
       url: "assets/Sertifikat/Sertifikat Praktik Kerja Lapangan.pdf"
     },
