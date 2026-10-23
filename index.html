@@ -1175,18 +1175,22 @@
       }
 
       // ── Line 2: Type "Yazid Ardani" char by char ──
+      let typeTimer = null;
       function typeNameLine2() {
         const el     = document.getElementById('hero-name-line2');
         const cursor = document.getElementById('hero-name-cursor');
         const roles  = document.getElementById('hero-role-row');
         if (!el) return;
+        if (typeTimer) clearTimeout(typeTimer);
+        el.textContent = '';
         const text  = 'Yazid Ardani';
         let   idx   = 0;
 
         function type() {
           if (idx < text.length) {
-            el.textContent += text.charAt(idx++);
-            setTimeout(type, idx < 7 ? 80 : 60);
+            el.textContent = text.slice(0, idx + 1);
+            idx++;
+            typeTimer = setTimeout(type, idx < 7 ? 80 : 60);
           } else {
             // Done typing — hide cursor, reveal role row
             setTimeout(() => {
@@ -1200,13 +1204,15 @@
       }
 
       // ── Role Cycling ──
+      let roleInterval = null;
       function startRoleCycle() {
         const roleEl = document.getElementById('hero-role-text');
         if (!roleEl) return;
+        if (roleInterval) clearInterval(roleInterval);
         const roles = ['Aspiring Web Developer', 'Informatics Student', 'Problem Solver', 'Data Administration', 'Ms. Office & Workspace', 'API & Infrastructure', 'UI/UX Enthusiast', 'Tech Explorer', 'AI Workflow Adopter'];
         let   ri    = 0;
 
-        setInterval(() => {
+        roleInterval = setInterval(() => {
           ri = (ri + 1) % roles.length;
           roleEl.style.opacity   = '0';
           roleEl.style.transform = 'translateY(-6px)';
@@ -1229,7 +1235,10 @@
         roleRow.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
       }
 
+      let heroAnimStarted = false;
       function startHeroAnimations() {
+        if (heroAnimStarted) return;
+        heroAnimStarted = true;
         document.body.classList.add('start-hero');
         setTimeout(animateLine1, 200);
         setTimeout(typeNameLine2, 600);
