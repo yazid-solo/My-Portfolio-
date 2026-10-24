@@ -168,27 +168,27 @@ const PROFILE = {
     { name: "git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg", color: "#f05032" },
     { name: "github", icon: "https://cdn.simpleicons.org/github/white", color: "#ffffff" },
     { name: "vercel", icon: "https://cdn.simpleicons.org/vercel/white", style: "width: 20px; height: 20px;", color: "#ffffff" },
-    { name: "netlify", icon: "https://api.iconify.design/logos:netlify-icon.svg", style: "width: 22px; height: 22px;", color: "#00C7B7" },
+    { name: "netlify", icon: "assets/Foto_Logo/netlify.svg", style: "width: 22px; height: 22px;", color: "#00C7B7" },
     { name: "postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg", color: "#ff6c37" },
     { name: "mysql", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", color: "#4479a1" },
     { name: "postgresql", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg", color: "#336791" },
     { name: "supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg", color: "#3ecf8e" },
     { name: "canva", icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg", style: "width: 28px; height: 28px;", color: "#00c4cc" },
     { name: "photoshop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg", color: "#31a8ff" },
-    { name: "ms excel", icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg", style: "width: 24px; height: 24px;", color: "#107c41" },
-    { name: "ms word", icon: "https://api.iconify.design/vscode-icons/file-type-word.svg", style: "width: 24px; height: 24px;", color: "#2b579a" },
+    { name: "ms excel", icon: "assets/Foto_Logo/excel.svg", style: "width: 24px; height: 24px;", color: "#107c41" },
+    { name: "ms word", icon: "assets/Foto_Logo/word.svg", style: "width: 24px; height: 24px;", color: "#2b579a" },
     { name: "docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", color: "#2496ed" },
     { name: "stitch", icon: "assets/Foto_Logo/stitch.svg", style: "width: 28px; height: 28px;", color: "#FFA1E0" },
-    { name: "ChatGPT", icon: "https://api.iconify.design/simple-icons:openai.svg?color=white", color: "#10a37f" },
-    { name: "GitHub Copilot", icon: "https://api.iconify.design/simple-icons:githubcopilot.svg?color=white", color: "#ffffff" },
+    { name: "ChatGPT", icon: "assets/Foto_Logo/chatgpt.svg", color: "#10a37f" },
+    { name: "GitHub Copilot", icon: "assets/Foto_Logo/copilot.svg", color: "#ffffff" },
     { name: "Claude AI", icon: "assets/Foto_Logo/claude.svg", color: "#d97757" },
     { name: "Google Gemini", icon: "assets/Foto_Logo/gemini.svg", color: "#1a73e8" },
     { name: "Antigravity IDE", icon: "assets/Foto_Logo/antigravity.svg", color: "#ff00ff" },
     { name: "Kiro", icon: "assets/Foto_Logo/kiro.svg", color: "#ffff00" },
-    { name: "CapCut", icon: "https://api.iconify.design/selfhst:capcut-light.svg", color: "#ffffff" },
+    { name: "CapCut", icon: "assets/Foto_Logo/capcut.svg", color: "#ffffff" },
     { name: "Swagger", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg", color: "#85ea2d" },
     { name: "phpMyAdmin", icon: "https://upload.wikimedia.org/wikipedia/commons/4/4f/PhpMyAdmin_logo.svg", color: "#6c78af" },
-    { name: "Google Colab", icon: "https://api.iconify.design/simple-icons:googlecolab.svg?color=%23F9AB00", color: "#F9AB00" }
+    { name: "Google Colab", icon: "assets/Foto_Logo/googlecolab.svg", color: "#F9AB00" }
   ],
 
   skills: [
@@ -212,23 +212,23 @@ const PROFILE = {
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80",
       items: [
         { name: "Figma UI/UX", level: { id: "Dasar", en: "Basic" }, pct: 50, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
-        { name: "Tailwind CSS", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "https://api.iconify.design/devicon/tailwindcss.svg" },
+        { name: "Tailwind CSS", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "assets/Foto_Logo/tailwindcss.svg" },
         { name: "Bootstrap", level: { id: "Dasar", en: "Basic" }, pct: 40, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" },
         { name: "Canva", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 65, icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg" },
         { name: "Adobe Photoshop", level: { id: "Dasar", en: "Basic" }, pct: 35, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" },
         { name: "Git / GitHub", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
         { name: "Vercel", level: { id: "Dasar", en: "Basic" }, pct: 50, icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iYmxhY2siLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjgsIDEyOCkgc2NhbGUoLjUpIj48cG9seWdvbiBmaWxsPSJ3aGl0ZSIgcG9pbnRzPSIyNTYsNDggNDk2LDQ2NCAxNiw0NjQiLz48L2c+PC9zdmc+" },
-        { name: "Netlify", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "https://api.iconify.design/logos:netlify-icon.svg" },
+        { name: "Netlify", level: { id: "Dasar", en: "Basic" }, pct: 45, icon: "assets/Foto_Logo/netlify.svg" },
         { name: "Docker", level: { id: "Mempelajari", en: "Learning" }, pct: 25, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
-        { name: "CapCut", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 60, icon: "https://api.iconify.design/selfhst:capcut-light.svg" }
+        { name: "CapCut", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 60, icon: "assets/Foto_Logo/capcut.svg" }
       ]
     },
     {
       category: "AI Assistants",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80",
       items: [
-        { name: "ChatGPT", icon: "https://api.iconify.design/simple-icons:openai.svg?color=white" },
-        { name: "GitHub Copilot", icon: "https://api.iconify.design/simple-icons:githubcopilot.svg?color=white" },
+        { name: "ChatGPT", icon: "assets/Foto_Logo/chatgpt.svg" },
+        { name: "GitHub Copilot", icon: "assets/Foto_Logo/copilot.svg" },
         { name: "Claude AI", icon: "assets/Foto_Logo/claude.svg" },
         { name: "Google Gemini", icon: "assets/Foto_Logo/gemini.svg" },
         { name: "Antigravity IDE", icon: "assets/Foto_Logo/antigravity.svg" },
@@ -252,10 +252,10 @@ const PROFILE = {
       category: "Produktivitas & Office",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
       items: [
-        { name: "Ms. Excel / Sheets", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 60, icon: "https://api.iconify.design/vscode-icons/file-type-excel.svg" },
-        { name: "Ms. Word / Docs", level: { id: "Menengah", en: "Intermediate" }, pct: 75, icon: "https://api.iconify.design/vscode-icons/file-type-word.svg" },
-        { name: "Ms. PowerPoint", level: { id: "Menengah", en: "Intermediate" }, pct: 70, icon: "https://api.iconify.design/vscode-icons/file-type-powerpoint.svg" },
-        { name: "Google Colab", level: { id: "Dasar", en: "Basic" }, pct: 40, icon: "https://api.iconify.design/simple-icons:googlecolab.svg?color=%23F9AB00" }
+        { name: "Ms. Excel / Sheets", level: { id: "Dasar-Menengah", en: "Basic-Intermediate" }, pct: 60, icon: "assets/Foto_Logo/excel.svg" },
+        { name: "Ms. Word / Docs", level: { id: "Menengah", en: "Intermediate" }, pct: 75, icon: "assets/Foto_Logo/word.svg" },
+        { name: "Ms. PowerPoint", level: { id: "Menengah", en: "Intermediate" }, pct: 70, icon: "assets/Foto_Logo/powerpoint.svg" },
+        { name: "Google Colab", level: { id: "Dasar", en: "Basic" }, pct: 40, icon: "assets/Foto_Logo/googlecolab.svg" }
       ]
     }
   ],
